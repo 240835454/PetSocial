@@ -3,14 +3,15 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "养宠",
+				"navigationBarTextStyle":"white"
 			}
-		}
+		} 
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
+		"navigationBarBackgroundColor": "#F2473D",
 		"backgroundColor": "#F8F8F8"
 	}
 }
