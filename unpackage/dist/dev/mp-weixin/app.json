@@ -1,13 +1,14 @@
 {
-  "pages": [
-    "pages/index/index"
-  ],
-  "subPackages": [],
-  "window": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#F2473D",
-    "backgroundColor": "#F8F8F8"
-  },
-  "usingComponents": {}
+    "pages": [
+        "pages/index/index"
+    ],
+    "subPackages": [],
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "uni-app",
+        "navigationBarBackgroundColor": "#F2473D",
+        "backgroundColor": "#F8F8F8"
+    },
+    "usingComponents": {},
+    "sitemapLocation": "sitemap22.json"
 }
