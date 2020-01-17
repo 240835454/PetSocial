@@ -1,0 +1,1 @@
+<view>123<button type data-event-opts="{{[['tap',[['enterEncyclopedia',['$event']]]]]}}" bindtap="__e">宠物百科</button></view>

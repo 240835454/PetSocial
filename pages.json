@@ -1,17 +1,81 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		// {
+		// 	"path": "pages/index/index",
+		// 	"style": {
+		// 		"navigationBarTitleText": "养宠",
+		// 		"navigationBarTextStyle": "white" 
+		// 	}
+		// },
+		// 社区
 		{
-			"path": "pages/index/index",
+			"path": "pages/community/community", 
+			"style": {
+				"navigationBarTitleText": "社区",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		// 养宠
+		{
+			"path": "pages/petbnb/petbnb",
 			"style": {
 				"navigationBarTitleText": "养宠",
-				"navigationBarTextStyle":"white"
+				"navigationBarTextStyle": "white"
 			}
-		} 
+		},
+		// 宠物百科
+		{
+			"path": "pages/petbnb/encyclopedia/encyclopedia",
+			"style": {
+				"navigationBarTitleText": "宠物种族",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		// 品种列表
+		{
+			"path": "pages/petbnb/encyclopedia/petTypeList",
+			"style": {
+				// "navigationBarTitleText": "品种列表",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		// 我的
+		{
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"navigationBarTextStyle": "white"
+			}
+		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F2473D",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#a6b5d5",
+		"selectedColor": "#333333",
+		"borderStyle": "black",
+		"list": [{
+				"selectedIconPath": "/static/community-active.png",
+				"iconPath": "/static/community.png", 
+				"pagePath": "pages/community/community",
+				"text": "社区"
+			},
+			{
+				"selectedIconPath": "/static/pet-active.png",
+				"iconPath": "/static/pet.png",
+				"pagePath": "pages/petbnb/petbnb",
+				"text": "养宠"
+			},
+			{
+				"selectedIconPath": "/static/user-active.png",
+				"iconPath": "/static/user.png",
+				"pagePath": "pages/user/user",
+				"text": "我的"
+			}
+		]
 	}
 }
