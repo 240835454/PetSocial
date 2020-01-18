@@ -1,23 +1,21 @@
 <template>
 	<view class="content list">
-		<scroll-view scroll-y="true" class="scroll-box" :scroll-into-view="'NAV'+toNum" enable-back-to-top='true' scroll-with-animation='true' :scroll-top="scrollTop"
-		 @scroll="scroll">
+		<scroll-view scroll-y="true" class="scroll-box" :scroll-into-view="'NAV'+toNum" enable-back-to-top='true'
+		 scroll-with-animation='true' :scroll-top="scrollTop" @scroll="scroll">
 			<view class='list-group' v-for="(item,index) in list" :key='index'>
 				<view class="title" :id="'NAV'+index">
 					{{item.Title}}
 				</view>
-				<template v-for='(info,index) in item.List'>
-					<view class='item' :key='index' @click="enterDetail(info.petBreedId)">
-						<image :src="info.icon" mode="" lazy-load="true" class='icon'></image>
-						<text>{{info.name}}</text>
-					</view>
-				</template>
+				<view class='item' v-for='(info,secondIndex) in item.List' :key='secondIndex' @click="enterDetail(info.petBreedId)">
+					<image :src="info.icon" mode="" lazy-load="true" class='icon'></image>
+					<text>{{info.name}}</text>
+				</view>
 			</view>
-		</scroll-view> 
+		</scroll-view>
 		<!-- 侧边字母导航 -->
 		<view class="list-shortcut">
 			<template v-for="(item,index) in list ">
-				<text :key='index'  :data-id="item.Title" :data-index='index' @tap="scrollToview">{{item.Title}}</text>
+				<text :key='index' :data-id="item.Title" :data-index='index' @tap="scrollToview">{{item.Title}}</text>
 			</template>
 		</view>
 		<!-- 固定在顶部的字母导航 -->
@@ -42,42 +40,42 @@
 				fixedTop: '',
 				listHeight: [],
 				height: 1000,
-				currentIndex: 0, 
+				currentIndex: 0,
 				fixedTitle: '',
 				scrollTop: 0,
 				toNum: 0,
 				name: '',
 				id: ''
-			}   
+			}
 		},
 		onLoad(options) {
 			this.id = options.id;
-			this.name = options.name;   
+			this.name = options.name;
 			uni.setNavigationBarTitle({
-				title: this.name  
+				title: this.name
 			})
 			this.getList();
 		},
 		mounted() {
-			this._calculateHeight(); 
-		},  
+			this._calculateHeight();
+		},
 		methods: {
 			getList() {
-				this.$http.get('/petbnb/encyclopedia/petTypeList',{
-					petRaceId: this.id 
-				})
-				.then(res=>{
-					// console.log(res.data.list);
-					let dataList = res.data.list;
-					let arr = formatList(dataList, 'firstWord');
-					this.list = arr; 
-				})
-				.catch(err=>{
-					uni.showToast({
-						icon: 'none', 
-						title: '系统出错，请稍后再试!'
+				this.$http.get('/petbnb/encyclopedia/petTypeList', {
+						petRaceId: this.id
 					})
-				})
+					.then(res => {
+						// console.log(res.data.list);
+						let dataList = res.data.list;
+						let arr = formatList(dataList, 'firstWord');
+						this.list = arr;
+					})
+					.catch(err => {
+						uni.showToast({
+							icon: 'none',
+							title: '系统出错，请稍后再试!'
+						})
+					})
 				// uni.request({
 				// 	url: 'http://192.168.1.101:3000/qita?petRaceId='+this.id,
 				// 	success: res => {
@@ -113,7 +111,7 @@
 						this.fixedTitle = this.list[i].Title;
 						this.fixedTt(height2 - newY);
 						// this.currentIndex = i;
-						return 
+						return
 					}
 					// console.log(newY);
 				}
@@ -160,9 +158,9 @@
 				this.toNum = e.target.dataset.index;
 			},
 			// 进入详情
-			enterDetail(id){
+			enterDetail(id) {
 				uni.navigateTo({
-					url: ''
+					url: './petDetail?id=' + id 
 				})
 			}
 		}
@@ -173,7 +171,7 @@
 	page {
 		height: 100%;
 	}
-	
+
 	// .list{
 	// 	  display: flex;
 	// 	  flex-direction: column;
@@ -207,30 +205,32 @@
 				border-bottom: none;
 			}
 		}
-		
+
 		.list-shortcut {
-		  position: fixed;
-		  z-index: 30;
-		  right: 0;
-		  top: 50%;
-		  -webkit-transform: translateY(-50%);
-		  transform: translateY(-50%);
-		  width: 40rpx;
-		  padding: 40rpx 0;
-		  border-radius: 20rpx;
-		  text-align: center;
-		  background: rgba(0,0,0,.2);
-		  font-family: Helvetica;
+			position: fixed;
+			z-index: 30;
+			right: 0;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+			width: 40rpx;
+			padding: 40rpx 0;
+			border-radius: 20rpx;
+			text-align: center;
+			background: rgba(0, 0, 0, .2);
+			font-family: Helvetica;
 		}
+
 		.list-shortcut text {
-		  display: block;
-		  padding: 8rpx;
-		  line-height: 1;
-		  color: #fff;
-		  font-size: 24rpx;
+			display: block;
+			padding: 8rpx;
+			line-height: 1;
+			color: #fff;
+			font-size: 24rpx;
 		}
-		.current{
-		  color: #ffcd32 !important;
+
+		.current {
+			color: #ffcd32 !important;
 		}
 
 		.list-fixed {
@@ -246,4 +246,3 @@
 		}
 	}
 </style>
-

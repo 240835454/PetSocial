@@ -1,0 +1,1 @@
+<view><image class="{{['rate','level'+level]}}" src mode></image></view>

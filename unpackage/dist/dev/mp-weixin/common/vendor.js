@@ -8508,7 +8508,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@alpha","_id":"@dcloudio/uni-stat@2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/community/community": { "navigationBarTitleText": "社区", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/petbnb": { "navigationBarTitleText": "养宠", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/user": { "navigationBarTitleText": "我的", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/encyclopedia/encyclopedia": { "navigationBarTitleText": "宠物种族", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/encyclopedia/petTypeList": { "navigationBarTextStyle": "white" } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F2473D", "backgroundColor": "#F8F8F8" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/community/community": { "navigationBarTitleText": "社区", "navigationBarTextStyle": "white" }, "pages/petbnb/petbnb": { "navigationBarTitleText": "养宠", "navigationBarTextStyle": "white" }, "pages/petbnb/encyclopedia/encyclopedia": { "navigationBarTitleText": "宠物种族", "navigationBarTextStyle": "white" }, "pages/petbnb/encyclopedia/petTypeList": { "navigationBarTextStyle": "white" }, "pages/petbnb/encyclopedia/petDetail": { "navigationBarTextStyle": "white" }, "pages/user/user": { "navigationBarTitleText": "我的", "navigationBarTextStyle": "white" } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F2473D", "backgroundColor": "#F8F8F8" } };exports.default = _default;
 
 /***/ }),
 /* 8 */
@@ -8647,81 +8647,7 @@ function normalizeComponent (
 
 
 /***/ }),
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */,
-/* 27 */,
-/* 28 */,
-/* 29 */,
-/* 30 */,
-/* 31 */,
-/* 32 */,
-/* 33 */,
-/* 34 */,
-/* 35 */,
-/* 36 */,
-/* 37 */,
-/* 38 */,
-/* 39 */,
-/* 40 */,
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */
-/*!*****************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/util/js/formatList.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.formatList = formatList;function formatList(arr, keyword) {
-  var newArr1 = [];
-  var tempArr = [];
-  var reg = /\b(\w)|\s(\w)/g;
-  var k = 0;
-  var firstWord = arr[0][keyword].charAt(0).toUpperCase(); //获取第一个分类字母
-  arr.map(function (v) {
-    v[keyword] = v[keyword].replace(reg, function (m) {return m.toUpperCase();}); //首字母大写
-    if (firstWord == v[keyword].charAt(0)) {
-      tempArr.push(v);
-      newArr1[k] = {
-        Title: firstWord,
-        List: tempArr };
-
-    } else {
-      //这里循环到这表示已经第二个字母了
-      firstWord = v[keyword].charAt(0); //设置第二字母
-      tempArr = []; //把之前的清除掉
-      tempArr.push(v); //添加第一个
-      newArr1[++k] = { //自增
-        Title: firstWord,
-        List: tempArr };
-
-    }
-  });
-  return newArr1;
-}
-
-/***/ }),
-/* 52 */,
-/* 53 */
+/* 15 */
 /*!*******************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/http/api.js ***!
   \*******************************************/
@@ -8729,7 +8655,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.formatList
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _interceptor = _interopRequireDefault(__webpack_require__(/*! ./interceptor.js */ 54));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _interceptor = _interopRequireDefault(__webpack_require__(/*! ./interceptor.js */ 16));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 // import qs from 'qs'; 
 
 // let ApiUrl= process.env.NODE_ENV === 'development' ? 'http://192.168.1.136:8100' : 'http://203.88.193.234:8992';
@@ -8817,7 +8743,7 @@ var ApiUrl = 'http://192.168.1.101:3000/api';var _default =
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 54 */
+/* 16 */
 /*!***************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/http/interceptor.js ***!
   \***************************************************/
@@ -8825,7 +8751,7 @@ var ApiUrl = 'http://192.168.1.101:3000/api';var _default =
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _gangdiedaoUniAxios = _interopRequireDefault(__webpack_require__(/*! @/js_sdk/gangdiedao-uni-axios */ 55));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _gangdiedaoUniAxios = _interopRequireDefault(__webpack_require__(/*! @/js_sdk/gangdiedao-uni-axios */ 17));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 _gangdiedaoUniAxios.default.interceptors.request.use(function (config) {
   var token = uni.getStorageSync('token');
@@ -8841,7 +8767,7 @@ _gangdiedaoUniAxios.default;exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 55 */
+/* 17 */
 /*!********************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/js_sdk/gangdiedao-uni-axios/index.js ***!
   \********************************************************************/
@@ -8849,11 +8775,11 @@ _gangdiedaoUniAxios.default;exports.default = _default;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _uniAxios = __webpack_require__(/*! ./uni-axios */ 56);var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _uniAxios = __webpack_require__(/*! ./uni-axios */ 18);var _default =
 _uniAxios.axios;exports.default = _default;
 
 /***/ }),
-/* 56 */
+/* 18 */
 /*!************************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/js_sdk/gangdiedao-uni-axios/uni-axios.js ***!
   \************************************************************************/
@@ -8861,7 +8787,7 @@ _uniAxios.axios;exports.default = _default;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });var _exportNames = { axios: true };Object.defineProperty(exports, "axios", { enumerable: true, get: function get() {return _axios.default;} });var _axios = _interopRequireWildcard(__webpack_require__(/*! axios */ 59));
+Object.defineProperty(exports, "__esModule", { value: true });var _exportNames = { axios: true };Object.defineProperty(exports, "axios", { enumerable: true, get: function get() {return _axios.default;} });var _axios = _interopRequireWildcard(__webpack_require__(/*! axios */ 19));
 
 
 
@@ -8903,166 +8829,10 @@ Object.defineProperty(exports, "__esModule", { value: true });var _exportNames =
 
 
 
-Object.keys(_axios).forEach(function (key) {if (key === "default" || key === "__esModule") return;if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;Object.defineProperty(exports, key, { enumerable: true, get: function get() {return _axios[key];} });});var _utils = _interopRequireDefault(__webpack_require__(/*! axios/lib/utils */ 61));var _adapter = __webpack_require__(/*! ./adapter */ 57);var _normalizeHeaderName = _interopRequireDefault(__webpack_require__(/*! axios/lib/helpers/normalizeHeaderName */ 72));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;return newObj;}}function setContentTypeIfUnset(headers, value) {if (!_utils.default.isUndefined(headers) && _utils.default.isUndefined(headers['Content-Type'])) {headers['Content-Type'] = value;}}_axios.default.defaults.transformRequest = [function transformRequest(data, headers) {(0, _normalizeHeaderName.default)(headers, 'Accept');(0, _normalizeHeaderName.default)(headers, 'Content-Type');if (_utils.default.isFormData(data) || _utils.default.isArrayBuffer(data) || _utils.default.isBuffer(data) || _utils.default.isStream(data) || _utils.default.isFile(data) || _utils.default.isBlob(data)) {return data;}if (_utils.default.isArrayBufferView(data)) {return data.buffer;}if (_utils.default.isURLSearchParams(data)) {setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');return data.toString();}if (_utils.default.isObject(data)) {setContentTypeIfUnset(headers, 'application/json;charset=utf-8');return JSON.stringify(data);}return data;}];_axios.default.defaults.adapter = _adapter.adapter;
-
-/***/ }),
-/* 57 */
-/*!**********************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/js_sdk/gangdiedao-uni-axios/adapter.js ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.adapter = void 0;var _utils = __webpack_require__(/*! axios/lib/utils */ 61);
-
-
-
-
-var _createError = _interopRequireDefault(__webpack_require__(/*! axios/lib/core/createError */ 75));
-var _buildURL = _interopRequireDefault(__webpack_require__(/*! axios/lib/helpers/buildURL */ 64));
-var _settle = _interopRequireDefault(__webpack_require__(/*! axios/lib/core/settle */ 74));
-var _awaitTimeout = _interopRequireDefault(__webpack_require__(/*! ./await-timeout */ 58));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-var timer = new _awaitTimeout.default();
-
-var adapter = function adapter(config) {
-  return new Promise(function (resolve, reject) {
-    var requestMethod = ((0, _utils.isString)(config.method) ? config.method : 'GET').toUpperCase();
-    var requestUrl = (0, _buildURL.default)(config.url, config.params, config.paramsSerializer);
-    var requestHeaders = (0, _utils.isObject)(config.headers) ? config.headers : {};
-
-    // 请求数据
-    var requestData = config.data;
-
-    var request = uni.request({
-      method: requestMethod,
-      url: requestUrl,
-      header: requestHeaders,
-      data: requestMethod === 'POST' || requestMethod === 'PUT' || requestMethod === 'PATCH' ? requestData : '',
-      responseType: config.responseType === 'arraybuffer' ? 'arraybuffer' : 'text',
-      dataType: config.responseType === 'json' ? 'json' : config.responseType,
-      success: function success(res) {
-        (0, _settle.default)(resolve, reject, {
-          data: res.data,
-          status: res.statusCode,
-          statusText: '',
-          headers: res.header,
-          config: config,
-          request: request });
-
-      },
-      fail: function fail() {
-        var error = (0, _createError.default)('网络错误', config, undefined, request);
-        reject(error);
-      },
-      complete: function complete() {
-        timer.clear();
-      } });
-
-
-    // 支持超时处理
-    if (config.timeout) {
-      timer.set(config.timeout).then(function () {
-        reject(new Error('请求超时'));
-        request.abort();
-      });
-    }
-  });
-};exports.adapter = adapter;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+Object.keys(_axios).forEach(function (key) {if (key === "default" || key === "__esModule") return;if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;Object.defineProperty(exports, key, { enumerable: true, get: function get() {return _axios[key];} });});var _utils = _interopRequireDefault(__webpack_require__(/*! axios/lib/utils */ 21));var _adapter = __webpack_require__(/*! ./adapter */ 48);var _normalizeHeaderName = _interopRequireDefault(__webpack_require__(/*! axios/lib/helpers/normalizeHeaderName */ 32));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;return newObj;}}function setContentTypeIfUnset(headers, value) {if (!_utils.default.isUndefined(headers) && _utils.default.isUndefined(headers['Content-Type'])) {headers['Content-Type'] = value;}}_axios.default.defaults.transformRequest = [function transformRequest(data, headers) {(0, _normalizeHeaderName.default)(headers, 'Accept');(0, _normalizeHeaderName.default)(headers, 'Content-Type');if (_utils.default.isFormData(data) || _utils.default.isArrayBuffer(data) || _utils.default.isBuffer(data) || _utils.default.isStream(data) || _utils.default.isFile(data) || _utils.default.isBlob(data)) {return data;}if (_utils.default.isArrayBufferView(data)) {return data.buffer;}if (_utils.default.isURLSearchParams(data)) {setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');return data.toString();}if (_utils.default.isObject(data)) {setContentTypeIfUnset(headers, 'application/json;charset=utf-8');return JSON.stringify(data);}return data;}];_axios.default.defaults.adapter = _adapter.adapter;
 
 /***/ }),
-/* 58 */
-/*!****************************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/js_sdk/gangdiedao-uni-axios/await-timeout.js ***!
-  \****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;} // await-timeout v0.5.0 by Vitaliy Potapov
-(function (global, factory) {
-   true ? module.exports = factory() :
-  undefined;
-})(void 0, function () {'use strict';
-
-  function promiseFinally(promise, fn) {
-    var success = function success(result) {
-      fn();
-      return result;
-    };
-    var error = function error(e) {
-      fn();
-      return Promise.reject(e);
-    };
-    return Promise.resolve(promise).then(success, error);
-  }
-
-  /**
-     * Converts any value to Error.
-     * @param {*} value
-     * @returns {Error}
-     */
-  function toError(value) {
-    value = typeof value === 'function' ? value() : value;
-    return typeof value === 'string' ? new Error(value) : value;
-  }
-
-  /**
-     * Promise-based replacement for setTimeout / clearTimeout.
-     */var
-
-  Timeout = /*#__PURE__*/function () {
-    function Timeout() {_classCallCheck(this, Timeout);
-      this._id = null;
-      this._delay = null;
-    }_createClass(Timeout, [{ key: "set", value: function set(
-
-
-
-
-
-
-
-
-
-      delay) {var _this = this;var rejectReason = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-        return new Promise(function (resolve, reject) {
-          _this.clear();
-          var fn = rejectReason ? function () {return reject(toError(rejectReason));} : resolve;
-          _this._id = setTimeout(fn, delay);
-          _this._delay = delay;
-        });
-      } }, { key: "wrap", value: function wrap(
-
-      promise, delay) {var _this2 = this;var rejectReason = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
-        var wrappedPromise = promiseFinally(promise, function () {return _this2.clear();});
-        var timer = this.set(delay, rejectReason);
-        return Promise.race([wrappedPromise, timer]);
-      } }, { key: "clear", value: function clear()
-
-      {
-        if (this._id) {
-          clearTimeout(this._id);
-        }
-      } }, { key: "id", get: function get() {return this._id;} }, { key: "delay", get: function get() {return this._delay;} }]);return Timeout;}();
-
-
-  Timeout.set = function (delay, rejectReason) {
-    return new Timeout().set(delay, rejectReason);
-  };
-
-  Timeout.wrap = function (promise, delay, rejectReason) {
-    return new Timeout().wrap(promise, delay, rejectReason);
-  };
-
-  return Timeout;
-
-});
-
-/***/ }),
-/* 59 */
+/* 19 */
 /*!***********************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/index.js ***!
   \***********************************************************/
@@ -9070,10 +8840,10 @@ function _classCallCheck(instance, Constructor) {if (!(instance instanceof Const
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-module.exports = __webpack_require__(/*! ./lib/axios */ 60);
+module.exports = __webpack_require__(/*! ./lib/axios */ 20);
 
 /***/ }),
-/* 60 */
+/* 20 */
 /*!***************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/axios.js ***!
   \***************************************************************/
@@ -9083,11 +8853,11 @@ module.exports = __webpack_require__(/*! ./lib/axios */ 60);
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./utils */ 61);
-var bind = __webpack_require__(/*! ./helpers/bind */ 62);
-var Axios = __webpack_require__(/*! ./core/Axios */ 63);
-var mergeConfig = __webpack_require__(/*! ./core/mergeConfig */ 84);
-var defaults = __webpack_require__(/*! ./defaults */ 69);
+var utils = __webpack_require__(/*! ./utils */ 21);
+var bind = __webpack_require__(/*! ./helpers/bind */ 22);
+var Axios = __webpack_require__(/*! ./core/Axios */ 23);
+var mergeConfig = __webpack_require__(/*! ./core/mergeConfig */ 44);
+var defaults = __webpack_require__(/*! ./defaults */ 29);
 
 /**
                                        * Create an instance of Axios
@@ -9120,15 +8890,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(/*! ./cancel/Cancel */ 85);
-axios.CancelToken = __webpack_require__(/*! ./cancel/CancelToken */ 86);
-axios.isCancel = __webpack_require__(/*! ./cancel/isCancel */ 68);
+axios.Cancel = __webpack_require__(/*! ./cancel/Cancel */ 45);
+axios.CancelToken = __webpack_require__(/*! ./cancel/CancelToken */ 46);
+axios.isCancel = __webpack_require__(/*! ./cancel/isCancel */ 28);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(/*! ./helpers/spread */ 87);
+axios.spread = __webpack_require__(/*! ./helpers/spread */ 47);
 
 module.exports = axios;
 
@@ -9136,7 +8906,7 @@ module.exports = axios;
 module.exports.default = axios;
 
 /***/ }),
-/* 61 */
+/* 21 */
 /*!***************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/utils.js ***!
   \***************************************************************/
@@ -9146,7 +8916,7 @@ module.exports.default = axios;
 "use strict";
 
 
-var bind = __webpack_require__(/*! ./helpers/bind */ 62);
+var bind = __webpack_require__(/*! ./helpers/bind */ 22);
 
 /*global toString:true*/
 
@@ -9489,7 +9259,7 @@ module.exports = {
   trim: trim };
 
 /***/ }),
-/* 62 */
+/* 22 */
 /*!**********************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/helpers/bind.js ***!
   \**********************************************************************/
@@ -9510,7 +9280,7 @@ module.exports = function bind(fn, thisArg) {
 };
 
 /***/ }),
-/* 63 */
+/* 23 */
 /*!********************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/core/Axios.js ***!
   \********************************************************************/
@@ -9520,11 +9290,11 @@ module.exports = function bind(fn, thisArg) {
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 61);
-var buildURL = __webpack_require__(/*! ../helpers/buildURL */ 64);
-var InterceptorManager = __webpack_require__(/*! ./InterceptorManager */ 65);
-var dispatchRequest = __webpack_require__(/*! ./dispatchRequest */ 66);
-var mergeConfig = __webpack_require__(/*! ./mergeConfig */ 84);
+var utils = __webpack_require__(/*! ./../utils */ 21);
+var buildURL = __webpack_require__(/*! ../helpers/buildURL */ 24);
+var InterceptorManager = __webpack_require__(/*! ./InterceptorManager */ 25);
+var dispatchRequest = __webpack_require__(/*! ./dispatchRequest */ 26);
+var mergeConfig = __webpack_require__(/*! ./mergeConfig */ 44);
 
 /**
                                              * Create a new instance of Axios
@@ -9614,7 +9384,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 module.exports = Axios;
 
 /***/ }),
-/* 64 */
+/* 24 */
 /*!**************************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/helpers/buildURL.js ***!
   \**************************************************************************/
@@ -9624,7 +9394,7 @@ module.exports = Axios;
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 61);
+var utils = __webpack_require__(/*! ./../utils */ 21);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -9695,7 +9465,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 };
 
 /***/ }),
-/* 65 */
+/* 25 */
 /*!*********************************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/core/InterceptorManager.js ***!
   \*********************************************************************************/
@@ -9705,7 +9475,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 61);
+var utils = __webpack_require__(/*! ./../utils */ 21);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -9757,7 +9527,7 @@ InterceptorManager.prototype.forEach = function forEach(fn) {
 module.exports = InterceptorManager;
 
 /***/ }),
-/* 66 */
+/* 26 */
 /*!******************************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/core/dispatchRequest.js ***!
   \******************************************************************************/
@@ -9767,10 +9537,10 @@ module.exports = InterceptorManager;
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 61);
-var transformData = __webpack_require__(/*! ./transformData */ 67);
-var isCancel = __webpack_require__(/*! ../cancel/isCancel */ 68);
-var defaults = __webpack_require__(/*! ../defaults */ 69);
+var utils = __webpack_require__(/*! ./../utils */ 21);
+var transformData = __webpack_require__(/*! ./transformData */ 27);
+var isCancel = __webpack_require__(/*! ../cancel/isCancel */ 28);
+var defaults = __webpack_require__(/*! ../defaults */ 29);
 
 /**
                                         * Throws a `Cancel` if cancellation has been requested.
@@ -9846,7 +9616,7 @@ module.exports = function dispatchRequest(config) {
 };
 
 /***/ }),
-/* 67 */
+/* 27 */
 /*!****************************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/core/transformData.js ***!
   \****************************************************************************/
@@ -9856,7 +9626,7 @@ module.exports = function dispatchRequest(config) {
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 61);
+var utils = __webpack_require__(/*! ./../utils */ 21);
 
 /**
                                     * Transform the data for a request or a response
@@ -9876,7 +9646,7 @@ module.exports = function transformData(data, headers, fns) {
 };
 
 /***/ }),
-/* 68 */
+/* 28 */
 /*!*************************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/cancel/isCancel.js ***!
   \*************************************************************************/
@@ -9891,7 +9661,7 @@ module.exports = function isCancel(value) {
 };
 
 /***/ }),
-/* 69 */
+/* 29 */
 /*!******************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/defaults.js ***!
   \******************************************************************/
@@ -9901,8 +9671,8 @@ module.exports = function isCancel(value) {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(/*! ./utils */ 61);
-var normalizeHeaderName = __webpack_require__(/*! ./helpers/normalizeHeaderName */ 72);
+var utils = __webpack_require__(/*! ./utils */ 21);
+var normalizeHeaderName = __webpack_require__(/*! ./helpers/normalizeHeaderName */ 32);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded' };
@@ -9918,10 +9688,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(/*! ./adapters/xhr */ 73);
+    adapter = __webpack_require__(/*! ./adapters/xhr */ 33);
   } else if (typeof process !== 'undefined' && Object.prototype.toString.call(process) === '[object process]') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(/*! ./adapters/http */ 73);
+    adapter = __webpack_require__(/*! ./adapters/http */ 33);
   }
   return adapter;
 }
@@ -9996,10 +9766,10 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 });
 
 module.exports = defaults;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/node-libs-browser/mock/process.js */ 70)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/node-libs-browser/mock/process.js */ 30)))
 
 /***/ }),
-/* 70 */
+/* 30 */
 /*!********************************************************!*\
   !*** ./node_modules/node-libs-browser/mock/process.js ***!
   \********************************************************/
@@ -10026,7 +9796,7 @@ exports.binding = function (name) {
     var path;
     exports.cwd = function () { return cwd };
     exports.chdir = function (dir) {
-        if (!path) path = __webpack_require__(/*! path */ 71);
+        if (!path) path = __webpack_require__(/*! path */ 31);
         cwd = path.resolve(dir, cwd);
     };
 })();
@@ -10039,7 +9809,7 @@ exports.features = {};
 
 
 /***/ }),
-/* 71 */
+/* 31 */
 /*!***********************************************!*\
   !*** ./node_modules/path-browserify/index.js ***!
   \***********************************************/
@@ -10271,10 +10041,10 @@ var substr = 'ab'.substr(-1) === 'b'
     }
 ;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 70)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 30)))
 
 /***/ }),
-/* 72 */
+/* 32 */
 /*!*************************************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/helpers/normalizeHeaderName.js ***!
   \*************************************************************************************/
@@ -10284,7 +10054,7 @@ var substr = 'ab'.substr(-1) === 'b'
 "use strict";
 
 
-var utils = __webpack_require__(/*! ../utils */ 61);
+var utils = __webpack_require__(/*! ../utils */ 21);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -10296,7 +10066,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 };
 
 /***/ }),
-/* 73 */
+/* 33 */
 /*!**********************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/adapters/xhr.js ***!
   \**********************************************************************/
@@ -10306,13 +10076,13 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 61);
-var settle = __webpack_require__(/*! ./../core/settle */ 74);
-var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ 64);
-var buildFullPath = __webpack_require__(/*! ../core/buildFullPath */ 77);
-var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ 80);
-var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ 81);
-var createError = __webpack_require__(/*! ../core/createError */ 75);
+var utils = __webpack_require__(/*! ./../utils */ 21);
+var settle = __webpack_require__(/*! ./../core/settle */ 34);
+var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ 24);
+var buildFullPath = __webpack_require__(/*! ../core/buildFullPath */ 37);
+var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ 40);
+var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ 41);
+var createError = __webpack_require__(/*! ../core/createError */ 35);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -10409,7 +10179,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(/*! ./../helpers/cookies */ 83);
+      var cookies = __webpack_require__(/*! ./../helpers/cookies */ 43);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(fullPath)) && config.xsrfCookieName ?
@@ -10486,7 +10256,7 @@ module.exports = function xhrAdapter(config) {
 };
 
 /***/ }),
-/* 74 */
+/* 34 */
 /*!*********************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/core/settle.js ***!
   \*********************************************************************/
@@ -10496,7 +10266,7 @@ module.exports = function xhrAdapter(config) {
 "use strict";
 
 
-var createError = __webpack_require__(/*! ./createError */ 75);
+var createError = __webpack_require__(/*! ./createError */ 35);
 
 /**
                                              * Resolve or reject a Promise based on response status.
@@ -10521,7 +10291,7 @@ module.exports = function settle(resolve, reject, response) {
 };
 
 /***/ }),
-/* 75 */
+/* 35 */
 /*!**************************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/core/createError.js ***!
   \**************************************************************************/
@@ -10531,7 +10301,7 @@ module.exports = function settle(resolve, reject, response) {
 "use strict";
 
 
-var enhanceError = __webpack_require__(/*! ./enhanceError */ 76);
+var enhanceError = __webpack_require__(/*! ./enhanceError */ 36);
 
 /**
                                                * Create an Error with the specified message, config, error code, request and response.
@@ -10549,7 +10319,7 @@ module.exports = function createError(message, config, code, request, response) 
 };
 
 /***/ }),
-/* 76 */
+/* 36 */
 /*!***************************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/core/enhanceError.js ***!
   \***************************************************************************/
@@ -10601,7 +10371,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 };
 
 /***/ }),
-/* 77 */
+/* 37 */
 /*!****************************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/core/buildFullPath.js ***!
   \****************************************************************************/
@@ -10611,8 +10381,8 @@ module.exports = function enhanceError(error, config, code, request, response) {
 "use strict";
 
 
-var isAbsoluteURL = __webpack_require__(/*! ../helpers/isAbsoluteURL */ 78);
-var combineURLs = __webpack_require__(/*! ../helpers/combineURLs */ 79);
+var isAbsoluteURL = __webpack_require__(/*! ../helpers/isAbsoluteURL */ 38);
+var combineURLs = __webpack_require__(/*! ../helpers/combineURLs */ 39);
 
 /**
                                                       * Creates a new URL by combining the baseURL with the requestedURL,
@@ -10631,7 +10401,7 @@ module.exports = function buildFullPath(baseURL, requestedURL) {
 };
 
 /***/ }),
-/* 78 */
+/* 38 */
 /*!*******************************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/helpers/isAbsoluteURL.js ***!
   \*******************************************************************************/
@@ -10655,7 +10425,7 @@ module.exports = function isAbsoluteURL(url) {
 };
 
 /***/ }),
-/* 79 */
+/* 39 */
 /*!*****************************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/helpers/combineURLs.js ***!
   \*****************************************************************************/
@@ -10679,7 +10449,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 };
 
 /***/ }),
-/* 80 */
+/* 40 */
 /*!******************************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/helpers/parseHeaders.js ***!
   \******************************************************************************/
@@ -10689,7 +10459,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 61);
+var utils = __webpack_require__(/*! ./../utils */ 21);
 
 // Headers whose duplicates are ignored by node
 // c.f. https://nodejs.org/api/http.html#http_message_headers
@@ -10742,7 +10512,7 @@ module.exports = function parseHeaders(headers) {
 };
 
 /***/ }),
-/* 81 */
+/* 41 */
 /*!*********************************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/helpers/isURLSameOrigin.js ***!
   \*********************************************************************************/
@@ -10752,8 +10522,8 @@ module.exports = function parseHeaders(headers) {
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 61);
-var isValidXss = __webpack_require__(/*! ./isValidXss */ 82);
+var utils = __webpack_require__(/*! ./../utils */ 21);
+var isValidXss = __webpack_require__(/*! ./isValidXss */ 42);
 
 module.exports =
 utils.isStandardBrowserEnv() ?
@@ -10824,7 +10594,7 @@ function nonStandardBrowserEnv() {
 }();
 
 /***/ }),
-/* 82 */
+/* 42 */
 /*!****************************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/helpers/isValidXss.js ***!
   \****************************************************************************/
@@ -10840,7 +10610,7 @@ module.exports = function isValidXss(requestURL) {
 };
 
 /***/ }),
-/* 83 */
+/* 43 */
 /*!*************************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/helpers/cookies.js ***!
   \*************************************************************************/
@@ -10850,7 +10620,7 @@ module.exports = function isValidXss(requestURL) {
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 61);
+var utils = __webpack_require__(/*! ./../utils */ 21);
 
 module.exports =
 utils.isStandardBrowserEnv() ?
@@ -10902,7 +10672,7 @@ function nonStandardBrowserEnv() {
 }();
 
 /***/ }),
-/* 84 */
+/* 44 */
 /*!**************************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/core/mergeConfig.js ***!
   \**************************************************************************/
@@ -10912,7 +10682,7 @@ function nonStandardBrowserEnv() {
 "use strict";
 
 
-var utils = __webpack_require__(/*! ../utils */ 61);
+var utils = __webpack_require__(/*! ../utils */ 21);
 
 /**
                                   * Config-specific merge-function which creates a new config-object
@@ -10985,7 +10755,7 @@ module.exports = function mergeConfig(config1, config2) {
 };
 
 /***/ }),
-/* 85 */
+/* 45 */
 /*!***********************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/cancel/Cancel.js ***!
   \***********************************************************************/
@@ -11014,7 +10784,7 @@ Cancel.prototype.__CANCEL__ = true;
 module.exports = Cancel;
 
 /***/ }),
-/* 86 */
+/* 46 */
 /*!****************************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/cancel/CancelToken.js ***!
   \****************************************************************************/
@@ -11024,7 +10794,7 @@ module.exports = Cancel;
 "use strict";
 
 
-var Cancel = __webpack_require__(/*! ./Cancel */ 85);
+var Cancel = __webpack_require__(/*! ./Cancel */ 45);
 
 /**
                                    * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -11081,7 +10851,7 @@ CancelToken.source = function source() {
 module.exports = CancelToken;
 
 /***/ }),
-/* 87 */
+/* 47 */
 /*!************************************************************************!*\
   !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/helpers/spread.js ***!
   \************************************************************************/
@@ -11116,6 +10886,225 @@ module.exports = function spread(callback) {
     return callback.apply(null, arr);
   };
 };
+
+/***/ }),
+/* 48 */
+/*!**********************************************************************!*\
+  !*** F:/谭鑫锋/宠物社交平台/PetSocial/js_sdk/gangdiedao-uni-axios/adapter.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.adapter = void 0;var _utils = __webpack_require__(/*! axios/lib/utils */ 21);
+
+
+
+
+var _createError = _interopRequireDefault(__webpack_require__(/*! axios/lib/core/createError */ 35));
+var _buildURL = _interopRequireDefault(__webpack_require__(/*! axios/lib/helpers/buildURL */ 24));
+var _settle = _interopRequireDefault(__webpack_require__(/*! axios/lib/core/settle */ 34));
+var _awaitTimeout = _interopRequireDefault(__webpack_require__(/*! ./await-timeout */ 49));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var timer = new _awaitTimeout.default();
+
+var adapter = function adapter(config) {
+  return new Promise(function (resolve, reject) {
+    var requestMethod = ((0, _utils.isString)(config.method) ? config.method : 'GET').toUpperCase();
+    var requestUrl = (0, _buildURL.default)(config.url, config.params, config.paramsSerializer);
+    var requestHeaders = (0, _utils.isObject)(config.headers) ? config.headers : {};
+
+    // 请求数据
+    var requestData = config.data;
+
+    var request = uni.request({
+      method: requestMethod,
+      url: requestUrl,
+      header: requestHeaders,
+      data: requestMethod === 'POST' || requestMethod === 'PUT' || requestMethod === 'PATCH' ? requestData : '',
+      responseType: config.responseType === 'arraybuffer' ? 'arraybuffer' : 'text',
+      dataType: config.responseType === 'json' ? 'json' : config.responseType,
+      success: function success(res) {
+        (0, _settle.default)(resolve, reject, {
+          data: res.data,
+          status: res.statusCode,
+          statusText: '',
+          headers: res.header,
+          config: config,
+          request: request });
+
+      },
+      fail: function fail() {
+        var error = (0, _createError.default)('网络错误', config, undefined, request);
+        reject(error);
+      },
+      complete: function complete() {
+        timer.clear();
+      } });
+
+
+    // 支持超时处理
+    if (config.timeout) {
+      timer.set(config.timeout).then(function () {
+        reject(new Error('请求超时'));
+        request.abort();
+      });
+    }
+  });
+};exports.adapter = adapter;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 49 */
+/*!****************************************************************************!*\
+  !*** F:/谭鑫锋/宠物社交平台/PetSocial/js_sdk/gangdiedao-uni-axios/await-timeout.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;} // await-timeout v0.5.0 by Vitaliy Potapov
+(function (global, factory) {
+   true ? module.exports = factory() :
+  undefined;
+})(void 0, function () {'use strict';
+
+  function promiseFinally(promise, fn) {
+    var success = function success(result) {
+      fn();
+      return result;
+    };
+    var error = function error(e) {
+      fn();
+      return Promise.reject(e);
+    };
+    return Promise.resolve(promise).then(success, error);
+  }
+
+  /**
+     * Converts any value to Error.
+     * @param {*} value
+     * @returns {Error}
+     */
+  function toError(value) {
+    value = typeof value === 'function' ? value() : value;
+    return typeof value === 'string' ? new Error(value) : value;
+  }
+
+  /**
+     * Promise-based replacement for setTimeout / clearTimeout.
+     */var
+
+  Timeout = /*#__PURE__*/function () {
+    function Timeout() {_classCallCheck(this, Timeout);
+      this._id = null;
+      this._delay = null;
+    }_createClass(Timeout, [{ key: "set", value: function set(
+
+
+
+
+
+
+
+
+
+      delay) {var _this = this;var rejectReason = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+        return new Promise(function (resolve, reject) {
+          _this.clear();
+          var fn = rejectReason ? function () {return reject(toError(rejectReason));} : resolve;
+          _this._id = setTimeout(fn, delay);
+          _this._delay = delay;
+        });
+      } }, { key: "wrap", value: function wrap(
+
+      promise, delay) {var _this2 = this;var rejectReason = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+        var wrappedPromise = promiseFinally(promise, function () {return _this2.clear();});
+        var timer = this.set(delay, rejectReason);
+        return Promise.race([wrappedPromise, timer]);
+      } }, { key: "clear", value: function clear()
+
+      {
+        if (this._id) {
+          clearTimeout(this._id);
+        }
+      } }, { key: "id", get: function get() {return this._id;} }, { key: "delay", get: function get() {return this._delay;} }]);return Timeout;}();
+
+
+  Timeout.set = function (delay, rejectReason) {
+    return new Timeout().set(delay, rejectReason);
+  };
+
+  Timeout.wrap = function (promise, delay, rejectReason) {
+    return new Timeout().wrap(promise, delay, rejectReason);
+  };
+
+  return Timeout;
+
+});
+
+/***/ }),
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */
+/*!*****************************************************!*\
+  !*** F:/谭鑫锋/宠物社交平台/PetSocial/util/js/formatList.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.formatList = formatList;function formatList(arr, keyword) {
+  var newArr1 = [];
+  var tempArr = [];
+  var reg = /\b(\w)|\s(\w)/g;
+  var k = 0;
+  var firstWord = arr[0][keyword].charAt(0).toUpperCase(); //获取第一个分类字母
+  arr.map(function (v) {
+    v[keyword] = v[keyword].replace(reg, function (m) {return m.toUpperCase();}); //首字母大写
+    if (firstWord == v[keyword].charAt(0)) {
+      tempArr.push(v);
+      newArr1[k] = {
+        Title: firstWord,
+        List: tempArr };
+
+    } else {
+      //这里循环到这表示已经第二个字母了
+      firstWord = v[keyword].charAt(0); //设置第二字母
+      tempArr = []; //把之前的清除掉
+      tempArr.push(v); //添加第一个
+      newArr1[++k] = { //自增
+        Title: firstWord,
+        List: tempArr };
+
+    }
+  });
+  return newArr1;
+}
 
 /***/ })
 ]]);

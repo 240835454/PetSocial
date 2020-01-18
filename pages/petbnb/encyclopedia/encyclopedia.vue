@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<template v-for="item in list"> 
+		<template v-for="(item,index) in list">
 			<view :key='item.id' class='item' @click='enterType(item.id,item.name)'>
 				<image :src="item.icon" mode="aspectFit" class="icon"></image>
 				<text>{{item.name}}</text>
@@ -15,7 +15,7 @@
 			return {
 				list: [{
 						id: 1,
-						name: '狗狗', 
+						name: '狗狗',
 						icon: '../../../static/dog.png'
 					},
 					{
@@ -47,35 +47,39 @@
 					}, {
 						id: 5,
 						name: '其它',
-						icon: '../../../static/lizard.png'  
-					}, 
+						icon: '../../../static/lizard.png'
+					},
 				]
 			}
 		},
 		methods: {
-			enterType(id,name){
+			enterType(id, name) {
 				uni.navigateTo({
-					url: './petTypeList?id=' + id + '&name='+ name +'品种'
+					url: './petTypeList?id=' + id + '&name=' + name + '品种'
 				})
-			}   
+			}
 		}
 	}
 </script>
 
 <style lang="less">
-	.content{
+	.content {
 		.item {
 			display: flex;
 			align-items: center;
 			padding: 20upx;
 			border-bottom: 1upx solid #f5f5f5;
-		
+
 			.icon {
 				width: 64upx;
 				height: 64upx;
 				margin-right: 20upx;
 				border-radius: 50%;
 			}
+		}
+		.input{
+			padding: 20rpx 0;
+			border: 1rpx solid #808080;
 		}
 	}
 </style>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "rate": "/components/rate"
+  }
+}

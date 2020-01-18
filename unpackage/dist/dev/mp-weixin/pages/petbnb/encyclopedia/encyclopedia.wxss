@@ -14,4 +14,8 @@
   margin-right: 20rpx;
   border-radius: 50%;
 }
+.content .input {
+  padding: 20rpx 0;
+  border: 1rpx solid #808080;
+}
 

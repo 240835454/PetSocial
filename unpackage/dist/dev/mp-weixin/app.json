@@ -1,42 +1,44 @@
 {
-  "pages": [
-    "pages/community/community",
-    "pages/petbnb/petbnb",
-    "pages/petbnb/encyclopedia/encyclopedia",
-    "pages/petbnb/encyclopedia/petTypeList",
-    "pages/user/user"
-  ],
-  "subPackages": [],
-  "window": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#F2473D",
-    "backgroundColor": "#F8F8F8"
-  },
-  "tabBar": {
-    "color": "#a6b5d5",
-    "selectedColor": "#333333",
-    "borderStyle": "black",
-    "list": [
-      {
-        "selectedIconPath": "/static/community-active.png",
-        "iconPath": "/static/community.png",
-        "pagePath": "pages/community/community",
-        "text": "社区"
-      },
-      {
-        "selectedIconPath": "/static/pet-active.png",
-        "iconPath": "/static/pet.png",
-        "pagePath": "pages/petbnb/petbnb",
-        "text": "养宠"
-      },
-      {
-        "selectedIconPath": "/static/user-active.png",
-        "iconPath": "/static/user.png",
-        "pagePath": "pages/user/user",
-        "text": "我的"
-      }
-    ]
-  },
-  "usingComponents": {}
+    "pages": [
+        "pages/community/community",
+        "pages/petbnb/petbnb",
+        "pages/petbnb/encyclopedia/encyclopedia",
+        "pages/petbnb/encyclopedia/petTypeList",
+        "pages/petbnb/encyclopedia/petDetail",
+        "pages/user/user"
+    ],
+    "subPackages": [],
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "uni-app",
+        "navigationBarBackgroundColor": "#F2473D",
+        "backgroundColor": "#F8F8F8"
+    },
+    "tabBar": {
+        "color": "#a6b5d5",
+        "selectedColor": "#333333",
+        "borderStyle": "black",
+        "list": [
+            {
+                "selectedIconPath": "/static/community-active.png",
+                "iconPath": "/static/community.png",
+                "pagePath": "pages/community/community",
+                "text": "社区"
+            },
+            {
+                "selectedIconPath": "/static/pet-active.png",
+                "iconPath": "/static/pet.png",
+                "pagePath": "pages/petbnb/petbnb",
+                "text": "养宠"
+            },
+            {
+                "selectedIconPath": "/static/user-active.png",
+                "iconPath": "/static/user.png",
+                "pagePath": "pages/user/user",
+                "text": "我的"
+            }
+        ]
+    },
+    "usingComponents": {},
+    "sitemapLocation": "sitemap33.json"
 }

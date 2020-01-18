@@ -38,15 +38,30 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/petbnb/petbnb",
-					"pathName": "pages/petbnb/petbnb",
-					"query": "",
+					"name": "pages/petbnb/encyclopedia/petDetail",
+					"pathName": "pages/petbnb/encyclopedia/petDetail",
+					"query": "id=5",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/petbnb/encyclopedia/encyclopedia",
-					"pathName": "pages/petbnb/encyclopedia/encyclopedia",
+					"name": "pages/petbnb/encyclopedia/petDetail",
+					"pathName": "pages/petbnb/encyclopedia/petDetail",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/petbnb/encyclopedia/petTypeList",
+					"pathName": "pages/petbnb/encyclopedia/petTypeList",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/petbnb/encyclopedia/petDetail",
+					"pathName": "pages/petbnb/encyclopedia/petDetail",
+					"query": "id=5",
 					"scene": null
 				}
 			]

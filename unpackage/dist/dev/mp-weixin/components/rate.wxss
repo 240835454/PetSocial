@@ -1,0 +1,38 @@
+.rate {
+  display: inline-block;
+  width: 160rpx;
+  height: 24rpx;
+  background-repeat: no-repeat;
+  background-image: url('https://res.ycw.com/web/images/pets/icon-pets-star.png');
+}
+.level1 {
+  background-position: 0 0;
+}
+.level2 {
+  background-position: 0 -24rpx;
+}
+.level3 {
+  background-position: 0 -48rpx;
+}
+.level4 {
+  background-position: 0 -72rpx;
+}
+.level5 {
+  background-position: 0 -96rpx;
+}
+.level6 {
+  background-position: 0 -120rpx;
+}
+.level7 {
+  background-position: 0 -144rpx;
+}
+.level8 {
+  background-position: 0 -168rpx;
+}
+.level9 {
+  background-position: 0 -192rpx;
+}
+.level10 {
+  background-position: 0 -226rpx;
+}
+
