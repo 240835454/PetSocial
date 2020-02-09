@@ -62,6 +62,6 @@
 		background-position: 0 -192rpx;
 	}
 	.level10{
-		background-position: 0 -226rpx;
+		background-position: 0 -216rpx;
 	}
 </style>

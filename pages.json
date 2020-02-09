@@ -7,12 +7,52 @@
 		// 		"navigationBarTextStyle": "white" 
 		// 	}
 		// },
+		// 注册
+		{
+			"path": "pages/login/register",
+			"style": {
+				"navigationBarTitleText": "萌宠",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		// 设置密码
+		{
+			"path": "pages/login/setPassword",
+			"style": {
+				"navigationBarTextStyle": "萌宠",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		// 登录
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "萌宠",
+				"navigationBarTextStyle": "white"
+			}
+		},
 		// 社区
 		{
-			"path": "pages/community/community", 
+			"path": "pages/community/community",
 			"style": {
 				"navigationBarTitleText": "社区",
-				"navigationBarTextStyle": "white"
+				"navigationBarTextStyle": "white",
+            	"enablePullDownRefresh" : true,
+                "app-plus" : {
+                    "bounce" : "none",
+                    "titleNView" : {
+                        "type" : "transparent",
+                        "buttons" : [
+                            {
+                                "background" : "rgba(255,255,255,0.2)",
+                                "color" : "#696969",
+                                "type" : "none",
+                                "fontSrc" : "/static/fonts/iconfont.ttf",
+                                "text" : "\ue608" //小相机
+                            }
+                        ]
+                    }
+                }
 			}
 		},
 		// 养宠
@@ -67,16 +107,16 @@
 		"selectedColor": "#333333",
 		"borderStyle": "black",
 		"list": [{
-				"selectedIconPath": "/static/community-active.png",
-				"iconPath": "/static/community.png", 
-				"pagePath": "pages/community/community",
-				"text": "社区"
-			},
-			{
 				"selectedIconPath": "/static/pet-active.png",
 				"iconPath": "/static/pet.png",
 				"pagePath": "pages/petbnb/petbnb",
 				"text": "养宠"
+			},
+			{
+				"selectedIconPath": "/static/community-active.png",
+				"iconPath": "/static/community.png",
+				"pagePath": "pages/community/community",
+				"text": "社区"
 			},
 			{
 				"selectedIconPath": "/static/user-active.png",

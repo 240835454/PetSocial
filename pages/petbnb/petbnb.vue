@@ -1,7 +1,11 @@
 <template>
 	<view class="">
-		123
-		<button type="" @click="enterEncyclopedia">宠物百科</button>
+		<view class="pet-box">
+			
+		</view>
+		<view class="">
+			<button type="" @click="enterEncyclopedia">宠物百科</button>
+		</view>
 	</view>
 </template>
 
@@ -14,8 +18,8 @@
 					url: './encyclopedia/encyclopedia'
 				})
 			}
-		}
-	}
+		}  
+	}   
 </script>
 
 <style>

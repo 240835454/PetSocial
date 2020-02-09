@@ -10,8 +10,8 @@
 					<view class='item' :key='index' @click="enterDetail(info.petBreedId)">
 						<image :src="info.icon" mode="" lazy-load="true" class='icon'></image>
 						<text>{{info.name}}</text>
-					</view>
-				</template>
+					</view>  
+				</template> 
 			</view>
 		</scroll-view> 
 		<!-- 侧边字母导航 -->

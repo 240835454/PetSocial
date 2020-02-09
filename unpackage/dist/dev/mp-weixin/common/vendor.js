@@ -737,7 +737,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -7065,7 +7065,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7086,14 +7086,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7169,7 +7169,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -7594,9 +7594,9 @@ module.exports = g;
 
 /***/ }),
 /* 4 */
-/*!******************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/pages.json ***!
-  \******************************************/
+/*!******************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/pages.json ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8501,20 +8501,20 @@ module.exports = {"_from":"@dcloudio/uni-stat@alpha","_id":"@dcloudio/uni-stat@2
 
 /***/ }),
 /* 7 */
-/*!***********************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/pages.json?{"type":"style"} ***!
-  \***********************************************************/
+/*!***********************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/pages.json?{"type":"style"} ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/community/community": { "navigationBarTitleText": "社区", "navigationBarTextStyle": "white" }, "pages/petbnb/petbnb": { "navigationBarTitleText": "养宠", "navigationBarTextStyle": "white" }, "pages/petbnb/encyclopedia/encyclopedia": { "navigationBarTitleText": "宠物种族", "navigationBarTextStyle": "white" }, "pages/petbnb/encyclopedia/petTypeList": { "navigationBarTextStyle": "white" }, "pages/petbnb/encyclopedia/petDetail": { "navigationBarTextStyle": "white" }, "pages/user/user": { "navigationBarTitleText": "我的", "navigationBarTextStyle": "white" } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F2473D", "backgroundColor": "#F8F8F8" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/login/register": { "navigationBarTitleText": "萌宠", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/setPassword": { "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/login": { "navigationBarTitleText": "萌宠", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/community/community": { "navigationBarTitleText": "社区", "navigationBarTextStyle": "white", "enablePullDownRefresh": true, "usingComponents": { "chat-input": "/components/im-chat/chatinput" }, "usingAutoImportComponents": {} }, "pages/petbnb/petbnb": { "navigationBarTitleText": "养宠", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/encyclopedia/encyclopedia": { "navigationBarTitleText": "宠物种族", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/encyclopedia/petTypeList": { "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/encyclopedia/petDetail": { "navigationBarTextStyle": "white", "usingComponents": { "rate": "/components/rate" }, "usingAutoImportComponents": {} }, "pages/user/user": { "navigationBarTitleText": "我的", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F2473D", "backgroundColor": "#F8F8F8" } };exports.default = _default;
 
 /***/ }),
 /* 8 */
-/*!**********************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/pages.json?{"type":"stat"} ***!
-  \**********************************************************/
+/*!**********************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/pages.json?{"type":"stat"} ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8648,9 +8648,9 @@ function normalizeComponent (
 
 /***/ }),
 /* 15 */
-/*!*******************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/http/api.js ***!
-  \*******************************************/
+/*!*******************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/http/api.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8659,7 +8659,7 @@ function normalizeComponent (
 // import qs from 'qs'; 
 
 // let ApiUrl= process.env.NODE_ENV === 'development' ? 'http://192.168.1.136:8100' : 'http://203.88.193.234:8992';
-var ApiUrl = 'http://192.168.1.101:3000/api';var _default =
+var ApiUrl = 'http://192.168.30.1:3000/API';var _default =
 
 {
   get: function get(url, params) {
@@ -8673,17 +8673,17 @@ var ApiUrl = 'http://192.168.1.101:3000/api';var _default =
       });
     });
   },
-  post: function post(url, params, config) {
-    if (config) {
-      var _config = _config;
-    } else {
-      var _config2 = {
-        headers: {
-          'Content-Type': 'application/json' } };
+  post: function post(url, params) {
+    // if(config){
+    // 	let config = config;
+    // }else{
+    var config = {
+      headers: {
+        'Content-Type': 'application/json' }
 
 
-    }
-    return new Promise(function (resolve, reject) {
+      // }
+    };return new Promise(function (resolve, reject) {
       _interceptor.default.post(ApiUrl + url, params, config).then(function (res) {
         resolve(res.data);
       }).catch(function (err) {
@@ -8744,9 +8744,9 @@ var ApiUrl = 'http://192.168.1.101:3000/api';var _default =
 
 /***/ }),
 /* 16 */
-/*!***************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/http/interceptor.js ***!
-  \***************************************************/
+/*!***************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/http/interceptor.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8768,9 +8768,9 @@ _gangdiedaoUniAxios.default;exports.default = _default;
 
 /***/ }),
 /* 17 */
-/*!********************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/js_sdk/gangdiedao-uni-axios/index.js ***!
-  \********************************************************************/
+/*!********************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/js_sdk/gangdiedao-uni-axios/index.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8780,9 +8780,9 @@ _uniAxios.axios;exports.default = _default;
 
 /***/ }),
 /* 18 */
-/*!************************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/js_sdk/gangdiedao-uni-axios/uni-axios.js ***!
-  \************************************************************************/
+/*!************************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/js_sdk/gangdiedao-uni-axios/uni-axios.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8833,9 +8833,9 @@ Object.keys(_axios).forEach(function (key) {if (key === "default" || key === "__
 
 /***/ }),
 /* 19 */
-/*!***********************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/index.js ***!
-  \***********************************************************/
+/*!***********************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/index.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8844,9 +8844,9 @@ module.exports = __webpack_require__(/*! ./lib/axios */ 20);
 
 /***/ }),
 /* 20 */
-/*!***************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/axios.js ***!
-  \***************************************************************/
+/*!***************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/axios.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8907,9 +8907,9 @@ module.exports.default = axios;
 
 /***/ }),
 /* 21 */
-/*!***************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/utils.js ***!
-  \***************************************************************/
+/*!***************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/utils.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9260,9 +9260,9 @@ module.exports = {
 
 /***/ }),
 /* 22 */
-/*!**********************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/helpers/bind.js ***!
-  \**********************************************************************/
+/*!**********************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/helpers/bind.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9281,9 +9281,9 @@ module.exports = function bind(fn, thisArg) {
 
 /***/ }),
 /* 23 */
-/*!********************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/core/Axios.js ***!
-  \********************************************************************/
+/*!********************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/core/Axios.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9385,9 +9385,9 @@ module.exports = Axios;
 
 /***/ }),
 /* 24 */
-/*!**************************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/helpers/buildURL.js ***!
-  \**************************************************************************/
+/*!**************************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/helpers/buildURL.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9466,9 +9466,9 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 /***/ }),
 /* 25 */
-/*!*********************************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/core/InterceptorManager.js ***!
-  \*********************************************************************************/
+/*!*********************************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/core/InterceptorManager.js ***!
+  \*********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9528,9 +9528,9 @@ module.exports = InterceptorManager;
 
 /***/ }),
 /* 26 */
-/*!******************************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/core/dispatchRequest.js ***!
-  \******************************************************************************/
+/*!******************************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/core/dispatchRequest.js ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9617,9 +9617,9 @@ module.exports = function dispatchRequest(config) {
 
 /***/ }),
 /* 27 */
-/*!****************************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/core/transformData.js ***!
-  \****************************************************************************/
+/*!****************************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/core/transformData.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9647,9 +9647,9 @@ module.exports = function transformData(data, headers, fns) {
 
 /***/ }),
 /* 28 */
-/*!*************************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/cancel/isCancel.js ***!
-  \*************************************************************************/
+/*!*************************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/cancel/isCancel.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9662,9 +9662,9 @@ module.exports = function isCancel(value) {
 
 /***/ }),
 /* 29 */
-/*!******************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/defaults.js ***!
-  \******************************************************************/
+/*!******************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/defaults.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10045,9 +10045,9 @@ var substr = 'ab'.substr(-1) === 'b'
 
 /***/ }),
 /* 32 */
-/*!*************************************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/helpers/normalizeHeaderName.js ***!
-  \*************************************************************************************/
+/*!*************************************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/helpers/normalizeHeaderName.js ***!
+  \*************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10067,9 +10067,9 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 /***/ }),
 /* 33 */
-/*!**********************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/adapters/xhr.js ***!
-  \**********************************************************************/
+/*!**********************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/adapters/xhr.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10257,9 +10257,9 @@ module.exports = function xhrAdapter(config) {
 
 /***/ }),
 /* 34 */
-/*!*********************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/core/settle.js ***!
-  \*********************************************************************/
+/*!*********************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/core/settle.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10292,9 +10292,9 @@ module.exports = function settle(resolve, reject, response) {
 
 /***/ }),
 /* 35 */
-/*!**************************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/core/createError.js ***!
-  \**************************************************************************/
+/*!**************************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/core/createError.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10320,9 +10320,9 @@ module.exports = function createError(message, config, code, request, response) 
 
 /***/ }),
 /* 36 */
-/*!***************************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/core/enhanceError.js ***!
-  \***************************************************************************/
+/*!***************************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/core/enhanceError.js ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10372,9 +10372,9 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 /***/ }),
 /* 37 */
-/*!****************************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/core/buildFullPath.js ***!
-  \****************************************************************************/
+/*!****************************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/core/buildFullPath.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10402,9 +10402,9 @@ module.exports = function buildFullPath(baseURL, requestedURL) {
 
 /***/ }),
 /* 38 */
-/*!*******************************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/helpers/isAbsoluteURL.js ***!
-  \*******************************************************************************/
+/*!*******************************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/helpers/isAbsoluteURL.js ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10426,9 +10426,9 @@ module.exports = function isAbsoluteURL(url) {
 
 /***/ }),
 /* 39 */
-/*!*****************************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/helpers/combineURLs.js ***!
-  \*****************************************************************************/
+/*!*****************************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/helpers/combineURLs.js ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10450,9 +10450,9 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 /***/ }),
 /* 40 */
-/*!******************************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/helpers/parseHeaders.js ***!
-  \******************************************************************************/
+/*!******************************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/helpers/parseHeaders.js ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10513,9 +10513,9 @@ module.exports = function parseHeaders(headers) {
 
 /***/ }),
 /* 41 */
-/*!*********************************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/helpers/isURLSameOrigin.js ***!
-  \*********************************************************************************/
+/*!*********************************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/helpers/isURLSameOrigin.js ***!
+  \*********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10595,9 +10595,9 @@ function nonStandardBrowserEnv() {
 
 /***/ }),
 /* 42 */
-/*!****************************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/helpers/isValidXss.js ***!
-  \****************************************************************************/
+/*!****************************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/helpers/isValidXss.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10611,9 +10611,9 @@ module.exports = function isValidXss(requestURL) {
 
 /***/ }),
 /* 43 */
-/*!*************************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/helpers/cookies.js ***!
-  \*************************************************************************/
+/*!*************************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/helpers/cookies.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10673,9 +10673,9 @@ function nonStandardBrowserEnv() {
 
 /***/ }),
 /* 44 */
-/*!**************************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/core/mergeConfig.js ***!
-  \**************************************************************************/
+/*!**************************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/core/mergeConfig.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10756,9 +10756,9 @@ module.exports = function mergeConfig(config1, config2) {
 
 /***/ }),
 /* 45 */
-/*!***********************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/cancel/Cancel.js ***!
-  \***********************************************************************/
+/*!***********************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/cancel/Cancel.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10785,9 +10785,9 @@ module.exports = Cancel;
 
 /***/ }),
 /* 46 */
-/*!****************************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/cancel/CancelToken.js ***!
-  \****************************************************************************/
+/*!****************************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/cancel/CancelToken.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10852,9 +10852,9 @@ module.exports = CancelToken;
 
 /***/ }),
 /* 47 */
-/*!************************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/node_modules/axios/lib/helpers/spread.js ***!
-  \************************************************************************/
+/*!************************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/node_modules/axios/lib/helpers/spread.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10889,9 +10889,9 @@ module.exports = function spread(callback) {
 
 /***/ }),
 /* 48 */
-/*!**********************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/js_sdk/gangdiedao-uni-axios/adapter.js ***!
-  \**********************************************************************/
+/*!**********************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/js_sdk/gangdiedao-uni-axios/adapter.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10956,9 +10956,9 @@ var adapter = function adapter(config) {
 
 /***/ }),
 /* 49 */
-/*!****************************************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/js_sdk/gangdiedao-uni-axios/await-timeout.js ***!
-  \****************************************************************************/
+/*!****************************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/js_sdk/gangdiedao-uni-axios/await-timeout.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11050,8 +11050,217 @@ function _classCallCheck(instance, Constructor) {if (!(instance instanceof Const
 /* 53 */,
 /* 54 */,
 /* 55 */,
-/* 56 */,
-/* 57 */,
+/* 56 */
+/*!************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/public/css/login/common.less ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 57 */
+/*!************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/public/js/md5.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+function md5(string) {
+  var x = Array();
+  var k, AA, BB, CC, DD, a, b, c, d;
+  var S11 = 7,S12 = 12,S13 = 17,S14 = 22;
+  var S21 = 5,S22 = 9,S23 = 14,S24 = 20;
+  var S31 = 4,S32 = 11,S33 = 16,S34 = 23;
+  var S41 = 6,S42 = 10,S43 = 15,S44 = 21;
+  string = Utf8Encode(string);
+  x = ConvertToWordArray(string);
+  a = 0x67452301;
+  b = 0xEFCDAB89;
+  c = 0x98BADCFE;
+  d = 0x10325476;
+  for (k = 0; k < x.length; k += 16) {
+    AA = a;
+    BB = b;
+    CC = c;
+    DD = d;
+    a = FF(a, b, c, d, x[k + 0], S11, 0xD76AA478);
+    d = FF(d, a, b, c, x[k + 1], S12, 0xE8C7B756);
+    c = FF(c, d, a, b, x[k + 2], S13, 0x242070DB);
+    b = FF(b, c, d, a, x[k + 3], S14, 0xC1BDCEEE);
+    a = FF(a, b, c, d, x[k + 4], S11, 0xF57C0FAF);
+    d = FF(d, a, b, c, x[k + 5], S12, 0x4787C62A);
+    c = FF(c, d, a, b, x[k + 6], S13, 0xA8304613);
+    b = FF(b, c, d, a, x[k + 7], S14, 0xFD469501);
+    a = FF(a, b, c, d, x[k + 8], S11, 0x698098D8);
+    d = FF(d, a, b, c, x[k + 9], S12, 0x8B44F7AF);
+    c = FF(c, d, a, b, x[k + 10], S13, 0xFFFF5BB1);
+    b = FF(b, c, d, a, x[k + 11], S14, 0x895CD7BE);
+    a = FF(a, b, c, d, x[k + 12], S11, 0x6B901122);
+    d = FF(d, a, b, c, x[k + 13], S12, 0xFD987193);
+    c = FF(c, d, a, b, x[k + 14], S13, 0xA679438E);
+    b = FF(b, c, d, a, x[k + 15], S14, 0x49B40821);
+    a = GG(a, b, c, d, x[k + 1], S21, 0xF61E2562);
+    d = GG(d, a, b, c, x[k + 6], S22, 0xC040B340);
+    c = GG(c, d, a, b, x[k + 11], S23, 0x265E5A51);
+    b = GG(b, c, d, a, x[k + 0], S24, 0xE9B6C7AA);
+    a = GG(a, b, c, d, x[k + 5], S21, 0xD62F105D);
+    d = GG(d, a, b, c, x[k + 10], S22, 0x2441453);
+    c = GG(c, d, a, b, x[k + 15], S23, 0xD8A1E681);
+    b = GG(b, c, d, a, x[k + 4], S24, 0xE7D3FBC8);
+    a = GG(a, b, c, d, x[k + 9], S21, 0x21E1CDE6);
+    d = GG(d, a, b, c, x[k + 14], S22, 0xC33707D6);
+    c = GG(c, d, a, b, x[k + 3], S23, 0xF4D50D87);
+    b = GG(b, c, d, a, x[k + 8], S24, 0x455A14ED);
+    a = GG(a, b, c, d, x[k + 13], S21, 0xA9E3E905);
+    d = GG(d, a, b, c, x[k + 2], S22, 0xFCEFA3F8);
+    c = GG(c, d, a, b, x[k + 7], S23, 0x676F02D9);
+    b = GG(b, c, d, a, x[k + 12], S24, 0x8D2A4C8A);
+    a = HH(a, b, c, d, x[k + 5], S31, 0xFFFA3942);
+    d = HH(d, a, b, c, x[k + 8], S32, 0x8771F681);
+    c = HH(c, d, a, b, x[k + 11], S33, 0x6D9D6122);
+    b = HH(b, c, d, a, x[k + 14], S34, 0xFDE5380C);
+    a = HH(a, b, c, d, x[k + 1], S31, 0xA4BEEA44);
+    d = HH(d, a, b, c, x[k + 4], S32, 0x4BDECFA9);
+    c = HH(c, d, a, b, x[k + 7], S33, 0xF6BB4B60);
+    b = HH(b, c, d, a, x[k + 10], S34, 0xBEBFBC70);
+    a = HH(a, b, c, d, x[k + 13], S31, 0x289B7EC6);
+    d = HH(d, a, b, c, x[k + 0], S32, 0xEAA127FA);
+    c = HH(c, d, a, b, x[k + 3], S33, 0xD4EF3085);
+    b = HH(b, c, d, a, x[k + 6], S34, 0x4881D05);
+    a = HH(a, b, c, d, x[k + 9], S31, 0xD9D4D039);
+    d = HH(d, a, b, c, x[k + 12], S32, 0xE6DB99E5);
+    c = HH(c, d, a, b, x[k + 15], S33, 0x1FA27CF8);
+    b = HH(b, c, d, a, x[k + 2], S34, 0xC4AC5665);
+    a = II(a, b, c, d, x[k + 0], S41, 0xF4292244);
+    d = II(d, a, b, c, x[k + 7], S42, 0x432AFF97);
+    c = II(c, d, a, b, x[k + 14], S43, 0xAB9423A7);
+    b = II(b, c, d, a, x[k + 5], S44, 0xFC93A039);
+    a = II(a, b, c, d, x[k + 12], S41, 0x655B59C3);
+    d = II(d, a, b, c, x[k + 3], S42, 0x8F0CCC92);
+    c = II(c, d, a, b, x[k + 10], S43, 0xFFEFF47D);
+    b = II(b, c, d, a, x[k + 1], S44, 0x85845DD1);
+    a = II(a, b, c, d, x[k + 8], S41, 0x6FA87E4F);
+    d = II(d, a, b, c, x[k + 15], S42, 0xFE2CE6E0);
+    c = II(c, d, a, b, x[k + 6], S43, 0xA3014314);
+    b = II(b, c, d, a, x[k + 13], S44, 0x4E0811A1);
+    a = II(a, b, c, d, x[k + 4], S41, 0xF7537E82);
+    d = II(d, a, b, c, x[k + 11], S42, 0xBD3AF235);
+    c = II(c, d, a, b, x[k + 2], S43, 0x2AD7D2BB);
+    b = II(b, c, d, a, x[k + 9], S44, 0xEB86D391);
+    a = AddUnsigned(a, AA);
+    b = AddUnsigned(b, BB);
+    c = AddUnsigned(c, CC);
+    d = AddUnsigned(d, DD);
+  }
+  var temp = WordToHex(a) + WordToHex(b) + WordToHex(c) + WordToHex(d);
+  return temp.toUpperCase();
+}
+function RotateLeft(lValue, iShiftBits) {
+  return lValue << iShiftBits | lValue >>> 32 - iShiftBits;
+}
+function AddUnsigned(lX, lY) {
+  var lX4, lY4, lX8, lY8, lResult;
+  lX8 = lX & 0x80000000;
+  lY8 = lY & 0x80000000;
+  lX4 = lX & 0x40000000;
+  lY4 = lY & 0x40000000;
+  lResult = (lX & 0x3FFFFFFF) + (lY & 0x3FFFFFFF);
+  if (lX4 & lY4) {
+    return lResult ^ 0x80000000 ^ lX8 ^ lY8;
+  }
+  if (lX4 | lY4) {
+    if (lResult & 0x40000000) {
+      return lResult ^ 0xC0000000 ^ lX8 ^ lY8;
+    } else {
+      return lResult ^ 0x40000000 ^ lX8 ^ lY8;
+    }
+  } else {
+    return lResult ^ lX8 ^ lY8;
+  }
+}
+function F(x, y, z) {
+  return x & y | ~x & z;
+}
+function G(x, y, z) {
+  return x & z | y & ~z;
+}
+function H(x, y, z) {
+  return x ^ y ^ z;
+}
+function I(x, y, z) {
+  return y ^ (x | ~z);
+}
+function FF(a, b, c, d, x, s, ac) {
+  a = AddUnsigned(a, AddUnsigned(AddUnsigned(F(b, c, d), x), ac));
+  return AddUnsigned(RotateLeft(a, s), b);
+}
+function GG(a, b, c, d, x, s, ac) {
+  a = AddUnsigned(a, AddUnsigned(AddUnsigned(G(b, c, d), x), ac));
+  return AddUnsigned(RotateLeft(a, s), b);
+}
+function HH(a, b, c, d, x, s, ac) {
+  a = AddUnsigned(a, AddUnsigned(AddUnsigned(H(b, c, d), x), ac));
+  return AddUnsigned(RotateLeft(a, s), b);
+}
+function II(a, b, c, d, x, s, ac) {
+  a = AddUnsigned(a, AddUnsigned(AddUnsigned(I(b, c, d), x), ac));
+  return AddUnsigned(RotateLeft(a, s), b);
+}
+function ConvertToWordArray(string) {
+  var lWordCount;
+  var lMessageLength = string.length;
+  var lNumberOfWords_temp1 = lMessageLength + 8;
+  var lNumberOfWords_temp2 = (lNumberOfWords_temp1 - lNumberOfWords_temp1 % 64) / 64;
+  var lNumberOfWords = (lNumberOfWords_temp2 + 1) * 16;
+  var lWordArray = Array(lNumberOfWords - 1);
+  var lBytePosition = 0;
+  var lByteCount = 0;
+  while (lByteCount < lMessageLength) {
+    lWordCount = (lByteCount - lByteCount % 4) / 4;
+    lBytePosition = lByteCount % 4 * 8;
+    lWordArray[lWordCount] = lWordArray[lWordCount] | string.charCodeAt(lByteCount) << lBytePosition;
+    lByteCount++;
+  }
+  lWordCount = (lByteCount - lByteCount % 4) / 4;
+  lBytePosition = lByteCount % 4 * 8;
+  lWordArray[lWordCount] = lWordArray[lWordCount] | 0x80 << lBytePosition;
+  lWordArray[lNumberOfWords - 2] = lMessageLength << 3;
+  lWordArray[lNumberOfWords - 1] = lMessageLength >>> 29;
+  return lWordArray;
+}
+function WordToHex(lValue) {
+  var WordToHexValue = "",WordToHexValue_temp = "",lByte,lCount;
+  for (lCount = 0; lCount <= 3; lCount++) {
+    lByte = lValue >>> lCount * 8 & 255;
+    WordToHexValue_temp = "0" + lByte.toString(16);
+    WordToHexValue = WordToHexValue + WordToHexValue_temp.substr(WordToHexValue_temp.length - 2, 2);
+  }
+  return WordToHexValue;
+}
+function Utf8Encode(string) {
+  var utftext = "";
+  for (var n = 0; n < string.length; n++) {
+    var c = string.charCodeAt(n);
+    if (c < 128) {
+      utftext += String.fromCharCode(c);
+    } else if (c > 127 && c < 2048) {
+      utftext += String.fromCharCode(c >> 6 | 192);
+      utftext += String.fromCharCode(c & 63 | 128);
+    } else {
+      utftext += String.fromCharCode(c >> 12 | 224);
+      utftext += String.fromCharCode(c >> 6 & 63 | 128);
+      utftext += String.fromCharCode(c & 63 | 128);
+    }
+  }
+  return utftext;
+}
+module.exports = {
+  md5: md5 };
+
+/***/ }),
 /* 58 */,
 /* 59 */,
 /* 60 */,
@@ -11070,10 +11279,30 @@ function _classCallCheck(instance, Constructor) {if (!(instance instanceof Const
 /* 73 */,
 /* 74 */,
 /* 75 */,
-/* 76 */
-/*!*****************************************************!*\
-  !*** F:/谭鑫锋/宠物社交平台/PetSocial/util/js/formatList.js ***!
-  \*****************************************************/
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */
+/*!*****************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/util/js/formatList.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11105,6 +11334,178 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.formatList
   });
   return newArr1;
 }
+
+/***/ }),
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */
+/*!******************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/public/css/common.less ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */
+/*!************************************************************************!*\
+  !*** C:/Users/Thinkpad/Desktop/PetSocial/public/js/index.post.data.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = [{
+  "post_id": '1',
+  "uid": 1,
+  "username": "龙葵",
+  "header_image": "/static/index/test/header03.jpg",
+  "content": {
+    "text": "内裤上百条，晒不干一条；衣服晾不干，亲人泪两行",
+    "images": ["/static/index/test/test2.jpg"] },
+
+  "islike": 0,
+  "like": [{
+    "uid": 2,
+    "username": "小李子," },
+
+  {
+    "uid": 3,
+    "username": "小张子" }],
+
+
+  "comments": {
+    "total": 2,
+    "comment": [{
+      "uid": 2,
+      "username": '小爱',
+      "content": "加个微信吧!基金基金基金基金基金基金基金基金基金基金基金基金基金基金基金基金基金基金" },
+
+    {
+      "uid": 3,
+      "username": '小虎',
+      "content": "一起出去好吗?" }] },
+
+
+
+  "timestamp": "5分钟前" },
+
+{
+  "post_id": 2,
+  "uid": 1,
+  "username": "菁英公寓-打造属于你的私密空间 小吴",
+  "header_image": "/static/index/test/header04.jpg",
+  "content": {
+    "text": "租房:东环朝南\n\r2室大衣柜\n\r燃气热水器\n\r5楼采光充足\n\r随时入住",
+    "images": [
+    "/static/index/test/pig-01.jpg",
+    "/static/index/test/pig-02.jpg",
+    "/static/index/test/pig-03.jpg",
+    "/static/index/test/pig-04.jpg",
+    "/static/index/test/pig-05.jpg",
+    "/static/index/test/pig-06.jpg",
+    "/static/index/test/pig-07.jpg",
+    "/static/index/test/pig-08.jpg",
+    "/static/index/test/pig-09.jpg"] },
+
+
+  "islike": 0,
+  "like": [{
+    "uid": 2,
+    "username": "小王子," },
+
+  {
+    "uid": 3,
+    "username": "张大大" }],
+
+
+  "comments": {
+    "total": 2,
+    "comment": [{
+      "uid": 2,
+      "username": '小虎',
+      "content": "吃错药了!" },
+
+    {
+      "uid": 3,
+      "username": '小狼',
+      "content": "霍霍霍霍霍霍霍霍霍霍霍霍霍霍霍霍霍霍霍霍霍霍!" }] },
+
+
+
+  "timestamp": "1小时前" },
+
+{
+  "post_id": 2,
+  "uid": 1,
+  "username": "BSK 必胜客新苏  小乐",
+  "header_image": "/static/index/test/header05.jpg",
+  "content": {
+    "text": "美食花样多，诱人如北北；迎来小宇宙，幸福两行泪[喵喵]这可是小必的心声啊～",
+    "images": ["/static/index/test/header01.jpg", "/static/index/test/header01.jpg",
+    "/static/index/test/header01.jpg", "/static/index/test/header01.jpg"] },
+
+
+  "islike": 0,
+  "like": [{
+    "uid": 2,
+    "username": "小王子," },
+
+  {
+    "uid": 3,
+    "username": "张大大" }],
+
+
+  "comments": {
+    "total": 2,
+    "comment": [{
+      "uid": 2,
+      "username": '小虎',
+      "content": "吃错药了!" },
+
+    {
+      "uid": 3,
+      "username": '小狼',
+      "content": "霍霍霍霍霍霍霍霍霍霍霍霍霍霍霍霍霍霍霍霍霍霍!" }] },
+
+
+
+  "timestamp": "7小时前" }];exports.default = _default;
 
 /***/ })
 ]]);

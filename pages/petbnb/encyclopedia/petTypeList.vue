@@ -1,5 +1,9 @@
 <template>
 	<view class="content list">
+		<view class="search-box">
+			<input type="text" value="" class='input' v-model="keyWord" @confirm="confirm" placeholder="搜索"/>
+			<icon type="search" size="18" class='icon'></icon>
+		</view>
 		<scroll-view scroll-y="true" class="scroll-box" :scroll-into-view="'NAV'+toNum" enable-back-to-top='true'
 		 scroll-with-animation='true' :scroll-top="scrollTop" @scroll="scroll">
 			<view class='list-group' v-for="(item,index) in list" :key='index'>
@@ -45,7 +49,8 @@
 				scrollTop: 0,
 				toNum: 0,
 				name: '',
-				id: ''
+				id: '',
+				keyWord: '',
 			}
 		},
 		onLoad(options) {
@@ -55,6 +60,13 @@
 				title: this.name
 			})
 			this.getList();
+			if(this.list.length == 0){
+				uni.showToast({
+					icon: 'loading',
+					title: '正在加载',
+					duration: 500
+				})
+			}
 		},
 		mounted() {
 			this._calculateHeight();
@@ -62,7 +74,8 @@
 		methods: {
 			getList() {
 				this.$http.get('/petbnb/encyclopedia/petTypeList', {
-						petRaceId: this.id
+						petRaceId: this.id,
+						keyWord: this.keyWord
 					})
 					.then(res => {
 						// console.log(res.data.list);
@@ -76,19 +89,11 @@
 							title: '系统出错，请稍后再试!'
 						})
 					})
-				// uni.request({
-				// 	url: 'http://192.168.1.101:3000/qita?petRaceId='+this.id,
-				// 	success: res => {
-				// 		let dataList = res.data;
-				// 		console.log(arr);
-				// 		let arr = formatList(dataList, 'firstWord')
-				// 		console.log(arr); 
-				// 		this.list = arr;
-				// 	},
-				// 	fail: err => {
-				// 		console.log(err); 
-				// 	}
-				// })
+			},
+			// 搜索
+			confirm(e){
+				this.keyWord = e.detail.value;
+				this.getList();
 			},
 			scroll(e) {
 				// console.log(e);
@@ -120,7 +125,7 @@
 				this.fixedTitle = this.list[this.listHeight.length - 2].Title;
 			},
 			fixedTt(newVal) {
-				let fixedTop = (newVal > 0 && newVal < TITLE_HEIGHT) ? newVal - TITLE_HEIGHT : 0;
+				let fixedTop = (newVal > 0 && newVal < TITLE_HEIGHT+52) ? newVal - TITLE_HEIGHT : 52;
 				if (this.fixedTop === fixedTop) {
 					return
 				}
@@ -160,7 +165,7 @@
 			// 进入详情
 			enterDetail(id) {
 				uni.navigateTo({
-					url: './petDetail?id=' + id 
+					url: './petDetail?id=' + id
 				})
 			}
 		}
@@ -177,7 +182,28 @@
 	// 	  flex-direction: column;
 	// }
 
+
+
 	.content {
+		position: relative;
+		
+		.search-box{
+			padding: 20rpx;
+			background-color: #f7f7f7;
+			position: relative;
+			.input{
+				padding: 10rpx 70rpx;
+				background-color: #fff;
+				border-radius: 20rpx;
+			}
+			.icon{
+				position: absolute;
+				top: 50%;
+				transform: translate(0,-50%);
+				left: 40rpx;
+			}
+		}
+
 		.scroll-box {
 			height: calc(100vh - 23rpx) !important;
 			white-space: nowrap !important;
