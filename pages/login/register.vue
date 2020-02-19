@@ -85,6 +85,7 @@
 						} else {
 							let token = 'Bearer ' + res.data.token;
 							uni.setStorageSync('token', token);
+							uni.setStorageSync('account',this.account); 
 							uni.showToast({
 								icon: 'success',
 								title: res.message

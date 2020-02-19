@@ -20,7 +20,7 @@ async function compress(_images, _fun) {
 
 /**
  * 菜鸟请大神教我如何优化QAQ~
- */
+ */ 
 async function _compress(_image) {
 
 	var last4chars = _image.slice(-4);

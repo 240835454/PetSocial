@@ -4,11 +4,14 @@
     "pages/login/setPassword",
     "pages/login/login",
     "pages/community/community",
+    "pages/community/publish",
+    "pages/community/publish_video",
     "pages/petbnb/petbnb",
     "pages/petbnb/encyclopedia/encyclopedia",
     "pages/petbnb/encyclopedia/petTypeList",
     "pages/petbnb/encyclopedia/petDetail",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/user/myInfo"
   ],
   "subPackages": [],
   "window": {
@@ -41,6 +44,11 @@
         "text": "我的"
       }
     ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "测试"
+    }
   },
   "usingComponents": {}
 }

@@ -37,6 +37,7 @@ export default {
 	put(url, data) {
 		let config = {
 			headers: {
+				// 'Content-Type': 'application/x-www-form-urlencoded'
 				'Content-Type': 'application/json'
 			}
 		}
@@ -68,13 +69,17 @@ export default {
 
 	// 上传文件
 	uploadFile(file) {
-		let url = 'http://14.18.81.113:8300/api/file/Files/single';
+		let url = 'http://192.168.30.1:3000/image';
 		return new Promise((resolve,reject) => {
 			uni.uploadFile({
 				url: url,
 				filePath: file,
 				name: 'file',
+				header:{
+					"Content-Type": "multipart/form-data",
+				},
 				success: res => {
+					console.log(res);
 					resolve(JSON.parse(res.data));
 				},
 				fail: err=>{

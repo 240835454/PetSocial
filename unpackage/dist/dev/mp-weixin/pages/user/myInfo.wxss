@@ -1,0 +1,15 @@
+.content {
+  padding: 20rpx;
+  font-family: PingFang-SC-Medium;
+}
+.content .item {
+  color: #80899c;
+}
+.content .item .input-box {
+  height: 70rpx;
+  padding-left: 20rpx;
+  margin: 20rpx 0;
+  border: 2rpx solid #e0e4ee;
+  font-size: 30rpx;
+}
+

@@ -19,8 +19,8 @@
 		{
 			"path": "pages/login/setPassword",
 			"style": {
-				"navigationBarTextStyle": "萌宠",
-				"navigationBarTextStyle": "white"
+				"navigationBarTextText": "萌宠",
+				"navigationBarTextStyle": "white" 
 			}
 		},
 		// 登录
@@ -37,22 +37,23 @@
 			"style": {
 				"navigationBarTitleText": "社区",
 				"navigationBarTextStyle": "white",
-            	"enablePullDownRefresh" : true,
-                "app-plus" : {
-                    "bounce" : "none",
-                    "titleNView" : {
-                        "type" : "transparent",
-                        "buttons" : [
-                            {
-                                "background" : "rgba(255,255,255,0.2)",
-                                "color" : "#696969",
-                                "type" : "none",
-                                "fontSrc" : "/static/fonts/iconfont.ttf",
-                                "text" : "\ue608" //小相机
-                            }
-                        ]
-                    }
-                }
+            	"enablePullDownRefresh" : true
+			}
+		},
+		// 拍照
+		{
+			"path": "pages/community/publish",
+			"style": {
+				"navigationBarTitleText": "发布",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		// 录视频
+		{
+			"path": "pages/community/publish_video",
+			"style": {
+				"navigationBarTitleText": "发布",
+				"navigationBarTextStyle": "white"
 			}
 		},
 		// 养宠
@@ -92,6 +93,14 @@
 			"path": "pages/user/user",
 			"style": {
 				"navigationBarTitleText": "我的",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		// 修改个人资料 
+		{
+			"path": "pages/user/myInfo",
+			"style": {
+				"navigationBarTitleText": "个人资料", 
 				"navigationBarTextStyle": "white"
 			}
 		}

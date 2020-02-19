@@ -81,6 +81,7 @@
 						} else {
 							let token = 'Bearer ' + res.data.token;
 							uni.setStorageSync('token', token);
+							uni.setStorageSync('account',this.account);
 							uni.showToast({
 								icon: 'none',
 								title: '登录成功!',
@@ -88,7 +89,7 @@
 								success: res => {
 									setTimeout(() => {
 										uni.switchTab({
-											url: '../community/community'
+											url: '../petbnb/petbnb' 
 										})
 									}, 1000)
 								}

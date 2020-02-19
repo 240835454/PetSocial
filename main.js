@@ -4,6 +4,8 @@ import http from './http/api.js'
 import 'public/css/common.less'
 
 Vue.config.productionTip = false; 
+ 
+Vue.prototype.$API = 'http://192.168.30.1:3000'
 
 Vue.prototype.$http = http;
  

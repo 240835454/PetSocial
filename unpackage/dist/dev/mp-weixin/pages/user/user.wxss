@@ -42,7 +42,7 @@ page {
 .info-box .name .icon_level {
   width: 42rpx;
   height: 42rpx;
-  margin: 0 10rpx;
+  margin: 10rpx;
 }
 .info-box .name .level,
 .info-box .name .salary {

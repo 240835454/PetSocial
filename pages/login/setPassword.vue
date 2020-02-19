@@ -47,6 +47,7 @@
 			            } else {
 			                let token = 'Bearer ' + res.data.token;
 			                uni.setStorageSync('token', token);
+							uni.setStorageSync('account',this.account); 
 			                uni.showToast({
 			                    icon: 'none',
 			                    title: '登录成功!',
