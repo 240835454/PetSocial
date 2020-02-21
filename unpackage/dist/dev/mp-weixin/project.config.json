@@ -45,8 +45,8 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/community/publish",
-					"pathName": "pages/community/publish",
+					"name": "pages/user/myAlbum",
+					"pathName": "pages/user/myAlbum",
 					"scene": null
 				}
 			]

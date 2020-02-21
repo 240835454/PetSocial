@@ -103,6 +103,14 @@
 				"navigationBarTitleText": "个人资料", 
 				"navigationBarTextStyle": "white"
 			}
+		},
+		// 修改个人资料
+		{
+			"path": "pages/user/myAlbum",
+			"style": {
+				"navigationBarTitleText": "我的相册", 
+				"navigationBarTextStyle": "white"
+			}
 		}
 	],
 	"globalStyle": {

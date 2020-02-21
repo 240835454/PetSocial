@@ -29,7 +29,7 @@
 				<image src="../../static/icon_guanzhu.png" mode="aspectFit" class="icon"></image>
 				<text class="name">我的关注</text>
 			</view>
-			<view class="item arrow" @click='changePhoneNumber'>
+			<view class="item arrow" @click='enterMyAlbum'>
 				<image src="../../static/icon_xiangce.png" mode="aspectFill" class="icon"></image>
 				<text class="name">我的相册</text>
 			</view>
@@ -111,6 +111,11 @@
 				uni.navigateTo({
 					url: 'myInfo'
 				})
+			},
+			enterMyAlbum(){
+				uni.navigateTo({
+					url: 'myAlbum'
+				}) 
 			},
 			changeIdCard() {
 				uni.navigateTo({

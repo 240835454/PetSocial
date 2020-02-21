@@ -25,7 +25,7 @@
 		<!-- 固定在顶部的字母导航 -->
 		<view class="list-fixed" :class="fixedTitle == '' ? 'hide' : ''" :style="{'transform':'translate3d(0,'+fixedTop+'px,0)'}">
 			<view class="fixed-title">
-				{{fixedTitle}}
+				{{fixedTitle}} 
 			</view>
 		</view>
 	</view>

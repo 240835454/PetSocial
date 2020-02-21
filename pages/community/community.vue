@@ -28,10 +28,10 @@
 				<view class="thumbnails">
 					<view class="my-gallery-video" v-for="(video, index_video) in post.content.video" :key="index_video">
 						<video :src="api + video" enable-play-gesture="true" vslide-gesture="true" controls></video>
-					</view> 
-				</view> 
-				<!-- 相册 --> 
-				<view class="thumbnails"> 
+					</view>
+				</view>
+				<!-- 相册 -->
+				<view class="thumbnails">
 					<view :class="post.content.images.length === 1?'my-gallery':'thumbnail'" v-for="(image, index_images) in post.content.images"
 					 :key="index_images">
 						<image class="gallery_img" lazy-load mode="aspectFill" :src="api + image" :data-src="image" @tap="previewImage(post.content.images,index_images)"></image>
@@ -108,8 +108,10 @@
 				info: '',
 				api: this.$API,
 				list: [],
-				// index: 1,
-				size: 10
+				now_page: 1,
+				size: 10,
+				total: '',
+				freshList: []
 			}
 		},
 		// mounted() { 
@@ -164,16 +166,46 @@
 				this.showLoadMore = false;
 		},
 		onReachBottom() { //监听上拉触底事件
-			// console.log('onReachBottom');
 			// this.showLoadMore = true;
-			// setTimeout(() => { 
-			// 	//获取数据
-			// 	if (this.post.length < 20) { //测试数据
-			// 		this.post = this.post.concat(this.post);
-			// 	} else { 
-			// 		this.loadMoreText = "暂无更多";
-			// 	} 
-			// }, 1000);
+
+			let account = uni.getStorageSync('account');
+			if (this.post.length < this.total) {
+				uni.showToast({
+					icon: 'loading',
+					title: '正在加载',
+					duration: 1000
+				})
+				this.now_page += 1;
+				setTimeout(() => {
+					this.$http.get('/Community/dynamic', {
+							index: this.now_page,
+							size: this.size
+						})
+						.then(res => {
+							this.freshList = res.data.list;
+							for (let i = 0; i < this.freshList.length; i++) {
+								for (let j = 0; j < this.freshList[i].likeList.length; j++) {
+									if (this.freshList[i].likeList[j].uid == account) {
+										this.freshList[i].islike = 1;
+									}
+								}
+							}
+							this.post = this.post.concat(this.freshList);
+							console.log(this.post);
+						})
+						.catch(err => {
+							uni.showToast({
+								icon: 'none',
+								title: '系统错误，请稍后再试'
+							})
+						})
+				},1000)
+			} else {
+				uni.showToast({
+					icon: 'none',
+					title: '暂无更多数据'
+				})
+			}
 		},
 		onPullDownRefresh() { //监听下拉刷新动作
 			console.log('onPullDownRefresh');
@@ -195,11 +227,12 @@
 			getList() {
 				let account = uni.getStorageSync('account');
 				this.$http.get('/Community/dynamic', {
-						index: this.index,
+						index: this.now_page,
 						size: this.size
 					})
 					.then(res => {
 						this.post = res.data.list;
+						this.total = res.data.total;
 						for (let i = 0; i < this.post.length; i++) {
 							for (let j = 0; j < this.post[i].likeList.length; j++) {
 								if (this.post[i].likeList[j].uid == account) {
@@ -411,7 +444,7 @@
 					fail: () => {},
 					complete: () => {}
 				});
-			}
+			} 
 		},
 	}
 </script>

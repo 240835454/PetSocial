@@ -1,0 +1,1 @@
+<view id="moments"><view class="home-pic"><image class="cover-pic" src="{{api+info.bgImage}}" mode="scaleToFill"></image><view class="home-pic-base"><view class="top-pic"><image class="header" src="{{api+info.avatar}}"></image></view><view class="top-name">{{info.name}}</view></view></view></view>
