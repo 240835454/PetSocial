@@ -5,7 +5,7 @@
 				<image src="../../static/video.png" mode="aspectFit" class='icon_video' @click="goPublish_video"></image>
 				<image src="../../static/camera.png" mode="aspectFit" class='icon_camera' @click="goPublish"></image>
 			</view>
-		</view>
+		</view> 
 		<!-- 当前用户名字和头像 -->
 		<view class="home-pic">
 			<image :src="api + info.bgImage" mode="scaleToFill" class='cover-pic' @click='changeBgImage'></image>
@@ -13,7 +13,7 @@
 				<view class="top-pic">
 					<image class="header" :src="api + info.avatar" @tap="test"></image>
 				</view>
-				<view class="top-name">{{info.name}}</view>
+				<view class="top-name">{{info.name}}</view> 
 			</view>
 		</view>
 
@@ -48,14 +48,25 @@
 					</view>
 				</view>
 				<!-- 赞／评论区 -->
-				<view class="post-footer" v-if='post.comments.content.length != 0 || post.likeList.length != 0'>
+<!-- 				<view class="post-footer" v-if='post.comments.content.length != 0 || post.likeList.length != 0'>
 					<view class="footer_content" v-if="post.likeList.length != 0">
 						<image class="liked" src="../../static/index/liked.png"></image>
-						<!-- <text class="nickname" v-for="(user,index_like) in post.likeList" :key="index_like">{{user.name}}</text> -->
 						<image :src="api + user.avatar" v-for="(user,index_like) in post.likeList" :key="index_like" class="liked_avatar"
 						 mode=""></image>
 					</view>
 					<view class="footer_content" v-for="(comment,comment_index) in post.comments.content" :key="comment_index" @click="reply(index,comment_index)">
+						<image :src="api + comment.avatar" class="liked_avatar" mode=""></image>
+						<text class="comment-nickname">{{comment.name}}<text v-text="comment.to_name ? '回复' : ''"></text><text v-text="comment.to_name"></text>:
+							<text class="comment-content">{{comment.content}}</text></text>
+					</view>
+				</view> -->
+				<view class="post-footer">
+					<view class="footer_content" v-if="post.likeList.length != 0">
+						<image class="liked" src="../../static/index/liked.png"></image>
+						<image :src="api + user.avatar" v-for="(user,index_like) in post.likeList" :key="index_like" class="liked_avatar"
+						 mode=""></image>
+					</view>
+					<view class="footer_content" v-for="(comment,comment_index) in comments" :key="comment_index" @click="reply(index,comment_index)">
 						<image :src="api + comment.avatar" class="liked_avatar" mode=""></image>
 						<text class="comment-nickname">{{comment.name}}<text v-text="comment.to_name ? '回复' : ''"></text><text v-text="comment.to_name"></text>:
 							<text class="comment-content">{{comment.content}}</text></text>
@@ -86,7 +97,8 @@
 		},
 		data() {
 			return {
-				post: [], //模拟数据
+				post: [], //动态列表
+				comments: [], // 评论列表
 				user_id: 4,
 				username: 'Liuxy',
 
@@ -123,17 +135,21 @@
 		// 		}
 		// 	});
 		// },
-		onLoad() {
+		async onLoad() {
 			uni.getSystemInfo({ //获取设备信息 
 				success: (res) => {
 					this.screenHeight = res.screenHeight;
 					this.platform = res.platform;
 				}
 			});
-			uni.startPullDownRefresh();
-			this.getUserInfo();
-			this.getList();
-		},
+			uni.startPullDownRefresh(); 
+			await this.getUserInfo();
+			await this.getList();
+			await this.getComments();
+			// for(let i = 0;i<this.comments.length;i++){
+			// 	if(this.comments[i].post_id === this.post.)
+			// }
+		}, 
 		onShow() {
 			uni.onWindowResize((res) => { //监听窗口尺寸变化,窗口尺寸不包括底部导航栏
 				if (this.platform === 'ios') {
@@ -227,7 +243,7 @@
 			getList() {
 				let account = uni.getStorageSync('account');
 				this.$http.get('/Community/dynamic', {
-						index: this.now_page,
+						index: this.now_page, 
 						size: this.size
 					})
 					.then(res => {
@@ -248,6 +264,16 @@
 							title: '系统错误，请稍后再试'
 						})
 					})
+			},
+			getComments(){
+				this.$http.get('/Community/commentsList').then(res=>{
+					
+				}).catch(err=>{
+					uni.showToast({
+						icon: 'none',
+						title: '系统错误，请稍后再试'
+					})
+				})
 			},
 			getUserInfo() {
 				this.$http.get('/User/userInfo')
@@ -387,21 +413,27 @@
 				let comment_content = message.content;
 				// }
 				// this.post[this.index].comments.total += 1; 
-				this.post[this.index].comments.content.push({
+				this.comments.push({
+					post_id: this.post[this.index].post_id,
+					uid: account,
+					name: this.info.name,
+					avatar: this.info.avatar, 
+					content: comment_content, //直接获取input中的值 
+					// to_uid: this.post[this.index].comments.content[this.comment_index] ? this.post[this.index].comments.content[
+					// 	this.comment_index].uid : '',
+					// to_name: this.post[this.index].comments.content[this.comment_index] ? this.post[this.index].comments.content[
+					// 	this.comment_index].name : '',
+					// to_avatar: this.post[this.index].comments.content[this.comment_index] ? this.post[this.index].comments.content[
+					// 	this.comment_index].avatar : ''
+				});
+				let date = new Date();
+				this.$http.post('/Community/comments', {
+					post_id: this.post[this.index].post_id,
 					uid: account,
 					name: this.info.name,
 					avatar: this.info.avatar,
-					content: comment_content, //直接获取input中的值 
-					to_uid: this.post[this.index].comments.content[this.comment_index] ? this.post[this.index].comments.content[
-						this.comment_index].uid : '',
-					to_name: this.post[this.index].comments.content[this.comment_index] ? this.post[this.index].comments.content[
-						this.comment_index].name : '',
-					to_avatar: this.post[this.index].comments.content[this.comment_index] ? this.post[this.index].comments.content[
-						this.comment_index].avatar : ''
-				});
-				this.$http.post('/Community/comments', {
-					post_id: this.post[this.index].post_id,
-					comments: JSON.stringify(this.post[this.index].comments)
+					content: comment_content,
+					timestamp: date.getTime()
 				}).then(res => {
 					that.getList();
 				}).catch(err => {

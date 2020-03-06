@@ -1,26 +1,26 @@
 
-.footer.data-v-55eebed7 {
+.footer.data-v-2478144a {
 	margin-top: 80rpx;
 }
-.cell-pd.data-v-55eebed7 {
+.cell-pd.data-v-2478144a {
 	padding: 20rpx 30rpx;
 }
-.uni-textarea.data-v-55eebed7 {
+.uni-textarea.data-v-2478144a {
 	width: auto;
 	padding: 20rpx 25rpx;
 	line-height: 1.6;
 	height: 150rpx;
 }
-.uni-list.data-v-55eebed7::before {
+.uni-list.data-v-2478144a::before {
 	height: 0;
 }
-.uni-list.data-v-55eebed7:after {
+.uni-list.data-v-2478144a:after {
 	height: 0;
 }
-.list-pd.data-v-55eebed7 {
+.list-pd.data-v-2478144a {
 	margin-top: 0;
 }
-.close-view.data-v-55eebed7{
+.close-view.data-v-2478144a{
     text-align: center;
 	line-height:30rpx;
 	height: 35rpx;
@@ -33,7 +33,7 @@
 	font-size: 35rpx;
 	border-radius: 8rpx;
 }
-.page.data-v-55eebed7 {
+.page.data-v-2478144a {
 	width: 750rpx;
 	height: 100%;
 }
