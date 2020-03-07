@@ -208,6 +208,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
@@ -237,6 +248,11 @@ var _default =
           title: '请重新登录' });
 
       });
+    },
+    enterChat: function enterChat() {
+      uni.navigateTo({
+        url: 'chat' });
+
     },
     getList: function getList() {var _this2 = this;
       var account = uni.getStorageSync('account');

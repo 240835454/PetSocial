@@ -544,7 +544,7 @@ var _default =
         this.comment_index].avatar : '' });
 
       var date = new Date();
-      this.$http.post('/Community/comments', {
+      this.$http.post('/Community/commentsList', {
         post_id: this.post[this.index].post_id,
         uid: account,
         name: this.info.name,

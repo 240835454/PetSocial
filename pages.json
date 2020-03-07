@@ -64,9 +64,25 @@
 				"navigationBarTextStyle": "white"
 			}
 		},
+		// 在线聊天
+		{
+			"path": "pages/community/chat",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarTextStyle": "white"
+			}
+		},
 		// 养宠
 		{
 			"path": "pages/petbnb/petbnb",
+			"style": {
+				"navigationBarTitleText": "养宠",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		// 添加宠物信息
+		{
+			"path": "pages/petbnb/pet/addPet",
 			"style": {
 				"navigationBarTitleText": "养宠",
 				"navigationBarTextStyle": "white"

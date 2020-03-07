@@ -70,6 +70,17 @@
 			</view>
 			<!-- 结束 post -->
 		</view>
+		<!-- 底部选项 -->
+		<view class="footer">
+			<view class="item">
+				<image src="../../static/add.png" mode="" class="icon"></image>
+				<text>关注</text>
+			</view>
+			<view class="item" @click="enterChat">
+				<image src="../../static/chat.png" mode="" class="icon"></image>
+				<text>私聊</text>
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -102,6 +113,11 @@
 							title: '请重新登录'
 						})
 					})
+			},
+			enterChat(){
+				uni.navigateTo({
+					url: 'chat' 
+				})
 			},
 			getList() {
 				let account = uni.getStorageSync('account');
@@ -211,4 +227,34 @@
 	}
 
 	.dynamic {}
+	.footer{
+		position: fixed;
+		bottom: 0;
+		display: flex;
+		justify-content: space-around;
+		width: 100%;
+		padding: 20upx;
+		background-color: #fff;
+		margin: 0;
+		.item{
+			display: flex;
+			align-items: center;
+			color: #999;
+			.icon{
+				width: 35upx;
+				height: 35upx;
+				padding-right: 30upx;
+			}
+			&:last-child{
+				&::before{
+					content: '';
+					position: absolute;
+					left: 50%;
+					width: 2upx;
+					height: 30upx;
+					background-color: #ccc;
+				}
+			}
+		}
+	}
 </style>

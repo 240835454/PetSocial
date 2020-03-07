@@ -71,8 +71,8 @@ export default {
 	// 上传文件
 	uploadFile(file) {
 		// let url = 'http://192.168.30.1:3000/image';
-		let url = 'http://192.168.1.110:3000/image';
-		return new Promise((resolve,reject) => { 
+		let url = 'http://192.168.1.106:3000/image';
+		return new Promise((resolve,reject) => {  
 			uni.uploadFile({
 				url: url,
 				filePath: file,
