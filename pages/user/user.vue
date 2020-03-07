@@ -21,21 +21,21 @@
 				<image src="../../static/icon_info.png" mode="aspectFit" class="icon"></image>
 				<text class="name">个人资料</text>
 			</view>
-			<view class="item arrow" @click='myPet'>
+			<view class="item arrow" @click='enterMyPet'>
 				<image src="../../static/icon_pet.png" mode="aspectFit" class="icon"></image>
 				<text class="name">我的宠物</text>
 			</view>
-			<view class="item arrow" @click='changePhoneNumber'>
+			<view class="item arrow" @click='enterMyFriend'>
 				<image src="../../static/icon_guanzhu.png" mode="aspectFit" class="icon"></image>
 				<text class="name">我的关注</text>
 			</view>
 			<view class="item arrow" @click='enterMyAlbum'>
 				<image src="../../static/icon_xiangce.png" mode="aspectFill" class="icon"></image>
-				<text class="name">我的相册</text>
+				<text class="name">我的动态</text>
 			</view>
-			<view class="item arrow">
+			<view class="item arrow" @click='enterMyCollection'>
 				<image src="../../static/icon_collect.png" mode="aspectFit" class="icon"></image>
-				<text class="name">我的收藏</text>
+				<text class="name">我的收藏</text> 
 			</view>
 			<view class="item arrow" @click="exit">
 				<image src="../../static/icon_logout.png" mode="aspectFill" class="icon"></image>
@@ -117,24 +117,19 @@
 					url: 'myAlbum'
 				}) 
 			},
-			changeIdCard() {
+			enterMyFriend() {
 				uni.navigateTo({
-					url: 'changeIdCard'
+					url: 'myFriend'
 				})
 			},
-			changePhoneNumber() {
+			enterMyPet() {
 				uni.navigateTo({
-					url: 'changePhoneNumber'
+					url: 'myPet'
 				})
 			},
-			changePassword() {
+			enterMyCollection() {
 				uni.navigateTo({
-					url: 'changePassword'
-				})
-			},
-			enterDetail() {
-				uni.navigateTo({
-					url: 'myCommission'
+					url: 'myCollection' 
 				})
 			},
 			// 退出

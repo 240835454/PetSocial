@@ -56,6 +56,14 @@
 				"navigationBarTextStyle": "white"
 			}
 		},
+		// 用户主页
+		{
+			"path": "pages/community/userDetail",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarTextStyle": "white"
+			}
+		},
 		// 养宠
 		{
 			"path": "pages/petbnb/petbnb",
@@ -104,11 +112,35 @@
 				"navigationBarTextStyle": "white"
 			}
 		},
-		// 修改个人资料
+		// 我的宠物
+		{
+			"path": "pages/user/myPet",
+			"style": {
+				"navigationBarTitleText": "我的宠物",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		// 我的关注
+		{
+			"path": "pages/user/myFriend",
+			"style": {
+				"navigationBarTitleText": "我的关注",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		// 我的相册
 		{
 			"path": "pages/user/myAlbum",
 			"style": {
 				"navigationBarTitleText": "我的相册", 
+				"navigationBarTextStyle": "white"
+			}
+		},
+		// 我的收藏
+		{
+			"path": "pages/user/myCollection",
+			"style": {
+				"navigationBarTitleText": "我的相册",
 				"navigationBarTextStyle": "white"
 			}
 		}

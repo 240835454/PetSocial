@@ -211,7 +211,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _indexPostData = _interopRequireDefault(__webpack_require__(/*! @/public/js/index.post.data.js */ 77));
-var _formatTime = __webpack_require__(/*! @/public/js/formatTime.js */ 78);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var chatInput = function chatInput() {return __webpack_require__.e(/*! import() | components/im-chat/chatinput */ "components/im-chat/chatinput").then(__webpack_require__.bind(null, /*! ../../components/im-chat/chatinput.vue */ 147));};
+var _formatTime = __webpack_require__(/*! @/public/js/formatTime.js */ 78);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var chatInput = function chatInput() {return __webpack_require__.e(/*! import() | components/im-chat/chatinput */ "components/im-chat/chatinput").then(__webpack_require__.bind(null, /*! ../../components/im-chat/chatinput.vue */ 181));};
 
 // 时间
 var _default =
@@ -224,7 +224,6 @@ var _default =
       post: [], //模拟数据
       user_id: 4,
       username: 'Liuxy',
-
       index: '',
       comment_index: '',
 
@@ -281,6 +280,7 @@ var _default =
         }
       }
     });
+    this.now_page = 1;
     this.getList();
     this.getUserInfo();
   },
@@ -441,6 +441,7 @@ var _default =
     },
     like: function like(index) {
       var account = uni.getStorageSync('account');
+      var date = new Date();
       if (this.post[index].islike == 0) {
         this.post[index].islike = 1;
         this.post[index].likeList.push({
@@ -450,18 +451,26 @@ var _default =
 
         this.$http.post('/Community/like', {
           post_id: this.post[index].post_id,
-          likeList: JSON.stringify(this.post[index].likeList) });
+          uid: account,
+          avatar: this.info.avatar,
+          name: this.info.name,
+          post_uid: this.post[index].uid,
+          post_avatar: this.post[index].avatar,
+          post_name: this.post[index].name,
+          post_content: JSON.stringify(this.post[index].content),
+          timestamp: date.getTime() });
 
       } else {
         this.post[index].islike = 0;
+        var like_id = '';
         for (var i = 0; i < this.post[index].likeList.length; i++) {
           if (this.post[index].likeList[i].uid == account) {
+            like_id = this.post[index].likeList[i].like_id;
             this.post[index].likeList.splice(i, 1);
           }
         }
-        this.$http.post('/Community/like', {
-          post_id: this.post[index].post_id,
-          likeList: JSON.stringify(this.post[index].likeList) }).
+        this.$http.put('/Community/like', {
+          like_id: like_id }).
 
         then(function (res) {
 
@@ -503,7 +512,7 @@ var _default =
     reply: function reply(index, comment_index) {
       this.is_reply = true; //回复中
       this.showInput = true; //调起input框
-      var replyTo = this.post[index].comments.content[comment_index].name;
+      var replyTo = this.post[index].comments[comment_index].name;
       this.input_placeholder = '回复' + replyTo;
       this.index = index; //post索引
       this.comment_index = comment_index; //评论索引
@@ -522,22 +531,34 @@ var _default =
       var comment_content = message.content;
       // }
       // this.post[this.index].comments.total += 1; 
-      this.post[this.index].comments.content.push({
+      this.post[this.index].comments.push({
         uid: account,
         name: this.info.name,
         avatar: this.info.avatar,
         content: comment_content, //直接获取input中的值 
-        to_uid: this.post[this.index].comments.content[this.comment_index] ? this.post[this.index].comments.content[
+        to_uid: this.post[this.index].comments[this.comment_index] ? this.post[this.index].comments[
         this.comment_index].uid : '',
-        to_name: this.post[this.index].comments.content[this.comment_index] ? this.post[this.index].comments.content[
+        to_name: this.post[this.index].comments[this.comment_index] ? this.post[this.index].comments[
         this.comment_index].name : '',
-        to_avatar: this.post[this.index].comments.content[this.comment_index] ? this.post[this.index].comments.content[
+        to_avatar: this.post[this.index].comments[this.comment_index] ? this.post[this.index].comments[
         this.comment_index].avatar : '' });
 
+      var date = new Date();
       this.$http.post('/Community/comments', {
         post_id: this.post[this.index].post_id,
-        comments: JSON.stringify(this.post[this.index].comments) }).
-      then(function (res) {
+        uid: account,
+        name: this.info.name,
+        avatar: this.info.avatar,
+        content: comment_content,
+        timestamp: date.getTime(),
+        to_uid: this.post[this.index].comments[this.comment_index] ? this.post[this.index].comments[
+        this.comment_index].uid : '',
+        to_name: this.post[this.index].comments[this.comment_index] ? this.post[this.index].comments[
+        this.comment_index].name : '',
+        to_avatar: this.post[this.index].comments[this.comment_index] ? this.post[this.index].comments[
+        this.comment_index].avatar : ''
+        // comments: JSON.stringify(this.post[this.index].comments)
+      }).then(function (res) {
         that.getList();
       }).catch(function (err) {
         uni.showToast({
@@ -578,6 +599,12 @@ var _default =
         success: function success(res) {},
         fail: function fail() {},
         complete: function complete() {} });
+
+    },
+    // 查看用户详情
+    enterDetail: function enterDetail(id) {
+      uni.navigateTo({
+        url: 'userDetail?id=' + id });
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

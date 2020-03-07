@@ -7,12 +7,12 @@
 		</swiper> -->
 		<view class="home-pic">
 			<image :src="api + info.bgImage" mode="scaleToFill" class='cover-pic'></image>
-			<view class="home-pic-base">
+			<view class="home-pic-base"> 
 				<view class="top-pic">
 					<image class="header" :src="api + info.avatar"></image>
-				</view>
+				</view> 
 				<view class="top-name">{{info.name}}</view>
-			</view>
+			</view> 
 		</view>
 	</view>
 </template>
@@ -26,10 +26,9 @@
 				now_page: 1,
 				size: 10,
 				info: {},
+				post: [],
 				api: this.$API,
-				imageList: ['http://192.168.1.110:3000/image/banner1.jpg', 'http://192.168.1.110:3000/image/banner2.jpg',
-					'http://192.168.1.110:3000/image/banner3.jpg'
-				]
+				total: '' 
 			}
 		},
 		onLoad() {
@@ -37,29 +36,29 @@
 			this.getUserInfo();
 		},
 		methods: {
-			getList() {
+			getList() { 
 				let account = uni.getStorageSync('account');
-				this.$http.get('/Community/dynamic', {
-						index: this.now_page,
-						size: this.size
+				this.$http.get('/User/myAlbum', {
+						// index: this.now_page, 
+						// size: this.size 
 					})
 					.then(res => {
-						// this.post = res.data.list;
+						this.post = res.data.list;
 						// this.total = res.data.total;
-						// for (let i = 0; i < this.post.length; i++) {
-						// 	for (let j = 0; j < this.post[i].likeList.length; j++) {
-						// 		if (this.post[i].likeList[j].uid == account) {
-						// 			this.post[i].islike = 1;
-						// 		}
-						// 	}
-						// }
-						// console.log(this.post);
+						for (let i = 0; i < this.post.length; i++) {
+							for (let j = 0; j < this.post[i].likeList.length; j++) {
+								if (this.post[i].likeList[j].uid == account) {
+									this.post[i].islike = 1;
+								}
+							}
+						} 
+						console.log(this.post);
 					})
 					.catch(err => {
 						uni.showToast({
 							icon: 'none',
 							title: '系统错误，请稍后再试'
-						})
+						}) 
 					})
 			},
 			getUserInfo() {
