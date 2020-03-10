@@ -26,12 +26,28 @@ page {
   padding: 20rpx;
   background-color: #fff;
   border-bottom: 1rpx solid #f6f6f6;
+  position: relative;
 }
 .box .item:last-child {
   border-bottom: none;
 }
 .box .item .input-box {
+  padding-right: 40rpx;
   text-align: right;
+}
+.box .item:not(:first-of-type)::after {
+  content: " ";
+  border: solid #e5e5e5;
+  border-width: 3rpx 3rpx 0 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 20rpx;
+  position: absolute;
+  width: 18rpx;
+  height: 18rpx;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
 }
 .box .footer .button {
   display: inline-block;

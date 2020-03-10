@@ -5,7 +5,7 @@
 				<text>成长中心</text><text @click="addPet">添加宠物</text>
 			</view>
 			<view class="pet-content">
-				<text class="no-pet">添加宠物更多惊喜</text>
+				<text class="no-pet" @click="addPet">添加宠物更多惊喜</text>
 			</view>
 		</view>
 		<view class="tabBar-box">

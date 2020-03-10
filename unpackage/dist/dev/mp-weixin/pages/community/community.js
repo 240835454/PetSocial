@@ -211,7 +211,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _indexPostData = _interopRequireDefault(__webpack_require__(/*! @/public/js/index.post.data.js */ 77));
-var _formatTime = __webpack_require__(/*! @/public/js/formatTime.js */ 78);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var chatInput = function chatInput() {return __webpack_require__.e(/*! import() | components/im-chat/chatinput */ "components/im-chat/chatinput").then(__webpack_require__.bind(null, /*! ../../components/im-chat/chatinput.vue */ 181));};
+var _formatTime = __webpack_require__(/*! @/public/js/formatTime.js */ 78);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var chatInput = function chatInput() {return __webpack_require__.e(/*! import() | components/im-chat/chatinput */ "components/im-chat/chatinput").then(__webpack_require__.bind(null, /*! ../../components/im-chat/chatinput.vue */ 201));};
 
 // 时间
 var _default =
