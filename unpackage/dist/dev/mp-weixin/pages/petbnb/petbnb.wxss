@@ -48,6 +48,41 @@ page {
           transform: translate(-50%, -50%);
   color: #ccc;
 }
+.pet-box .swiper-box .swiper-item {
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.pet-box .swiper-box .swiper-item .top {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.pet-box .swiper-box .swiper-item .top .name {
+  padding: 0 10rpx;
+}
+.pet-box .swiper-box .swiper-item .top .avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.pet-box .swiper-box .swiper-item .top .icon_level {
+  width: 42rpx;
+  height: 42rpx;
+  margin-top: 5rpx;
+  padding-right: 20rpx;
+}
+.pet-box .swiper-box .swiper-item .bbb {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  padding: 20rpx;
+}
+.pet-box .swiper-box .swiper-item .bbb .breed {
+  display: block;
+}
 .tabBar-box {
   display: -webkit-box;
   display: -webkit-flex;

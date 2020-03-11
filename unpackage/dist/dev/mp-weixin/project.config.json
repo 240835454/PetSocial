@@ -44,7 +44,7 @@
 					"scene": null
 				},
 				{
-					"id": 1,
+					"id": -1,
 					"name": "pages/petbnb/petbnb",
 					"pathName": "pages/petbnb/petbnb",
 					"query": "",
@@ -52,9 +52,8 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/petbnb/petbnb",
-					"pathName": "pages/petbnb/petbnb",
-					"query": "",
+					"name": "pages/petbnb/account/account",
+					"pathName": "pages/petbnb/account/account",
 					"scene": null
 				}
 			]

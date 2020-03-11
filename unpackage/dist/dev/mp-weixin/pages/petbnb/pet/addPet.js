@@ -133,7 +133,17 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;} //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -165,7 +175,108 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 var _default =
-{};exports.default = _default;
+{
+  data: function data() {
+    return {
+      info: {
+        uid: '',
+        name: '',
+        gender: '',
+        birthDay: '',
+        avatar: '',
+        breed: '',
+        state: '' },
+
+      gender: '',
+      genderArray: [{
+        id: 1,
+        name: '雄' },
+      {
+        id: 2,
+        name: '雌' }],
+
+      stateArray: [
+      '已绝育', '未绝育'],
+
+      api: this.$API };
+
+  },
+  onShow: function onShow(options) {
+    var page = getCurrentPages();
+    this.info.breed = page[1].$vm.breed;
+  },
+  methods: {
+    addPet: function addPet() {
+      if (this.info.name !== '' && this.info.gender !== '' && this.info.birthDay !== '' && this.info.avatar !== '' &&
+      this.info.breed !== '' && this.info.state !== '') {
+        this.$http.post('/petbnb/addPet', _objectSpread({},
+        this.info)).
+
+        then(function (res) {
+          if (res.code === 1) {
+            uni.showToast({
+              title: res.message,
+              icon: 'success' });
+
+            setTimeout(function () {
+              uni.navigateBack({
+                delta: 1 });
+
+            }, 1000);
+          }
+        }).
+        catch(function (err) {
+
+        });
+      } else {
+        uni.showToast({
+          title: '请将信息填写完整',
+          icon: 'none' });
+
+      }
+    },
+    // 宠物头像
+    changeAvatar: function changeAvatar() {var _this = this;
+      var that = this;
+      uni.chooseImage({
+        count: 1,
+        success: function success(res) {
+          _this.$http.uploadFile(res.tempFilePaths[0]).then(function (res) {
+            that.info.avatar = res.data.path;
+          }).
+          catch(function (err) {
+            uni.showToast({
+              icon: 'none',
+              title: '系统错误，请稍后再试!' });
+
+          });
+        } });
+
+    },
+    // 宠物姓名
+    petName: function petName(e) {
+      this.info.name = e.detail.value;
+    },
+    // 宠物性别
+    petGender: function petGender(e) {
+      this.gender = this.genderArray[e.detail.value].name;
+      this.info.gender = this.genderArray[e.detail.value].id;
+    },
+    // 宠物品种
+    petBreed: function petBreed() {
+      uni.navigateTo({
+        url: '../encyclopedia/encyclopedia' });
+
+    },
+    // 宠物生日
+    petBirthDay: function petBirthDay(e) {
+      this.info.birthDay = e.detail.value;
+    },
+    // 宠物绝育状态
+    petState: function petState(e) {
+      this.info.state = this.stateArray[e.detail.value];
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

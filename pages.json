@@ -88,12 +88,36 @@
 				"navigationBarTextStyle": "white"
 			}
 		},
+		// 记账本
+		{
+			"path": "pages/petbnb/account/account",
+			"style": {
+				"navigationBarTitleText": "记账本",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		// 精选文章
+		{
+			"path": "pages/petbnb/article/article",
+			"style": {
+				"navigationBarTitleText": "精选文章",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		// 同城服务
+		{
+			"path": "pages/petbnb/service/service",
+			"style": {
+				"navigationBarTitleText": "同城服务",
+				"navigationBarTextStyle": "white"
+			}
+		},
 		// 宠物百科
 		{
 			"path": "pages/petbnb/encyclopedia/encyclopedia",
 			"style": {
 				"navigationBarTitleText": "宠物种族",
-				"navigationBarTextStyle": "white"
+				"navigationBarTextStyle": "white" 
 			}
 		},
 		// 品种列表

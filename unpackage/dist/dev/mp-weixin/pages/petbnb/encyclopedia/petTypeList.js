@@ -298,10 +298,19 @@ var TITLE_HEIGHT = 23;var _default = { data: function data() {return { title: 'H
       this.toNum = e.target.dataset.index;
     },
     // 进入详情
-    enterDetail: function enterDetail(id) {
-      uni.navigateTo({
-        url: './petDetail?id=' + id });
+    enterDetail: function enterDetail(id, index, secondIndex) {
+      var page = getCurrentPages();
+      var prePage = page[page.length - 3];
+      prePage.$vm.breed = this.list[index].List[secondIndex].name;
+      if (page[page.length - 3].route === 'pages/petbnb/pet/addPet') {
+        uni.navigateBack({
+          delta: 2 });
 
+      } else {
+        uni.navigateTo({
+          url: './petDetail?id=' + id });
+
+      }
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

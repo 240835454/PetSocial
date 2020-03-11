@@ -1,29 +1,39 @@
 <template>
 	<view class="content">
 		<view class="box">
-			<image src="../../../static/camera.png" class="icon" mode=""></image>
+			<image :src="info.avatar === '' ? '../../../static/camera.png' : api + info.avatar" class="icon" mode="" @click='changeAvatar'></image>
 			<view class="item">
 				<text>宠物名称</text>
-				<input type="text" value="" placeholder="设置宠物名称" placeholder-style='text-align:right' class="input-box" />
+				<input type="text" value="" @input="petName" placeholder="设置宠物名称" placeholder-style='text-align:right' class="input-box" />
 			</view>
 			<view class="item">
 				<text>宠物性别</text>
-				<input type="text" value="" placeholder="选择宠物性别" placeholder-style='text-align:right' class="input-box" />
+				<picker mode="" :range="genderArray" mode="selector" @change="petGender" range-key="name"> 
+					<input type="text" disabled="true" :value="gender" placeholder="选择宠物性别" placeholder-style='text-align:right'
+					 class="input-box" />
+				</picker>
 			</view>
 			<view class="item">
 				<text>宠物品种</text>
-				<input type="text" value="" placeholder="选择宠物品种" placeholder-style='text-align:right' class="input-box" />
+				<input type="text" :value="info.breed" disabled="true" @click="petBreed" placeholder="选择宠物品种" placeholder-style='text-align:right'
+				 class="input-box" />
 			</view>
 			<view class="item">
 				<text>宠物生日</text>
-				<input type="text" value="" placeholder="选择宠物生日" placeholder-style='text-align:right' class="input-box" />
+				<picker mode="" mode="date" @change="petBirthDay">
+					<input type="text" :value="info.birthDay" disabled="true" placeholder="选择宠物生日" placeholder-style='text-align:right'
+					 class="input-box" />
+				</picker>
 			</view>
 			<view class="item">
 				<text>绝育状态</text>
-				<input type="text" value="" placeholder="绝育状态" placeholder-style='text-align:right' class="input-box" />
+				<picker mode="selector" :range="stateArray" @change="petState">
+					<input type="text" :value="info.state" placeholder="绝育状态" disabled="true" placeholder-style='text-align:right'
+					 class="input-box" />
+				</picker>
 			</view>
 			<view class="footer">
-				<text class="button">保存</text>
+				<text class="button" @click="addPet">保存</text>
 			</view>
 		</view>
 	</view>
@@ -31,7 +41,107 @@
 
 <script>
 	export default {
+		data() {
+			return {
+				info: {
+					uid: '',
+					name: '',
+					gender: '',
+					birthDay: '',
+					avatar: '',
+					breed: '',
+					state: ''
+				},
+				gender: '',
+				genderArray: [{
+					id: 1,
+					name: '雄',
+				}, {
+					id: 2,
+					name: '雌'
+				}],
+				stateArray: [
+					'已绝育', '未绝育'
+				],
+				api: this.$API
+			}
+		},
+		onShow(options) {
+			let page = getCurrentPages();  
+			this.info.breed = page[1].$vm.breed;
+		},
+		methods: {
+			addPet() {
+				if (this.info.name !== '' && this.info.gender !== '' && this.info.birthDay !== '' && this.info.avatar !== '' &&
+					this.info.breed !== '' && this.info.state !== '') {
+					this.$http.post('/petbnb/addPet', {
+							...this.info
+						})
+						.then(res => {
+							if (res.code === 1) {
+								uni.showToast({
+									title: res.message,
+									icon: 'success'
+								})
+								setTimeout(()=>{
+									uni.navigateBack({
+										delta: 1
+									})
+								},1000)
+							}
+						})
+						.catch(err => {
 
+						})
+				} else {
+					uni.showToast({
+						title: '请将信息填写完整',
+						icon: 'none'
+					})
+				}
+			},
+			// 宠物头像
+			changeAvatar() {
+				let that = this;
+				uni.chooseImage({
+					count: 1,
+					success: res => {
+						this.$http.uploadFile(res.tempFilePaths[0]).then(res => {
+								that.info.avatar = res.data.path;
+							})
+							.catch(err => {
+								uni.showToast({
+									icon: 'none',
+									title: '系统错误，请稍后再试!'
+								})
+							})
+					}
+				})
+			},
+			// 宠物姓名
+			petName(e) {
+				this.info.name = e.detail.value;
+			},
+			// 宠物性别
+			petGender(e) {
+				this.gender = this.genderArray[e.detail.value].name;
+				this.info.gender = this.genderArray[e.detail.value].id;
+			},
+			// 宠物品种
+			petBreed() {
+				uni.navigateTo({
+					url: '../encyclopedia/encyclopedia'
+				})
+			},
+			// 宠物生日
+			petBirthDay(e) {
+				this.info.birthDay = e.detail.value;
+			},
+			// 宠物绝育状态
+			petState(e) {
+				this.info.state = this.stateArray[e.detail.value];
+			}
+		}
 	}
 </script>
 
@@ -47,8 +157,8 @@
 			width: 120upx;
 			height: 120upx;
 			margin: 50upx 0 30upx;
-			border: 1upx solid rgba(224, 224, 224, 0.5);
-			padding: 15upx;
+			// border: 1upx solid rgba(224, 224, 224, 0.5);
+			// padding: 15upx;
 			border-radius: 50%;
 			z-index: 10;
 		}
@@ -70,8 +180,8 @@
 				padding-right: 40upx;
 				text-align: right;
 			}
-			
-			&:not(:first-of-type){
+
+			&:not(:first-of-type) {
 				&::after {
 					content: " ";
 					border: solid #e5e5e5;

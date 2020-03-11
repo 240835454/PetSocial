@@ -1,62 +1,64 @@
 {
-    "pages": [
-        "pages/login/register",
-        "pages/login/setPassword",
-        "pages/login/login",
-        "pages/community/community",
-        "pages/community/publish",
-        "pages/community/publish_video",
-        "pages/community/userDetail",
-        "pages/community/chat",
-        "pages/petbnb/petbnb",
-        "pages/petbnb/pet/addPet",
-        "pages/petbnb/encyclopedia/encyclopedia",
-        "pages/petbnb/encyclopedia/petTypeList",
-        "pages/petbnb/encyclopedia/petDetail",
-        "pages/user/user",
-        "pages/user/myInfo",
-        "pages/user/myPet",
-        "pages/user/myFriend",
-        "pages/user/myAlbum",
-        "pages/user/myCollection"
-    ],
-    "subPackages": [],
-    "window": {
-        "navigationBarTextStyle": "black",
-        "navigationBarTitleText": "uni-app",
-        "navigationBarBackgroundColor": "#F2473D",
-        "backgroundColor": "#F8F8F8"
-    },
-    "tabBar": {
-        "color": "#a6b5d5",
-        "selectedColor": "#333333",
-        "borderStyle": "black",
-        "list": [
-            {
-                "selectedIconPath": "/static/pet-active.png",
-                "iconPath": "/static/pet.png",
-                "pagePath": "pages/petbnb/petbnb",
-                "text": "养宠"
-            },
-            {
-                "selectedIconPath": "/static/community-active.png",
-                "iconPath": "/static/community.png",
-                "pagePath": "pages/community/community",
-                "text": "社区"
-            },
-            {
-                "selectedIconPath": "/static/user-active.png",
-                "iconPath": "/static/user.png",
-                "pagePath": "pages/user/user",
-                "text": "我的"
-            }
-        ]
-    },
-    "permission": {
-        "scope.userLocation": {
-            "desc": "测试"
-        }
-    },
-    "usingComponents": {},
-    "sitemapLocation": "sitemap94.json"
+  "pages": [
+    "pages/login/register",
+    "pages/login/setPassword",
+    "pages/login/login",
+    "pages/community/community",
+    "pages/community/publish",
+    "pages/community/publish_video",
+    "pages/community/userDetail",
+    "pages/community/chat",
+    "pages/petbnb/petbnb",
+    "pages/petbnb/pet/addPet",
+    "pages/petbnb/account/account",
+    "pages/petbnb/article/article",
+    "pages/petbnb/service/service",
+    "pages/petbnb/encyclopedia/encyclopedia",
+    "pages/petbnb/encyclopedia/petTypeList",
+    "pages/petbnb/encyclopedia/petDetail",
+    "pages/user/user",
+    "pages/user/myInfo",
+    "pages/user/myPet",
+    "pages/user/myFriend",
+    "pages/user/myAlbum",
+    "pages/user/myCollection"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F2473D",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#a6b5d5",
+    "selectedColor": "#333333",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "/static/pet-active.png",
+        "iconPath": "/static/pet.png",
+        "pagePath": "pages/petbnb/petbnb",
+        "text": "养宠"
+      },
+      {
+        "selectedIconPath": "/static/community-active.png",
+        "iconPath": "/static/community.png",
+        "pagePath": "pages/community/community",
+        "text": "社区"
+      },
+      {
+        "selectedIconPath": "/static/user-active.png",
+        "iconPath": "/static/user.png",
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "测试"
+    }
+  },
+  "usingComponents": {}
 }

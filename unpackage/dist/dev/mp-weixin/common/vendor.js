@@ -754,7 +754,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -7082,7 +7082,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7103,14 +7103,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7186,7 +7186,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -8525,7 +8525,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@alpha","_id":"@dcloudio/uni-stat@2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/login/register": { "navigationBarTitleText": "萌宠", "navigationBarTextStyle": "white" }, "pages/login/setPassword": { "navigationBarTextText": "萌宠", "navigationBarTextStyle": "white" }, "pages/login/login": { "navigationBarTitleText": "萌宠", "navigationBarTextStyle": "white" }, "pages/community/community": { "navigationBarTitleText": "社区", "navigationBarTextStyle": "white", "enablePullDownRefresh": true }, "pages/community/publish": { "navigationBarTitleText": "发布", "navigationBarTextStyle": "white" }, "pages/community/publish_video": { "navigationBarTitleText": "发布", "navigationBarTextStyle": "white" }, "pages/community/userDetail": { "navigationBarTitleText": "", "navigationBarTextStyle": "white" }, "pages/community/chat": { "navigationBarTitleText": "", "navigationBarTextStyle": "white" }, "pages/petbnb/petbnb": { "navigationBarTitleText": "养宠", "navigationBarTextStyle": "white" }, "pages/petbnb/pet/addPet": { "navigationBarTitleText": "养宠", "navigationBarTextStyle": "white" }, "pages/petbnb/encyclopedia/encyclopedia": { "navigationBarTitleText": "宠物种族", "navigationBarTextStyle": "white" }, "pages/petbnb/encyclopedia/petTypeList": { "navigationBarTextStyle": "white" }, "pages/petbnb/encyclopedia/petDetail": { "navigationBarTextStyle": "white" }, "pages/user/user": { "navigationBarTitleText": "我的", "navigationBarTextStyle": "white" }, "pages/user/myInfo": { "navigationBarTitleText": "个人资料", "navigationBarTextStyle": "white" }, "pages/user/myPet": { "navigationBarTitleText": "我的宠物", "navigationBarTextStyle": "white" }, "pages/user/myFriend": { "navigationBarTitleText": "我的关注", "navigationBarTextStyle": "white" }, "pages/user/myAlbum": { "navigationBarTitleText": "我的相册", "navigationBarTextStyle": "white" }, "pages/user/myCollection": { "navigationBarTitleText": "我的相册", "navigationBarTextStyle": "white" } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F2473D", "backgroundColor": "#F8F8F8" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/login/register": { "navigationBarTitleText": "萌宠", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/setPassword": { "navigationBarTextText": "萌宠", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/login": { "navigationBarTitleText": "萌宠", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/community/community": { "navigationBarTitleText": "社区", "navigationBarTextStyle": "white", "enablePullDownRefresh": true, "usingComponents": { "chat-input": "/components/im-chat/chatinput" }, "usingAutoImportComponents": {} }, "pages/community/publish": { "navigationBarTitleText": "发布", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/community/publish_video": { "navigationBarTitleText": "发布", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/community/userDetail": { "navigationBarTitleText": "", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/community/chat": { "navigationBarTitleText": "", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/petbnb": { "navigationBarTitleText": "养宠", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/pet/addPet": { "navigationBarTitleText": "养宠", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/encyclopedia/encyclopedia": { "navigationBarTitleText": "宠物种族", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/encyclopedia/petTypeList": { "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/encyclopedia/petDetail": { "navigationBarTextStyle": "white", "usingComponents": { "rate": "/components/rate" }, "usingAutoImportComponents": {} }, "pages/user/user": { "navigationBarTitleText": "我的", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/myInfo": { "navigationBarTitleText": "个人资料", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/myPet": { "navigationBarTitleText": "我的宠物", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/myFriend": { "navigationBarTitleText": "我的关注", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/myAlbum": { "navigationBarTitleText": "我的相册", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/myCollection": { "navigationBarTitleText": "我的相册", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/account/account": { "navigationBarTitleText": "记账本", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/article/article": { "navigationBarTitleText": "精选文章", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/service/service": { "navigationBarTitleText": "同城服务", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F2473D", "backgroundColor": "#F8F8F8" } };exports.default = _default;
 
 /***/ }),
 /* 8 */

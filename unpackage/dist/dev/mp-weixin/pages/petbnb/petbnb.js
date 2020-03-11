@@ -180,8 +180,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
+  onLoad: function onLoad() {
+    this.getPetList();
+  },
+  onShow: function onShow() {
+    this.getPetList();
+  },
+  data: function data() {
+    return {
+      petList: [],
+      api: this.$API };
+
+  },
   methods: {
     // 进入宠物百科
     enterEncyclopedia: function enterEncyclopedia() {
@@ -189,10 +218,40 @@ var _default =
         url: './encyclopedia/encyclopedia' });
 
     },
-    // 添加宠物信息
+    // 获取用户宠物列表
+    getPetList: function getPetList() {var _this = this;
+      this.$http.get('/petbnb/getPetList').
+      then(function (res) {
+        if (res.code === 1) {
+          _this.petList = res.data.list;
+        }
+      }).
+      catch(function (err) {
+
+      });
+    },
+    // 进入添加宠物信息页面
     addPet: function addPet() {
       uni.navigateTo({
         url: './pet/addPet' });
+
+    },
+    // 进入记账本页面
+    enterAccount: function enterAccount() {
+      uni.navigateTo({
+        url: './account/account' });
+
+    },
+    // 进入文章页面
+    enterArticle: function enterArticle() {
+      uni.navigateTo({
+        url: './article/article' });
+
+    },
+    // 进入同城服务
+    enterService: function enterService() {
+      uni.navigateTo({
+        url: './service/service' });
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
