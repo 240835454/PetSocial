@@ -66,9 +66,9 @@
 						<image :src="api + user.avatar" v-for="(user,index_like) in post.likeList" :key="index_like" class="liked_avatar"
 						 mode=""></image>
 					</view>
-					<view class="footer_content" v-for="(comment,comment_index) in comments" :key="comment_index" @click="reply(index,comment_index)">
+					<view class="footer_content" v-for="(comment,comment_index) in post.comments" :key="comment_index" @click="reply(index,comment_index)">
 						<image :src="api + comment.avatar" class="liked_avatar" mode=""></image>
-						<text class="comment-nickname">{{comment.name}}<text v-text="comment.to_name ? '回复' : ''"></text><text v-text="comment.to_name"></text>:
+						<text class="comment-nickname">{{comment.name}}<text v-text="comment.to_name ? '回复' : ''"></text><text v-text="comment.to_name ? comment.to_name : ''"></text>:
 							<text class="comment-content">{{comment.content}}</text></text>
 					</view>
 				</view>
@@ -162,10 +162,11 @@
 					}
 				}
 			});
+			this.index = 1;
 			this.getList();
 			this.getUserInfo();
 		},
-		onPageScroll(e) {
+		onPageScroll(e) { 
 			if (e.scrollTop >= 144) {
 				this.hide = false;
 			} else {
@@ -266,14 +267,14 @@
 					})
 			},
 			getComments(){
-				this.$http.get('/Community/commentsList').then(res=>{
+				// this.$http.get('/Community/commentsList').then(res=>{
 					
-				}).catch(err=>{
-					uni.showToast({
-						icon: 'none',
-						title: '系统错误，请稍后再试'
-					})
-				})
+				// }).catch(err=>{
+				// 	uni.showToast({
+				// 		icon: 'none',
+				// 		title: '系统错误，请稍后再试'
+				// 	})
+				// })
 			},
 			getUserInfo() {
 				this.$http.get('/User/userInfo')
