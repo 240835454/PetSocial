@@ -56,6 +56,22 @@
 				"navigationBarTextStyle": "white"
 			}
 		},
+		// 用户主页
+		{
+			"path": "pages/community/userDetail",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		// 在线聊天
+		{
+			"path": "pages/community/chat",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarTextStyle": "white"
+			}
+		},
 		// 养宠
 		{
 			"path": "pages/petbnb/petbnb",
@@ -64,12 +80,52 @@
 				"navigationBarTextStyle": "white"
 			}
 		},
+		// 添加宠物信息
+		{
+			"path": "pages/petbnb/pet/addPet",
+			"style": {
+				"navigationBarTitleText": "养宠",
+				"navigationBarTextStyle": "white"
+			} 
+		},
+		// 记账本
+		{
+			"path": "pages/petbnb/account/account",
+			"style": {
+				"navigationBarTitleText": "账本",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		// 新建记账
+		{
+			"path": "pages/petbnb/account/addAccount",
+			"style": {
+				"navigationBarTitleText": "记账",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		// 精选文章
+		{
+			"path": "pages/petbnb/article/article",
+			"style": {
+				"navigationBarTitleText": "精选文章",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		// 同城服务
+		{
+			"path": "pages/petbnb/service/service",
+			"style": {
+				"navigationBarTitleText": "同城服务",
+				"navigationBarTextStyle": "white"
+			}
+		},
 		// 宠物百科
 		{
 			"path": "pages/petbnb/encyclopedia/encyclopedia",
 			"style": {
 				"navigationBarTitleText": "宠物种族",
-				"navigationBarTextStyle": "white"
+				"navigationBarTextStyle": "white" 
 			}
 		},
 		// 品种列表
@@ -104,11 +160,35 @@
 				"navigationBarTextStyle": "white"
 			}
 		},
-		// 修改个人资料
+		// 我的宠物
+		{
+			"path": "pages/user/myPet",
+			"style": {
+				"navigationBarTitleText": "我的宠物",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		// 我的关注
+		{
+			"path": "pages/user/myFriend",
+			"style": {
+				"navigationBarTitleText": "我的关注",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		// 我的相册
 		{
 			"path": "pages/user/myAlbum",
 			"style": {
 				"navigationBarTitleText": "我的相册", 
+				"navigationBarTextStyle": "white"
+			}
+		},
+		// 我的收藏
+		{
+			"path": "pages/user/myCollection",
+			"style": {
+				"navigationBarTitleText": "我的相册",
 				"navigationBarTextStyle": "white"
 			}
 		}

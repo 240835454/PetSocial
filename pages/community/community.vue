@@ -16,10 +16,10 @@
 				<view class="top-name">{{info.name}}</view> 
 			</view>
 		</view>
-
-		<view class="moments__post" v-for="(post,index) in post" :key="index" :id="'post-'+index" v-if="post.length != 0">
+  
+		<view class="moments__post" v-for="(post,index) in post" :key="index" :id="'post-'+index" v-if="post.length !== 0"> 
 			<view class="post-left">
-				<image class="post_header" :src="api + post.avatar"></image>
+				<image class="post_header" :src="api + post.avatar" @click="enterDetail(post.uid)"></image>
 			</view>
 			<view class="post_right">
 				<text class="post-username">{{post.name}}</text>
@@ -54,9 +54,9 @@
 						<image :src="api + user.avatar" v-for="(user,index_like) in post.likeList" :key="index_like" class="liked_avatar"
 						 mode=""></image>
 					</view>
-					<view class="footer_content" v-for="(comment,comment_index) in post.comments.content" :key="comment_index" @click="reply(index,comment_index)">
+					<view class="footer_content" v-for="(comment,comment_index) in post.comments" :key="comment_index" @click="reply(index,comment_index)">
 						<image :src="api + comment.avatar" class="liked_avatar" mode=""></image>
-						<text class="comment-nickname">{{comment.name}}<text v-text="comment.to_name ? '回复' : ''"></text><text v-text="comment.to_name"></text>:
+						<text class="comment-nickname">{{comment.name}}<text v-text="comment.to_name ? '回复' : ''"></text><text v-text="comment.to_name ? comment.to_name : ''"></text>:
 							<text class="comment-content">{{comment.content}}</text></text>
 					</view>
 				</view> -->
@@ -101,12 +101,11 @@
 				comments: [], // 评论列表
 				user_id: 4,
 				username: 'Liuxy',
-
 				index: '',
 				comment_index: '',
 
 				input_placeholder: '评论', //占位内容
-				focus: false, //是否自动聚焦输入框
+				focus: false, //是否自动聚焦输入框 
 				is_reply: false, //回复还是评论 
 				showInput: false, //评论输入框
 
@@ -162,9 +161,9 @@
 					}
 				}
 			});
-			this.index = 1;
+			this.now_page = 1;
 			this.getList();
-			this.getUserInfo();
+			this.getUserInfo(); 
 		},
 		onPageScroll(e) { 
 			if (e.scrollTop >= 144) {
@@ -205,8 +204,8 @@
 									if (this.freshList[i].likeList[j].uid == account) {
 										this.freshList[i].islike = 1;
 									}
-								}
-							}
+								} 
+							} 
 							this.post = this.post.concat(this.freshList);
 							console.log(this.post);
 						})
@@ -216,7 +215,7 @@
 								title: '系统错误，请稍后再试'
 							})
 						})
-				},1000)
+				}, 1000)
 			} else {
 				uni.showToast({
 					icon: 'none',
@@ -254,7 +253,7 @@
 							for (let j = 0; j < this.post[i].likeList.length; j++) {
 								if (this.post[i].likeList[j].uid == account) {
 									this.post[i].islike = 1;
-								}
+								}  
 							}
 						}
 						console.log(this.post);
@@ -333,6 +332,7 @@
 			},
 			like(index) {
 				let account = uni.getStorageSync('account');
+				let date = new Date();
 				if (this.post[index].islike == 0) {
 					this.post[index].islike = 1;
 					this.post[index].likeList.push({
@@ -342,18 +342,26 @@
 					});
 					this.$http.post('/Community/like', {
 						post_id: this.post[index].post_id,
-						likeList: JSON.stringify(this.post[index].likeList)
+						uid: account,
+						avatar: this.info.avatar,
+						name: this.info.name,
+						post_uid: this.post[index].uid,
+						post_avatar: this.post[index].avatar,
+						post_name: this.post[index].name, 
+						post_content: JSON.stringify(this.post[index].content),
+						timestamp: date.getTime()
 					})
 				} else {
 					this.post[index].islike = 0;
+					let like_id = ''; 
 					for (let i = 0; i < this.post[index].likeList.length; i++) {
 						if (this.post[index].likeList[i].uid == account) {
+							like_id = this.post[index].likeList[i].like_id;
 							this.post[index].likeList.splice(i, 1)
 						}
 					}
-					this.$http.post('/Community/like', {
-							post_id: this.post[index].post_id,
-							likeList: JSON.stringify(this.post[index].likeList)
+					this.$http.put('/Community/like', { 
+						like_id
 						})
 						.then(res => {
 
@@ -363,7 +371,7 @@
 								icon: 'none',
 								title: '系统错误，请稍后再试!'
 							})
-						})
+					})
 				}
 			},
 			comment(index) {
@@ -395,7 +403,7 @@
 			reply(index, comment_index) {
 				this.is_reply = true; //回复中
 				this.showInput = true; //调起input框
-				let replyTo = this.post[index].comments.content[comment_index].name;
+				let replyTo = this.post[index].comments[comment_index].name;
 				this.input_placeholder = '回复' + replyTo;
 				this.index = index; //post索引
 				this.comment_index = comment_index; //评论索引
@@ -414,32 +422,38 @@
 				let comment_content = message.content;
 				// }
 				// this.post[this.index].comments.total += 1; 
-				this.comments.push({
-					post_id: this.post[this.index].post_id,
+				this.post[this.index].comments.push({
 					uid: account,
 					name: this.info.name,
 					avatar: this.info.avatar, 
 					content: comment_content, //直接获取input中的值 
-					// to_uid: this.post[this.index].comments.content[this.comment_index] ? this.post[this.index].comments.content[
-					// 	this.comment_index].uid : '',
-					// to_name: this.post[this.index].comments.content[this.comment_index] ? this.post[this.index].comments.content[
-					// 	this.comment_index].name : '',
-					// to_avatar: this.post[this.index].comments.content[this.comment_index] ? this.post[this.index].comments.content[
-					// 	this.comment_index].avatar : ''
+					to_uid: this.post[this.index].comments[this.comment_index] ? this.post[this.index].comments[
+						this.comment_index].uid : '',
+					to_name: this.post[this.index].comments[this.comment_index] ? this.post[this.index].comments[
+						this.comment_index].name : '',
+					to_avatar: this.post[this.index].comments[this.comment_index] ? this.post[this.index].comments[
+						this.comment_index].avatar : ''  
 				});
 				let date = new Date();
-				this.$http.post('/Community/comments', {
+				this.$http.post('/Community/commentsList', {
 					post_id: this.post[this.index].post_id,
 					uid: account,
 					name: this.info.name,
-					avatar: this.info.avatar,
+					avatar: this.info.avatar, 
 					content: comment_content,
-					timestamp: date.getTime()
+					timestamp: date.getTime(),  
+					to_uid: this.post[this.index].comments[this.comment_index] ? this.post[this.index].comments[
+						this.comment_index].uid : '',
+					to_name: this.post[this.index].comments[this.comment_index] ? this.post[this.index].comments[
+						this.comment_index].name : '',
+					to_avatar: this.post[this.index].comments[this.comment_index] ? this.post[this.index].comments[
+						this.comment_index].avatar : ''
+					// comments: JSON.stringify(this.post[this.index].comments)
 				}).then(res => {
 					that.getList();
 				}).catch(err => {
 					uni.showToast({
-						icon: 'none',
+						icon: 'none', 
 						title: '系统错误，请稍后再试!'
 					})
 				})
@@ -477,7 +491,13 @@
 					fail: () => {},
 					complete: () => {}
 				});
-			} 
+			},
+			// 查看用户详情
+			enterDetail(id){
+				uni.navigateTo({ 
+					url: 'userDetail?id='+id 
+				})
+			}
 		},
 	}
 </script>
@@ -486,7 +506,7 @@
 	@import url("../../public/css/community/index.css");
 
 	.top {
-		position: fixed;
+		position: fixed; 
 		width: 100%;
 		height: 0upx;
 		// top: 30upx;

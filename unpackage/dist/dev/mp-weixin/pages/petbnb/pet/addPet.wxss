@@ -1,0 +1,57 @@
+page {
+  background-color: #f9f9f9;
+}
+.box {
+  text-align: center;
+}
+.box .icon {
+  width: 120rpx;
+  height: 120rpx;
+  margin: 50rpx 0 30rpx;
+  border-radius: 50%;
+  z-index: 10;
+}
+.box .item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  padding: 20rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #f6f6f6;
+  position: relative;
+}
+.box .item:last-child {
+  border-bottom: none;
+}
+.box .item .input-box {
+  padding-right: 40rpx;
+  text-align: right;
+}
+.box .item:not(:first-of-type)::after {
+  content: " ";
+  border: solid #e5e5e5;
+  border-width: 3rpx 3rpx 0 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 20rpx;
+  position: absolute;
+  width: 18rpx;
+  height: 18rpx;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
+}
+.box .footer .button {
+  display: inline-block;
+  padding: 15rpx 300rpx;
+  background-color: #F2473D;
+  border-radius: 20rpx;
+  color: #fff;
+}
+

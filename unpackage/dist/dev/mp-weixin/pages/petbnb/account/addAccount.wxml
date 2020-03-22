@@ -1,0 +1,1 @@
+<view><view class="list"><block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="id"><view class="item"><view class="item-icon" style="{{'background-color:'+(item.color)+';'}}"><image class="icon" src="{{item.icon}}" mode></image></view><text class="name">{{item.name}}</text></view></block></view></view>

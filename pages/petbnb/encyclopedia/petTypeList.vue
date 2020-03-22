@@ -10,7 +10,7 @@
 				<view class="title" :id="'NAV'+index">
 					{{item.Title}}
 				</view>
-				<view class='item' v-for='(info,secondIndex) in item.List' :key='secondIndex' @click="enterDetail(info.petBreedId)">
+				<view class='item' v-for='(info,secondIndex) in item.List' :key='secondIndex' @click="enterDetail(info.petBreedId,index,secondIndex)">
 					<image :src="info.icon" mode="" lazy-load="true" class='icon'></image>
 					<text>{{info.name}}</text>
 				</view>
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-	import {
+	import { 
 		formatList
 	} from '../../../util/js/formatList.js';
 	const TITLE_HEIGHT = 23;
@@ -163,10 +163,19 @@
 				this.toNum = e.target.dataset.index;
 			},
 			// 进入详情
-			enterDetail(id) {
-				uni.navigateTo({
-					url: './petDetail?id=' + id
-				})
+			enterDetail(id,index,secondIndex) {
+				let page = getCurrentPages();
+				let prePage = page[page.length-3];
+				prePage.$vm.breed = this.list[index].List[secondIndex].name;
+				if(page[page.length-3].route === 'pages/petbnb/pet/addPet'){
+					uni.navigateBack({
+						delta: 2
+					})
+				}else{
+					uni.navigateTo({
+						url: './petDetail?id=' + id
+					})
+				}
 			}
 		}
 	}

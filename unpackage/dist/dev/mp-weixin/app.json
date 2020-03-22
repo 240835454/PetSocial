@@ -6,13 +6,23 @@
     "pages/community/community",
     "pages/community/publish",
     "pages/community/publish_video",
+    "pages/community/userDetail",
+    "pages/community/chat",
     "pages/petbnb/petbnb",
+    "pages/petbnb/pet/addPet",
+    "pages/petbnb/account/account",
+    "pages/petbnb/account/addAccount",
+    "pages/petbnb/article/article",
+    "pages/petbnb/service/service",
     "pages/petbnb/encyclopedia/encyclopedia",
     "pages/petbnb/encyclopedia/petTypeList",
     "pages/petbnb/encyclopedia/petDetail",
     "pages/user/user",
     "pages/user/myInfo",
-    "pages/user/myAlbum"
+    "pages/user/myPet",
+    "pages/user/myFriend",
+    "pages/user/myAlbum",
+    "pages/user/myCollection"
   ],
   "subPackages": [],
   "window": {
@@ -52,5 +62,5 @@
     }
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap68.json"
+  "sitemapLocation": "sitemap57.json"
 }

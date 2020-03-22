@@ -1,0 +1,47 @@
+.list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  padding: 40rpx 20rpx;
+  box-sizing: border-box;
+}
+.list .item {
+  width: 16.6%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  margin-bottom: 30rpx;
+  font-size: 20rpx;
+}
+.list .item .item-icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.list .item .item-icon .icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+.list .item .name {
+  display: block;
+  margin-top: 5rpx;
+}
+

@@ -1,0 +1,114 @@
+.charts {
+  width: 750rpx;
+  height: 500rpx;
+  margin-top: 140rpx;
+  background-color: #FFFFFF;
+}
+page {
+  background: #F2F2F2;
+  width: 750rpx;
+  overflow-x: hidden;
+}
+.qiun-padding {
+  padding: 2%;
+  width: 96%;
+}
+.qiun-wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+.qiun-rows {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+  -webkit-flex-direction: row !important;
+          flex-direction: row !important;
+}
+.qiun-columns {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+  -webkit-flex-direction: column !important;
+          flex-direction: column !important;
+}
+.qiun-common-mt {
+  margin-top: 10rpx;
+}
+.qiun-bg-white {
+  background: #FFFFFF;
+}
+.qiun-title-bar {
+  width: 96%;
+  padding: 10rpx 2%;
+  -webkit-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+}
+.qiun-title-dot-light {
+  border-left: 10rpx solid #0ea391;
+  padding-left: 10rpx;
+  font-size: 32rpx;
+  color: #000000;
+}
+.qiun-charts {
+  width: 750rpx;
+  height: 500rpx;
+  background-color: #FFFFFF;
+}
+.charts {
+  width: 750rpx;
+  height: 500rpx;
+  background-color: #FFFFFF;
+}
+.top {
+  height: 70rpx;
+  line-height: 70rpx;
+  padding-right: 40rpx;
+  background-color: #F2473D;
+  color: #fff;
+  text-align: right;
+}
+.nav {
+  position: fixed;
+  top: 70rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-around;
+          justify-content: space-around;
+  width: 100%;
+  padding: 20rpx;
+  background-color: #fff;
+  margin: 0;
+  box-sizing: border-box;
+  box-shadow: 0 5rpx 30rpx 10rpx rgba(188, 188, 188, 0.3);
+  z-index: 10;
+}
+.nav .item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.nav .item .icon {
+  width: 35rpx;
+  height: 35rpx;
+  padding-right: 30rpx;
+}
+.nav .item:last-child::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 2rpx;
+  height: 30rpx;
+  background-color: #ccc;
+}
+

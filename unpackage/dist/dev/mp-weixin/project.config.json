@@ -38,15 +38,15 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/petbnb/petbnb",
-					"pathName": "pages/petbnb/petbnb",
+					"name": "pages/petbnb/account/addAccount",
+					"pathName": "pages/petbnb/account/addAccount",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/community/community",
-					"pathName": "pages/community/community",
+					"name": "pages/petbnb/account/account",
+					"pathName": "pages/petbnb/account/account",
 					"scene": null
 				}
 			]
