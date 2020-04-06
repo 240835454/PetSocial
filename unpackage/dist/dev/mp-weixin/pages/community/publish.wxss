@@ -1,26 +1,26 @@
 
-.footer.data-v-2478144a {
+.footer.data-v-33f68f50 {
 	margin-top: 80rpx;
 }
-.cell-pd.data-v-2478144a {
+.cell-pd.data-v-33f68f50 {
 	padding: 20rpx 30rpx;
 }
-.uni-textarea.data-v-2478144a {
+.uni-textarea.data-v-33f68f50 {
 	width: auto;
 	padding: 20rpx 25rpx;
 	line-height: 1.6;
 	height: 150rpx;
 }
-.uni-list.data-v-2478144a::before {
+.uni-list.data-v-33f68f50::before {
 	height: 0;
 }
-.uni-list.data-v-2478144a:after {
+.uni-list.data-v-33f68f50:after {
 	height: 0;
 }
-.list-pd.data-v-2478144a {
+.list-pd.data-v-33f68f50 {
 	margin-top: 0;
 }
-.close-view.data-v-2478144a{
+.close-view.data-v-33f68f50{
     text-align: center;
 	line-height:30rpx;
 	height: 35rpx;
@@ -33,7 +33,7 @@
 	font-size: 35rpx;
 	border-radius: 8rpx;
 }
-.page.data-v-2478144a {
+.page.data-v-33f68f50 {
 	width: 750rpx;
 	height: 100%;
 }

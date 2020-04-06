@@ -21,6 +21,19 @@
           align-items: center;
   margin-bottom: 30rpx;
   font-size: 20rpx;
+  position: relative;
+}
+.list .item::after {
+  position: absolute;
+  content: '\2714';
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 36rpx;
+  background-color: rgba(111, 134, 186, 0.5);
+  border-radius: 50%;
 }
 .list .item .item-icon {
   display: -webkit-box;

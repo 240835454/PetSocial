@@ -1,7 +1,7 @@
 <template>
 	<view class="">
 		<view class="list">
-			<view class="item" v-for="(item,index) in list" :key="item.id">
+			<view class="item" v-for="(item,index) in list" :key="item.id" @click="pickItem(item)">
 				<view class="item-icon" :style="{'background-color': item.color}">
 					<image :src="item.icon" mode="" class="icon"></image>
 				</view>
@@ -95,7 +95,9 @@
 			}
 		},
 		methods: {
-
+			pickItem(item){
+				console.log(item);
+			}
 		}
 	}
 </script>
@@ -115,6 +117,19 @@
 			align-items: center;
 			margin-bottom: 30upx;
 			font-size: 20upx;
+			position: relative;
+			&::after{
+				position: absolute;
+				content: '\2714';
+				width: 80upx;
+				height: 80upx;
+				line-height: 80upx;
+				text-align: center;
+				color: #fff;
+				font-size: 36rpx;
+				background-color: rgba(111,134,186,0.5);
+				border-radius: 50%;
+			}
 			.item-icon {
 				display: flex;
 				align-items: center;
