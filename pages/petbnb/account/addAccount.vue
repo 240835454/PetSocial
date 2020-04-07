@@ -114,7 +114,7 @@
 			flex-direction: column;
 			align-items: center;
 			margin-bottom: 30upx;
-			font-size: 20upx;
+			font-size: 20upx; 
 			.item-icon {
 				display: flex;
 				align-items: center;

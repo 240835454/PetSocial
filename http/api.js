@@ -1,6 +1,7 @@
 import axios from './interceptor.js'
 
-let ApiUrl = 'http://192.168.30.1:3000/API';
+// let ApiUrl = 'http://192.168.0.108:3000/API';
+let ApiUrl = 'http://192.168.0.113:3000/API';
 // let ApiUrl = 'http://172.20.10.13:3000/API';
 
 export default {
@@ -62,7 +63,8 @@ export default {
 	},
 	// 上传文件
 	uploadFile(file) {
-		let url = 'http://192.168.30.1:3000/image';
+		let url = 'http://192.168.0.108:3000/image';
+		// let url = 'http://192.168.30.1:3000/image';
 		// let url = 'http://172.20.10.13:3000/image';
 		return new Promise((resolve, reject) => {
 			uni.uploadFile({
