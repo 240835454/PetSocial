@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "w-picker": "/components/w-picker/w-picker"
+  }
+}

@@ -1,3 +1,6 @@
+.index {
+  padding-bottom: 100rpx;
+}
 .charts {
   width: 750rpx;
   height: 500rpx;
@@ -5,7 +8,7 @@
   background-color: #FFFFFF;
 }
 page {
-  background: #F2F2F2;
+  background: #fff;
   width: 750rpx;
   overflow-x: hidden;
 }
@@ -75,8 +78,7 @@ page {
   text-align: right;
 }
 .nav {
-  position: fixed;
-  top: 70rpx;
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -87,7 +89,7 @@ page {
   background-color: #fff;
   margin: 0;
   box-sizing: border-box;
-  box-shadow: 0 5rpx 30rpx 10rpx rgba(188, 188, 188, 0.3);
+  box-shadow: 1rpx 1rpx 10rpx 1rpx rgba(188, 188, 188, 0.3);
   z-index: 10;
 }
 .nav .item {
@@ -103,6 +105,9 @@ page {
   height: 35rpx;
   padding-right: 30rpx;
 }
+.nav .item .active {
+  color: #F2473D;
+}
 .nav .item:last-child::before {
   content: '';
   position: absolute;
@@ -110,5 +115,83 @@ page {
   width: 2rpx;
   height: 30rpx;
   background-color: #ccc;
+}
+.box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-around;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  margin-top: 50rpx;
+  height: 300rpx;
+}
+.box .box-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.box .box-item .date-icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+.box .box-item .input {
+  margin-left: 10rpx;
+  padding: 10rpx;
+  border: 2rpx solid #ccc;
+  border-radius: 10rpx;
+}
+.costList .item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  font-size: 24rpx;
+  position: relative;
+  padding: 10rpx 20rpx;
+  border-top: 1rpx solid #ccc;
+}
+.costList .item:last-child {
+  border-bottom: 1rpx solid #ccc;
+}
+.costList .item .item-icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.costList .item .item-icon .icon {
+  width: 36rpx;
+  height: 36rpx;
+}
+.costList .item .name {
+  display: block;
+  padding-left: 20rpx;
+}
+.costList .item .price {
+  position: absolute;
+  right: 20rpx;
+}
+.costList .item .price::before {
+  content: '￥';
 }
 

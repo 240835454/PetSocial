@@ -61,7 +61,6 @@
 					success: res => {
 						let dataList = res.data;
 						let arr = formatList(dataList, 'firstWord')
-						console.log(arr); 
 						this.list = arr;
 					},
 					fail: err => {

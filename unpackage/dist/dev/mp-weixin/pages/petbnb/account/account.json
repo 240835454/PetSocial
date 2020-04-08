@@ -1,5 +1,8 @@
 {
   "navigationBarTitleText": "账本",
   "navigationBarTextStyle": "white",
-  "usingComponents": {}
+  "usingComponents": {
+    "charts": "/pages/petbnb/account/components/charts",
+    "detail": "/pages/petbnb/account/components/detail"
+  }
 }

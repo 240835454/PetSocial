@@ -131,7 +131,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var Charts = function Charts() {Promise.all(/*! require.ensure | pages/petbnb/account/components/charts */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/petbnb/account/components/charts")]).then((function () {return resolve(__webpack_require__(/*! ./components/charts.vue */ 140));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var Detail = function Detail() {__webpack_require__.e(/*! require.ensure | pages/petbnb/account/components/detail */ "pages/petbnb/account/components/detail").then((function () {return resolve(__webpack_require__(/*! ./components/detail.vue */ 298));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -151,89 +151,33 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+{
+  components: {
+    Charts: Charts,
+    Detail: Detail },
 
+  data: function data() {
+    return {
+      tabList: ["明细", "图表"],
+      activeIndex: 0 };
 
-
-
-var _uCharts = _interopRequireDefault(__webpack_require__(/*! ../../../js_sdk/u-charts/u-charts/u-charts.js */ 140));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _self;var canvaColumn = null;var _default = { data: function data() {return { cWidth: '', cHeight: '', pixelRatio: 1, serverData: '' };}, onLoad: function onLoad() {_self = this;this.cWidth = uni.upx2px(750);this.cHeight = uni.upx2px(500);this.getServerData();}, methods: { getServerData: function getServerData() {uni.request({ url: 'https://www.ucharts.cn/data.json', data: {}, success: function success(res) {
-          console.log(res.data.data);
-          var Ring = {
-            series: [] };
-
-          //这里我后台返回的是数组，所以用等于，如果您后台返回的是单条数据，需要push进去
-          Ring.series = res.data.data.Ring.series;
-          _self.showRing("canvasRing", Ring);
-        },
-        fail: function fail() {
-          _self.tips = "网络错误，小程序端请检查合法域名";
-        } });
-
-    },
-    showRing: function showRing(canvasId, chartData) {
-      canvaRing = new _uCharts.default({
-        $this: _self,
-        canvasId: canvasId,
-        type: 'ring',
-        fontSize: 11,
-        legend: true,
-        title: {
-          name: '70%',
-          color: '#7cb5ec',
-          fontSize: 20 * _self.pixelRatio,
-          offsetY: -10 * _self.pixelRatio },
-
-        subtitle: {
-          name: '收益率',
-          color: '#666666',
-          fontSize: 15 * _self.pixelRatio,
-          offsetY: 10 * _self.pixelRatio },
-
-        extra: {
-          pie: {
-            offsetAngle: -45,
-            ringWidth: 20 * _self.pixelRatio,
-            labelWidth: 15 } },
-
-
-        background: '#FFFFFF',
-        pixelRatio: _self.pixelRatio,
-        series: chartData.series,
-        animation: true,
-        width: _self.cWidth * _self.pixelRatio,
-        height: _self.cHeight * _self.pixelRatio,
-        disablePieStroke: true,
-        dataLabel: true });
-
-    },
-    touchRing: function touchRing(e) {
-      canvaRing.showToolTip(e, {
-        format: function format(item) {
-          return item.name + ':' + item.data;
-        } });
-
+  },
+  onShow: function onShow() {
+    if (this.activeIndex === 0) {
+      this.activeIndex = 1;
+      this.$nextTick(function () {
+        this.activeIndex = 0;
+      });
+    } else {
+      this.activeIndex = 0;
+      this.$nextTick(function () {
+        this.activeIndex = 1;
+      });
+    }
+  },
+  methods: {
+    changeTab: function changeTab(e) {
+      this.activeIndex = e;
     },
     add: function add() {
       uni.navigateTo({

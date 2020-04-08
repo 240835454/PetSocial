@@ -40,6 +40,27 @@
 					"id": -1,
 					"name": "pages/petbnb/account/addAccount",
 					"pathName": "pages/petbnb/account/addAccount",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/petbnb/petbnb",
+					"pathName": "pages/petbnb/petbnb",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/petbnb/account/account",
+					"pathName": "pages/petbnb/account/account",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/petbnb/article/article",
+					"pathName": "pages/petbnb/article/article",
 					"scene": null
 				}
 			]

@@ -31,14 +31,14 @@
 					<image src="../../static/18.png" mode="aspectFill"></image>
 					<view class="text-box">
 						<text>宠物百科</text>
-						<text class='en-text'>Pet encyclopedia</text>
+						<text class='en-text'>Pet Encyclopedia</text>
 					</view>
 				</view>
 				<view class="item" @click='enterAccount'>
 					<image src="../../static/19.png" mode="aspectFill"></image>
 					<view class="text-box">
 						<text>记账本</text>
-						<text class='en-text'>Account book</text>
+						<text class='en-text'>Account Book</text>
 					</view>
 				</view>
 			</view>
@@ -54,7 +54,7 @@
 					<image src="../../static/22.png" mode="aspectFill"></image>
 					<view class="text-box">
 						<text>同城服务</text>
-						<text class='en-text'>Urban service</text>
+						<text class='en-text'>Urban Service</text>
 					</view>
 				</view>
 			</view>

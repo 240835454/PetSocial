@@ -1,0 +1,57 @@
+.timelineItem .timeItem.data-v-0db0bace {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.timelineItem .timeItem .leftTime.data-v-0db0bace {
+  width: 135rpx;
+  padding: 0 10rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  margin-right: 10rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.timelineItem .timeItem .line.data-v-0db0bace {
+  width: 1px;
+  background: #cccccc;
+  position: relative;
+}
+.timelineItem .timeItem .line .out.data-v-0db0bace {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  width: 28rpx;
+  height: 28rpx;
+  background: rgba(236, 104, 23, 0.6);
+  border-radius: 50%;
+}
+.timelineItem .timeItem .line .out .inner.data-v-0db0bace {
+  width: 18rpx;
+  height: 18rpx;
+  background: #ec6817;
+  border-radius: 50%;
+}
+.timelineItem .timeItem .rightContent.data-v-0db0bace {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  padding: 0 10rpx 40rpx;
+  margin-left: 20rpx;
+  min-height: 50rpx;
+}
+
