@@ -757,7 +757,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -7086,7 +7086,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7107,14 +7107,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7190,7 +7190,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -12488,8 +12488,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 145 */,
 /* 146 */,
 /* 147 */,
-/* 148 */,
-/* 149 */
+/* 148 */
 /*!*********************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/static/account_1.png ***!
   \*********************************************************************/
@@ -12499,7 +12498,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACd0lEQVRoQ+2Yu4oUQRSGv/8BFBTEywMYaGomeInERDExNBJWMPEFZN3USAMRI8HQBW8v4G5iICYGbmBkoqCCCGv+S7U9Q01Pz3T1dZ2lK+qeqTr1X86pOjNixYdWHD8jgb12cHRgdKClAmMKtRSw9fLRgdYStgywvx2wfQa4A1wGDrcUq+nyXeAjcFfSVjHIQgdsXwI2gQNNd+5h3WlJO3HcZQSuAS+AB8BDSV96AFQZ0vZxYA1YB95JOptEIEyyfarIuHLHHiYEHMAn4I+kmYxY5sBz4BxwtAdMy0J+Az5IuhpPsu3wLmkGcymByeSBgc9tF4NNJmD7NXAF2AC2yiq/T2J5ulzPc35TUngO6ZzmgO2vwAkgq3jbT4CTOehtSff6JJCDvQC8Bb5LOlaXwJSp7VAHRyLAgxAoA1zHgZhAUCEUzsUU1fNNNiYu2Q5urRcLr0asadEORSADnNdPwJk9N0m7IuCmBLJ8rwJg+03hxg45HEZ89e9KCodD0uiEQNJO/06IR0C4bJaNHUm3a8ScOXUaOZC6WXGe7Vq1U7bP0A5kgKtG6mHQ2SlUBWjyfX7axNPP5y/b8YdVtRTPHdSBrlJoIkQgGhOwHe6iH8BvSYdmRCnZvPTKTnUjt79RDcS1UyDwGLgFvJIU2vzpmGvmFlX7XhEAbgDPgF/ATUkvhyCQ3QMpjWCeNpOaCcs+S1qLOuKDwH3gqaT3RSHLHJhp5uoo32RugcDP0H3anmvmFsUuI/BfttPJBOIzuImiXa5JaQJX5idlLQe6VLHvWPv7n7m+1esi/uhAFyq2iTE60Ea9LtaODnShYpsYowNt1Oti7co78BeQv2BAbPF+ngAAAABJRU5ErkJggg=="
 
 /***/ }),
-/* 150 */
+/* 149 */
 /*!*********************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/static/account_2.png ***!
   \*********************************************************************/
@@ -12509,7 +12508,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABX
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAGnUlEQVRoQ+2Zd6xlZRXFfwv+IBIFBEVISBAkRER6JxLANkiTXjWQQZwRhIwiQyiRGUQpAZ2AMxRRQgtl6HUgdDAoaEBEIBTFiKBgkGYhBJdZL/u+nNyZN++c++6DkPD9c3POPWd/e31777XLEe/zpfe5/nwA4L22YGcL2P4EcBtwjqR5wwBg+5vA4cBekh7vInMQADcCjwG7A1tKernLhv3P2l4C+AdwBrCjpI27yOsEwPYhwMclzbZ9MvA/Scd02XARAEbl2L4CeEDST9rK7ArgKuBKSZdmA9tvA5tIeqTths3nbK8BPC1pRA/b2wB7SPp2W3ldAZwPPNTzfdv7AVMkHdB2wz4AOfH5kuY3ABwpaYe28roC+DwwXdJevQ1sJ+hmSkpstF62pwAnSdqwIeti4H5JZ7cV1AlAndKvgKMl3VXX6wNzJMX8rZft3wAHS3q45OTUj5O0RWsh0D2R2d4X2FfSzo2Tuxy4U9I5bTYvMtis6Xq2/wCc2IuvNnLyTGcL1GldD1wl6YK6/ggQBdaX9MriNrf9IeCvwKqS3qj3kwdCoaOHMtkA4i43ACtJ+lcpcSywtKT8jrlsnw68KukHDfB/Kfa5va3ivecGskBt/HPguZ4ide+/Rau/X5QittcG7pW0QsP9ZgOrSDqoq/IDu1Ap+0kgDLSRpCfq3t7ALpISJwst29cAVzTyyGeABPM6kp59VwGUwrOAjSXt2DjRB4FZkm5uKmQ7/n2MpM0bz54HvCzp6EGUn5AFGkr8qXLDrQUqtcxcSZv1AQhdhjZz4sm6yQMpCGPJgdfAMdAAcGABaJ7shcCDkn5ays4oS32t8V4sdONEK9oJAygFk9RuknRaXX8UeApIrZM9YqXVJL1a/38DmCZpk4GPvl4cFoDQagq8tXt5wPb3geUKwGuSEi9xnZWBBUBqnvQVE1pDAVCKJaklIL/XcJPU+Sk2+2lzPUm7TEjzYVqgACQY4yqbSnqo7qU4u0XSJXW9KRDfTxkxEG32gx6aBUrBHwKflfRV218GjpW0dcMivwD+KemIYZx+ZAwVQIH4D5D+IP3yVOCPQE77K8AlklILDW1NBoC0nemo1qoCL8qm300Pfd1EaXNSXagvFtLX3p2+OZk5JUdR6XNDO/5huFCNWeLv66Y6BUKTcZnQavLCx4Algc8BaUlfAP4G/C7jGUl/nwiggV3I9rJAKtK4Rvj8HiDKvNisg2wnC68laZrt7QtgZksJ7gDPoOAgSa8NAmQgALZXB+4DUr/PlpRAXWjZXhF4RtIyY/wfOccDXwS2GkvO4oB1BmB7HeBR4LDUOnUdK2wArAmEZQ6QdI/ty4B3JO1fI5OfAWGp5IsUdymtH7edoD8zbihpkb3EWCA6ASi3yQwoU4j5pXwCNa50U8XAVElTbGeCke4r63BJ99lOxZo4eLFoNU3M1gViT+DUaktbu1NXAGcBS0maajusktJ4W0kBkTonPW4amjtsx0pxj6y42bq2vwBcKyk9dG+QlUJwRIbtJLq3JH2rbTy0BmD7U/HnlMXAnzPgyilKerKU+TGwhKQZtg8DvtRr0m1nCHCrpLm25wCvSDqh3vt0kUDmQ6vWoazRttToAiCnubKk6baTYdMGfqeUWKVYKFSZqcTzwHaSflv/x1qpQEOzCez7gc17g2HbSXSPSjrPdoZaYbL0yuOuLgDSnIRR5th+AJgh6del4C+BCySda3tu7kk6tLl7836N03dPrNT76d7OSBdXtBsLtJqPdgFwJXB5Be/rPWqsXjet4k4VFwnU1SW93gcgVJo8kZH8w7YzljlFUqyReBiRaTvBvLekPcY9/i6ZuPx4nqQFtp+QlFonG78DbFMsk6lDxuNhk4WW7ZnAFpJ2tb1VSg1JydKRMyLT9nbAIW2HXF0scFwF3zzbBsIU8ekMs2ba3gc4QVJywZjLdlrN4zNasR2g/66iLzlBNXZcXtKJw7ZAOqiMDmdVrZ8SIQEZCnzDdoa+cYlYYXEAdgWOynjFdug0NPpSDYhvs53C7xFJ1w4bQDZL9gyIN/v8+7vFOqltxl22UzstkBTqHV22Pxzlk9V7c9PxhLV2ofLTq6uCHJ3fV+DmfoazrcqAyuDJ3KHa0Y96tqenwJO023iK9/7vCiCjwHxVCSNllB5+D5vk6+LIV5a2q9gmsnYCki+mZcDb9UtlJwBlhYDIh720iCklLpZ0UVvF+1zm60CGXcnutwA/mvTPrIMoOpnvdLbAZCoziOwPAAxyasN85//4YgheRTSwBgAAAABJRU5ErkJggg=="
 
 /***/ }),
-/* 151 */
+/* 150 */
 /*!*********************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/static/account_3.png ***!
   \*********************************************************************/
@@ -12519,7 +12518,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABX
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAFAElEQVRoQ+2ZWehWZRDGf89NQQRF0GZYQdFehC1WFCmkEWVGkrQaUbZJVKYQUZR00UWZthmFRGFhJGioCHWTLWRoUkRGZQu0295NRQRPTL5Hzv/8z3eW73yfIjh355x35p1nZt6ZeeeInZy0k+vPLgA72oND84DtCQVwJwLvxztJa6uA53i38WTri7xDAWD7YeD2CiU3Sjq57Lvtt4HTK3jnSbpvG6BhhIDtd4GTKmRvknRcnwDWSpo4bADfAmOAeUCEy57A4VkIAZslxZpS6hFCEZL3hrztAcBJsxHu7uJt2wuBW7cXgB+BfcMD+XjtCOBZ4GpgmaTpww6hD4FjBwxgJTAFWCRp1rABvAZEzA7SA+8A44syh5VGXwIuAVZJurBL6GS8tn8B9gFmSVo0bA88AdwMfCfpoK4AbIfiASBouqRlwwYQhSZSXtAYSd93AWE7QidCKGhivhpXhpDtKEZnAN8AH0j6vIkitqOSRkUNmiJpdRO+XmtsXwE8D/wlaY/8ulIAts8D7ikp6SNSWJVSuZjtfJBtZx5dLmlaJQDb1wNPVSknqfbw284O8jpJ4cW+yfbmVMlnS1pQB6Cujwn+uZIeqvHATZGzu56DFA1rkpzxktb3BGD7UmBpQ1NdAHwqKawzimzvFecGOBi4QdLTDeWOWGY7oiGi4g1JZxdljAgF21n6a7PXT8AG4GVghaSfM2bbDwB3AhuByZJ+bSM4JZGIiJ5eLwJYAVzUZpPC2k0pT38U720fn7wQj/MlzWkjO2f9YDtK0id1HogNHmy4SYTbvyEYOAa4PPFtkHRqzgv3A3cDf4Y3JD3WRL7tMGQYNOguSeHNUVT0wGTglQYbRF04TNI/OUWjdYjMEzRN0vLkhd2B11Mf06gy294b+C3JirC8uJdOo9Kh7TeBM2tAXCvpmeIa21kT94ik23Lg4sCvKvNQiYz9gC3pfVx6zpH0cWMAyWpZDi/jmyFpSdmHHICVkqbm19iOMIpwCtoi6YAS5eOeHAkho8skvVhlzJ4FyfZVQLgu2uKwRPQiT0qKjFJKtr8EDgUWS5pZouAtwKPpfaTYyEz/W9t2MXxnSlpcEwmDG2zlyn3seY2kuEGNItszgOfShyWSZtjeH3gVOCG9nyopLjC1VNsS1ErYar2s2Yrl6yVF99iTbMeN6vG0INruccB16XlEt1m3f2cAtk8D1mUbNemTUsiEF8IbXwNjE/8dkmKm1Jg6AbCdzy5xkT9E0t9Ndi/0OMESVXqspKgXjalvALYPBKLMx/wnLvGTJP3QeOetoRf1JLuxvSDpyjb8sbYLgKxHjywyoSpX91LKdqTjTOlxkt7bLgBs7wZEygzrL5A0u+3G6RxEio7iFwPfvozZF5PtOHRfJaXPkvTWzgZgW8Xs13I72gP5NrlV3s57Klc/GjV5ZV7uN4TitvV7EjhH0vw+QygmDVEE10g6vx8ZfQFI7s8avrhWHtl28zSsiutoDK1ulFQ5SOglvwuAfP/fenSS653+AI7ud/jVN4Dkhaz/j8dzJUVDVkuFxm+hpKrfUZXyOgFIILKfGfEYk4elvX7ipUMbTVv2A3DE35Za5CULOgMonIdsi7K/kNEqR7xn1DrsBpaFygTZnptG6qfUWDKGVDGiLL0vtPXCQDxQyO2TgMhKR6RxYKTbL4DPgPg7mb8yttV31PqBA+isUUsBuwC0NNjAl/8HHp36QOg15OAAAAAASUVORK5CYII="
 
 /***/ }),
-/* 152 */
+/* 151 */
 /*!*********************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/static/account_4.png ***!
   \*********************************************************************/
@@ -12529,7 +12528,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABX
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAADwUlEQVRoQ+2Za6ilYxTHf//iA6lx/4Iw0jQuSW6j5gPFBxoRjSYl1+aLKZdJbolT5JJbiS8KySVGTSlKjRCTmBqho4MwkVF80dQUzdRfa/fubc+2z97vs95nnEbnqdM+9a71X+v3XNfzvmIfb9rH82cRYKFHsNoI2L4WuAQ4tCXUW8CHkra2tB9r1hnA9log/s5IJPIX8KSkuxK+PZdOALbvB+7LBh/y2yDpyoxOGsD2OuDpTNB5fJ6XdEOpXgrA9iHAF8Ax8wT8BXgX+Hnk+UnA6glJrpL0dglEFuAK4M0Jge6Q9Oi457Z3AgfO4/uypKv/C4DHgPUTAs1IivXxr2bbE/x2S9q/CMD2Yc32twqI/9u286YYfgP8OmJzMnDEFL8PWiSwDdgAbNZeWIwt4lczmQmA94FpvVktYmWh2QCYNCcrx6svtzcBZoFPgeigFUDM/+qtNsAM8DnwiaTfhrO1fTRwLnAxEHVTlVYL4B3gdklft8mqKfyiBDmujf0kmxoA10l6caS3zwHOBuJ3F/AxsFVSjM6g2b4beLALRFeApyTd2k/AdlSkDwMXzJNUrIlHJG0c8gn/J7IQXQDmJC0fSuQh4M6Wibwk6Zoh3/RW3gXgUklxKcH248BtLZPvm10v6YXG//SYYoX+PfMswKDWsb0S+CgTHFgm6dsGInW3yAKsltSrRm3HKMRVMtM2Srq80VkDvFYqkgVYLmnO9n7A78DBpYEb+x3A4ZJ22T4F+KpUJwOwU9JBTa+dBXxWGnTEfqWkzY3epLvC2DAZgC2SYo+P6XNLXMo7AqyX1NtGbW8BzizRywD8IOmEJuBlwGBPLwk8ZLtG0uuNXtT5x5boZABCf4mkHbbjTvxTScAxtsdL2mZ7CfBHqVYWYIWkOFVj2L8ETi0N3NjPSorFGzqp7TgLMKh/bN8DPJAEuEnSsw3AjcBzpTpZgD3eHtiOKnRQVrRMYpOkC/u2tuNULi6zswAR915JvZ63vRT4vmXifbMjJcUZEv5XAa8U+vfMuwCE/1JJPzZJxNuGN1rcr+eAi2LhDvntcfkpAekKsF3SUcMBbUc5HdvrspFE4or5nqSbR+wz028g0RUghLYD5/eLsqE5fQBwIrAbiLPjz5HEA/JVIOzSrQZAP/g6Sc9My8R21E1xehcv2HHaNQFCfxMQ5fF3TWHWL85ir4+3EvEb18zTpoG2fV4boG3canaLANW6Min0v3g3WvtTUbIvU269t9PZ7wOpiJWc/vk+UElwwWRS38gWLNsxgRcBFno0/gb0vJWIjH/A7QAAAABJRU5ErkJggg=="
 
 /***/ }),
-/* 153 */
+/* 152 */
 /*!*********************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/static/account_5.png ***!
   \*********************************************************************/
@@ -12539,7 +12538,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABX
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAFBklEQVRoQ+1YWahWVRhd66GICJHoocIsKOrBBqmwsgElIm0uSgpSmyQqbBb1qYICs1KwESsqK5Ck0QabSCoaSIMGi6geGoysqB4qG4gV6/Kdy/5PZ/jvOed6k+4Hl8t/9vCttfc3bmIrF27l+DFKYKRvcPQG/vc3IGk6gH0BvE/y+aEeyIiZkKQzAFwB4LAE9GcA5pJc0y+RLU5AkgEbuAkUyecAppD8uh8SW4yApHEArgzwGba/ANwCwKZzcULqZpLz/jMEJPnEDd4kMllp8CTXZR8kvQdgfwB/2rRIvltHYlhvoMTO3wzgj+bBSToewNPxfQXJ2SNCoMTOvwngS6pASbIDHxtzptc5dKc3UGLnxnJrgP+i7kQlTQHwSsxbQ9JhtlQ6I1Bi508F8FfrgKfjkh4AMCu+zSa5omx9awIldm5nXFKluMaMDgVgX7FsAHAUyR+L1jQmUGLnPxt4nPpvQzn1AodeDmBOfD+X5P2dEKiw83vj1D9qAzwJqakvzCL5YGsCko4EcDeAfZLNXgrgz3UB3HtIchK7EMCeseckku+0IiDpWgDXJJu4bnEiuqtD4I44C2zzyZ6rSM5o5cQF4G8HcB3J77sAL2k8gPlRTmRbbgawmKQPrnkYlXQygCeSHSrD2lAJSZoLYFlu3SMAbmxdSkjaFoBj+CGhYAbJVQURw/MOAvAtgO9I/lpHJPqAZ3PzPgSwiOTDdeuz8cowmjOdhSQXFYB30rGNbpeMOWI8RPKFIiCSPgWwVzL2N4AbSKY+1heHOgI+kQkAXBVOJvlHEubcRX1Qo+Uqkj21T4E/uSqdT/LLvhDnJpUSiAxrW7TYYQedSdIJAFYne9mZbVr+PxnAMclYTwyX5LLaPYDF5rKwCfBaE5LkSOMmwzKO5Mbk9F3jnFhEzt9yp7yBpG9rQCQdDuD1+LmS5FnDReCN6Fc3khxsRCQdDcDJy1IKIEdiAsmBDC1pm2hY/PMtkmlPPGQuVSak2G0tyanJCc4EkFWHU0muLdIqaRcA7gEseRNcD+BARy2SntdYqgjYZHYFkCdwNYCbQmMVAZcBztaWi9KMLekTAHsD2Exy+8bogfK3UUnuVR3b8wROBfBYKHX0WFxyA+cAuC/GTiP5eHKLzrIOuz3+0YRI1Q04lp8d9jqWpJUOiCSfrE/YtbqT278qUEnPADgOwE8ADiD5Vax1/HcesKwmeVIT4NmaKgKXA1gaE3t603yUAXA9Scdzk/Otua7J3n2WkbwsIZ+G4DtIXjJcBBzLs0y6lKTj96BIug1AnXI760ySHycEnC9OL/KNJkTqMrGbazcWlmn5t0tJd4aZ7VCg3InuPJI/JOCPAPBa/PYL3ESSvzQBXmtCYQ7nA7gnJm8iuXNemST7gkOrx3YH8DaAl0lmQNNbczN0QXzoCa1NSdT2xJIcPU4JBetJHtxEmaS0xzVJN+p+gWsl/RCYGO80Y0OTI88CktkLWiUASb4Vd23TYuLvAM4k+WQr5LG4lkCYksOhy+adEqW28eVlRCSZuJ8GXXrsF+ucwOYUmVdTMn0RCBKTANhpXQKk8iIAO+Sm+DgGgN918jWOTXEeSc/tTPomECTceV0KwHE9fWmuAmTAbm4qe9umjIZEIFMiaUcAfkHwn8vjPQoA+JnFZbfBtwqVVeQaEchvKGm35A3Hw+uGE3SqvxMCTa+/i3WjBLo4xTZ7jN5Am9PrYu0/Pu/lQO07qhwAAAAASUVORK5CYII="
 
 /***/ }),
-/* 154 */
+/* 153 */
 /*!*********************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/static/account_6.png ***!
   \*********************************************************************/
@@ -12549,7 +12548,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABX
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAEUklEQVRoQ+2YSYhcVRSGv38jBOc5iIhoEAyCIoogimYhoqKoCU40JiYxKjiCEhWnCHHIQjG60DgPKBIcwIEoDbYrJxwWoqK4EWcNgoKIRn85xanidnW996qqu5MO1FlV3XfPPee//5neE9u5aDv3nxGAbc3giIERA9O8gVEI2T4SeB74D/h+iAt9W9JtQ+i1VKbFgO2TgaeBvYd1IPXWS7pqmDOGBmB7DHgU2KHL8MQAjuwFHJb7nwEukrRlAP3hGLB9DXBPYegRYAFwYq6NA6dK+qfOGduh8zhwXO57PUH83C+IgRmwfQdwQ2FgtaR1tudlOC3OZx8Dp0n6oQHE7sCTwOm5790E8UU/IAYCYPthYGUe/G8aihzoiO0NwMW58E2C+LTJGdsB4sLc9yWwTNI7TXp9AbAdsRrxfkYe+G06H6EyRWzfCVyfD/5MEI25Yfs+4MrU+zVBvFYHohGA7YXAY8AxedAHefBnDaFxHbCu2LNE0gtNN2o7SuqtuS9KczAxieXyjFoAtk8AngAOTKVXgKWSfmtyJJ7bXgFEgrflUkkPNenaDhaCjbZcLan833lQCcD2EuApIJIzZIOkS9Kx5cAhDY6MSxq3fVaes1Puv0nS2j5AnAs8V/Sq2yW1makHYPt+4PLCyJp2t7R9EvBmkwNBALCrpD9sR3mNJD0g9T6UdFTTGan3IhCVKuQBSVfUhpDtNcAtxabLJD1YKtl+NRITqCqR0ZnDWPSLltg+HIg6v18uRVyv6KNXHAqEvYNS71lgTFJc0ORGZjscbYVJWyQ1JnrTTRYgyuoUywFoZZ+9Ilhvs7YpQWxuOWd754zTM9PYT8C+LYQzCyBKa4Ao5X1gddfaHsBuQJTrv4tn1ybzsRR6Y7J9cDp/bG4MdJ8DLfr7AWA7aN4i6as6NmyXAKLhreqXvYp9LweAmEWW5Yb4HV305nYtrgJg+4jcczywZ+r/AsQosFbSe91GCwB/SZpn+64etz8Ipo0B4O7oqlGvJd2YIdVpJr0A2I7ydl6DpU7lKnKgzUALQNqKi4hwKeVeINajckUf6imSJnomaNkNuwF0dcqI0ZhK30gL5xRdNJYWSPq6DkAvz2y/lZPtlEvo3j8QANs7AjFoRSn8TtL+FQ60ShzwkqSz5xKAozP7w6fFkqLJTJGCpc2SYhBsSXcOVIXGbDJQzjbzJUW57QXgfCAaTshCSVHV5gSA2uQubjpGh4jjkEWRbCMAFfE2aBKPGMhRotMHKnJo1sroiIERA10xt62SuHbKnc1GNlM5MOsAYtKMiTMkXjbi5SEkxu6l7QZVNQrkJBkTZUi8V3ySvy8oPnotqtGfMo22m2G3TlUI7ZKfymN4myuyUVJMu5Ok7rNKfHhdD5wyRxBMSJrCWuMLe36Z26cAMR/4cRqg4nN6DHfxbbVKer0TfyTp974ZmIaDW1W1kYGt6s0QxkYAhri0GVUZMTCj1znEYf8D2NxfxPAjmEQAAAAASUVORK5CYII="
 
 /***/ }),
-/* 155 */
+/* 154 */
 /*!*********************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/static/account_7.png ***!
   \*********************************************************************/
@@ -12559,7 +12558,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABX
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAEBUlEQVRoQ9WaWchVVRTHf/+CXhLSrNDQqKhogMghX6zsi8AgjRKJSgMJmgyLMIt6MCsaaO6hQSmaRDMoTSVICiNUCq0IGqTMIjCMaCAKisJ/LDiCfffce/bZ997v3NbTfdhr7//v7Gmtta/IMNvPAEPAscAhGV2UufwDCHgdWCPptZR+wyHZbB8OfAS8B3wF3J3sXL/hu8BjktZ3ck0GsH088CrwMBC/762vqbbHz8A0SV+386wDEOJXAx8DnwKH1paT57BW0pxeAGyVNN32EuDBPC1ZXn8CoyX9VeadNAO2jwB+lCTbW4DpWVLynYYkxZ5osVSAELwIuDxAgLH5WrI8Z0va2A3AVUBsqC+Bz7IkdOd0haTYf9kzECfPHcAsIOl87k5vi/e1klZ0A7BR0izbATESx+dwrYslPdoNwC5JJ9h+Cbiyx183pbtlku7KArB9VNy6kg6zvR2YmjJij9s8IumWXICzi69+PfArMKrH4lK6Wy7pulyAa4BvgB+AT1JG60ObVZLm5QI8ASwDZhahRB/0VXa5QdJFuQBvSZppOzbR0sqh+tNgs6TzcgG+k3SM7TXApf3RV9nrDkln1gawPQ7YLmmi7Vj/p1cO1Z8GOyWdkgMwA5gN3A783sPsqy7mHkkTcgBuAL4vTqHIA5qy3+IeygF4CrgfOAdY2ZR6YJ+kg3MAYvcP2b6vWEYNMjBK0h/DBXTMB2zvlTTO9lrg4ibVA+Ml7U0GsH008LakU21/AZzcMMCJknbVATi/iP9vAyIvbdomS2o5SNouIds3AT8BnwMfNq0emCEp6lH/sU4AkQFFEhE3YOQBTduFkt6sA7BF0lm2HwBiGTVtl0mKcCZ5Bn6RNMb2hmIvNA1wtaRnkwBsTwTWS5pkezdwXNPqgZslPZ4KcAEwF7gRaLk8GoJZKumeVIDFhfAdEY02JHj4sA9JujUV4HngSeA04IUBAXha0sJUABd10Egl7xwQgJWSWko6pfeA7ciAptoeJIB1ki5JnYH9UeggAbwjKcKb6nvA9iACvCIpquP/W4DS6ly7PbC5uAfiTWBQNvEcSZGXJM1APKO+D3wLBEzTti2et8pEtJuBMUDEHQuKcLq0IjCCVPMkrUoGiIa2/y6ysCjpldbmRwhgiaR4YCm1TvlAHKGLJI2NUwk4d4QE7x/m5aiESNrUadyqpD5qoScVy6nfe8FF3BUxf7wNR0W80ipfKW3HU390ugdYXgBVdpzYIESvA16U9EaiT/UpNLwj21FSidQygrsPis0dM1PXQvBOIMQ+V1ZlqNth5Qwc2KHtmIEjgYhJImKdD0TF7KCKgSOXXZH7lbP3QDvHomo9CTgDiP8xTDmg7b5ilqKC0JOv3AngX0iLdUCSMWDTAAAAAElFTkSuQmCC"
 
 /***/ }),
-/* 156 */
+/* 155 */
 /*!*********************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/static/account_8.png ***!
   \*********************************************************************/
@@ -12569,7 +12568,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABX
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACx0lEQVRoQ+2ZTYhOURjHf/8FZeNrowbZkA1FzUJY+MgCIYpiZ2EjVlJsmFmxsGQyylZKPsqgbEYyDclHSKHsjIU0oiQWj47eqXlf9849z7nz3nlvzbN5N//n43efc8+553lFzU01r59pgKnuYOkOmNl8YCuwrABmGBiW9H0yoUsBmNlm4DKwJLKoL8ApSRcj9YWyZAAz6wFOF2bIFuyTdC3Rt8ktCcDM5gDfShYwT1LZGGm7kJmtBF6VBMhyfwo8BPokfYyJn9qBDcBgTAKnxuDfQ/0M9ErqL/LvNICxesdArjde+rd5IJ0KML7ed8AeSZkQdQAIMFcl7c/qQl0AQu2LJH1qhagTwEZJDzoJ4GXLWRJ2tjx7L2l5py2hpidqZluA40D4bbXck3sql1DmkjCzg8ABoBsIS+bKRJ8dHQdQdHBNyjvgTdJOfWoHFoQTEtgBLHYWOALcB/olPXb6/id3A5jZUuBD2cTAL2CvpIEysVIAhoC1ZZKO8x2UtKlMLBeAmbXjK3SNpCepEF6AMrewvBp7JPVWBfAIWJeaLMdvSNL61JjeDvwEZqUmy/H7IWl2asxoADNbAbxOTVTgl/weeAAOAZfaBHBE0oWU2B6AG8DulCQRPrcl7YzQpR9kZhYuE10pSSJ8RiQtjNClATTGh19TEjh8uiSFaYTLopaQmW0HSh35EVWFi/vNCF2TJBbgHHDMG9ypPy/pqNMnbjJnZs+B1d7gTv0bSWHi57LYDvwGZrgi+8V/JM30uhUCmNkq4IU3cKK+W9Izj28MwGEg6ZDxFNLQug+0GICw+4RdqAq7K8mVKwbgDrCtiuqBe5JcuWIAzgAnKgI4K+mkJ1chQAhmZqPAXE/gBO2opPCHocuiABoQt4Bdrujx4gFJYcLhtmiABkS4E080w3QXEKZvWUPb2EAugNigVeqmAap82lm5at+Bv1GV3DHAvxD7AAAAAElFTkSuQmCC"
 
 /***/ }),
-/* 157 */
+/* 156 */
 /*!*********************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/static/account_9.png ***!
   \*********************************************************************/
@@ -12579,7 +12578,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABX
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAB7UlEQVRoQ+2XvUsdURDFfweCYJUuaYTUIpiAkDQi8T8QUlgESxMICiJYq52N2AiiWFhZRrBLGiNpQ0ISiIhWVrYWlnLC6j5YHo/I/UCzcrd5PPbOxzlnZu6saPmjludPAXDfChYFigKJDGQtIdvulY+krHGaMbI6bj2AbvY7gFqjQAEQ0dB30gPdeeUsqQKgye5tTXvb+4gKyrvMNcboY2AQeF4n9RM4Ai6q/6WEGlJl6QHbfcAn4HXt+xQ4AarffuAlMNyI+x2YkvQnpmyy3sS2q8SqEqmeX8CCpM897oQBYBJYAR7V75ckLaeASFbA9jnwFNgBZiRd/ish20+AfeBVfW4oRYkkALbngVXgo6Q3IUza3gTeAcdABeIqxL5zNhqA7VHga+1oXNKX0ARsfwNGgHVJs6H21xMtxqiysb0GzAHbkqZj/NgeAw5r22FJv0P9pADYAyaA95K2QgN3zts+qKfXB0kboX5SAPwAXgBR5dMAsAQsAruS3t4lgJ5fX6EJNM6fSXoWap+iQG4AUStGMoAce03KklcAFAVu7pTrfooho5RQDGs9NtWiQOj9kVS3D06BYPYaBv9FE7cewL2O0RT2um1jJlpyCbUWQM7EU3xFK5ASNKdtAZCTzRhfRYEY1nLaFAVyshnj6y8JdOIx6cto7wAAAABJRU5ErkJggg=="
 
 /***/ }),
-/* 158 */
+/* 157 */
 /*!**********************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/static/account_10.png ***!
   \**********************************************************************/
@@ -12589,7 +12588,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABX
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACaklEQVRoQ+2XzYvPURjFP4cxycbrSCFJkgWSUkKxsrO2sEHKxtbWQtlY2lGSnf+AyWJ2JlLTWHgrbBQKCYkxXd26o1/TjPvc+1wvU/fWb/U7z7nnPOe+fcUCH1rg+ukG/nWCPYGegLMDfQk5G+gu7wm4W+gkKE4ghHAIiL8/McYkjZUQFxkIIYQS8lqsJLMuMzCEcBU4CdwBFgFragXOU7ch8a4Arkk6beEvMRC7/yKRbraQV2J+AEPWFEwG/tbSmW3YYiJrIIm/B+wFpoHFlZ2tKsuZsBiYBHZUze4vmpC0+3c0WQOxOIQwY+IVsN6vy8TwUNLOHNJkIJl4D7wFtuVIG/z/TpLplCsxMA7E02dtA4E5ivuS4p7LjhID8R44DizNsvoB1yWdsNCUGIjPh1vAF2CVhdyBOWx9UpgNpH3wGngGHHCIy5V+k2ROudTAY+AzsCenwvH/G0nrrPWlBo4BN4CYxEbrJAW4+Fw5I+mKtabIQFpGcZK7wD7rJCW43M07m6vGwG3gIPAU2FUizoAdlXTEgPsFKTaQUngErAZGSibLYE03rzuBGYIQwhMgbrYhYJnTyKSkqjSrEhgwcRE4CsQ3fI2AeKfclHSqtgEuA2k5nQUuAMuBD8BKo5iIPS/pshE/J8xtYCCNeDpNAUsygr4Dw6WnzXycTQykj564sbcPTPQReJlSiaLjpt808C19SdI5T/djbSsDn4CJwifGlKTh/8XAV+ABsL9A0LSkeIK5RqsEtqaLrUTMFknPSwrmwjYx4BXhqe8GPN1rUdsTaNFFD0dPwNO9FrU9gRZd9HD0BDzda1H7E9y7lzFNhVgoAAAAAElFTkSuQmCC"
 
 /***/ }),
-/* 159 */
+/* 158 */
 /*!**********************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/static/account_11.png ***!
   \**********************************************************************/
@@ -12599,7 +12598,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABX
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAADP0lEQVRoQ+2ZTYiNYRTHf/+VoihJygILRFmMNCELY+ErHw35SGw0slGECE1GIWFBZDEoNUpNZFK+isxukoiJhY9sRAmlZIHF0ZneO925834879y5zNR7Nvd23//5+J9znuc573PFMBcN8/gpCPzvChYVKCpQZQYG1EJm1gIsB2YCv4D7QLukjpB4Iv16YBnwA3gBtEpqC9Evx+QmYGZ3gaUxjr7775IepwVhZk3AxQTMLkln85DIRcDM9gKnUhy8BFZLeh+HMbMlwL2MAGdJcjtBEkzAzOYATwKsdkaV8NbqFTMbA3QBMwJsjJD0OwAXdpCZ2VjgW4zBTkkNZnYdWFv23LP8ELgKTAE883OjzxLsDdAIrAcOV9jukjR/MAl45r0CleJ93wB8AL6GOCzDNEjqNLNHwMIY3aOSmrNsZraQmZ0A9qcY6pDUaGYehAcTIkcktUS7UWX2y/U3SGpPM5hKwMy2ApcDIjou6VBEYjewMkHnKXBe0hUz2wyEbJv1khLXXiKBnBn1eH0f3+5fzGxF1BYTAV+8vit1S2qNnu8BTgckxiFvgXmS4tZg/CI2s0mA7yaTA52UYN1RVtskfa7UNbMtgGd+cU671yRtitOJrYCZ3UppgxDff4Av0cL+CUwAxgOjQpQTMD1tWvmsHwEzOwPsrMJRLVWbJPVZk30ImNka4EYtI6jStm/VCyS9LtmpJJC0J1fpd1DVT0rq3daHI4GecyepAj4l+rQ4lCW1Aj7j3x7C0fv8tEjSx9gKRIfMOuACMG6IEfEFvFGSD4m9knQOTAf2AT5KDAXx1j4tySvQR7JmoVWAD3MhM3wtiD4DmiXdSTKeOY1GbXUMOFiLCFNsHpDkyUuVIAIRiX95RvS8K2QF788LAiFZGgCmqEC/pKW8uw4gwZkqRQWKCmQ2STqgaKGQFgo6aAIrMRsYXYateQV6rhQDg8uExVzh1IRA+bX6YGa/RLD8erFO0vNM5jlHiXPAjhCjVWLeSZoaaiPPLOT/xrwKNVwFbpukS6H6wQSiidTL7K+cI0Md5MTdlORXO8GSi0BEoi56wZkW7CUb+MnvTyU9yIb2ReQmkNdBrfEFgVpnOMv+sK/AX8JHH0BBMepCAAAAAElFTkSuQmCC"
 
 /***/ }),
-/* 160 */
+/* 159 */
 /*!**********************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/static/account_12.png ***!
   \**********************************************************************/
@@ -12609,7 +12608,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABX
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAGjklEQVRoQ+1ZCaxdUxRdK2JoitAYq4oaWkqpmiKoqtZURUVLQ8zEFFNqDCoREqVEo2j0x0w0aKql5sbYNjS0piI1JcaKWWuIJevb9+e8++8b/3uSn9jJyct7795z9trz3ofo5sRuzj/+B5BpUFI/AIcA2BZA32T5kc+S9R6AOSSXNUP7XdKApCEADgVwIIDdcwyZUYPJ6BsAGyTfFwCYC+Bxkm80CqYhAMH4aQC8MloIYBaApwAsJvmHpF4AbgdwVDw0FsDWAPYDMDx5dxqAaY0AqQuApLUBTMox7sOnkzSAQpJ0DIDrAfQBMJbkDEk7ATgewAkA1okXvdcEkj/VqpGaAUiyOdwJYM/YvA3A1FqlJsl+cTOAIzIQ3kfS5gHiqtj3VQCnkLQJVqWaAEjyoY/Gbq9YmiRtLnVRaNAmtkcKIoDsC8Ag/GkaQ/KxagdUBSDpTAC3xkYzSNqOG6bQ5JNhNsPzGpQ0MYD4jLNITq10WEUAkiyNF2KDu0ie2DDnyYuSRgCYDeA5kgfn95Q0GcD58fswkvPKnVsWgKT1AdgetwJwE8kLmsF8toek87wvgCtIXlMAwv/5mY/sdyS/LTq/EoA7ItrMJGkfaDpJso0f7nxB8v30gJz2HWJPrxlAxPnXAfxphyO5qOnc/xuBHEptog4K1+UA2MQGA1gNwHoAdimKeIUakJRJfzLJC1vBfGJKDs0jSG6W/LYXgJcAXA1gVQCXRaLrpIVOABLpfx3S/6QaAEkbAXA8t8a+9yLpz6ok6WgADwIYRXKOX5D0cEh/HwBrAHgHQI8iLRQBuBTAtUZP0iGtgyTtACBdWwbjPqSIPgbgos2f2VpEcmkibQeJDwG8HFn+2Cg9OqKPpFsAnGNN5E2tCIBt0uGzN4AV4WSHxWd2rn83Y9n6Ice97XaT3ForecbJsI1kmyQDs/ZSKgmdklwozgcwj+Sw9MESAJI2jbLX9vc7gP3j4bdiA1eQC0i+W9U2cg9Ich1kRpyF/elloKYpAN4GYN8z3esqNSrVlWFWBuB3+pL8PNs+DyDNui5xXVzNJel6vqkkyVWp9+9Fcsdg0lWr7T+jTwOI88QZkaFLsnMegNP2qeFQrllaSpIseTvvFgEgS27OvJaygQ0Kq7Bv3g/gNpIWdDvlATj27kYybTxaBkJSJnFn2++iV3AP0SFlSaPMdJTiNuHlJP1bIYDFDlskt2kZ18nGSTnhqNQ/+asnyd+y75K2j1LePrCEpLVSCMDRZCnJfHvYdDwhWTvq2STbq11JFqDD9GCSb6aHSnIeeCL+yxqgTiZkAMtI7tx0jkslb5t3P+Fq1HbfTpJs4+MBjCOZOnP2v0uafiTLArAEepN07dESktQzSukV+VJakntsh9JyFepyAF9UMiE7sUcja5L8tRUIJDlR9iHpMFpCkgYAcCt5H8njciZk4L/ESKasEzuMOt5uV2tPWg/IYN5ZvgfJ9gRVAMJZfn4+40Yn5wRaMYxmiWw8SRdYTSNJr0UWHlgpk8dzKwsAjAPwUL7NLFdK2LmyMqJLICTZYZ3V13ViImk/K0uSHPMHFACYCcA1WflSIiJBVsz1J/lBV7iX5MrSdY1L80EkPZ2rSJJuADAkBRDTjC8BLKxYzAWArJwujATVGMj+l+QRicvxpwGMJunisCpJegDAxjkAduh7ai2nPe90O+lEMrSeKVnCfBYMyvay5ZCEo/9McnSyn2eoB9TU0IQWspZyEsmLqootHpC0K4DLw1brejdh1mWF6/729lHSyVFGFAqjXE+cacF7jCT5TDUQksz4JQD+im7OY8S6SZLnou7FJ4bte7QzsK6mPqeFF0kOraDykQAujomzI4Vb0ZI6plYUklxEWgOejU5PpnT1jVUCQDrY6jRSjNG5zcu1jJOPGW9I6on5eALiKOT7hlWcdRsebAWIdLTYAULSkQDOBbA3gC5JPdWOpMxZbTKeRJgaGy0mUikZ7kanZKk7LF5J0hLrMkly0/9V+NDfMfzt2nA3AZGO1/3zs47xJD1daApJGgPgkZC8NdCc8XoCIr3gWALgRpJ3N4N7SZ6PTojLk+ZfcCQg8ldM7pDcmMwi6VRfM0laPfzopKSdbN0VU87ZnCfSS74fo917ProsD6s6kSRP8tzPetpgxj2HMv03l3x5jmKO6ubioNw1q5shz/O9nCw3jJUNsryVJwy+qZld6z1bkVCqXjHVahPd8qK7VnCtfK5pGmglk5X27vYA/gFrTNBP6BeT3wAAAABJRU5ErkJggg=="
 
 /***/ }),
-/* 161 */
+/* 160 */
 /*!**********************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/static/account_13.png ***!
   \**********************************************************************/
@@ -12619,7 +12618,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABX
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAG7klEQVRoQ9WZe8y/5RzHX29sDmsYpRUrhCxES4iEQicpNqEmqRCNNJTQiJCM0jqt1VCpJqbk1JwSOjIzOR9XKPKHMFPobe/H53rcz/f53t/7/n6f58f6bM+efe/rc1/X531dn8P7+tziLi66i9tPLwDb9wT2A7atv8cD/wSuBb4L3CDpkv/3BkwFYPuRwOnAswcMvBw4VNJvFgVi+3nAXsCja46fAqdK+v6YOVcBqAkv67z8W+BnwI+BO4FtgMcAm3R0Xi7p3DELdnVsXwS8uOe9IyWdPDTnCgC2DwPOqJdi+GGSPjttEtvHA2/rjD1d0jeHFmzjtj8EHFm/bwcuBO4PPLP+Z+ilkgKyV5YB2H4q8K2O5s+BGHVLD4AcffekYsTGkv46BML2o4CflN7FwFGSfp3fth8BnALsAVwv6UmDAGxvBHwDeAJwG3C/euloSSf2APgE8CLgz8B9S+dMSa8ZAeAA4Hzgd5IePKlvO6fwtXr+HElf7ptz6QRs7w98vJQOBfYB9gZ+AGwn6R8TvrsjcFU9ey+Q8XfU760k/XIWCNvvLP0rJD2rZ4Nczw+XlIQyVRqAdwNvB26StMVEIO89GQe2TwCOBu6oU7s70LLGvpIuXQsA2w8FfjUxR7LTFcBZkr7TxhqAz9SOf0nSc+tUEsSbA6t2wHZzn8skPb/0EzNbAcdKSoD3yoSLPLFrUM0V18wafbKfpMTOfwqZ7WZs8u/r6ll8ML54nKQc+bLYbmMflPSm0k8afVkWltSXGqfNcaKknGZ3LIGc1H0rEEOvBx4IxFPundgBAvzmBiCFKMF0uqTD5wBwtqRXlv4FSXvARZLyf6bY/kPVkoslpeKvENtJqXdKSpJYEttPBpLWN24b2wB8CnhhfKwFle0bqmDNOoGu/k3AQ4BjJCVGeqVzgtFZFWMD754FZNOulfSUBiABnOO5VdKDbO9UaTVzTfPRnNKpQHJ/dmq7TlbaQ9IX+4ywfRrw2hp/o6QUtNFiezk+FKmj2Rf4dM3ynvK3VOUfSQp1mDzeELzv1cO8uyfwqvq92YziF8MDIHKKpCNGW/5fNzobOCQ/lwEUiOzabqWXapritsp92oK2vwLsElYKPLae92agicxzqaQAn+VmSRynSUogL0mxhax7rxZrXSoR/40fN/l9FbGbp61iO5mmy1OmVtVaOMQv86Re5OT2kpTMN1VsJ5s1cpgilix0HyAZMqw1BTap9IeTZO5A4GOdWY8DPikpu7wslQ0SN+FDTVbFSmfnwnvCf/4C7C6pVfE+ALPqwLLxeXkanc7OhlZkt5r8ooL0X1UbUimbJJDDGlsMrTDK9ucqRvL8AElJt4NiO4nhKOAlHeU3A+dJincsSd+FJv7/gdDpgZWWC980PdsfBl5fY2+V9L5By+dUmHkntv1w4HGdv5C2XClzjLlSphj1uUE344S/vHqG7mZAxi+QFM4zWjbIpX4i44QKx+/jfqukqPyVVUt62WkfonUHYDsZJ8x0UyC0Ony+l153iGFs7E3b/0sAuVY+rRbcVdJXZ7hO7hLH1Pg5knIXmUvW9QRsJwUnFUcOlvSRGcYfDJxT4+luhBOtuDiNQbJuAGwfC7yrFj1eUn73BfjOQCrqPYo27yZp8gIzxv7+xtaot0vJduhzy+8XSsoVtc/4ZJzcJ7YuhZ0l5T6+kKz5BGyna/D14idJsbtI+tsMAAsVtr751gTA9gOApMA0uv4IPCP8ZIbxaZcs3fhyp+7reMxzFKMA2E4XIk2ocJRIbklXA3+vDkaezbyY2A51bp22mYVtXQHYziU/WWKWHCEpu9vn9+l9tg7fdZJyNVwXGaISoRFZeIuiD6G2cZEEYshWXOeMvvZjLLSdYP0C8LBqw2zZd+FZBNEQgNa/XEFhxy5k+251eq3LvYOkb499f4zeEIDWHTtfUi4Zc4ntM4uk5b39JaWBu64yFsAJklrJH2WA7XD31ld9v6S3jHpxTqUhAK2BdYmkF4yd23Y6y58v/csl7T723Xn1hgC0JuyfqkDl09KSVONp82l533Y40EHALZIS8BtMhgBk8QRdeqSprumhtr5+mkt5fqCk87oW2o675PY1N7+fF+lgIes2knomn9a5S56/pvRfIemj8xo2Vn8QQLnL9tW42rU60N35p3YjOu3DuS8pY42P3igAkxPafgNw0tIE1d2botPb3Z7HwCHdRQF06UXfCeTbWq6Vy738IWMWGV8IQLnVdcAOFdjhQu0jXQI/7ZQQvxslbbmIYWPfWQuANJxaZW3sNLeqpM/0LiMbNIAXjoG2O7bzRXLaB7gAOmnyy87YXZ1Hb+ET6IBI+z1fWMJc0/tJGzLtv96LzTwGDumuGcDQAht6/N8OcMhPy2NmEAAAAABJRU5ErkJggg=="
 
 /***/ }),
-/* 162 */
+/* 161 */
 /*!**********************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/static/account_14.png ***!
   \**********************************************************************/
@@ -12629,6 +12628,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABX
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAABFklEQVRoQ+1Zuw7CMBCzGfgHkPhDZlZgZeYPkcovIJZDqehAFdo8LkIV7tjeOXe2r1FaYuEXF14/1MCvFZQCUwqY2To8J/lspVQTBcxsB+AAYP8u/ArgQvLm3UirBk4AjqNizyTDfderVQMdgM2o0jvJrWv1wZ7egAHPzCyGS9J9PXdANZBpCSkQI0wzkGEjWUgWyrBLdG+pzI+ma4gzWNUQa4gz7KIhTiVLb6FUpv7mQPPNEhlEFYWmnOCS9gE1UMR//z1pluDZgKkzbmFdyWlqYKBKM5Bsms9AWUgWKrTOkCYLRSz0qCQ1pIefHisAU1h9jJsCDkU3g0jaiZut7gCsBhxIrIKQAlX0OSRLAQcSqyAWr8ALKIuOMR1m6f8AAAAASUVORK5CYII="
 
 /***/ }),
+/* 162 */,
 /* 163 */,
 /* 164 */,
 /* 165 */,
@@ -12656,8 +12656,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABX
 /* 187 */,
 /* 188 */,
 /* 189 */,
-/* 190 */,
-/* 191 */
+/* 190 */
 /*!**********************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/util/js/formatList.js ***!
   \**********************************************************************/
@@ -12694,6 +12693,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.formatList
 }
 
 /***/ }),
+/* 191 */,
 /* 192 */,
 /* 193 */,
 /* 194 */,
@@ -12757,7 +12757,5650 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.formatList
 /* 252 */,
 /* 253 */,
 /* 254 */,
-/* 255 */,
+/* 255 */
+/*!*************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/PetSocial/js_sdk/u-charts/u-charts/u-charts.js ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {/*
+ * uCharts v1.9.3.20190922
+ * uni-app平台高性能跨全端图表，支持H5、APP、小程序（微信/支付宝/百度/头条/QQ/360）
+ * Copyright (c) 2019 QIUN秋云 https://www.ucharts.cn All rights reserved.
+ * Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+ * 
+ * uCharts官方网站
+ * https://www.uCharts.cn
+ * 
+ * 开源地址:
+ * https://gitee.com/uCharts/uCharts
+ * 
+ * uni-app插件市场地址：
+ * http://ext.dcloud.net.cn/plugin?id=271
+ * 
+ */
+
+
+
+var config = {
+  yAxisWidth: 15,
+  yAxisSplit: 5,
+  xAxisHeight: 15,
+  xAxisLineHeight: 15,
+  legendHeight: 15,
+  yAxisTitleWidth: 15,
+  padding: [10, 10, 10, 10],
+  pixelRatio: 1,
+  rotate: false,
+  columePadding: 3,
+  fontSize: 13,
+  //dataPointShape: ['diamond', 'circle', 'triangle', 'rect'],
+  dataPointShape: ['circle', 'circle', 'circle', 'circle'],
+  colors: ['#1890ff', '#2fc25b', '#facc14', '#f04864', '#8543e0', '#90ed7d'],
+  pieChartLinePadding: 15,
+  pieChartTextPadding: 5,
+  xAxisTextPadding: 3,
+  titleColor: '#333333',
+  titleFontSize: 20,
+  subtitleColor: '#999999',
+  subtitleFontSize: 15,
+  toolTipPadding: 3,
+  toolTipBackground: '#000000',
+  toolTipOpacity: 0.7,
+  toolTipLineHeight: 20,
+  radarLabelTextMargin: 15,
+  gaugeLabelTextMargin: 15 };
+
+
+var assign = function assign(target) {for (var _len2 = arguments.length, varArgs = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {varArgs[_key2 - 1] = arguments[_key2];}
+  if (target == null) {
+    throw new TypeError('Cannot convert undefined or null to object');
+  }
+  if (!varArgs || varArgs.length <= 0) {
+    return target;
+  }
+  // 深度合并对象
+  function deepAssign(obj1, obj2) {
+    for (var key in obj2) {
+      obj1[key] = obj1[key] && obj1[key].toString() === "[object Object]" ?
+      deepAssign(obj1[key], obj2[key]) : obj1[key] = obj2[key];
+    }
+    return obj1;
+  }
+
+  varArgs.forEach(function (val) {
+    target = deepAssign(target, val);
+  });
+  return target;
+};
+
+var util = {
+  toFixed: function toFixed(num, limit) {
+    limit = limit || 2;
+    if (this.isFloat(num)) {
+      num = num.toFixed(limit);
+    }
+    return num;
+  },
+  isFloat: function isFloat(num) {
+    return num % 1 !== 0;
+  },
+  approximatelyEqual: function approximatelyEqual(num1, num2) {
+    return Math.abs(num1 - num2) < 1e-10;
+  },
+  isSameSign: function isSameSign(num1, num2) {
+    return Math.abs(num1) === num1 && Math.abs(num2) === num2 || Math.abs(num1) !== num1 && Math.abs(num2) !== num2;
+  },
+  isSameXCoordinateArea: function isSameXCoordinateArea(p1, p2) {
+    return this.isSameSign(p1.x, p2.x);
+  },
+  isCollision: function isCollision(obj1, obj2) {
+    obj1.end = {};
+    obj1.end.x = obj1.start.x + obj1.width;
+    obj1.end.y = obj1.start.y - obj1.height;
+    obj2.end = {};
+    obj2.end.x = obj2.start.x + obj2.width;
+    obj2.end.y = obj2.start.y - obj2.height;
+    var flag = obj2.start.x > obj1.end.x || obj2.end.x < obj1.start.x || obj2.end.y > obj1.start.y || obj2.start.y < obj1.end.y;
+    return !flag;
+  } };
+
+
+//兼容H5点击事件
+function getH5Offset(e) {
+  e.mp = {
+    changedTouches: [] };
+
+  e.mp.changedTouches.push({
+    x: e.offsetX,
+    y: e.offsetY });
+
+  return e;
+}
+
+// hex 转 rgba
+function hexToRgb(hexValue, opc) {
+  var rgx = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+  var hex = hexValue.replace(rgx, function (m, r, g, b) {
+    return r + r + g + g + b + b;
+  });
+  var rgb = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  var r = parseInt(rgb[1], 16);
+  var g = parseInt(rgb[2], 16);
+  var b = parseInt(rgb[3], 16);
+  return 'rgba(' + r + ',' + g + ',' + b + ',' + opc + ')';
+}
+
+function findRange(num, type, limit) {
+  if (isNaN(num)) {
+    throw new Error('[uCharts] unvalid series data!');
+  }
+  limit = limit || 10;
+  type = type ? type : 'upper';
+  var multiple = 1;
+  while (limit < 1) {
+    limit *= 10;
+    multiple *= 10;
+  }
+  if (type === 'upper') {
+    num = Math.ceil(num * multiple);
+  } else {
+    num = Math.floor(num * multiple);
+  }
+  while (num % limit !== 0) {
+    if (type === 'upper') {
+      num++;
+    } else {
+      num--;
+    }
+  }
+  return num / multiple;
+}
+
+function calCandleMA(dayArr, nameArr, colorArr, kdata) {
+  var seriesTemp = [];
+  for (var k = 0; k < dayArr.length; k++) {
+    var seriesItem = {
+      data: [],
+      name: nameArr[k],
+      color: colorArr[k] };
+
+    for (var i = 0, len = kdata.length; i < len; i++) {
+      if (i < dayArr[k]) {
+        seriesItem.data.push(null);
+        continue;
+      }
+      var sum = 0;
+      for (var j = 0; j < dayArr[k]; j++) {
+        sum += kdata[i - j][1];
+      }
+      seriesItem.data.push(+(sum / dayArr[k]).toFixed(3));
+    }
+    seriesTemp.push(seriesItem);
+  }
+  return seriesTemp;
+}
+
+function calValidDistance(self, distance, chartData, config, opts) {
+  var dataChartAreaWidth = opts.width - opts.area[1] - opts.area[3];
+  var dataChartWidth = chartData.eachSpacing * (opts.chartData.xAxisData.xAxisPoints.length - 1);
+  var validDistance = distance;
+  if (distance >= 0) {
+    validDistance = 0;
+    self.event.trigger('scrollLeft');
+  } else if (Math.abs(distance) >= dataChartWidth - dataChartAreaWidth) {
+    validDistance = dataChartAreaWidth - dataChartWidth;
+    self.event.trigger('scrollRight');
+  }
+  return validDistance;
+}
+
+function isInAngleRange(angle, startAngle, endAngle) {
+  function adjust(angle) {
+    while (angle < 0) {
+      angle += 2 * Math.PI;
+    }
+    while (angle > 2 * Math.PI) {
+      angle -= 2 * Math.PI;
+    }
+    return angle;
+  }
+  angle = adjust(angle);
+  startAngle = adjust(startAngle);
+  endAngle = adjust(endAngle);
+  if (startAngle > endAngle) {
+    endAngle += 2 * Math.PI;
+    if (angle < startAngle) {
+      angle += 2 * Math.PI;
+    }
+  }
+  return angle >= startAngle && angle <= endAngle;
+}
+
+function calRotateTranslate(x, y, h) {
+  var xv = x;
+  var yv = h - y;
+  var transX = xv + (h - yv - xv) / Math.sqrt(2);
+  transX *= -1;
+  var transY = (h - yv) * (Math.sqrt(2) - 1) - (h - yv - xv) / Math.sqrt(2);
+  return {
+    transX: transX,
+    transY: transY };
+
+}
+
+function createCurveControlPoints(points, i) {
+
+  function isNotMiddlePoint(points, i) {
+    if (points[i - 1] && points[i + 1]) {
+      return points[i].y >= Math.max(points[i - 1].y, points[i + 1].y) || points[i].y <= Math.min(points[i - 1].y,
+      points[
+      i + 1].y);
+    } else {
+      return false;
+    }
+  }
+  var a = 0.2;
+  var b = 0.2;
+  var pAx = null;
+  var pAy = null;
+  var pBx = null;
+  var pBy = null;
+  if (i < 1) {
+    pAx = points[0].x + (points[1].x - points[0].x) * a;
+    pAy = points[0].y + (points[1].y - points[0].y) * a;
+  } else {
+    pAx = points[i].x + (points[i + 1].x - points[i - 1].x) * a;
+    pAy = points[i].y + (points[i + 1].y - points[i - 1].y) * a;
+  }
+
+  if (i > points.length - 3) {
+    var last = points.length - 1;
+    pBx = points[last].x - (points[last].x - points[last - 1].x) * b;
+    pBy = points[last].y - (points[last].y - points[last - 1].y) * b;
+  } else {
+    pBx = points[i + 1].x - (points[i + 2].x - points[i].x) * b;
+    pBy = points[i + 1].y - (points[i + 2].y - points[i].y) * b;
+  }
+  if (isNotMiddlePoint(points, i + 1)) {
+    pBy = points[i + 1].y;
+  }
+  if (isNotMiddlePoint(points, i)) {
+    pAy = points[i].y;
+  }
+  if (pAy >= Math.max(points[i].y, points[i + 1].y) || pAy <= Math.min(points[i].y, points[i + 1].y)) {
+    pAy = points[i].y;
+  }
+  if (pBy >= Math.max(points[i].y, points[i + 1].y) || pBy <= Math.min(points[i].y, points[i + 1].y)) {
+    pBy = points[i + 1].y;
+  }
+  return {
+    ctrA: {
+      x: pAx,
+      y: pAy },
+
+    ctrB: {
+      x: pBx,
+      y: pBy } };
+
+
+}
+
+function convertCoordinateOrigin(x, y, center) {
+  return {
+    x: center.x + x,
+    y: center.y - y };
+
+}
+
+function avoidCollision(obj, target) {
+  if (target) {
+    // is collision test
+    while (util.isCollision(obj, target)) {
+      if (obj.start.x > 0) {
+        obj.start.y--;
+      } else if (obj.start.x < 0) {
+        obj.start.y++;
+      } else {
+        if (obj.start.y > 0) {
+          obj.start.y++;
+        } else {
+          obj.start.y--;
+        }
+      }
+    }
+  }
+  return obj;
+}
+
+function fillSeries(series, opts, config) {
+  var index = 0;
+  return series.map(function (item) {
+    if (!item.color) {
+      item.color = config.colors[index];
+      index = (index + 1) % config.colors.length;
+    }
+    if (!item.index) {
+      item.index = 0;
+    }
+    if (!item.type) {
+      item.type = opts.type;
+    }
+    if (typeof item.show == "undefined") {
+      item.show = true;
+    }
+    if (!item.type) {
+      item.type = opts.type;
+    }
+    if (!item.pointShape) {
+      item.pointShape = "circle";
+    }
+    if (!item.legendShape) {
+      switch (item.type) {
+        case 'line':
+          item.legendShape = "line";
+          break;
+        case 'column':
+          item.legendShape = "rect";
+          break;
+        case 'area':
+          item.legendShape = "triangle";
+          break;
+        default:
+          item.legendShape = "circle";}
+
+    }
+    return item;
+  });
+}
+
+function getDataRange(minData, maxData) {
+  var limit = 0;
+  var range = maxData - minData;
+  if (range >= 10000) {
+    limit = 1000;
+  } else if (range >= 1000) {
+    limit = 100;
+  } else if (range >= 100) {
+    limit = 10;
+  } else if (range >= 10) {
+    limit = 5;
+  } else if (range >= 1) {
+    limit = 1;
+  } else if (range >= 0.1) {
+    limit = 0.1;
+  } else if (range >= 0.01) {
+    limit = 0.01;
+  } else if (range >= 0.001) {
+    limit = 0.001;
+  } else if (range >= 0.0001) {
+    limit = 0.0001;
+  } else if (range >= 0.00001) {
+    limit = 0.00001;
+  } else {
+    limit = 0.000001;
+  }
+  return {
+    minRange: findRange(minData, 'lower', limit),
+    maxRange: findRange(maxData, 'upper', limit) };
+
+}
+
+function measureText(text) {
+  var fontSize = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : config.fontSize;
+  text = String(text);
+  var text = text.split('');
+  var width = 0;
+  for (var i = 0; i < text.length; i++) {
+    var item = text[i];
+    if (/[a-zA-Z]/.test(item)) {
+      width += 7;
+    } else if (/[0-9]/.test(item)) {
+      width += 5.5;
+    } else if (/\./.test(item)) {
+      width += 2.7;
+    } else if (/-/.test(item)) {
+      width += 3.25;
+    } else if (/[\u4e00-\u9fa5]/.test(item)) {
+      width += 10;
+    } else if (/\(|\)/.test(item)) {
+      width += 3.73;
+    } else if (/\s/.test(item)) {
+      width += 2.5;
+    } else if (/%/.test(item)) {
+      width += 8;
+    } else {
+      width += 10;
+    }
+  }
+  return width * fontSize / 10;
+}
+
+function dataCombine(series) {
+  return series.reduce(function (a, b) {
+    return (a.data ? a.data : a).concat(b.data);
+  }, []);
+}
+
+function dataCombineStack(series, len) {
+  var sum = new Array(len);
+  for (var j = 0; j < sum.length; j++) {
+    sum[j] = 0;
+  }
+  for (var i = 0; i < series.length; i++) {
+    for (var j = 0; j < sum.length; j++) {
+      sum[j] += series[i].data[j];
+    }
+  }
+  return series.reduce(function (a, b) {
+    return (a.data ? a.data : a).concat(b.data).concat(sum);
+  }, []);
+}
+
+function getTouches(touches, opts, e) {
+  var x, y;
+  if (touches.clientX) {
+    if (opts.rotate) {
+      y = opts.height - touches.clientX * opts.pixelRatio;
+      x = (touches.pageY - e.currentTarget.offsetTop - opts.height / opts.pixelRatio / 2 * (opts.pixelRatio - 1)) *
+      opts.pixelRatio;
+    } else {
+      x = touches.clientX * opts.pixelRatio;
+      y = (touches.pageY - e.currentTarget.offsetTop - opts.height / opts.pixelRatio / 2 * (opts.pixelRatio - 1)) *
+      opts.pixelRatio;
+    }
+  } else {
+    if (opts.rotate) {
+      y = opts.height - touches.x * opts.pixelRatio;
+      x = touches.y * opts.pixelRatio;
+    } else {
+      x = touches.x * opts.pixelRatio;
+      y = touches.y * opts.pixelRatio;
+    }
+  }
+  return {
+    x: x,
+    y: y };
+
+}
+
+function getSeriesDataItem(series, index) {
+  var data = [];
+  for (var i = 0; i < series.length; i++) {
+    var item = series[i];
+    if (item.data[index] !== null && typeof item.data[index] !== 'undefined' && item.show) {
+      var seriesItem = {};
+      seriesItem.color = item.color;
+      seriesItem.type = item.type;
+      seriesItem.style = item.style;
+      seriesItem.pointShape = item.pointShape;
+      seriesItem.disableLegend = item.disableLegend;
+      seriesItem.name = item.name;
+      seriesItem.show = item.show;
+      seriesItem.data = item.format ? item.format(item.data[index]) : item.data[index];
+      data.push(seriesItem);
+    }
+  }
+  return data;
+}
+
+function getMaxTextListLength(list) {
+  var lengthList = list.map(function (item) {
+    return measureText(item);
+  });
+  return Math.max.apply(null, lengthList);
+}
+
+function getRadarCoordinateSeries(length) {
+  var eachAngle = 2 * Math.PI / length;
+  var CoordinateSeries = [];
+  for (var i = 0; i < length; i++) {
+    CoordinateSeries.push(eachAngle * i);
+  }
+
+  return CoordinateSeries.map(function (item) {
+    return -1 * item + Math.PI / 2;
+  });
+}
+
+function getToolTipData(seriesData, calPoints, index, categories) {
+  var option = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {};
+
+  var textList = seriesData.map(function (item) {
+    var titleText = [];
+    if (categories) {
+      titleText = categories;
+    } else {
+      titleText = item.data;
+    }
+    return {
+      text: option.format ? option.format(item, titleText[index]) : item.name + ': ' + item.data,
+      color: item.color };
+
+  });
+  var validCalPoints = [];
+  var offset = {
+    x: 0,
+    y: 0 };
+
+  for (var i = 0; i < calPoints.length; i++) {
+    var points = calPoints[i];
+    if (typeof points[index] !== 'undefined' && points[index] !== null) {
+      validCalPoints.push(points[index]);
+    }
+  }
+  for (var _i = 0; _i < validCalPoints.length; _i++) {
+    var item = validCalPoints[_i];
+    offset.x = Math.round(item.x);
+    offset.y += item.y;
+  }
+  offset.y /= validCalPoints.length;
+  return {
+    textList: textList,
+    offset: offset };
+
+}
+
+function getMixToolTipData(seriesData, calPoints, index, categories) {
+  var option = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {};
+  var textList = seriesData.map(function (item) {
+    return {
+      text: option.format ? option.format(item, categories[index]) : item.name + ': ' + item.data,
+      color: item.color,
+      disableLegend: item.disableLegend ? true : false };
+
+  });
+  textList = textList.filter(function (item) {
+    if (item.disableLegend !== true) {
+      return item;
+    }
+  });
+  var validCalPoints = [];
+  var offset = {
+    x: 0,
+    y: 0 };
+
+  for (var i = 0; i < calPoints.length; i++) {
+    var points = calPoints[i];
+    if (typeof points[index] !== 'undefined' && points[index] !== null) {
+      validCalPoints.push(points[index]);
+    }
+  }
+  for (var _i2 = 0; _i2 < validCalPoints.length; _i2++) {
+    var item = validCalPoints[_i2];
+    offset.x = Math.round(item.x);
+    offset.y += item.y;
+  }
+  offset.y /= validCalPoints.length;
+  return {
+    textList: textList,
+    offset: offset };
+
+}
+
+function getCandleToolTipData(series, seriesData, calPoints, index, categories, extra) {
+  var option = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : {};
+  var upColor = extra.color.upFill;
+  var downColor = extra.color.downFill;
+  //颜色顺序为开盘，收盘，最低，最高
+  var color = [upColor, upColor, downColor, upColor];
+  var textList = [];
+  var text0 = {
+    text: categories[index],
+    color: null };
+
+  textList.push(text0);
+  seriesData.map(function (item) {
+    if (index == 0 && item.data[1] - item.data[0] < 0) {
+      color[1] = downColor;
+    } else {
+      if (item.data[0] < series[index - 1][1]) {
+        color[0] = downColor;
+      }
+      if (item.data[1] < item.data[0]) {
+        color[1] = downColor;
+      }
+      if (item.data[2] > series[index - 1][1]) {
+        color[2] = upColor;
+      }
+      if (item.data[3] < series[index - 1][1]) {
+        color[3] = downColor;
+      }
+    }
+    var text1 = {
+      text: '开盘：' + item.data[0],
+      color: color[0] };
+
+    var text2 = {
+      text: '收盘：' + item.data[1],
+      color: color[1] };
+
+    var text3 = {
+      text: '最低：' + item.data[2],
+      color: color[2] };
+
+    var text4 = {
+      text: '最高：' + item.data[3],
+      color: color[3] };
+
+    textList.push(text1, text2, text3, text4);
+  });
+  var validCalPoints = [];
+  var offset = {
+    x: 0,
+    y: 0 };
+
+  for (var i = 0; i < calPoints.length; i++) {
+    var points = calPoints[i];
+    if (typeof points[index] !== 'undefined' && points[index] !== null) {
+      validCalPoints.push(points[index]);
+    }
+  }
+  offset.x = Math.round(validCalPoints[0][0].x);
+  return {
+    textList: textList,
+    offset: offset };
+
+}
+
+function filterSeries(series) {
+  var tempSeries = [];
+  for (var i = 0; i < series.length; i++) {
+    if (series[i].show == true) {
+      tempSeries.push(series[i]);
+    }
+  }
+  return tempSeries;
+}
+
+function findCurrentIndex(currentPoints, calPoints, opts, config) {
+  var offset = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 0;
+  var currentIndex = -1;
+  var spacing = 0;
+  var xAxisPoints = [];
+  for (var i = 0; i < calPoints[0].length; i++) {
+    xAxisPoints.push(calPoints[0][i].x);
+  }
+  if ((opts.type == 'line' || opts.type == 'area') && opts.xAxis.boundaryGap == 'justify') {
+    spacing = opts.chartData.eachSpacing / 2;
+  }
+  if (!opts.categories) {
+    spacing = 0;
+  }
+  if (isInExactChartArea(currentPoints, opts, config)) {
+    xAxisPoints.forEach(function (item, index) {
+      if (currentPoints.x + offset + spacing > item) {
+        currentIndex = index;
+      }
+    });
+  }
+  return currentIndex;
+}
+
+function findLegendIndex(currentPoints, legendData, opts) {
+  var currentIndex = -1;
+  if (isInExactLegendArea(currentPoints, legendData.area)) {
+    var points = legendData.points;
+    var index = -1;
+    for (var i = 0, len = points.length; i < len; i++) {
+      var item = points[i];
+      for (var j = 0; j < item.length; j++) {
+        index += 1;
+        var area = item[j]['area'];
+        if (currentPoints.x > area[0] && currentPoints.x < area[2] && currentPoints.y > area[1] && currentPoints.y < area[3]) {
+          currentIndex = index;
+          break;
+        }
+      }
+    }
+    return currentIndex;
+  }
+  return currentIndex;
+}
+
+function isInExactLegendArea(currentPoints, area) {
+  return currentPoints.x > area.start.x && currentPoints.x < area.end.x && currentPoints.y > area.start.y &&
+  currentPoints.y < area.end.y;
+}
+
+function isInExactChartArea(currentPoints, opts, config) {
+  return currentPoints.x <= opts.width - opts.area[1] + 10 && currentPoints.x >= opts.area[3] - 10 && currentPoints.y >= opts.area[0] && currentPoints.y <= opts.height - opts.area[2];
+}
+
+function findRadarChartCurrentIndex(currentPoints, radarData, count) {
+  var eachAngleArea = 2 * Math.PI / count;
+  var currentIndex = -1;
+  if (isInExactPieChartArea(currentPoints, radarData.center, radarData.radius)) {
+    var fixAngle = function fixAngle(angle) {
+      if (angle < 0) {
+        angle += 2 * Math.PI;
+      }
+      if (angle > 2 * Math.PI) {
+        angle -= 2 * Math.PI;
+      }
+      return angle;
+    };
+
+    var angle = Math.atan2(radarData.center.y - currentPoints.y, currentPoints.x - radarData.center.x);
+    angle = -1 * angle;
+    if (angle < 0) {
+      angle += 2 * Math.PI;
+    }
+
+    var angleList = radarData.angleList.map(function (item) {
+      item = fixAngle(-1 * item);
+
+      return item;
+    });
+
+    angleList.forEach(function (item, index) {
+      var rangeStart = fixAngle(item - eachAngleArea / 2);
+      var rangeEnd = fixAngle(item + eachAngleArea / 2);
+      if (rangeEnd < rangeStart) {
+        rangeEnd += 2 * Math.PI;
+      }
+      if (angle >= rangeStart && angle <= rangeEnd || angle + 2 * Math.PI >= rangeStart && angle + 2 * Math.PI <=
+      rangeEnd) {
+        currentIndex = index;
+      }
+    });
+  }
+
+  return currentIndex;
+}
+
+function findFunnelChartCurrentIndex(currentPoints, funnelData) {
+  var currentIndex = -1;
+  for (var i = 0, len = funnelData.series.length; i < len; i++) {
+    var item = funnelData.series[i];
+    if (currentPoints.x > item.funnelArea[0] && currentPoints.x < item.funnelArea[2] && currentPoints.y > item.funnelArea[1] && currentPoints.y < item.funnelArea[3]) {
+      currentIndex = i;
+      break;
+    }
+  }
+  return currentIndex;
+}
+
+function findWordChartCurrentIndex(currentPoints, wordData) {
+  var currentIndex = -1;
+  for (var i = 0, len = wordData.length; i < len; i++) {
+    var item = wordData[i];
+    if (currentPoints.x > item.area[0] && currentPoints.x < item.area[2] && currentPoints.y > item.area[1] && currentPoints.y < item.area[3]) {
+      currentIndex = i;
+      break;
+    }
+  }
+  return currentIndex;
+}
+
+function findMapChartCurrentIndex(currentPoints, opts) {
+  var currentIndex = -1;
+  var cData = opts.chartData.mapData;
+  var data = opts.series;
+  var tmp = pointToCoordinate(currentPoints.y, currentPoints.x, cData.bounds, cData.scale, cData.xoffset, cData.yoffset);
+  var poi = [tmp.x, tmp.y];
+  for (var i = 0, len = data.length; i < len; i++) {
+    var item = data[i].geometry.coordinates;
+    if (isPoiWithinPoly(poi, item)) {
+      currentIndex = i;
+      break;
+    }
+  }
+  return currentIndex;
+}
+
+function findPieChartCurrentIndex(currentPoints, pieData) {
+  var currentIndex = -1;
+  if (isInExactPieChartArea(currentPoints, pieData.center, pieData.radius)) {
+    var angle = Math.atan2(pieData.center.y - currentPoints.y, currentPoints.x - pieData.center.x);
+    angle = -angle;
+    for (var i = 0, len = pieData.series.length; i < len; i++) {
+      var item = pieData.series[i];
+      if (isInAngleRange(angle, item._start_, item._start_ + item._proportion_ * 2 * Math.PI)) {
+        currentIndex = i;
+        break;
+      }
+    }
+  }
+
+  return currentIndex;
+}
+
+function isInExactPieChartArea(currentPoints, center, radius) {
+  return Math.pow(currentPoints.x - center.x, 2) + Math.pow(currentPoints.y - center.y, 2) <= Math.pow(radius, 2);
+}
+
+function splitPoints(points) {
+  var newPoints = [];
+  var items = [];
+  points.forEach(function (item, index) {
+    if (item !== null) {
+      items.push(item);
+    } else {
+      if (items.length) {
+        newPoints.push(items);
+      }
+      items = [];
+    }
+  });
+  if (items.length) {
+    newPoints.push(items);
+  }
+
+  return newPoints;
+}
+
+function calLegendData(series, opts, config, chartData) {
+  var legendData = {
+    area: {
+      start: {
+        x: 0,
+        y: 0 },
+
+      end: {
+        x: 0,
+        y: 0 },
+
+      width: 0,
+      height: 0,
+      wholeWidth: 0,
+      wholeHeight: 0 },
+
+    points: [],
+    widthArr: [],
+    heightArr: [] };
+
+  if (opts.legend.show === false) {
+    chartData.legendData = legendData;
+    return legendData;
+  }
+
+  var padding = opts.legend.padding;
+  var margin = opts.legend.margin;
+  var fontSize = opts.legend.fontSize;
+  var shapeWidth = 15 * opts.pixelRatio;
+  var shapeRight = 5 * opts.pixelRatio;
+  var lineHeight = Math.max(opts.legend.lineHeight * opts.pixelRatio, fontSize);
+  if (opts.legend.position == 'top' || opts.legend.position == 'bottom') {
+    var legendList = [];
+    var widthCount = 0;
+    var widthCountArr = [];
+    var currentRow = [];
+    for (var i = 0; i < series.length; i++) {
+      var item = series[i];
+      var itemWidth = shapeWidth + shapeRight + measureText(item.name || 'undefined', fontSize) + opts.legend.itemGap;
+      if (widthCount + itemWidth > opts.width - opts.padding[1] - opts.padding[3]) {
+        legendList.push(currentRow);
+        widthCountArr.push(widthCount - opts.legend.itemGap);
+        widthCount = itemWidth;
+        currentRow = [item];
+      } else {
+        widthCount += itemWidth;
+        currentRow.push(item);
+      }
+    }
+    if (currentRow.length) {
+      legendList.push(currentRow);
+      widthCountArr.push(widthCount - opts.legend.itemGap);
+      legendData.widthArr = widthCountArr;
+      var legendWidth = Math.max.apply(null, widthCountArr);
+      switch (opts.legend.float) {
+        case 'left':
+          legendData.area.start.x = opts.padding[3];
+          legendData.area.end.x = opts.padding[3] + 2 * padding;
+          break;
+        case 'right':
+          legendData.area.start.x = opts.width - opts.padding[1] - legendWidth - 2 * padding;
+          legendData.area.end.x = opts.width - opts.padding[1];
+          break;
+        default:
+          legendData.area.start.x = (opts.width - legendWidth) / 2 - padding;
+          legendData.area.end.x = (opts.width + legendWidth) / 2 + padding;}
+
+      legendData.area.width = legendWidth + 2 * padding;
+      legendData.area.wholeWidth = legendWidth + 2 * padding;
+      legendData.area.height = legendList.length * lineHeight + 2 * padding;
+      legendData.area.wholeHeight = legendList.length * lineHeight + 2 * padding + 2 * margin;
+      legendData.points = legendList;
+    }
+  } else {
+    var len = series.length;
+    var maxHeight = opts.height - opts.padding[0] - opts.padding[2] - 2 * margin - 2 * padding;
+    var maxLength = Math.min(Math.floor(maxHeight / lineHeight), len);
+    legendData.area.height = maxLength * lineHeight + padding * 2;
+    legendData.area.wholeHeight = maxLength * lineHeight + padding * 2;
+    switch (opts.legend.float) {
+      case 'top':
+        legendData.area.start.y = opts.padding[0] + margin;
+        legendData.area.end.y = opts.padding[0] + margin + legendData.area.height;
+        break;
+      case 'bottom':
+        legendData.area.start.y = opts.height - opts.padding[2] - margin - legendData.area.height;
+        legendData.area.end.y = opts.height - opts.padding[2] - margin;
+        break;
+      default:
+        legendData.area.start.y = (opts.height - legendData.area.height) / 2;
+        legendData.area.end.y = (opts.height + legendData.area.height) / 2;}
+
+    var lineNum = len % maxLength === 0 ? len / maxLength : Math.floor(len / maxLength + 1);
+    var _currentRow = [];
+    for (var _i3 = 0; _i3 < lineNum; _i3++) {
+      var temp = series.slice(_i3 * maxLength, _i3 * maxLength + maxLength);
+      _currentRow.push(temp);
+    }
+
+    legendData.points = _currentRow;
+
+    if (_currentRow.length) {
+      for (var _i4 = 0; _i4 < _currentRow.length; _i4++) {
+        var _item = _currentRow[_i4];
+        var maxWidth = 0;
+        for (var j = 0; j < _item.length; j++) {
+          var _itemWidth = shapeWidth + shapeRight + measureText(_item[j].name || 'undefined', fontSize) + opts.legend.itemGap;
+          if (_itemWidth > maxWidth) {
+            maxWidth = _itemWidth;
+          }
+        }
+        legendData.widthArr.push(maxWidth);
+        legendData.heightArr.push(_item.length * lineHeight + padding * 2);
+      }
+      var _legendWidth = 0;
+      for (var _i5 = 0; _i5 < legendData.widthArr.length; _i5++) {
+        _legendWidth += legendData.widthArr[_i5];
+      }
+      legendData.area.width = _legendWidth - opts.legend.itemGap + 2 * padding;
+      legendData.area.wholeWidth = legendData.area.width + padding;
+    }
+  }
+
+  switch (opts.legend.position) {
+    case 'top':
+      legendData.area.start.y = opts.padding[0] + margin;
+      legendData.area.end.y = opts.padding[0] + margin + legendData.area.height;
+      break;
+    case 'bottom':
+      legendData.area.start.y = opts.height - opts.padding[2] - legendData.area.height - margin;
+      legendData.area.end.y = opts.height - opts.padding[2] - margin;
+      break;
+    case 'left':
+      legendData.area.start.x = opts.padding[3];
+      legendData.area.end.x = opts.padding[3] + legendData.area.width;
+      break;
+    case 'right':
+      legendData.area.start.x = opts.width - opts.padding[1] - legendData.area.width;
+      legendData.area.end.x = opts.width - opts.padding[1];
+      break;}
+
+  chartData.legendData = legendData;
+  return legendData;
+}
+
+function calCategoriesData(categories, opts, config, eachSpacing) {
+  var result = {
+    angle: 0,
+    xAxisHeight: config.xAxisHeight };
+
+  var categoriesTextLenth = categories.map(function (item) {
+    return measureText(item, opts.xAxis.fontSize || config.fontSize);
+  });
+  var maxTextLength = Math.max.apply(this, categoriesTextLenth);
+
+  if (opts.xAxis.rotateLabel == true && maxTextLength + 2 * config.xAxisTextPadding > eachSpacing) {
+    result.angle = 45 * Math.PI / 180;
+    result.xAxisHeight = 2 * config.xAxisTextPadding + maxTextLength * Math.sin(result.angle);
+  }
+  return result;
+}
+
+function getXAxisTextList(series, opts, config) {
+  var index = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : -1;
+  var data = dataCombine(series);
+  var sorted = [];
+  // remove null from data
+  data = data.filter(function (item) {
+    //return item !== null;
+    if (typeof item === 'object' && item !== null) {
+      if (item.constructor == Array) {
+        return item !== null;
+      } else {
+        return item.value !== null;
+      }
+    } else {
+      return item !== null;
+    }
+  });
+  data.map(function (item) {
+    if (typeof item === 'object') {
+      if (item.constructor == Array) {
+        if (opts.type == 'candle') {
+          item.map(function (subitem) {
+            sorted.push(subitem);
+          });
+        } else {
+          sorted.push(item[0]);
+        }
+      } else {
+        sorted.push(item.value);
+      }
+    } else {
+      sorted.push(item);
+    }
+  });
+
+  var minData = 0;
+  var maxData = 0;
+  if (sorted.length > 0) {
+    minData = Math.min.apply(this, sorted);
+    maxData = Math.max.apply(this, sorted);
+  }
+  //为了兼容v1.9.0之前的项目
+  if (index > -1) {
+    if (typeof opts.xAxis.data[index].min === 'number') {
+      minData = Math.min(opts.xAxis.data[index].min, minData);
+    }
+    if (typeof opts.xAxis.data[index].max === 'number') {
+      maxData = Math.max(opts.xAxis.data[index].max, maxData);
+    }
+  } else {
+    if (typeof opts.xAxis.min === 'number') {
+      minData = Math.min(opts.xAxis.min, minData);
+    }
+    if (typeof opts.xAxis.max === 'number') {
+      maxData = Math.max(opts.xAxis.max, maxData);
+    }
+  }
+
+
+  if (minData === maxData) {
+    var rangeSpan = maxData || 10;
+    maxData += rangeSpan;
+  }
+
+  var dataRange = getDataRange(minData, maxData);
+  var minRange = dataRange.minRange;
+  var maxRange = dataRange.maxRange;
+
+  var range = [];
+  var eachRange = (maxRange - minRange) / opts.xAxis.splitNumber;
+
+  for (var i = 0; i <= opts.xAxis.splitNumber; i++) {
+    range.push(minRange + eachRange * i);
+  }
+  return range;
+}
+
+function calXAxisData(series, opts, config) {
+  var result = {
+    angle: 0,
+    xAxisHeight: config.xAxisHeight };
+
+
+  result.ranges = getXAxisTextList(series, opts, config);
+  result.rangesFormat = result.ranges.map(function (item) {
+    item = opts.xAxis.format ? opts.xAxis.format(item) : util.toFixed(item, 2);
+    return item;
+  });
+  var xAxisScaleValues = result.ranges.map(function (item) {
+    // 如果刻度值是浮点数,则保留两位小数
+    item = util.toFixed(item, 2);
+    // 若有自定义格式则调用自定义的格式化函数
+    item = opts.xAxis.format ? opts.xAxis.format(Number(item)) : item;
+    return item;
+  });
+
+  result = Object.assign(result, getXAxisPoints(xAxisScaleValues, opts, config));
+  // 计算X轴刻度的属性譬如每个刻度的间隔,刻度的起始点\结束点以及总长
+  var eachSpacing = result.eachSpacing;
+
+  var textLength = xAxisScaleValues.map(function (item) {
+    return measureText(item);
+  });
+
+  // get max length of categories text
+  var maxTextLength = Math.max.apply(this, textLength);
+
+  // 如果刻度值文本内容过长,则将其逆时针旋转45°
+  if (maxTextLength + 2 * config.xAxisTextPadding > eachSpacing) {
+    result.angle = 45 * Math.PI / 180;
+    result.xAxisHeight = 2 * config.xAxisTextPadding + maxTextLength * Math.sin(result.angle);
+  }
+
+  if (opts.xAxis.disabled === true) {
+    result.xAxisHeight = 0;
+  }
+
+  return result;
+}
+
+function getRadarDataPoints(angleList, center, radius, series, opts) {
+  var process = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 1;
+
+  var radarOption = opts.extra.radar || {};
+  radarOption.max = radarOption.max || 0;
+  var maxData = Math.max(radarOption.max, Math.max.apply(null, dataCombine(series)));
+
+  var data = [];var _loop2 = function _loop2(
+  i) {
+    var each = series[i];
+    var listItem = {};
+    listItem.color = each.color;
+    listItem.legendShape = each.legendShape;
+    listItem.pointShape = each.pointShape;
+    listItem.data = [];
+    each.data.forEach(function (item, index) {
+      var tmp = {};
+      tmp.angle = angleList[index];
+
+      tmp.proportion = item / maxData;
+      tmp.position = convertCoordinateOrigin(radius * tmp.proportion * process * Math.cos(tmp.angle), radius * tmp.proportion *
+      process * Math.sin(tmp.angle), center);
+      listItem.data.push(tmp);
+    });
+
+    data.push(listItem);};for (var i = 0; i < series.length; i++) {_loop2(i);
+  }
+
+  return data;
+}
+
+function getPieDataPoints(series, radius) {
+  var process = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
+
+  var count = 0;
+  var _start_ = 0;
+  for (var i = 0; i < series.length; i++) {
+    var item = series[i];
+    item.data = item.data === null ? 0 : item.data;
+    count += item.data;
+  }
+  for (var _i6 = 0; _i6 < series.length; _i6++) {
+    var _item2 = series[_i6];
+    _item2.data = _item2.data === null ? 0 : _item2.data;
+    if (count === 0) {
+      _item2._proportion_ = 1 / series.length * process;
+    } else {
+      _item2._proportion_ = _item2.data / count * process;
+    }
+    _item2._radius_ = radius;
+  }
+  for (var _i7 = 0; _i7 < series.length; _i7++) {
+    var _item3 = series[_i7];
+    _item3._start_ = _start_;
+    _start_ += 2 * _item3._proportion_ * Math.PI;
+  }
+
+  return series;
+}
+
+function getFunnelDataPoints(series, radius) {
+  var process = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
+  series = series.sort(function (a, b) {return parseInt(b.data) - parseInt(a.data);});
+  for (var i = 0; i < series.length; i++) {
+    series[i].radius = series[i].data / series[0].data * radius * process;
+    series[i]._proportion_ = series[i].data / series[0].data;
+  }
+  return series.reverse();
+}
+
+function getRoseDataPoints(series, type, minRadius, radius) {
+  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+  var count = 0;
+  var _start_ = 0;
+
+  var dataArr = [];
+  for (var i = 0; i < series.length; i++) {
+    var item = series[i];
+    item.data = item.data === null ? 0 : item.data;
+    count += item.data;
+    dataArr.push(item.data);
+  }
+
+  var minData = Math.min.apply(null, dataArr);
+  var maxData = Math.max.apply(null, dataArr);
+  var radiusLength = radius - minRadius;
+
+  for (var _i8 = 0; _i8 < series.length; _i8++) {
+    var _item4 = series[_i8];
+    _item4.data = _item4.data === null ? 0 : _item4.data;
+    if (count === 0 || type == 'area') {
+      _item4._proportion_ = _item4.data / count * process;
+      _item4._rose_proportion_ = 1 / series.length * process;
+    } else {
+      _item4._proportion_ = _item4.data / count * process;
+      _item4._rose_proportion_ = _item4.data / count * process;
+    }
+    _item4._radius_ = minRadius + radiusLength * ((_item4.data - minData) / (maxData - minData));
+  }
+  for (var _i9 = 0; _i9 < series.length; _i9++) {
+    var _item5 = series[_i9];
+    _item5._start_ = _start_;
+    _start_ += 2 * _item5._rose_proportion_ * Math.PI;
+  }
+
+  return series;
+}
+
+function getArcbarDataPoints(series, arcbarOption) {
+  var process = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
+  if (process == 1) {
+    process = 0.999999;
+  }
+  for (var i = 0; i < series.length; i++) {
+    var item = series[i];
+    item.data = item.data === null ? 0 : item.data;
+    var totalAngle = void 0;
+    if (arcbarOption.type == 'circle') {
+      totalAngle = 2;
+    } else {
+      if (arcbarOption.endAngle < arcbarOption.startAngle) {
+        totalAngle = 2 + arcbarOption.endAngle - arcbarOption.startAngle;
+      } else {
+        totalAngle = arcbarOption.startAngle - arcbarOption.endAngle;
+      }
+    }
+    item._proportion_ = totalAngle * item.data * process + arcbarOption.startAngle;
+    if (item._proportion_ >= 2) {
+      item._proportion_ = item._proportion_ % 2;
+    }
+  }
+  return series;
+}
+
+function getGaugeAxisPoints(categories, startAngle, endAngle) {
+  var totalAngle = startAngle - endAngle + 1;
+  var tempStartAngle = startAngle;
+  for (var i = 0; i < categories.length; i++) {
+    categories[i].value = categories[i].value === null ? 0 : categories[i].value;
+    categories[i]._startAngle_ = tempStartAngle;
+    categories[i]._endAngle_ = totalAngle * categories[i].value + startAngle;
+    if (categories[i]._endAngle_ >= 2) {
+      categories[i]._endAngle_ = categories[i]._endAngle_ % 2;
+    }
+    tempStartAngle = categories[i]._endAngle_;
+  }
+  return categories;
+}
+
+function getGaugeDataPoints(series, categories, gaugeOption) {
+  var process = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 1;
+  for (var i = 0; i < series.length; i++) {
+    var item = series[i];
+    item.data = item.data === null ? 0 : item.data;
+    if (gaugeOption.pointer.color == 'auto') {
+      for (var _i10 = 0; _i10 < categories.length; _i10++) {
+        if (item.data <= categories[_i10].value) {
+          item.color = categories[_i10].color;
+          break;
+        }
+      }
+    } else {
+      item.color = gaugeOption.pointer.color;
+    }
+    var totalAngle = gaugeOption.startAngle - gaugeOption.endAngle + 1;
+    item._endAngle_ = totalAngle * item.data + gaugeOption.startAngle;
+    item._oldAngle_ = gaugeOption.oldAngle;
+    if (gaugeOption.oldAngle < gaugeOption.endAngle) {
+      item._oldAngle_ += 2;
+    }
+    if (item.data >= gaugeOption.oldData) {
+      item._proportion_ = (item._endAngle_ - item._oldAngle_) * process + gaugeOption.oldAngle;
+    } else {
+      item._proportion_ = item._oldAngle_ - (item._oldAngle_ - item._endAngle_) * process;
+    }
+    if (item._proportion_ >= 2) {
+      item._proportion_ = item._proportion_ % 2;
+    }
+  }
+  return series;
+}
+
+function getPieTextMaxLength(series) {
+  series = getPieDataPoints(series);
+  var maxLength = 0;
+  for (var i = 0; i < series.length; i++) {
+    var item = series[i];
+    var text = item.format ? item.format(+item._proportion_.toFixed(2)) : util.toFixed(item._proportion_ * 100) + '%';
+    maxLength = Math.max(maxLength, measureText(text));
+  }
+
+  return maxLength;
+}
+
+function fixColumeData(points, eachSpacing, columnLen, index, config, opts) {
+  return points.map(function (item) {
+    if (item === null) {
+      return null;
+    }
+    item.width = Math.ceil((eachSpacing - 2 * config.columePadding) / columnLen);
+
+    if (opts.extra.column && opts.extra.column.width && +opts.extra.column.width > 0) {
+      item.width = Math.min(item.width, +opts.extra.column.width);
+    }
+    if (item.width <= 0) {
+      item.width = 1;
+    }
+    item.x += (index + 0.5 - columnLen / 2) * item.width;
+    return item;
+  });
+}
+
+function fixColumeMeterData(points, eachSpacing, columnLen, index, config, opts, border) {
+  return points.map(function (item) {
+    if (item === null) {
+      return null;
+    }
+    item.width = Math.ceil((eachSpacing - 2 * config.columePadding) / 2);
+
+    if (opts.extra.column && opts.extra.column.width && +opts.extra.column.width > 0) {
+      item.width = Math.min(item.width, +opts.extra.column.width);
+    }
+
+    if (index > 0) {
+      item.width -= 2 * border;
+    }
+    return item;
+  });
+}
+
+function fixColumeStackData(points, eachSpacing, columnLen, index, config, opts, series) {
+
+  return points.map(function (item, indexn) {
+
+    if (item === null) {
+      return null;
+    }
+    item.width = Math.ceil((eachSpacing - 2 * config.columePadding) / 2);
+
+    if (opts.extra.column && opts.extra.column.width && +opts.extra.column.width > 0) {
+      item.width = Math.min(item.width, +opts.extra.column.width);
+    }
+    return item;
+  });
+}
+
+function getXAxisPoints(categories, opts, config) {
+  var spacingValid = opts.width - opts.area[1] - opts.area[3];
+  var dataCount = opts.enableScroll ? Math.min(opts.xAxis.itemCount, categories.length) : categories.length;
+  if ((opts.type == 'line' || opts.type == 'area') && dataCount > 1 && opts.xAxis.boundaryGap == 'justify') {
+    dataCount -= 1;
+  }
+  var eachSpacing = spacingValid / dataCount;
+
+  var xAxisPoints = [];
+  var startX = opts.area[3];
+  var endX = opts.width - opts.area[1];
+  categories.forEach(function (item, index) {
+    xAxisPoints.push(startX + index * eachSpacing);
+  });
+  if (opts.xAxis.boundaryGap !== 'justify') {
+    if (opts.enableScroll === true) {
+      xAxisPoints.push(startX + categories.length * eachSpacing);
+    } else {
+      xAxisPoints.push(endX);
+    }
+  }
+  return {
+    xAxisPoints: xAxisPoints,
+    startX: startX,
+    endX: endX,
+    eachSpacing: eachSpacing };
+
+}
+
+function getCandleDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config) {
+  var process = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : 1;
+  var points = [];
+  var validHeight = opts.height - opts.area[0] - opts.area[2];
+  data.forEach(function (item, index) {
+    if (item === null) {
+      points.push(null);
+    } else {
+      var cPoints = [];
+      item.forEach(function (items, indexs) {
+        var point = {};
+        point.x = xAxisPoints[index] + Math.round(eachSpacing / 2);
+        var value = items.value || items;
+        var height = validHeight * (value - minRange) / (maxRange - minRange);
+        height *= process;
+        point.y = opts.height - Math.round(height) - opts.area[2];
+        cPoints.push(point);
+      });
+      points.push(cPoints);
+    }
+  });
+
+  return points;
+}
+
+function getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config) {
+  var process = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : 1;
+  var boundaryGap = 'center';
+  if (opts.type == 'line' || opts.type == 'area') {
+    boundaryGap = opts.xAxis.boundaryGap;
+  }
+  var points = [];
+  var validHeight = opts.height - opts.area[0] - opts.area[2];
+  var validWidth = opts.width - opts.area[1] - opts.area[3];
+  data.forEach(function (item, index) {
+    if (item === null) {
+      points.push(null);
+    } else {
+      var point = {};
+      point.color = item.color;
+      point.x = xAxisPoints[index];
+      var value = item;
+      if (typeof item === 'object' && item !== null) {
+        if (item.constructor == Array) {
+          var xranges, xminRange, xmaxRange;
+          xranges = [].concat(opts.chartData.xAxisData.ranges);
+
+          xminRange = xranges.shift();
+          xmaxRange = xranges.pop();
+          value = item[1];
+          point.x = opts.area[3] + validWidth * (item[0] - xminRange) / (xmaxRange - xminRange);
+        } else {
+          value = item.value;
+        }
+      }
+      if (boundaryGap == 'center') {
+        point.x += Math.round(eachSpacing / 2);
+      }
+      var height = validHeight * (value - minRange) / (maxRange - minRange);
+      height *= process;
+      point.y = opts.height - Math.round(height) - opts.area[2];
+      points.push(point);
+    }
+  });
+
+  return points;
+}
+
+function getStackDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, seriesIndex, stackSeries) {
+  var process = arguments.length > 9 && arguments[9] !== undefined ? arguments[9] : 1;
+  var points = [];
+  var validHeight = opts.height - opts.area[0] - opts.area[2];
+
+  data.forEach(function (item, index) {
+    if (item === null) {
+      points.push(null);
+    } else {
+      var point = {};
+      point.color = item.color;
+      point.x = xAxisPoints[index] + Math.round(eachSpacing / 2);
+
+      if (seriesIndex > 0) {
+        var value = 0;
+        for (var i = 0; i <= seriesIndex; i++) {
+          value += stackSeries[i].data[index];
+        }
+        var value0 = value - item;
+        var height = validHeight * (value - minRange) / (maxRange - minRange);
+        var height0 = validHeight * (value0 - minRange) / (maxRange - minRange);
+      } else {
+        var value = item;
+        var height = validHeight * (value - minRange) / (maxRange - minRange);
+        var height0 = 0;
+      }
+      var heightc = height0;
+      height *= process;
+      heightc *= process;
+      point.y = opts.height - Math.round(height) - opts.area[2];
+      point.y0 = opts.height - Math.round(heightc) - opts.area[2];
+      points.push(point);
+    }
+  });
+
+  return points;
+}
+
+function getYAxisTextList(series, opts, config, stack) {
+  var index = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : -1;
+  var data;
+  if (stack == 'stack') {
+    data = dataCombineStack(series, opts.categories.length);
+  } else {
+    data = dataCombine(series);
+  }
+  var sorted = [];
+  // remove null from data
+  data = data.filter(function (item) {
+    //return item !== null;
+    if (typeof item === 'object' && item !== null) {
+      if (item.constructor == Array) {
+        return item !== null;
+      } else {
+        return item.value !== null;
+      }
+    } else {
+      return item !== null;
+    }
+  });
+  data.map(function (item) {
+    if (typeof item === 'object') {
+      if (item.constructor == Array) {
+        if (opts.type == 'candle') {
+          item.map(function (subitem) {
+            sorted.push(subitem);
+          });
+        } else {
+          sorted.push(item[1]);
+        }
+      } else {
+        sorted.push(item.value);
+      }
+    } else {
+      sorted.push(item);
+    }
+  });
+
+  var minData = 0;
+  var maxData = 0;
+  if (sorted.length > 0) {
+    minData = Math.min.apply(this, sorted);
+    maxData = Math.max.apply(this, sorted);
+  }
+  //为了兼容v1.9.0之前的项目
+  if (index > -1) {
+    if (typeof opts.yAxis.data[index].min === 'number') {
+      minData = Math.min(opts.yAxis.data[index].min, minData);
+    }
+    if (typeof opts.yAxis.data[index].max === 'number') {
+      maxData = Math.max(opts.yAxis.data[index].max, maxData);
+    }
+  } else {
+    if (typeof opts.yAxis.min === 'number') {
+      minData = Math.min(opts.yAxis.min, minData);
+    }
+    if (typeof opts.yAxis.max === 'number') {
+      maxData = Math.max(opts.yAxis.max, maxData);
+    }
+  }
+
+
+  if (minData === maxData) {
+    var rangeSpan = maxData || 10;
+    maxData += rangeSpan;
+  }
+
+  var dataRange = getDataRange(minData, maxData);
+  var minRange = dataRange.minRange;
+  var maxRange = dataRange.maxRange;
+
+  var range = [];
+  var eachRange = (maxRange - minRange) / opts.yAxis.splitNumber;
+
+  for (var i = 0; i <= opts.yAxis.splitNumber; i++) {
+    range.push(minRange + eachRange * i);
+  }
+  return range.reverse();
+}
+
+function calYAxisData(series, opts, config) {
+  //堆叠图重算Y轴
+  var columnstyle = assign({}, {
+    type: "" },
+  opts.extra.column);
+  //如果是多Y轴，重新计算
+  var YLength = opts.yAxis.data.length;
+  var newSeries = new Array(YLength);
+  if (YLength > 0) {
+    for (var i = 0; i < YLength; i++) {
+      newSeries[i] = [];
+      for (var j = 0; j < series.length; j++) {
+        if (series[j].index == i) {
+          newSeries[i].push(series[j]);
+        }
+      }
+    }
+    var rangesArr = new Array(YLength);
+    var rangesFormatArr = new Array(YLength);
+    var yAxisWidthArr = new Array(YLength);var _loop3 = function _loop3(
+
+    _i11) {
+      var yData = opts.yAxis.data[_i11];
+      //如果总开关不显示，强制每个Y轴为不显示
+      if (opts.yAxis.disabled == true) {
+        yData.disabled = true;
+      }
+      rangesArr[_i11] = getYAxisTextList(newSeries[_i11], opts, config, columnstyle.type, _i11);
+      var yAxisFontSizes = yData.fontSize || config.fontSize;
+      yAxisWidthArr[_i11] = { position: yData.position ? yData.position : 'left', width: 0 };
+      rangesFormatArr[_i11] = rangesArr[_i11].map(function (items) {
+        items = util.toFixed(items, 6);
+        items = yData.format ? yData.format(Number(items)) : items;
+        yAxisWidthArr[_i11].width = Math.max(yAxisWidthArr[_i11].width, measureText(items, yAxisFontSizes) + 5);
+        return items;
+      });
+      var calibration = yData.calibration ? 4 * opts.pixelRatio : 0;
+      yAxisWidthArr[_i11].width += calibration + 3 * opts.pixelRatio;
+      if (yData.disabled === true) {
+        yAxisWidthArr[_i11].width = 0;
+      }};for (var _i11 = 0; _i11 < YLength; _i11++) {_loop3(_i11);
+    }
+
+  } else {
+    var rangesArr = new Array(1);
+    var rangesFormatArr = new Array(1);
+    var yAxisWidthArr = new Array(1);
+    rangesArr[0] = getYAxisTextList(series, opts, config, columnstyle.type);
+    yAxisWidthArr[0] = { position: 'left', width: 0 };
+    var yAxisFontSize = opts.yAxis.fontSize || config.fontSize;
+    rangesFormatArr[0] = rangesArr[0].map(function (item) {
+      item = util.toFixed(item, 6);
+      item = opts.yAxis.format ? opts.yAxis.format(Number(item)) : item;
+      yAxisWidthArr[0].width = Math.max(yAxisWidthArr[0].width, measureText(item, yAxisFontSize) + 5);
+      return item;
+    });
+    yAxisWidthArr[0].width += 3 * opts.pixelRatio;
+    if (opts.yAxis.disabled === true) {
+      yAxisWidthArr[0] = { position: 'left', width: 0 };
+      opts.yAxis.data[0] = { disabled: true };
+    } else {
+      opts.yAxis.data[0] = { disabled: false, position: 'left', max: opts.yAxis.max, min: opts.yAxis.min, format: opts.yAxis.format };
+    }
+
+  }
+
+  return {
+    rangesFormat: rangesFormatArr,
+    ranges: rangesArr,
+    yAxisWidth: yAxisWidthArr };
+
+
+}
+
+function calTooltipYAxisData(point, series, opts, config, eachSpacing) {
+  var ranges = [].concat(opts.chartData.yAxisData.ranges);
+  var spacingValid = opts.height - opts.area[0] - opts.area[2];
+  var minAxis = opts.area[0];
+  var items = [];
+  for (var i = 0; i < ranges.length; i++) {
+    var maxVal = ranges[i].shift();
+    var minVal = ranges[i].pop();
+    var item = maxVal - (maxVal - minVal) * (point - minAxis) / spacingValid;
+    item = opts.yAxis.data[i].format ? opts.yAxis.data[i].format(Number(item)) : item.toFixed(0);
+    items.push(String(item));
+  }
+  return items;
+}
+
+function calMarkLineData(points, opts) {
+  var minRange, maxRange;
+  var spacingValid = opts.height - opts.area[0] - opts.area[2];
+  for (var i = 0; i < points.length; i++) {
+    points[i].yAxisIndex = points[i].yAxisIndex ? points[i].yAxisIndex : 0;
+    var range = [].concat(opts.chartData.yAxisData.ranges[points[i].yAxisIndex]);
+    minRange = range.pop();
+    maxRange = range.shift();
+    var height = spacingValid * (points[i].value - minRange) / (maxRange - minRange);
+    points[i].y = opts.height - Math.round(height) - opts.area[2];
+  }
+  return points;
+}
+
+function contextRotate(context, opts) {
+  if (opts.rotateLock !== true) {
+    context.translate(opts.height, 0);
+    context.rotate(90 * Math.PI / 180);
+  } else if (opts._rotate_ !== true) {
+    context.translate(opts.height, 0);
+    context.rotate(90 * Math.PI / 180);
+    opts._rotate_ = true;
+  }
+}
+
+function drawPointShape(points, color, shape, context, opts) {
+  context.beginPath();
+  if (opts.dataPointShapeType == 'hollow') {
+    context.setStrokeStyle(color);
+    context.setFillStyle(opts.background);
+    context.setLineWidth(2 * opts.pixelRatio);
+  } else {
+    context.setStrokeStyle("#ffffff");
+    context.setFillStyle(color);
+    context.setLineWidth(1 * opts.pixelRatio);
+  }
+  if (shape === 'diamond') {
+    points.forEach(function (item, index) {
+      if (item !== null) {
+        context.moveTo(item.x, item.y - 4.5);
+        context.lineTo(item.x - 4.5, item.y);
+        context.lineTo(item.x, item.y + 4.5);
+        context.lineTo(item.x + 4.5, item.y);
+        context.lineTo(item.x, item.y - 4.5);
+      }
+    });
+  } else if (shape === 'circle') {
+    points.forEach(function (item, index) {
+      if (item !== null) {
+        context.moveTo(item.x + 2.5 * opts.pixelRatio, item.y);
+        context.arc(item.x, item.y, 3 * opts.pixelRatio, 0, 2 * Math.PI, false);
+      }
+    });
+  } else if (shape === 'rect') {
+    points.forEach(function (item, index) {
+      if (item !== null) {
+        context.moveTo(item.x - 3.5, item.y - 3.5);
+        context.rect(item.x - 3.5, item.y - 3.5, 7, 7);
+      }
+    });
+  } else if (shape === 'triangle') {
+    points.forEach(function (item, index) {
+      if (item !== null) {
+        context.moveTo(item.x, item.y - 4.5);
+        context.lineTo(item.x - 4.5, item.y + 4.5);
+        context.lineTo(item.x + 4.5, item.y + 4.5);
+        context.lineTo(item.x, item.y - 4.5);
+      }
+    });
+  }
+  context.closePath();
+  context.fill();
+  context.stroke();
+}
+
+function drawRingTitle(opts, config, context, center) {
+  var titlefontSize = opts.title.fontSize || config.titleFontSize;
+  var subtitlefontSize = opts.subtitle.fontSize || config.subtitleFontSize;
+  var title = opts.title.name || '';
+  var subtitle = opts.subtitle.name || '';
+  var titleFontColor = opts.title.color || config.titleColor;
+  var subtitleFontColor = opts.subtitle.color || config.subtitleColor;
+  var titleHeight = title ? titlefontSize : 0;
+  var subtitleHeight = subtitle ? subtitlefontSize : 0;
+  var margin = 5;
+
+  if (subtitle) {
+    var textWidth = measureText(subtitle, subtitlefontSize);
+    var startX = center.x - textWidth / 2 + (opts.subtitle.offsetX || 0);
+    var startY = center.y + subtitlefontSize / 2 + (opts.subtitle.offsetY || 0);
+    if (title) {
+      startY += (titleHeight + margin) / 2;
+    }
+    context.beginPath();
+    context.setFontSize(subtitlefontSize);
+    context.setFillStyle(subtitleFontColor);
+    context.fillText(subtitle, startX, startY);
+    context.closePath();
+    context.stroke();
+  }
+  if (title) {
+    var _textWidth = measureText(title, titlefontSize);
+    var _startX = center.x - _textWidth / 2 + (opts.title.offsetX || 0);
+    var _startY = center.y + titlefontSize / 2 + (opts.title.offsetY || 0);
+    if (subtitle) {
+      _startY -= (subtitleHeight + margin) / 2;
+    }
+    context.beginPath();
+    context.setFontSize(titlefontSize);
+    context.setFillStyle(titleFontColor);
+    context.fillText(title, _startX, _startY);
+    context.closePath();
+    context.stroke();
+  }
+}
+
+function drawPointText(points, series, config, context) {
+  // 绘制数据文案
+  var data = series.data;
+  points.forEach(function (item, index) {
+    if (item !== null) {
+      //var formatVal = series.format ? series.format(data[index]) : data[index];
+      context.beginPath();
+      context.setFontSize(series.textSize || config.fontSize);
+      context.setFillStyle(series.textColor || '#666666');
+      var value = data[index];
+      if (typeof data[index] === 'object' && data[index] !== null) {
+        if (data[index].constructor == Array) {
+          value = data[index][1];
+        } else {
+          value = data[index].value;
+        }
+      }
+      var formatVal = series.format ? series.format(value) : value;
+      context.fillText(String(formatVal), item.x - measureText(formatVal, series.textSize || config.fontSize) / 2, item.y - 4);
+      context.closePath();
+      context.stroke();
+    }
+  });
+
+}
+
+function drawGaugeLabel(gaugeOption, radius, centerPosition, opts, config, context) {
+  radius -= gaugeOption.width / 2 + config.gaugeLabelTextMargin;
+
+  var totalAngle = gaugeOption.startAngle - gaugeOption.endAngle + 1;
+  var splitAngle = totalAngle / gaugeOption.splitLine.splitNumber;
+  var totalNumber = gaugeOption.endNumber - gaugeOption.startNumber;
+  var splitNumber = totalNumber / gaugeOption.splitLine.splitNumber;
+  var nowAngle = gaugeOption.startAngle;
+  var nowNumber = gaugeOption.startNumber;
+  for (var i = 0; i < gaugeOption.splitLine.splitNumber + 1; i++) {
+    var pos = {
+      x: radius * Math.cos(nowAngle * Math.PI),
+      y: radius * Math.sin(nowAngle * Math.PI) };
+
+    var labelText = gaugeOption.labelFormat ? gaugeOption.labelFormat(nowNumber) : nowNumber;
+    pos.x += centerPosition.x - measureText(labelText) / 2;
+    pos.y += centerPosition.y;
+    var startX = pos.x;
+    var startY = pos.y;
+    context.beginPath();
+    context.setFontSize(config.fontSize);
+    context.setFillStyle(gaugeOption.labelColor || '#666666');
+    context.fillText(labelText, startX, startY + config.fontSize / 2);
+    context.closePath();
+    context.stroke();
+
+    nowAngle += splitAngle;
+    if (nowAngle >= 2) {
+      nowAngle = nowAngle % 2;
+    }
+    nowNumber += splitNumber;
+  }
+
+}
+
+function drawRadarLabel(angleList, radius, centerPosition, opts, config, context) {
+  var radarOption = opts.extra.radar || {};
+  radius += config.radarLabelTextMargin;
+
+  angleList.forEach(function (angle, index) {
+    var pos = {
+      x: radius * Math.cos(angle),
+      y: radius * Math.sin(angle) };
+
+    var posRelativeCanvas = convertCoordinateOrigin(pos.x, pos.y, centerPosition);
+    var startX = posRelativeCanvas.x;
+    var startY = posRelativeCanvas.y;
+    if (util.approximatelyEqual(pos.x, 0)) {
+      startX -= measureText(opts.categories[index] || '') / 2;
+    } else if (pos.x < 0) {
+      startX -= measureText(opts.categories[index] || '');
+    }
+    context.beginPath();
+    context.setFontSize(config.fontSize);
+    context.setFillStyle(radarOption.labelColor || '#666666');
+    context.fillText(opts.categories[index] || '', startX, startY + config.fontSize / 2);
+    context.closePath();
+    context.stroke();
+  });
+
+}
+
+function drawPieText(series, opts, config, context, radius, center) {
+  var lineRadius = config.pieChartLinePadding;
+  var textObjectCollection = [];
+  var lastTextObject = null;
+
+  var seriesConvert = series.map(function (item) {
+    var text = item.format ? item.format(+item._proportion_.toFixed(2)) : util.toFixed(item._proportion_.toFixed(4) * 100) + '%';
+    if (item._rose_proportion_) item._proportion_ = item._rose_proportion_;
+    var arc = 2 * Math.PI - (item._start_ + 2 * Math.PI * item._proportion_ / 2);
+    var color = item.color;
+    var radius = item._radius_;
+    return {
+      arc: arc,
+      text: text,
+      color: color,
+      radius: radius,
+      textColor: item.textColor,
+      textSize: item.textSize };
+
+  });
+  for (var i = 0; i < seriesConvert.length; i++) {
+    var item = seriesConvert[i];
+    // line end
+    var orginX1 = Math.cos(item.arc) * (item.radius + lineRadius);
+    var orginY1 = Math.sin(item.arc) * (item.radius + lineRadius);
+
+    // line start
+    var orginX2 = Math.cos(item.arc) * item.radius;
+    var orginY2 = Math.sin(item.arc) * item.radius;
+
+    // text start
+    var orginX3 = orginX1 >= 0 ? orginX1 + config.pieChartTextPadding : orginX1 - config.pieChartTextPadding;
+    var orginY3 = orginY1;
+    var textWidth = measureText(item.text, item.textSize || config.fontSize);
+    var startY = orginY3;
+
+    if (lastTextObject && util.isSameXCoordinateArea(lastTextObject.start, {
+      x: orginX3 }))
+    {
+      if (orginX3 > 0) {
+        startY = Math.min(orginY3, lastTextObject.start.y);
+      } else if (orginX1 < 0) {
+        startY = Math.max(orginY3, lastTextObject.start.y);
+      } else {
+        if (orginY3 > 0) {
+          startY = Math.max(orginY3, lastTextObject.start.y);
+        } else {
+          startY = Math.min(orginY3, lastTextObject.start.y);
+        }
+      }
+    }
+    if (orginX3 < 0) {
+      orginX3 -= textWidth;
+    }
+
+    var textObject = {
+      lineStart: {
+        x: orginX2,
+        y: orginY2 },
+
+      lineEnd: {
+        x: orginX1,
+        y: orginY1 },
+
+      start: {
+        x: orginX3,
+        y: startY },
+
+      width: textWidth,
+      height: config.fontSize,
+      text: item.text,
+      color: item.color,
+      textColor: item.textColor,
+      textSize: item.textSize };
+
+    lastTextObject = avoidCollision(textObject, lastTextObject);
+    textObjectCollection.push(lastTextObject);
+  }
+
+  for (var _i12 = 0; _i12 < textObjectCollection.length; _i12++) {
+    var _item6 = textObjectCollection[_i12];
+    var lineStartPoistion = convertCoordinateOrigin(_item6.lineStart.x, _item6.lineStart.y, center);
+    var lineEndPoistion = convertCoordinateOrigin(_item6.lineEnd.x, _item6.lineEnd.y, center);
+    var textPosition = convertCoordinateOrigin(_item6.start.x, _item6.start.y, center);
+    context.setLineWidth(1 * opts.pixelRatio);
+    context.setFontSize(config.fontSize);
+    context.beginPath();
+    context.setStrokeStyle(_item6.color);
+    context.setFillStyle(_item6.color);
+    context.moveTo(lineStartPoistion.x, lineStartPoistion.y);
+    var curveStartX = _item6.start.x < 0 ? textPosition.x + _item6.width : textPosition.x;
+    var textStartX = _item6.start.x < 0 ? textPosition.x - 5 : textPosition.x + 5;
+    context.quadraticCurveTo(lineEndPoistion.x, lineEndPoistion.y, curveStartX, textPosition.y);
+    context.moveTo(lineStartPoistion.x, lineStartPoistion.y);
+    context.stroke();
+    context.closePath();
+    context.beginPath();
+    context.moveTo(textPosition.x + _item6.width, textPosition.y);
+    context.arc(curveStartX, textPosition.y, 2, 0, 2 * Math.PI);
+    context.closePath();
+    context.fill();
+    context.beginPath();
+    context.setFontSize(_item6.textSize || config.fontSize);
+    context.setFillStyle(_item6.textColor || '#666666');
+    context.fillText(_item6.text, textStartX, textPosition.y + 3);
+    context.closePath();
+    context.stroke();
+    context.closePath();
+  }
+}
+
+function drawToolTipSplitLine(offsetX, opts, config, context) {
+  var toolTipOption = opts.extra.tooltip || {};
+  toolTipOption.gridType = toolTipOption.gridType == undefined ? 'solid' : toolTipOption.gridType;
+  toolTipOption.dashLength = toolTipOption.dashLength == undefined ? 4 : toolTipOption.dashLength;
+  var startY = opts.area[0];
+  var endY = opts.height - opts.area[2];
+
+  if (toolTipOption.gridType == 'dash') {
+    context.setLineDash([toolTipOption.dashLength, toolTipOption.dashLength]);
+  }
+  context.setStrokeStyle(toolTipOption.gridColor || '#cccccc');
+  context.setLineWidth(1 * opts.pixelRatio);
+  context.beginPath();
+  context.moveTo(offsetX, startY);
+  context.lineTo(offsetX, endY);
+  context.stroke();
+  context.setLineDash([]);
+
+  if (toolTipOption.xAxisLabel) {
+    var labelText = opts.categories[opts.tooltip.index];
+    context.setFontSize(config.fontSize);
+    var textWidth = measureText(labelText, config.fontSize);
+
+    var textX = offsetX - 0.5 * textWidth;
+    var textY = endY;
+    context.beginPath();
+    context.setFillStyle(hexToRgb(toolTipOption.labelBgColor || config.toolTipBackground, toolTipOption.labelBgOpacity || config.toolTipOpacity));
+    context.setStrokeStyle(toolTipOption.labelBgColor || config.toolTipBackground);
+    context.setLineWidth(1 * opts.pixelRatio);
+    context.rect(textX - config.toolTipPadding, textY, textWidth + 2 * config.toolTipPadding, config.fontSize + 2 * config.toolTipPadding);
+    context.closePath();
+    context.stroke();
+    context.fill();
+
+    context.beginPath();
+    context.setFontSize(config.fontSize);
+    context.setFillStyle(toolTipOption.labelFontColor || config.fontColor);
+    context.fillText(String(labelText), textX, textY + config.toolTipPadding + config.fontSize);
+    context.closePath();
+    context.stroke();
+  }
+}
+
+function drawMarkLine(opts, config, context) {
+  var markLineOption = assign({}, {
+    type: 'solid',
+    dashLength: 4,
+    data: [] },
+  opts.extra.markLine);
+  var startX = opts.area[3];
+  var endX = opts.width - opts.area[1];
+  var points = calMarkLineData(markLineOption.data, opts);
+
+  for (var i = 0; i < points.length; i++) {
+    var item = assign({}, {
+      lineColor: '#DE4A42',
+      showLabel: false,
+      labelFontColor: '#666666',
+      labelBgColor: '#DFE8FF',
+      labelBgOpacity: 0.8,
+      yAxisIndex: 0 },
+    points[i]);
+
+    if (markLineOption.type == 'dash') {
+      context.setLineDash([markLineOption.dashLength, markLineOption.dashLength]);
+    }
+    context.setStrokeStyle(item.lineColor);
+    context.setLineWidth(1 * opts.pixelRatio);
+    context.beginPath();
+    context.moveTo(startX, item.y);
+    context.lineTo(endX, item.y);
+    context.stroke();
+    context.setLineDash([]);
+    if (item.showLabel) {
+      var labelText = opts.yAxis.format ? opts.yAxis.format(Number(item.value)) : item.value;
+      context.setFontSize(config.fontSize);
+      var textWidth = measureText(labelText, config.fontSize);
+      var bgStartX = opts.padding[3] + config.yAxisTitleWidth - config.toolTipPadding;
+      var bgEndX = Math.max(opts.area[3], textWidth + config.toolTipPadding * 2);
+      var bgWidth = bgEndX - bgStartX;
+
+      var textX = bgStartX + (bgWidth - textWidth) / 2;
+      var textY = item.y;
+      context.setFillStyle(hexToRgb(item.labelBgColor, item.labelBgOpacity));
+      context.setStrokeStyle(item.labelBgColor);
+      context.setLineWidth(1 * opts.pixelRatio);
+      context.beginPath();
+      context.rect(bgStartX, textY - 0.5 * config.fontSize - config.toolTipPadding, bgWidth, config.fontSize + 2 * config.toolTipPadding);
+      context.closePath();
+      context.stroke();
+      context.fill();
+
+      context.beginPath();
+      context.setFontSize(config.fontSize);
+      context.setFillStyle(item.labelFontColor);
+      context.fillText(String(labelText), textX, textY + 0.5 * config.fontSize);
+      context.stroke();
+    }
+  }
+}
+
+function drawToolTipHorizentalLine(opts, config, context, eachSpacing, xAxisPoints) {
+  var toolTipOption = assign({}, {
+    gridType: 'solid',
+    dashLength: 4 },
+  opts.extra.tooltip);
+
+  var startX = opts.area[3];
+  var endX = opts.width - opts.area[1];
+
+  if (toolTipOption.gridType == 'dash') {
+    context.setLineDash([toolTipOption.dashLength, toolTipOption.dashLength]);
+  }
+  context.setStrokeStyle(toolTipOption.gridColor || '#cccccc');
+  context.setLineWidth(1 * opts.pixelRatio);
+  context.beginPath();
+  context.moveTo(startX, opts.tooltip.offset.y);
+  context.lineTo(endX, opts.tooltip.offset.y);
+  context.stroke();
+  context.setLineDash([]);
+
+  if (toolTipOption.yAxisLabel) {
+    var labelText = calTooltipYAxisData(opts.tooltip.offset.y, opts.series, opts, config, eachSpacing);
+    var widthArr = opts.chartData.yAxisData.yAxisWidth;
+    var tStartLeft = opts.area[3];
+    var tStartRight = opts.width - opts.area[1];
+    for (var i = 0; i < labelText.length; i++) {
+      context.setFontSize(config.fontSize);
+      var textWidth = measureText(labelText[i], config.fontSize);
+      var bgStartX = void 0,bgEndX = void 0,bgWidth = void 0;
+      if (widthArr[i].position == 'left') {
+        bgStartX = tStartLeft - widthArr[i].width;
+        bgEndX = Math.max(bgStartX, bgStartX + textWidth + config.toolTipPadding * 2);
+      } else {
+        bgStartX = tStartRight;
+        bgEndX = Math.max(bgStartX + widthArr[i].width, bgStartX + textWidth + config.toolTipPadding * 2);
+      }
+      bgWidth = bgEndX - bgStartX;
+
+      var textX = bgStartX + (bgWidth - textWidth) / 2;
+      var textY = opts.tooltip.offset.y;
+      context.beginPath();
+      context.setFillStyle(hexToRgb(toolTipOption.labelBgColor || config.toolTipBackground, toolTipOption.labelBgOpacity || config.toolTipOpacity));
+      context.setStrokeStyle(toolTipOption.labelBgColor || config.toolTipBackground);
+      context.setLineWidth(1 * opts.pixelRatio);
+      context.rect(bgStartX, textY - 0.5 * config.fontSize - config.toolTipPadding, bgWidth, config.fontSize + 2 * config.toolTipPadding);
+      context.closePath();
+      context.stroke();
+      context.fill();
+
+      context.beginPath();
+      context.setFontSize(config.fontSize);
+      context.setFillStyle(toolTipOption.labelFontColor || config.fontColor);
+      context.fillText(labelText[i], textX, textY + 0.5 * config.fontSize);
+      context.closePath();
+      context.stroke();
+      if (widthArr[i].position == 'left') {
+        tStartLeft -= widthArr[i].width + opts.yAxis.padding;
+      } else {
+        tStartRight += widthArr[i].width + opts.yAxis.padding;
+      }
+    }
+  }
+}
+
+function drawToolTipSplitArea(offsetX, opts, config, context, eachSpacing) {
+  var toolTipOption = assign({}, {
+    activeBgColor: '#000000',
+    activeBgOpacity: 0.08 },
+  opts.extra.tooltip);
+  var startY = opts.area[0];
+  var endY = opts.height - opts.area[2];
+  context.beginPath();
+  context.setFillStyle(hexToRgb(toolTipOption.activeBgColor, toolTipOption.activeBgOpacity));
+  context.rect(offsetX - eachSpacing / 2, startY, eachSpacing, endY - startY);
+  context.closePath();
+  context.fill();
+}
+
+function drawToolTip(textList, offset, opts, config, context, eachSpacing, xAxisPoints) {
+  var toolTipOption = assign({}, {
+    showBox: true,
+    bgColor: '#000000',
+    bgOpacity: 0.7,
+    fontColor: '#FFFFFF' },
+  opts.extra.tooltip);
+  var legendWidth = 4 * opts.pixelRatio;
+  var legendMarginRight = 5 * opts.pixelRatio;
+  var arrowWidth = 8 * opts.pixelRatio;
+  var isOverRightBorder = false;
+  if (opts.type == 'line' || opts.type == 'area' || opts.type == 'candle' || opts.type == 'mix') {
+    drawToolTipSplitLine(opts.tooltip.offset.x, opts, config, context);
+  }
+
+  offset = assign({
+    x: 0,
+    y: 0 },
+  offset);
+  offset.y -= 8 * opts.pixelRatio;
+  var textWidth = textList.map(function (item) {
+    return measureText(item.text, config.fontSize);
+  });
+  var toolTipWidth = legendWidth + legendMarginRight + 4 * config.toolTipPadding + Math.max.apply(null, textWidth);
+  var toolTipHeight = 2 * config.toolTipPadding + textList.length * config.toolTipLineHeight;
+
+  if (toolTipOption.showBox == false) {return;}
+  // if beyond the right border
+  if (offset.x - Math.abs(opts._scrollDistance_) + arrowWidth + toolTipWidth > opts.width) {
+    isOverRightBorder = true;
+  }
+  if (toolTipHeight + offset.y > opts.height) {
+    offset.y = opts.height - toolTipHeight;
+  }
+  // draw background rect
+  context.beginPath();
+  context.setFillStyle(hexToRgb(toolTipOption.bgColor || config.toolTipBackground, toolTipOption.bgOpacity || config.toolTipOpacity));
+  if (isOverRightBorder) {
+    context.moveTo(offset.x, offset.y + 10 * opts.pixelRatio);
+    context.lineTo(offset.x - arrowWidth, offset.y + 10 * opts.pixelRatio - 5 * opts.pixelRatio);
+    context.lineTo(offset.x - arrowWidth, offset.y);
+    context.lineTo(offset.x - arrowWidth - Math.round(toolTipWidth), offset.y);
+    context.lineTo(offset.x - arrowWidth - Math.round(toolTipWidth), offset.y + toolTipHeight);
+    context.lineTo(offset.x - arrowWidth, offset.y + toolTipHeight);
+    context.lineTo(offset.x - arrowWidth, offset.y + 10 * opts.pixelRatio + 5 * opts.pixelRatio);
+    context.lineTo(offset.x, offset.y + 10 * opts.pixelRatio);
+  } else {
+    context.moveTo(offset.x, offset.y + 10 * opts.pixelRatio);
+    context.lineTo(offset.x + arrowWidth, offset.y + 10 * opts.pixelRatio - 5 * opts.pixelRatio);
+    context.lineTo(offset.x + arrowWidth, offset.y);
+    context.lineTo(offset.x + arrowWidth + Math.round(toolTipWidth), offset.y);
+    context.lineTo(offset.x + arrowWidth + Math.round(toolTipWidth), offset.y + toolTipHeight);
+    context.lineTo(offset.x + arrowWidth, offset.y + toolTipHeight);
+    context.lineTo(offset.x + arrowWidth, offset.y + 10 * opts.pixelRatio + 5 * opts.pixelRatio);
+    context.lineTo(offset.x, offset.y + 10 * opts.pixelRatio);
+  }
+
+  context.closePath();
+  context.fill();
+
+  // draw legend
+  textList.forEach(function (item, index) {
+    if (item.color !== null) {
+      context.beginPath();
+      context.setFillStyle(item.color);
+      var startX = offset.x + arrowWidth + 2 * config.toolTipPadding;
+      var startY = offset.y + (config.toolTipLineHeight - config.fontSize) / 2 + config.toolTipLineHeight * index +
+      config.toolTipPadding + 1;
+      if (isOverRightBorder) {
+        startX = offset.x - toolTipWidth - arrowWidth + 2 * config.toolTipPadding;
+      }
+      context.fillRect(startX, startY, legendWidth, config.fontSize);
+      context.closePath();
+    }
+  });
+
+  // draw text list
+
+  textList.forEach(function (item, index) {
+    var startX = offset.x + arrowWidth + 2 * config.toolTipPadding + legendWidth + legendMarginRight;
+    if (isOverRightBorder) {
+      startX = offset.x - toolTipWidth - arrowWidth + 2 * config.toolTipPadding + +legendWidth + legendMarginRight;
+    }
+    var startY = offset.y + (config.toolTipLineHeight - config.fontSize) / 2 + config.toolTipLineHeight * index +
+    config.toolTipPadding;
+    context.beginPath();
+    context.setFontSize(config.fontSize);
+    context.setFillStyle(toolTipOption.fontColor);
+    context.fillText(item.text, startX, startY + config.fontSize);
+    context.closePath();
+    context.stroke();
+  });
+}
+
+function drawYAxisTitle(title, opts, config, context) {
+  var startX = config.xAxisHeight + (opts.height - config.xAxisHeight - measureText(title)) / 2;
+  context.save();
+  context.beginPath();
+  context.setFontSize(config.fontSize);
+  context.setFillStyle(opts.yAxis.titleFontColor || '#333333');
+  context.translate(0, opts.height);
+  context.rotate(-90 * Math.PI / 180);
+  context.fillText(title, startX, opts.padding[3] + 0.5 * config.fontSize);
+  context.closePath();
+  context.stroke();
+  context.restore();
+}
+
+function drawColumnDataPoints(series, opts, config, context) {
+  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+  var xAxisData = opts.chartData.xAxisData,
+  xAxisPoints = xAxisData.xAxisPoints,
+  eachSpacing = xAxisData.eachSpacing;
+  var columnOption = assign({}, {
+    type: 'group',
+    width: eachSpacing / 2,
+    meter: {
+      border: 4,
+      fillColor: '#FFFFFF' } },
+
+  opts.extra.column);
+
+  var calPoints = [];
+  context.save();
+
+  var leftNum = -2;
+  var rightNum = xAxisPoints.length + 2;
+
+  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
+    context.translate(opts._scrollDistance_, 0);
+    leftNum = Math.floor(-opts._scrollDistance_ / eachSpacing) - 2;
+    rightNum = leftNum + opts.xAxis.itemCount + 4;
+  }
+  if (opts.tooltip && opts.tooltip.textList && opts.tooltip.textList.length && process === 1) {
+    drawToolTipSplitArea(opts.tooltip.offset.x, opts, config, context, eachSpacing);
+  }
+
+  series.forEach(function (eachSeries, seriesIndex) {
+    var ranges, minRange, maxRange;
+    ranges = [].concat(opts.chartData.yAxisData.ranges[eachSeries.index]);
+    minRange = ranges.pop();
+    maxRange = ranges.shift();
+
+    var data = eachSeries.data;
+    switch (columnOption.type) {
+      case 'group':
+        var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+        var tooltipPoints = getStackDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, seriesIndex, series, process);
+        calPoints.push(tooltipPoints);
+        points = fixColumeData(points, eachSpacing, series.length, seriesIndex, config, opts);
+        for (var i = 0; i < points.length; i++) {
+          var item = points[i];
+          if (item !== null && i > leftNum && i < rightNum) {
+            context.beginPath();
+            context.setStrokeStyle(item.color || eachSeries.color);
+            context.setLineWidth(1);
+            context.setFillStyle(item.color || eachSeries.color);
+            var startX = item.x - item.width / 2;
+            var height = opts.height - item.y - opts.area[2];
+            context.moveTo(startX - 1, item.y);
+            context.lineTo(startX + item.width - 2, item.y);
+            context.lineTo(startX + item.width - 2, opts.height - opts.area[2]);
+            context.lineTo(startX, opts.height - opts.area[2]);
+            context.lineTo(startX, item.y);
+            context.closePath();
+            context.stroke();
+            context.fill();
+          }
+        };
+        break;
+      case 'stack':
+        // 绘制堆叠数据图
+        var points = getStackDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, seriesIndex, series, process);
+        calPoints.push(points);
+        points = fixColumeStackData(points, eachSpacing, series.length, seriesIndex, config, opts, series);
+
+        for (var _i13 = 0; _i13 < points.length; _i13++) {
+          var _item7 = points[_i13];
+          if (_item7 !== null && _i13 > leftNum && _i13 < rightNum) {
+            context.beginPath();
+            context.setFillStyle(_item7.color || eachSeries.color);
+            var startX = _item7.x - _item7.width / 2 + 1;
+            var height = opts.height - _item7.y - opts.area[2];
+            var height0 = opts.height - _item7.y0 - opts.area[2];
+            if (seriesIndex > 0) {
+              height -= height0;
+            }
+            context.moveTo(startX, _item7.y);
+            context.fillRect(startX, _item7.y, _item7.width - 2, height);
+            context.closePath();
+            context.fill();
+          }
+        };
+        break;
+      case 'meter':
+        // 绘制温度计数据图
+        var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+        calPoints.push(points);
+        points = fixColumeMeterData(points, eachSpacing, series.length, seriesIndex, config, opts, columnOption.meter.border);
+        if (seriesIndex == 0) {
+          for (var _i14 = 0; _i14 < points.length; _i14++) {
+            var _item8 = points[_i14];
+            if (_item8 !== null && _i14 > leftNum && _i14 < rightNum) {
+              //画背景颜色
+              context.beginPath();
+              context.setFillStyle(columnOption.meter.fillColor);
+              var startX = _item8.x - _item8.width / 2;
+              var height = opts.height - _item8.y - opts.area[2];
+              context.moveTo(startX, _item8.y);
+              context.fillRect(startX, _item8.y, _item8.width, height);
+              context.closePath();
+              context.fill();
+              //画边框线
+              if (columnOption.meter.border > 0) {
+                context.beginPath();
+                context.setStrokeStyle(eachSeries.color);
+                context.setLineWidth(columnOption.meter.border * opts.pixelRatio);
+                context.moveTo(startX + columnOption.meter.border * 0.5, _item8.y + height);
+                context.lineTo(startX + columnOption.meter.border * 0.5, _item8.y + columnOption.meter.border * 0.5);
+                context.lineTo(startX + _item8.width - columnOption.meter.border * 0.5, _item8.y + columnOption.meter.border * 0.5);
+                context.lineTo(startX + _item8.width - columnOption.meter.border * 0.5, _item8.y + height);
+                context.stroke();
+              }
+            }
+          };
+        } else {
+          for (var _i15 = 0; _i15 < points.length; _i15++) {
+            var _item9 = points[_i15];
+            if (_item9 !== null && _i15 > leftNum && _i15 < rightNum) {
+              context.beginPath();
+              context.setFillStyle(_item9.color || eachSeries.color);
+              var startX = _item9.x - _item9.width / 2;
+              var height = opts.height - _item9.y - opts.area[2];
+              context.moveTo(startX, _item9.y);
+              context.fillRect(startX, _item9.y, _item9.width, height);
+              context.closePath();
+              context.fill();
+            }
+          };
+        }
+        break;}
+
+  });
+
+  if (opts.dataLabel !== false && process === 1) {
+    series.forEach(function (eachSeries, seriesIndex) {
+      var ranges, minRange, maxRange;
+      ranges = [].concat(opts.chartData.yAxisData.ranges[eachSeries.index]);
+      minRange = ranges.pop();
+      maxRange = ranges.shift();
+      var data = eachSeries.data;
+      switch (columnOption.type) {
+        case 'group':
+          var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+          points = fixColumeData(points, eachSpacing, series.length, seriesIndex, config, opts);
+          drawPointText(points, eachSeries, config, context);
+          break;
+        case 'stack':
+          var points = getStackDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, seriesIndex, series, process);
+          drawPointText(points, eachSeries, config, context);
+          break;
+        case 'meter':
+          var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+          drawPointText(points, eachSeries, config, context);
+          break;}
+
+    });
+  }
+
+  context.restore();
+
+  return {
+    xAxisPoints: xAxisPoints,
+    calPoints: calPoints,
+    eachSpacing: eachSpacing };
+
+}
+
+function drawCandleDataPoints(series, seriesMA, opts, config, context) {
+  var process = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 1;
+  var candleOption = assign({}, {
+    color: {},
+    average: {} },
+  opts.extra.candle);
+  candleOption.color = assign({}, {
+    upLine: '#f04864',
+    upFill: '#f04864',
+    downLine: '#2fc25b',
+    downFill: '#2fc25b' },
+  candleOption.color);
+  candleOption.average = assign({}, {
+    show: false,
+    name: [],
+    day: [],
+    color: config.colors },
+  candleOption.average);
+  opts.extra.candle = candleOption;
+
+  var xAxisData = opts.chartData.xAxisData,
+  xAxisPoints = xAxisData.xAxisPoints,
+  eachSpacing = xAxisData.eachSpacing;
+
+  var calPoints = [];
+
+  context.save();
+
+  var leftNum = -2;
+  var rightNum = xAxisPoints.length + 2;
+  var leftSpace = 0;
+  var rightSpace = opts.width + eachSpacing;
+
+  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
+    context.translate(opts._scrollDistance_, 0);
+    leftNum = Math.floor(-opts._scrollDistance_ / eachSpacing) - 2;
+    rightNum = leftNum + opts.xAxis.itemCount + 4;
+    leftSpace = -opts._scrollDistance_ - eachSpacing + opts.area[3];
+    rightSpace = leftSpace + (opts.xAxis.itemCount + 4) * eachSpacing;
+  }
+
+  //画均线
+  if (candleOption.average.show) {
+    seriesMA.forEach(function (eachSeries, seriesIndex) {
+      var ranges, minRange, maxRange;
+      ranges = [].concat(opts.chartData.yAxisData.ranges[eachSeries.index]);
+      minRange = ranges.pop();
+      maxRange = ranges.shift();
+
+      var data = eachSeries.data;
+      var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+      var splitPointList = splitPoints(points);
+
+      for (var i = 0; i < splitPointList.length; i++) {
+        var _points = splitPointList[i];
+        context.beginPath();
+        context.setStrokeStyle(eachSeries.color);
+        context.setLineWidth(1);
+        if (_points.length === 1) {
+          context.moveTo(_points[0].x, _points[0].y);
+          context.arc(_points[0].x, _points[0].y, 1, 0, 2 * Math.PI);
+        } else {
+          context.moveTo(_points[0].x, _points[0].y);
+          var startPoint = 0;
+          for (var j = 0; j < _points.length; j++) {
+            var item = _points[j];
+            if (startPoint == 0 && item.x > leftSpace) {
+              context.moveTo(item.x, item.y);
+              startPoint = 1;
+            }
+            if (j > 0 && item.x > leftSpace && item.x < rightSpace) {
+              var ctrlPoint = createCurveControlPoints(_points, j - 1);
+              context.bezierCurveTo(ctrlPoint.ctrA.x, ctrlPoint.ctrA.y, ctrlPoint.ctrB.x, ctrlPoint.ctrB.y, item.x, item.y);
+            }
+          }
+          context.moveTo(_points[0].x, _points[0].y);
+        }
+        context.closePath();
+        context.stroke();
+      }
+    });
+  }
+  //画K线
+  series.forEach(function (eachSeries, seriesIndex) {
+    var ranges, minRange, maxRange;
+    ranges = [].concat(opts.chartData.yAxisData.ranges[eachSeries.index]);
+    minRange = ranges.pop();
+    maxRange = ranges.shift();
+    var data = eachSeries.data;
+    var points = getCandleDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+    calPoints.push(points);
+    var splitPointList = splitPoints(points);
+
+    for (var i = 0; i < splitPointList[0].length; i++) {
+      if (i > leftNum && i < rightNum) {
+        var item = splitPointList[0][i];
+        context.beginPath();
+        //如果上涨
+        if (data[i][1] - data[i][0] > 0) {
+          context.setStrokeStyle(candleOption.color.upLine);
+          context.setFillStyle(candleOption.color.upFill);
+          context.setLineWidth(1 * opts.pixelRatio);
+          context.moveTo(item[3].x, item[3].y); //顶点
+          context.lineTo(item[1].x, item[1].y); //收盘中间点
+          context.lineTo(item[1].x - eachSpacing / 4, item[1].y); //收盘左侧点
+          context.lineTo(item[0].x - eachSpacing / 4, item[0].y); //开盘左侧点
+          context.lineTo(item[0].x, item[0].y); //开盘中间点
+          context.lineTo(item[2].x, item[2].y); //底点
+          context.lineTo(item[0].x, item[0].y); //开盘中间点
+          context.lineTo(item[0].x + eachSpacing / 4, item[0].y); //开盘右侧点
+          context.lineTo(item[1].x + eachSpacing / 4, item[1].y); //收盘右侧点
+          context.lineTo(item[1].x, item[1].y); //收盘中间点
+          context.moveTo(item[3].x, item[3].y); //顶点
+        } else {
+          context.setStrokeStyle(candleOption.color.downLine);
+          context.setFillStyle(candleOption.color.downFill);
+          context.setLineWidth(1 * opts.pixelRatio);
+          context.moveTo(item[3].x, item[3].y); //顶点
+          context.lineTo(item[0].x, item[0].y); //开盘中间点
+          context.lineTo(item[0].x - eachSpacing / 4, item[0].y); //开盘左侧点
+          context.lineTo(item[1].x - eachSpacing / 4, item[1].y); //收盘左侧点
+          context.lineTo(item[1].x, item[1].y); //收盘中间点
+          context.lineTo(item[2].x, item[2].y); //底点
+          context.lineTo(item[1].x, item[1].y); //收盘中间点
+          context.lineTo(item[1].x + eachSpacing / 4, item[1].y); //收盘右侧点
+          context.lineTo(item[0].x + eachSpacing / 4, item[0].y); //开盘右侧点
+          context.lineTo(item[0].x, item[0].y); //开盘中间点
+          context.moveTo(item[3].x, item[3].y); //顶点
+        }
+        context.closePath();
+        context.fill();
+        context.stroke();
+      }
+    }
+  });
+
+  context.restore();
+
+  return {
+    xAxisPoints: xAxisPoints,
+    calPoints: calPoints,
+    eachSpacing: eachSpacing };
+
+}
+
+function drawAreaDataPoints(series, opts, config, context) {
+  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+  var areaOption = assign({}, {
+    type: 'straight',
+    opacity: 0.2,
+    addLine: false,
+    width: 2,
+    gradient: false },
+  opts.extra.area);
+
+  var xAxisData = opts.chartData.xAxisData,
+  xAxisPoints = xAxisData.xAxisPoints,
+  eachSpacing = xAxisData.eachSpacing;
+
+  var endY = opts.height - opts.area[2];
+  var calPoints = [];
+
+  context.save();
+  var leftSpace = 0;
+  var rightSpace = opts.width + eachSpacing;
+  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
+    context.translate(opts._scrollDistance_, 0);
+    leftSpace = -opts._scrollDistance_ - eachSpacing + opts.area[3];
+    rightSpace = leftSpace + (opts.xAxis.itemCount + 4) * eachSpacing;
+  }
+
+  series.forEach(function (eachSeries, seriesIndex) {
+    var ranges, minRange, maxRange;
+    ranges = [].concat(opts.chartData.yAxisData.ranges[eachSeries.index]);
+    minRange = ranges.pop();
+    maxRange = ranges.shift();
+    var data = eachSeries.data;
+    var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+    calPoints.push(points);
+
+    var splitPointList = splitPoints(points);
+    for (var i = 0; i < splitPointList.length; i++) {
+      var _points2 = splitPointList[i];
+      // 绘制区域数
+      context.beginPath();
+      context.setStrokeStyle(hexToRgb(eachSeries.color, areaOption.opacity));
+      if (areaOption.gradient) {
+        var gradient = context.createLinearGradient(0, opts.area[0], 0, opts.height - opts.area[2]);
+        gradient.addColorStop('0', hexToRgb(eachSeries.color, areaOption.opacity));
+        gradient.addColorStop('1.0', hexToRgb("#FFFFFF", 0.1));
+        context.setFillStyle(gradient);
+      } else {
+        context.setFillStyle(hexToRgb(eachSeries.color, areaOption.opacity));
+      }
+      context.setLineWidth(areaOption.width * opts.pixelRatio);
+      if (_points2.length > 1) {
+        var firstPoint = _points2[0];
+        var lastPoint = _points2[_points2.length - 1];
+        context.moveTo(firstPoint.x, firstPoint.y);
+        var startPoint = 0;
+        if (areaOption.type === 'curve') {
+          for (var j = 0; j < _points2.length; j++) {
+            var item = _points2[j];
+            if (startPoint == 0 && item.x > leftSpace) {
+              context.moveTo(item.x, item.y);
+              startPoint = 1;
+            }
+            if (j > 0 && item.x > leftSpace && item.x < rightSpace) {
+              var ctrlPoint = createCurveControlPoints(_points2, j - 1);
+              context.bezierCurveTo(ctrlPoint.ctrA.x, ctrlPoint.ctrA.y, ctrlPoint.ctrB.x, ctrlPoint.ctrB.y, item.x, item.y);
+            }
+          };
+        } else {
+          for (var _j = 0; _j < _points2.length; _j++) {
+            var _item10 = _points2[_j];
+            if (startPoint == 0 && _item10.x > leftSpace) {
+              context.moveTo(_item10.x, _item10.y);
+              startPoint = 1;
+            }
+            if (_j > 0 && _item10.x > leftSpace && _item10.x < rightSpace) {
+              context.lineTo(_item10.x, _item10.y);
+            }
+          };
+        }
+
+        context.lineTo(lastPoint.x, endY);
+        context.lineTo(firstPoint.x, endY);
+        context.lineTo(firstPoint.x, firstPoint.y);
+      } else {
+        var _item11 = _points2[0];
+        context.moveTo(_item11.x - eachSpacing / 2, _item11.y);
+        context.lineTo(_item11.x + eachSpacing / 2, _item11.y);
+        context.lineTo(_item11.x + eachSpacing / 2, endY);
+        context.lineTo(_item11.x - eachSpacing / 2, endY);
+        context.moveTo(_item11.x - eachSpacing / 2, _item11.y);
+      }
+      context.closePath();
+      context.fill();
+
+      //画连线
+      if (areaOption.addLine) {
+        if (eachSeries.lineType == 'dash') {
+          var dashLength = eachSeries.dashLength ? eachSeries.dashLength : 8;
+          dashLength *= opts.pixelRatio;
+          context.setLineDash([dashLength, dashLength]);
+        }
+        context.beginPath();
+        context.setStrokeStyle(eachSeries.color);
+        context.setLineWidth(areaOption.width * opts.pixelRatio);
+        if (_points2.length === 1) {
+          context.moveTo(_points2[0].x, _points2[0].y);
+          context.arc(_points2[0].x, _points2[0].y, 1, 0, 2 * Math.PI);
+        } else {
+          context.moveTo(_points2[0].x, _points2[0].y);
+          var _startPoint = 0;
+          if (areaOption.type === 'curve') {
+            for (var _j2 = 0; _j2 < _points2.length; _j2++) {
+              var _item12 = _points2[_j2];
+              if (_startPoint == 0 && _item12.x > leftSpace) {
+                context.moveTo(_item12.x, _item12.y);
+                _startPoint = 1;
+              }
+              if (_j2 > 0 && _item12.x > leftSpace && _item12.x < rightSpace) {
+                var _ctrlPoint = createCurveControlPoints(_points2, _j2 - 1);
+                context.bezierCurveTo(_ctrlPoint.ctrA.x, _ctrlPoint.ctrA.y, _ctrlPoint.ctrB.x, _ctrlPoint.ctrB.y, _item12.x, _item12.y);
+              }
+            };
+          } else {
+            for (var _j3 = 0; _j3 < _points2.length; _j3++) {
+              var _item13 = _points2[_j3];
+              if (_startPoint == 0 && _item13.x > leftSpace) {
+                context.moveTo(_item13.x, _item13.y);
+                _startPoint = 1;
+              }
+              if (_j3 > 0 && _item13.x > leftSpace && _item13.x < rightSpace) {
+                context.lineTo(_item13.x, _item13.y);
+              }
+            };
+          }
+          context.moveTo(_points2[0].x, _points2[0].y);
+        }
+        context.stroke();
+        context.setLineDash([]);
+      }
+    }
+
+    //画点
+    if (opts.dataPointShape !== false) {
+      drawPointShape(points, eachSeries.color, eachSeries.pointShape, context, opts);
+    }
+
+  });
+
+  if (opts.dataLabel !== false && process === 1) {
+    series.forEach(function (eachSeries, seriesIndex) {
+      var ranges, minRange, maxRange;
+      ranges = [].concat(opts.chartData.yAxisData.ranges[eachSeries.index]);
+      minRange = ranges.pop();
+      maxRange = ranges.shift();
+      var data = eachSeries.data;
+      var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+      drawPointText(points, eachSeries, config, context);
+    });
+  }
+
+  context.restore();
+
+  return {
+    xAxisPoints: xAxisPoints,
+    calPoints: calPoints,
+    eachSpacing: eachSpacing };
+
+}
+
+function drawLineDataPoints(series, opts, config, context) {
+  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+  var lineOption = assign({}, {
+    type: 'straight',
+    width: 2 },
+  opts.extra.line);
+  lineOption.width *= opts.pixelRatio;
+
+  var xAxisData = opts.chartData.xAxisData,
+  xAxisPoints = xAxisData.xAxisPoints,
+  eachSpacing = xAxisData.eachSpacing;
+  var calPoints = [];
+
+  context.save();
+  var leftSpace = 0;
+  var rightSpace = opts.width + eachSpacing;
+  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
+    context.translate(opts._scrollDistance_, 0);
+    leftSpace = -opts._scrollDistance_ - eachSpacing + opts.area[3];
+    rightSpace = leftSpace + (opts.xAxis.itemCount + 4) * eachSpacing;
+  }
+
+  series.forEach(function (eachSeries, seriesIndex) {
+    var ranges, minRange, maxRange;
+    ranges = [].concat(opts.chartData.yAxisData.ranges[eachSeries.index]);
+    minRange = ranges.pop();
+    maxRange = ranges.shift();
+    var data = eachSeries.data;
+    var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+    calPoints.push(points);
+    var splitPointList = splitPoints(points);
+
+    if (eachSeries.lineType == 'dash') {
+      var dashLength = eachSeries.dashLength ? eachSeries.dashLength : 8;
+      dashLength *= opts.pixelRatio;
+      context.setLineDash([dashLength, dashLength]);
+    }
+    context.beginPath();
+    context.setStrokeStyle(eachSeries.color);
+    context.setLineWidth(lineOption.width);
+
+    splitPointList.forEach(function (points, index) {
+
+      if (points.length === 1) {
+        context.moveTo(points[0].x, points[0].y);
+        context.arc(points[0].x, points[0].y, 1, 0, 2 * Math.PI);
+      } else {
+        context.moveTo(points[0].x, points[0].y);
+        var startPoint = 0;
+        if (lineOption.type === 'curve') {
+          for (var j = 0; j < points.length; j++) {
+            var item = points[j];
+            if (startPoint == 0 && item.x > leftSpace) {
+              context.moveTo(item.x, item.y);
+              startPoint = 1;
+            }
+            if (j > 0 && item.x > leftSpace && item.x < rightSpace) {
+              var ctrlPoint = createCurveControlPoints(points, j - 1);
+              context.bezierCurveTo(ctrlPoint.ctrA.x, ctrlPoint.ctrA.y, ctrlPoint.ctrB.x, ctrlPoint.ctrB.y, item.x, item.y);
+            }
+          };
+        } else {
+          for (var _j4 = 0; _j4 < points.length; _j4++) {
+            var _item14 = points[_j4];
+            if (startPoint == 0 && _item14.x > leftSpace) {
+              context.moveTo(_item14.x, _item14.y);
+              startPoint = 1;
+            }
+            if (_j4 > 0 && _item14.x > leftSpace && _item14.x < rightSpace) {
+              context.lineTo(_item14.x, _item14.y);
+            }
+          };
+        }
+        context.moveTo(points[0].x, points[0].y);
+      }
+
+    });
+
+    context.stroke();
+    context.setLineDash([]);
+
+    if (opts.dataPointShape !== false) {
+      drawPointShape(points, eachSeries.color, eachSeries.pointShape, context, opts);
+    }
+  });
+
+  if (opts.dataLabel !== false && process === 1) {
+    series.forEach(function (eachSeries, seriesIndex) {
+      var ranges, minRange, maxRange;
+      ranges = [].concat(opts.chartData.yAxisData.ranges[eachSeries.index]);
+      minRange = ranges.pop();
+      maxRange = ranges.shift();
+      var data = eachSeries.data;
+      var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+      drawPointText(points, eachSeries, config, context);
+    });
+  }
+
+  context.restore();
+
+  return {
+    xAxisPoints: xAxisPoints,
+    calPoints: calPoints,
+    eachSpacing: eachSpacing };
+
+}
+
+function drawMixDataPoints(series, opts, config, context) {
+  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+
+  var xAxisData = opts.chartData.xAxisData,
+  xAxisPoints = xAxisData.xAxisPoints,
+  eachSpacing = xAxisData.eachSpacing;
+
+  var endY = opts.height - opts.area[2];
+  var calPoints = [];
+
+  var columnIndex = 0;
+  var columnLength = 0;
+  series.forEach(function (eachSeries, seriesIndex) {
+    if (eachSeries.type == 'column') {
+      columnLength += 1;
+    }
+  });
+  context.save();
+  var leftNum = -2;
+  var rightNum = xAxisPoints.length + 2;
+  var leftSpace = 0;
+  var rightSpace = opts.width + eachSpacing;
+  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
+    context.translate(opts._scrollDistance_, 0);
+    leftNum = Math.floor(-opts._scrollDistance_ / eachSpacing) - 2;
+    rightNum = leftNum + opts.xAxis.itemCount + 4;
+    leftSpace = -opts._scrollDistance_ - eachSpacing + opts.area[3];
+    rightSpace = leftSpace + (opts.xAxis.itemCount + 4) * eachSpacing;
+  }
+
+  series.forEach(function (eachSeries, seriesIndex) {
+    var ranges, minRange, maxRange;
+
+    ranges = [].concat(opts.chartData.yAxisData.ranges[eachSeries.index]);
+    minRange = ranges.pop();
+    maxRange = ranges.shift();
+
+    var data = eachSeries.data;
+    var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+    calPoints.push(points);
+
+    // 绘制柱状数据图
+    if (eachSeries.type == 'column') {
+      points = fixColumeData(points, eachSpacing, columnLength, columnIndex, config, opts);
+      for (var i = 0; i < points.length; i++) {
+        var item = points[i];
+        if (item !== null && i > leftNum && i < rightNum) {
+          context.beginPath();
+          context.setStrokeStyle(item.color || eachSeries.color);
+          context.setLineWidth(1);
+          context.setFillStyle(item.color || eachSeries.color);
+          var startX = item.x - item.width / 2;
+          var height = opts.height - item.y - opts.area[2];
+          context.moveTo(startX, item.y);
+          context.moveTo(startX - 1, item.y);
+          context.lineTo(startX + item.width - 2, item.y);
+          context.lineTo(startX + item.width - 2, opts.height - opts.area[2]);
+          context.lineTo(startX, opts.height - opts.area[2]);
+          context.lineTo(startX, item.y);
+          context.closePath();
+          context.stroke();
+          context.fill();
+          context.closePath();
+          context.fill();
+        }
+      }
+      columnIndex += 1;
+    }
+
+    //绘制区域图数据
+
+    if (eachSeries.type == 'area') {
+      var _splitPointList = splitPoints(points);
+      for (var _i16 = 0; _i16 < _splitPointList.length; _i16++) {
+        var _points3 = _splitPointList[_i16];
+        // 绘制区域数据
+        context.beginPath();
+        context.setStrokeStyle(eachSeries.color);
+        context.setFillStyle(hexToRgb(eachSeries.color, 0.2));
+        context.setLineWidth(2 * opts.pixelRatio);
+        if (_points3.length > 1) {
+          var firstPoint = _points3[0];
+          var lastPoint = _points3[_points3.length - 1];
+          context.moveTo(firstPoint.x, firstPoint.y);
+          var startPoint = 0;
+          if (eachSeries.style === 'curve') {
+            for (var j = 0; j < _points3.length; j++) {
+              var _item15 = _points3[j];
+              if (startPoint == 0 && _item15.x > leftSpace) {
+                context.moveTo(_item15.x, _item15.y);
+                startPoint = 1;
+              }
+              if (j > 0 && _item15.x > leftSpace && _item15.x < rightSpace) {
+                var ctrlPoint = createCurveControlPoints(_points3, j - 1);
+                context.bezierCurveTo(ctrlPoint.ctrA.x, ctrlPoint.ctrA.y, ctrlPoint.ctrB.x, ctrlPoint.ctrB.y, _item15.x, _item15.y);
+              }
+            };
+          } else {
+            for (var _j5 = 0; _j5 < _points3.length; _j5++) {
+              var _item16 = _points3[_j5];
+              if (startPoint == 0 && _item16.x > leftSpace) {
+                context.moveTo(_item16.x, _item16.y);
+                startPoint = 1;
+              }
+              if (_j5 > 0 && _item16.x > leftSpace && _item16.x < rightSpace) {
+                context.lineTo(_item16.x, _item16.y);
+              }
+            };
+          }
+          context.lineTo(lastPoint.x, endY);
+          context.lineTo(firstPoint.x, endY);
+          context.lineTo(firstPoint.x, firstPoint.y);
+        } else {
+          var _item17 = _points3[0];
+          context.moveTo(_item17.x - eachSpacing / 2, _item17.y);
+          context.lineTo(_item17.x + eachSpacing / 2, _item17.y);
+          context.lineTo(_item17.x + eachSpacing / 2, endY);
+          context.lineTo(_item17.x - eachSpacing / 2, endY);
+          context.moveTo(_item17.x - eachSpacing / 2, _item17.y);
+        }
+        context.closePath();
+        context.fill();
+      }
+    }
+
+    // 绘制折线数据图
+    if (eachSeries.type == 'line') {
+      var splitPointList = splitPoints(points);
+      splitPointList.forEach(function (points, index) {
+        if (eachSeries.lineType == 'dash') {
+          var dashLength = eachSeries.dashLength ? eachSeries.dashLength : 8;
+          dashLength *= opts.pixelRatio;
+          context.setLineDash([dashLength, dashLength]);
+        }
+        context.beginPath();
+        context.setStrokeStyle(eachSeries.color);
+        context.setLineWidth(2 * opts.pixelRatio);
+        if (points.length === 1) {
+          context.moveTo(points[0].x, points[0].y);
+          context.arc(points[0].x, points[0].y, 1, 0, 2 * Math.PI);
+        } else {
+          context.moveTo(points[0].x, points[0].y);
+          var _startPoint2 = 0;
+          if (eachSeries.style == 'curve') {
+            for (var _j6 = 0; _j6 < points.length; _j6++) {
+              var _item18 = points[_j6];
+              if (_startPoint2 == 0 && _item18.x > leftSpace) {
+                context.moveTo(_item18.x, _item18.y);
+                _startPoint2 = 1;
+              }
+              if (_j6 > 0 && _item18.x > leftSpace && _item18.x < rightSpace) {
+                var ctrlPoint = createCurveControlPoints(points, _j6 - 1);
+                context.bezierCurveTo(ctrlPoint.ctrA.x, ctrlPoint.ctrA.y, ctrlPoint.ctrB.x, ctrlPoint.ctrB.y, _item18.x, _item18.y);
+              }
+            }
+          } else {
+            for (var _j7 = 0; _j7 < points.length; _j7++) {
+              var _item19 = points[_j7];
+              if (_startPoint2 == 0 && _item19.x > leftSpace) {
+                context.moveTo(_item19.x, _item19.y);
+                _startPoint2 = 1;
+              }
+              if (_j7 > 0 && _item19.x > leftSpace && _item19.x < rightSpace) {
+                context.lineTo(_item19.x, _item19.y);
+              }
+            }
+          }
+          context.moveTo(points[0].x, points[0].y);
+        }
+        context.stroke();
+        context.setLineDash([]);
+      });
+    }
+
+    // 绘制点数据图
+    if (eachSeries.type == 'point') {
+      eachSeries.addPoint = true;
+    }
+
+    if (eachSeries.addPoint == true && eachSeries.type !== 'column') {
+      drawPointShape(points, eachSeries.color, eachSeries.pointShape, context, opts);
+    }
+  });
+  if (opts.dataLabel !== false && process === 1) {
+    var columnIndex = 0;
+    series.forEach(function (eachSeries, seriesIndex) {
+      var ranges, minRange, maxRange;
+
+      ranges = [].concat(opts.chartData.yAxisData.ranges[eachSeries.index]);
+      minRange = ranges.pop();
+      maxRange = ranges.shift();
+
+      var data = eachSeries.data;
+      var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
+      if (eachSeries.type !== 'column') {
+        drawPointText(points, eachSeries, config, context);
+      } else {
+        points = fixColumeData(points, eachSpacing, columnLength, columnIndex, config, opts);
+        drawPointText(points, eachSeries, config, context);
+        columnIndex += 1;
+      }
+
+    });
+  }
+
+  context.restore();
+
+  return {
+    xAxisPoints: xAxisPoints,
+    calPoints: calPoints,
+    eachSpacing: eachSpacing };
+
+}
+
+function drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints) {
+  var toolTipOption = opts.extra.tooltip || {};
+  if (toolTipOption.horizentalLine && opts.tooltip && process === 1 && (opts.type == 'line' || opts.type == 'area' || opts.type == 'column' || opts.type == 'candle' || opts.type == 'mix')) {
+    drawToolTipHorizentalLine(opts, config, context, eachSpacing, xAxisPoints);
+  }
+  context.save();
+  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
+    context.translate(opts._scrollDistance_, 0);
+  }
+  if (opts.tooltip && opts.tooltip.textList && opts.tooltip.textList.length && process === 1) {
+    drawToolTip(opts.tooltip.textList, opts.tooltip.offset, opts, config, context, eachSpacing, xAxisPoints);
+  }
+  context.restore();
+
+}
+
+function drawXAxis(categories, opts, config, context) {
+
+  var xAxisData = opts.chartData.xAxisData,
+  xAxisPoints = xAxisData.xAxisPoints,
+  startX = xAxisData.startX,
+  endX = xAxisData.endX,
+  eachSpacing = xAxisData.eachSpacing;
+  var boundaryGap = 'center';
+  if (opts.type == 'line' || opts.type == 'area') {
+    boundaryGap = opts.xAxis.boundaryGap;
+  }
+  var startY = opts.height - opts.area[2];
+  var endY = opts.area[0];
+
+  //绘制滚动条
+  if (opts.enableScroll && opts.xAxis.scrollShow) {
+    var scrollY = opts.height - opts.area[2] + config.xAxisHeight;
+    var scrollScreenWidth = endX - startX;
+    var scrollTotalWidth = eachSpacing * (xAxisPoints.length - 1);
+    var scrollWidth = scrollScreenWidth * scrollScreenWidth / scrollTotalWidth;
+    var scrollLeft = 0;
+    if (opts._scrollDistance_) {
+      scrollLeft = -opts._scrollDistance_ * scrollScreenWidth / scrollTotalWidth;
+    }
+    context.beginPath();
+    context.setLineCap('round');
+    context.setLineWidth(6 * opts.pixelRatio);
+    context.setStrokeStyle(opts.xAxis.scrollBackgroundColor || "#EFEBEF");
+    context.moveTo(startX, scrollY);
+    context.lineTo(endX, scrollY);
+    context.stroke();
+    context.closePath();
+    context.beginPath();
+    context.setLineCap('round');
+    context.setLineWidth(6 * opts.pixelRatio);
+    context.setStrokeStyle(opts.xAxis.scrollColor || "#A6A6A6");
+    context.moveTo(startX + scrollLeft, scrollY);
+    context.lineTo(startX + scrollLeft + scrollWidth, scrollY);
+    context.stroke();
+    context.closePath();
+    context.setLineCap('butt');
+  }
+
+  context.save();
+
+  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0) {
+    context.translate(opts._scrollDistance_, 0);
+  }
+
+  //绘制X轴刻度线
+  if (opts.xAxis.calibration === true) {
+    context.setStrokeStyle(opts.xAxis.gridColor || "#cccccc");
+    context.setLineCap('butt');
+    context.setLineWidth(1 * opts.pixelRatio);
+    xAxisPoints.forEach(function (item, index) {
+      if (index > 0) {
+        context.beginPath();
+        context.moveTo(item - eachSpacing / 2, startY);
+        context.lineTo(item - eachSpacing / 2, startY + 3 * opts.pixelRatio);
+        context.closePath();
+        context.stroke();
+      }
+    });
+  }
+  //绘制X轴网格
+  if (opts.xAxis.disableGrid !== true) {
+    context.setStrokeStyle(opts.xAxis.gridColor || "#cccccc");
+    context.setLineCap('butt');
+    context.setLineWidth(1 * opts.pixelRatio);
+    if (opts.xAxis.gridType == 'dash') {
+      context.setLineDash([opts.xAxis.dashLength, opts.xAxis.dashLength]);
+    }
+    opts.xAxis.gridEval = opts.xAxis.gridEval || 1;
+    xAxisPoints.forEach(function (item, index) {
+      if (index % opts.xAxis.gridEval == 0) {
+        context.beginPath();
+        context.moveTo(item, startY);
+        context.lineTo(item, endY);
+        context.stroke();
+      }
+    });
+    context.setLineDash([]);
+  }
+
+
+  //绘制X轴文案
+  if (opts.xAxis.disabled !== true) {
+    // 对X轴列表做抽稀处理
+    //默认全部显示X轴标签
+    var maxXAxisListLength = categories.length;
+    //如果设置了X轴单屏数量
+    if (opts.xAxis.labelCount) {
+      //如果设置X轴密度
+      if (opts.xAxis.itemCount) {
+        maxXAxisListLength = Math.ceil(categories.length / opts.xAxis.itemCount * opts.xAxis.labelCount);
+      } else {
+        maxXAxisListLength = opts.xAxis.labelCount;
+      }
+      maxXAxisListLength -= 1;
+    }
+
+    var ratio = Math.ceil(categories.length / maxXAxisListLength);
+
+    var newCategories = [];
+    var cgLength = categories.length;
+    for (var i = 0; i < cgLength; i++) {
+      if (i % ratio !== 0) {
+        newCategories.push("");
+      } else {
+        newCategories.push(categories[i]);
+      }
+    }
+    newCategories[cgLength - 1] = categories[cgLength - 1];
+
+    var xAxisFontSize = opts.xAxis.fontSize || config.fontSize;
+    if (config._xAxisTextAngle_ === 0) {
+      newCategories.forEach(function (item, index) {
+        var offset = -measureText(String(item), xAxisFontSize) / 2;
+        if (boundaryGap == 'center') {
+          offset += eachSpacing / 2;
+        }
+        var scrollHeight = 0;
+        if (opts.xAxis.scrollShow) {
+          scrollHeight = 6 * opts.pixelRatio;
+        }
+        context.beginPath();
+        context.setFontSize(xAxisFontSize);
+        context.setFillStyle(opts.xAxis.fontColor || '#666666');
+        context.fillText(String(item), xAxisPoints[index] + offset, startY + xAxisFontSize + (config.xAxisHeight - scrollHeight - xAxisFontSize) / 2);
+        context.closePath();
+        context.stroke();
+      });
+
+    } else {
+      newCategories.forEach(function (item, index) {
+        context.save();
+        context.beginPath();
+        context.setFontSize(xAxisFontSize);
+        context.setFillStyle(opts.xAxis.fontColor || '#666666');
+        var textWidth = measureText(String(item), xAxisFontSize);
+        var offset = -textWidth;
+        if (boundaryGap == 'center') {
+          offset += eachSpacing / 2;
+        }
+        var _calRotateTranslate = calRotateTranslate(xAxisPoints[index] + eachSpacing / 2, startY + xAxisFontSize / 2 + 5, opts.height),
+        transX = _calRotateTranslate.transX,
+        transY = _calRotateTranslate.transY;
+
+        context.rotate(-1 * config._xAxisTextAngle_);
+        context.translate(transX, transY);
+        context.fillText(String(item), xAxisPoints[index] + offset, startY + xAxisFontSize + 5);
+        context.closePath();
+        context.stroke();
+        context.restore();
+      });
+    }
+  }
+  context.restore();
+
+  //绘制X轴轴线
+  if (opts.xAxis.axisLine) {
+    context.beginPath();
+    context.setStrokeStyle(opts.xAxis.axisLineColor);
+    context.setLineWidth(1 * opts.pixelRatio);
+    context.moveTo(startX, opts.height - opts.area[2]);
+    context.lineTo(endX, opts.height - opts.area[2]);
+    context.stroke();
+  }
+}
+
+function drawYAxisGrid(categories, opts, config, context) {
+  if (opts.yAxis.disableGrid === true) {
+    return;
+  }
+  var spacingValid = opts.height - opts.area[0] - opts.area[2];
+  var eachSpacing = spacingValid / opts.yAxis.splitNumber;
+  var startX = opts.area[3];
+  var xAxisPoints = opts.chartData.xAxisData.xAxisPoints,
+  xAxiseachSpacing = opts.chartData.xAxisData.eachSpacing;
+  var TotalWidth = xAxiseachSpacing * (xAxisPoints.length - 1);
+  var endX = startX + TotalWidth;
+
+  var points = [];
+  for (var i = 0; i < opts.yAxis.splitNumber + 1; i++) {
+    points.push(opts.height - opts.area[2] - eachSpacing * i);
+  }
+
+  context.save();
+  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0) {
+    context.translate(opts._scrollDistance_, 0);
+  }
+
+  if (opts.yAxis.gridType == 'dash') {
+    context.setLineDash([opts.yAxis.dashLength, opts.yAxis.dashLength]);
+  }
+  context.setStrokeStyle(opts.yAxis.gridColor);
+  context.setLineWidth(1 * opts.pixelRatio);
+  points.forEach(function (item, index) {
+    context.beginPath();
+    context.moveTo(startX, item);
+    context.lineTo(endX, item);
+    context.stroke();
+  });
+  context.setLineDash([]);
+
+  context.restore();
+}
+
+function drawYAxis(series, opts, config, context) {
+  if (opts.yAxis.disabled === true) {
+    return;
+  }
+  var spacingValid = opts.height - opts.area[0] - opts.area[2];
+  var eachSpacing = spacingValid / opts.yAxis.splitNumber;
+  var startX = opts.area[3];
+  var endX = opts.width - opts.area[1];
+  var endY = opts.height - opts.area[2];
+  var fillEndY = endY + config.xAxisHeight;
+  if (opts.xAxis.scrollShow) {
+    fillEndY -= 3 * opts.pixelRatio;
+  }
+  if (opts.xAxis.rotateLabel) {
+    fillEndY = opts.height - opts.area[2] + 3;
+  }
+  // set YAxis background
+  context.beginPath();
+  context.setFillStyle(opts.background || '#ffffff');
+  if (opts._scrollDistance_ < 0) {
+    context.fillRect(0, 0, startX, fillEndY);
+  }
+  if (opts.enableScroll == true) {
+    context.fillRect(endX, 0, opts.width, fillEndY);
+  }
+  context.closePath();
+  context.stroke();
+
+  var points = [];
+  for (var i = 0; i <= opts.yAxis.splitNumber; i++) {
+    points.push(opts.area[0] + eachSpacing * i);
+  }
+
+  var tStartLeft = opts.area[3];
+  var tStartRight = opts.width - opts.area[1];var _loop4 = function _loop4(
+
+  _i17) {
+    var yData = opts.yAxis.data[_i17];
+    if (yData.disabled !== true) {
+      var rangesFormat = opts.chartData.yAxisData.rangesFormat[_i17];
+      var yAxisFontSize = yData.fontSize || config.fontSize;
+      var yAxisWidth = opts.chartData.yAxisData.yAxisWidth[_i17];
+      //画Y轴刻度及文案
+      rangesFormat.forEach(function (item, index) {
+        var pos = points[index] ? points[index] : endY;
+        context.beginPath();
+        context.setFontSize(yAxisFontSize);
+        context.setLineWidth(1 * opts.pixelRatio);
+        context.setStrokeStyle(yData.axisLineColor || '#cccccc');
+        context.setFillStyle(yData.fontColor || '#666666');
+        if (yAxisWidth.position == 'left') {
+          context.fillText(String(item), tStartLeft - yAxisWidth.width, pos + yAxisFontSize / 2);
+          //画刻度线
+          if (yData.calibration == true) {
+            context.moveTo(tStartLeft, pos);
+            context.lineTo(tStartLeft - 3 * opts.pixelRatio, pos);
+          }
+        } else {
+          context.fillText(String(item), tStartRight + 4 * opts.pixelRatio, pos + yAxisFontSize / 2);
+          //画刻度线
+          if (yData.calibration == true) {
+            context.moveTo(tStartRight, pos);
+            context.lineTo(tStartRight + 3 * opts.pixelRatio, pos);
+          }
+        }
+        context.closePath();
+        context.stroke();
+      });
+      //画Y轴轴线
+      if (yData.axisLine !== false) {
+        context.beginPath();
+        context.setStrokeStyle(yData.axisLineColor || '#cccccc');
+        context.setLineWidth(1 * opts.pixelRatio);
+        if (yAxisWidth.position == 'left') {
+          context.moveTo(tStartLeft, opts.height - opts.area[2]);
+          context.lineTo(tStartLeft, opts.area[0]);
+        } else {
+          context.moveTo(tStartRight, opts.height - opts.area[2]);
+          context.lineTo(tStartRight, opts.area[0]);
+        }
+        context.stroke();
+      }
+
+      //画Y轴标题
+      if (opts.yAxis.showTitle) {
+
+        var titleFontSize = yData.titleFontSize || config.fontSize;
+        var title = yData.title;
+        context.beginPath();
+        context.setFontSize(titleFontSize);
+        context.setFillStyle(yData.titleFontColor || '#666666');
+        if (yAxisWidth.position == 'left') {
+          context.fillText(title, tStartLeft - measureText(title, titleFontSize) / 2, opts.area[0] - 10 * opts.pixelRatio);
+        } else {
+          context.fillText(title, tStartRight - measureText(title, titleFontSize) / 2, opts.area[0] - 10 * opts.pixelRatio);
+        }
+        context.closePath();
+        context.stroke();
+      }
+      if (yAxisWidth.position == 'left') {
+        tStartLeft -= yAxisWidth.width + opts.yAxis.padding;
+      } else {
+        tStartRight += yAxisWidth.width + opts.yAxis.padding;
+      }
+    }};for (var _i17 = 0; _i17 < opts.yAxis.data.length; _i17++) {_loop4(_i17);
+  }
+}
+
+function drawLegend(series, opts, config, context, chartData) {
+  if (opts.legend.show === false) {
+    return;
+  }
+  var legendData = chartData.legendData;
+  var legendList = legendData.points;
+  var legendArea = legendData.area;
+  var padding = opts.legend.padding;
+  var fontSize = opts.legend.fontSize;
+  var shapeWidth = 15 * opts.pixelRatio;
+  var shapeRight = 5 * opts.pixelRatio;
+  var itemGap = opts.legend.itemGap;
+  var lineHeight = Math.max(opts.legend.lineHeight * opts.pixelRatio, fontSize);
+
+  //画背景及边框
+  context.beginPath();
+  context.setLineWidth(opts.legend.borderWidth);
+  context.setStrokeStyle(opts.legend.borderColor);
+  context.setFillStyle(opts.legend.backgroundColor);
+  context.moveTo(legendArea.start.x, legendArea.start.y);
+  context.rect(legendArea.start.x, legendArea.start.y, legendArea.width, legendArea.height);
+  context.closePath();
+  context.fill();
+  context.stroke();
+
+  legendList.forEach(function (itemList, listIndex) {
+    var width = 0;
+    var height = 0;
+    width = legendData.widthArr[listIndex];
+    height = legendData.heightArr[listIndex];
+    var startX = 0;
+    var startY = 0;
+    if (opts.legend.position == 'top' || opts.legend.position == 'bottom') {
+      startX = legendArea.start.x + (legendArea.width - width) / 2;
+      startY = legendArea.start.y + padding + listIndex * lineHeight;
+    } else {
+      if (listIndex == 0) {
+        width = 0;
+      } else {
+        width = legendData.widthArr[listIndex - 1];
+      }
+      startX = legendArea.start.x + padding + width;
+      startY = legendArea.start.y + padding + (legendArea.height - height) / 2;
+    }
+
+    context.setFontSize(config.fontSize);
+    for (var i = 0; i < itemList.length; i++) {
+      var item = itemList[i];
+      item.area = [0, 0, 0, 0];
+      item.area[0] = startX;
+      item.area[1] = startY;
+      item.area[3] = startY + lineHeight;
+      context.beginPath();
+      context.setLineWidth(1 * opts.pixelRatio);
+      context.setStrokeStyle(item.show ? item.color : opts.legend.hiddenColor);
+      context.setFillStyle(item.show ? item.color : opts.legend.hiddenColor);
+      switch (item.legendShape) {
+        case 'line':
+          context.moveTo(startX, startY + 0.5 * lineHeight - 2 * opts.pixelRatio);
+          context.fillRect(startX, startY + 0.5 * lineHeight - 2 * opts.pixelRatio, 15 * opts.pixelRatio, 4 * opts.pixelRatio);
+          break;
+        case 'triangle':
+          context.moveTo(startX + 7.5 * opts.pixelRatio, startY + 0.5 * lineHeight - 5 * opts.pixelRatio);
+          context.lineTo(startX + 2.5 * opts.pixelRatio, startY + 0.5 * lineHeight + 5 * opts.pixelRatio);
+          context.lineTo(startX + 12.5 * opts.pixelRatio, startY + 0.5 * lineHeight + 5 * opts.pixelRatio);
+          context.lineTo(startX + 7.5 * opts.pixelRatio, startY + 0.5 * lineHeight - 5 * opts.pixelRatio);
+          break;
+        case 'diamond':
+          context.moveTo(startX + 7.5 * opts.pixelRatio, startY + 0.5 * lineHeight - 5 * opts.pixelRatio);
+          context.lineTo(startX + 2.5 * opts.pixelRatio, startY + 0.5 * lineHeight);
+          context.lineTo(startX + 7.5 * opts.pixelRatio, startY + 0.5 * lineHeight + 5 * opts.pixelRatio);
+          context.lineTo(startX + 12.5 * opts.pixelRatio, startY + 0.5 * lineHeight);
+          context.lineTo(startX + 7.5 * opts.pixelRatio, startY + 0.5 * lineHeight - 5 * opts.pixelRatio);
+          break;
+        case 'circle':
+          context.moveTo(startX + 7.5 * opts.pixelRatio, startY + 0.5 * lineHeight);
+          context.arc(startX + 7.5 * opts.pixelRatio, startY + 0.5 * lineHeight, 5 * opts.pixelRatio, 0, 2 * Math.PI);
+          break;
+        case 'rect':
+          context.moveTo(startX, startY + 0.5 * lineHeight - 5 * opts.pixelRatio);
+          context.fillRect(startX, startY + 0.5 * lineHeight - 5 * opts.pixelRatio, 15 * opts.pixelRatio, 10 * opts.pixelRatio);
+          break;
+        default:
+          context.moveTo(startX, startY + 0.5 * lineHeight - 5 * opts.pixelRatio);
+          context.fillRect(startX, startY + 0.5 * lineHeight - 5 * opts.pixelRatio, 15 * opts.pixelRatio, 10 * opts.pixelRatio);}
+
+      context.closePath();
+      context.fill();
+      context.stroke();
+
+      startX += shapeWidth + shapeRight;
+      var fontTrans = 0.5 * lineHeight + 0.5 * fontSize - 2;
+      context.beginPath();
+      context.setFontSize(fontSize);
+      context.setFillStyle(item.show ? opts.legend.fontColor : opts.legend.hiddenColor);
+      context.fillText(item.name, startX, startY + fontTrans);
+      context.closePath();
+      context.stroke();
+      if (opts.legend.position == 'top' || opts.legend.position == 'bottom') {
+        startX += measureText(item.name, fontSize) + itemGap;
+        item.area[2] = startX;
+      } else {
+        item.area[2] = startX + measureText(item.name, fontSize) + itemGap;;
+        startX -= shapeWidth + shapeRight;
+        startY += lineHeight;
+      }
+    }
+  });
+}
+
+function drawPieDataPoints(series, opts, config, context) {
+  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+  var pieOption = assign({}, {
+    activeOpacity: 0.5,
+    activeRadius: 10 * opts.pixelRatio,
+    offsetAngle: 0,
+    labelWidth: 15 * opts.pixelRatio,
+    ringWidth: 0,
+    border: false,
+    borderWidth: 2,
+    borderColor: '#FFFFFF' },
+  opts.extra.pie);
+  var centerPosition = {
+    x: opts.area[3] + (opts.width - opts.area[1] - opts.area[3]) / 2,
+    y: opts.area[0] + (opts.height - opts.area[0] - opts.area[2]) / 2 };
+
+  if (config.pieChartLinePadding == 0) {
+    config.pieChartLinePadding = pieOption.activeRadius;
+  }
+
+  var radius = Math.min((opts.width - opts.area[1] - opts.area[3]) / 2 - config.pieChartLinePadding - config.pieChartTextPadding - config._pieTextMaxLength_, (opts.height - opts.area[0] - opts.area[2]) / 2 - config.pieChartLinePadding - config.pieChartTextPadding);
+
+  series = getPieDataPoints(series, radius, process);
+
+  var activeRadius = pieOption.activeRadius;
+
+  series = series.map(function (eachSeries) {
+    eachSeries._start_ += pieOption.offsetAngle * Math.PI / 180;
+    return eachSeries;
+  });
+  series.forEach(function (eachSeries, seriesIndex) {
+    if (opts.tooltip) {
+      if (opts.tooltip.index == seriesIndex) {
+        context.beginPath();
+        context.setFillStyle(hexToRgb(eachSeries.color, opts.extra.pie.activeOpacity || 0.5));
+        context.moveTo(centerPosition.x, centerPosition.y);
+        context.arc(centerPosition.x, centerPosition.y, eachSeries._radius_ + activeRadius, eachSeries._start_,
+        eachSeries._start_ + 2 *
+        eachSeries._proportion_ * Math.PI);
+        context.closePath();
+        context.fill();
+      }
+    }
+    context.beginPath();
+    context.setLineWidth(pieOption.borderWidth * opts.pixelRatio);
+    context.lineJoin = "round";
+    context.setStrokeStyle(pieOption.borderColor);
+    context.setFillStyle(eachSeries.color);
+    context.moveTo(centerPosition.x, centerPosition.y);
+    context.arc(centerPosition.x, centerPosition.y, eachSeries._radius_, eachSeries._start_, eachSeries._start_ + 2 * eachSeries._proportion_ * Math.PI);
+    context.closePath();
+    context.fill();
+    if (pieOption.border == true) {
+      context.stroke();
+    }
+  });
+
+  if (opts.type === 'ring') {
+    var innerPieWidth = radius * 0.6;
+    if (typeof opts.extra.pie.ringWidth === 'number' && opts.extra.pie.ringWidth > 0) {
+      innerPieWidth = Math.max(0, radius - opts.extra.pie.ringWidth);
+    }
+    context.beginPath();
+    context.setFillStyle(opts.background || '#ffffff');
+    context.moveTo(centerPosition.x, centerPosition.y);
+    context.arc(centerPosition.x, centerPosition.y, innerPieWidth, 0, 2 * Math.PI);
+    context.closePath();
+    context.fill();
+  }
+
+  if (opts.dataLabel !== false && process === 1) {
+    var valid = false;
+    for (var i = 0, len = series.length; i < len; i++) {
+      if (series[i].data > 0) {
+        valid = true;
+        break;
+      }
+    }
+
+    if (valid) {
+      drawPieText(series, opts, config, context, radius, centerPosition);
+    }
+  }
+
+  if (process === 1 && opts.type === 'ring') {
+    drawRingTitle(opts, config, context, centerPosition);
+  }
+
+  return {
+    center: centerPosition,
+    radius: radius,
+    series: series };
+
+}
+
+function drawRoseDataPoints(series, opts, config, context) {
+  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+  var roseOption = assign({}, {
+    type: 'area',
+    activeOpacity: 0.5,
+    activeRadius: 10 * opts.pixelRatio,
+    offsetAngle: 0,
+    labelWidth: 15 * opts.pixelRatio,
+    border: false,
+    borderWidth: 2,
+    borderColor: '#FFFFFF' },
+  opts.extra.rose);
+  if (config.pieChartLinePadding == 0) {
+    config.pieChartLinePadding = roseOption.activeRadius;
+  }
+  var centerPosition = {
+    x: opts.area[3] + (opts.width - opts.area[1] - opts.area[3]) / 2,
+    y: opts.area[0] + (opts.height - opts.area[0] - opts.area[2]) / 2 };
+
+  var radius = Math.min((opts.width - opts.area[1] - opts.area[3]) / 2 - config.pieChartLinePadding - config.pieChartTextPadding - config._pieTextMaxLength_, (opts.height - opts.area[0] - opts.area[2]) / 2 - config.pieChartLinePadding - config.pieChartTextPadding);
+  var minRadius = roseOption.minRadius || radius * 0.5;
+
+  series = getRoseDataPoints(series, roseOption.type, minRadius, radius, process);
+
+  var activeRadius = roseOption.activeRadius;
+
+  series = series.map(function (eachSeries) {
+    eachSeries._start_ += (roseOption.offsetAngle || 0) * Math.PI / 180;
+    return eachSeries;
+  });
+
+  series.forEach(function (eachSeries, seriesIndex) {
+    if (opts.tooltip) {
+      if (opts.tooltip.index == seriesIndex) {
+        context.beginPath();
+        context.setFillStyle(hexToRgb(eachSeries.color, roseOption.activeOpacity || 0.5));
+        context.moveTo(centerPosition.x, centerPosition.y);
+        context.arc(centerPosition.x, centerPosition.y, activeRadius + eachSeries._radius_, eachSeries._start_,
+        eachSeries._start_ + 2 * eachSeries._rose_proportion_ * Math.PI);
+        context.closePath();
+        context.fill();
+      }
+    }
+    context.beginPath();
+    context.setLineWidth(roseOption.borderWidth * opts.pixelRatio);
+    context.lineJoin = "round";
+    context.setStrokeStyle(roseOption.borderColor);
+    context.setFillStyle(eachSeries.color);
+    context.moveTo(centerPosition.x, centerPosition.y);
+    context.arc(centerPosition.x, centerPosition.y, eachSeries._radius_, eachSeries._start_, eachSeries._start_ + 2 *
+    eachSeries._rose_proportion_ * Math.PI);
+    context.closePath();
+    context.fill();
+    if (roseOption.border == true) {
+      context.stroke();
+    }
+  });
+
+  if (opts.dataLabel !== false && process === 1) {
+    var valid = false;
+    for (var i = 0, len = series.length; i < len; i++) {
+      if (series[i].data > 0) {
+        valid = true;
+        break;
+      }
+    }
+
+    if (valid) {
+      drawPieText(series, opts, config, context, radius, centerPosition);
+    }
+  }
+
+  return {
+    center: centerPosition,
+    radius: radius,
+    series: series };
+
+}
+
+function drawArcbarDataPoints(series, opts, config, context) {
+  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+  var arcbarOption = assign({}, {
+    startAngle: 0.75,
+    endAngle: 0.25,
+    type: 'default',
+    width: 12 * opts.pixelRatio,
+    gap: 2 * opts.pixelRatio },
+  opts.extra.arcbar);
+
+  series = getArcbarDataPoints(series, arcbarOption, process);
+
+  var centerPosition;
+  if (arcbarOption.center) {
+    centerPosition = arcbarOption.center;
+  } else {
+    centerPosition = {
+      x: opts.width / 2,
+      y: opts.height / 2 };
+
+  }
+
+  var radius;
+  if (arcbarOption.radius) {
+    radius = arcbarOption.radius;
+  } else {
+    radius = Math.min(centerPosition.x, centerPosition.y);
+    radius -= 5 * opts.pixelRatio;
+    radius -= arcbarOption.width / 2;
+  }
+
+  for (var i = 0; i < series.length; i++) {
+    var eachSeries = series[i];
+    //背景颜色
+    context.setLineWidth(arcbarOption.width);
+    context.setStrokeStyle(arcbarOption.backgroundColor || '#E9E9E9');
+    context.setLineCap('round');
+    context.beginPath();
+    if (arcbarOption.type == 'default') {
+      context.arc(centerPosition.x, centerPosition.y, radius - (arcbarOption.width + arcbarOption.gap) * i, arcbarOption.startAngle * Math.PI, arcbarOption.endAngle * Math.PI, false);
+    } else {
+      context.arc(centerPosition.x, centerPosition.y, radius - (arcbarOption.width + arcbarOption.gap) * i, 0, 2 * Math.PI, false);
+    }
+    context.stroke();
+    //进度条
+    context.setLineWidth(arcbarOption.width);
+    context.setStrokeStyle(eachSeries.color);
+    context.setLineCap('round');
+    context.beginPath();
+    context.arc(centerPosition.x, centerPosition.y, radius - (arcbarOption.width + arcbarOption.gap) * i, arcbarOption.startAngle * Math.PI, eachSeries._proportion_ * Math.PI, false);
+    context.stroke();
+  }
+
+  drawRingTitle(opts, config, context, centerPosition);
+
+  return {
+    center: centerPosition,
+    radius: radius,
+    series: series };
+
+}
+
+function drawGaugeDataPoints(categories, series, opts, config, context) {
+  var process = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 1;
+  var gaugeOption = assign({}, {
+    type: 'default',
+    startAngle: 0.75,
+    endAngle: 0.25,
+    width: 15,
+    splitLine: {
+      fixRadius: 0,
+      splitNumber: 10,
+      width: 15,
+      color: '#FFFFFF',
+      childNumber: 5,
+      childWidth: 5 },
+
+    pointer: {
+      width: 15,
+      color: 'auto' } },
+
+  opts.extra.gauge);
+
+  if (gaugeOption.oldAngle == undefined) {
+    gaugeOption.oldAngle = gaugeOption.startAngle;
+  }
+  if (gaugeOption.oldData == undefined) {
+    gaugeOption.oldData = 0;
+  }
+  categories = getGaugeAxisPoints(categories, gaugeOption.startAngle, gaugeOption.endAngle);
+
+  var centerPosition = {
+    x: opts.width / 2,
+    y: opts.height / 2 };
+
+  var radius = Math.min(centerPosition.x, centerPosition.y);
+  radius -= 5 * opts.pixelRatio;
+  radius -= gaugeOption.width / 2;
+  var innerRadius = radius - gaugeOption.width;
+  var totalAngle = 0;
+
+  //判断仪表盘的样式：default百度样式，progress新样式
+  if (gaugeOption.type == 'progress') {
+
+    //## 第一步画中心圆形背景和进度条背景
+    //中心圆形背景
+    var pieRadius = radius - gaugeOption.width * 3;
+    context.beginPath();
+    var gradient = context.createLinearGradient(centerPosition.x, centerPosition.y - pieRadius, centerPosition.x, centerPosition.y + pieRadius);
+    //配置渐变填充（起点：中心点向上减半径；结束点中心点向下加半径）
+    gradient.addColorStop('0', hexToRgb(series[0].color, 0.3));
+    gradient.addColorStop('1.0', hexToRgb("#FFFFFF", 0.1));
+    context.setFillStyle(gradient);
+    context.arc(centerPosition.x, centerPosition.y, pieRadius, 0, 2 * Math.PI, false);
+    context.fill();
+    //画进度条背景
+    context.setLineWidth(gaugeOption.width);
+    context.setStrokeStyle(hexToRgb(series[0].color, 0.3));
+    context.setLineCap('round');
+    context.beginPath();
+    context.arc(centerPosition.x, centerPosition.y, innerRadius, gaugeOption.startAngle * Math.PI, gaugeOption.endAngle * Math.PI, false);
+    context.stroke();
+
+    //## 第二步画刻度线
+    totalAngle = gaugeOption.startAngle - gaugeOption.endAngle + 1;
+    var splitAngle = totalAngle / gaugeOption.splitLine.splitNumber;
+    var childAngle = totalAngle / gaugeOption.splitLine.splitNumber / gaugeOption.splitLine.childNumber;
+    var startX = -radius - gaugeOption.width * 0.5 - gaugeOption.splitLine.fixRadius;
+    var endX = -radius - gaugeOption.width - gaugeOption.splitLine.fixRadius + gaugeOption.splitLine.width;
+    context.save();
+    context.translate(centerPosition.x, centerPosition.y);
+    context.rotate((gaugeOption.startAngle - 1) * Math.PI);
+    var len = gaugeOption.splitLine.splitNumber * gaugeOption.splitLine.childNumber + 1;
+    var proc = series[0].data * process;
+    for (var i = 0; i < len; i++) {
+      context.beginPath();
+      //刻度线随进度变色
+      if (proc > i / len) {
+        context.setStrokeStyle(hexToRgb(series[0].color, 1));
+      } else {
+        context.setStrokeStyle(hexToRgb(series[0].color, 0.3));
+      }
+      context.setLineWidth(3 * opts.pixelRatio);
+      context.moveTo(startX, 0);
+      context.lineTo(endX, 0);
+      context.stroke();
+      context.rotate(childAngle * Math.PI);
+    }
+    context.restore();
+
+    //## 第三步画进度条
+    series = getArcbarDataPoints(series, gaugeOption, process);
+    context.setLineWidth(gaugeOption.width);
+    context.setStrokeStyle(series[0].color);
+    context.setLineCap('round');
+    context.beginPath();
+    context.arc(centerPosition.x, centerPosition.y, innerRadius, gaugeOption.startAngle * Math.PI, series[0]._proportion_ * Math.PI, false);
+    context.stroke();
+
+    //## 第四步画指针
+    var pointerRadius = radius - gaugeOption.width * 2.5;
+    context.save();
+    context.translate(centerPosition.x, centerPosition.y);
+    context.rotate((series[0]._proportion_ - 1) * Math.PI);
+    context.beginPath();
+    context.setLineWidth(gaugeOption.width / 3);
+    var gradient3 = context.createLinearGradient(0, -pointerRadius * 0.6, 0, pointerRadius * 0.6);
+    gradient3.addColorStop('0', hexToRgb('#FFFFFF', 0));
+    gradient3.addColorStop('0.5', hexToRgb(series[0].color, 1));
+    gradient3.addColorStop('1.0', hexToRgb('#FFFFFF', 0));
+    context.setStrokeStyle(gradient3);
+    context.arc(0, 0, pointerRadius, 0.85 * Math.PI, 1.15 * Math.PI, false);
+    context.stroke();
+    context.beginPath();
+    context.setLineWidth(1);
+    context.setStrokeStyle(series[0].color);
+    context.setFillStyle(series[0].color);
+    context.moveTo(-pointerRadius - gaugeOption.width / 3 / 2, -4);
+    context.lineTo(-pointerRadius - gaugeOption.width / 3 / 2 - 4, 0);
+    context.lineTo(-pointerRadius - gaugeOption.width / 3 / 2, 4);
+    context.lineTo(-pointerRadius - gaugeOption.width / 3 / 2, -4);
+    context.stroke();
+    context.fill();
+    context.restore();
+
+    //default百度样式
+  } else {
+    //画背景
+    context.setLineWidth(gaugeOption.width);
+    context.setLineCap('butt');
+    for (var _i18 = 0; _i18 < categories.length; _i18++) {
+      var eachCategories = categories[_i18];
+      context.beginPath();
+      context.setStrokeStyle(eachCategories.color);
+      context.arc(centerPosition.x, centerPosition.y, radius, eachCategories._startAngle_ * Math.PI, eachCategories._endAngle_ * Math.PI, false);
+      context.stroke();
+    }
+    context.save();
+
+    //画刻度线
+    totalAngle = gaugeOption.startAngle - gaugeOption.endAngle + 1;
+    var _splitAngle = totalAngle / gaugeOption.splitLine.splitNumber;
+    var _childAngle = totalAngle / gaugeOption.splitLine.splitNumber / gaugeOption.splitLine.childNumber;
+    var _startX2 = -radius - gaugeOption.width * 0.5 - gaugeOption.splitLine.fixRadius;
+    var _endX = -radius - gaugeOption.width * 0.5 - gaugeOption.splitLine.fixRadius + gaugeOption.splitLine.width;
+    var childendX = -radius - gaugeOption.width * 0.5 - gaugeOption.splitLine.fixRadius + gaugeOption.splitLine.childWidth;
+
+    context.translate(centerPosition.x, centerPosition.y);
+    context.rotate((gaugeOption.startAngle - 1) * Math.PI);
+
+    for (var _i19 = 0; _i19 < gaugeOption.splitLine.splitNumber + 1; _i19++) {
+      context.beginPath();
+      context.setStrokeStyle(gaugeOption.splitLine.color);
+      context.setLineWidth(2 * opts.pixelRatio);
+      context.moveTo(_startX2, 0);
+      context.lineTo(_endX, 0);
+      context.stroke();
+      context.rotate(_splitAngle * Math.PI);
+    }
+    context.restore();
+
+    context.save();
+    context.translate(centerPosition.x, centerPosition.y);
+    context.rotate((gaugeOption.startAngle - 1) * Math.PI);
+
+    for (var _i20 = 0; _i20 < gaugeOption.splitLine.splitNumber * gaugeOption.splitLine.childNumber + 1; _i20++) {
+      context.beginPath();
+      context.setStrokeStyle(gaugeOption.splitLine.color);
+      context.setLineWidth(1 * opts.pixelRatio);
+      context.moveTo(_startX2, 0);
+      context.lineTo(childendX, 0);
+      context.stroke();
+      context.rotate(_childAngle * Math.PI);
+    }
+    context.restore();
+
+    //画指针
+    series = getGaugeDataPoints(series, categories, gaugeOption, process);
+
+    for (var _i21 = 0; _i21 < series.length; _i21++) {
+      var eachSeries = series[_i21];
+      context.save();
+      context.translate(centerPosition.x, centerPosition.y);
+      context.rotate((eachSeries._proportion_ - 1) * Math.PI);
+      context.beginPath();
+      context.setFillStyle(eachSeries.color);
+      context.moveTo(gaugeOption.pointer.width, 0);
+      context.lineTo(0, -gaugeOption.pointer.width / 2);
+      context.lineTo(-innerRadius, 0);
+      context.lineTo(0, gaugeOption.pointer.width / 2);
+      context.lineTo(gaugeOption.pointer.width, 0);
+      context.closePath();
+      context.fill();
+      context.beginPath();
+      context.setFillStyle('#FFFFFF');
+      context.arc(0, 0, gaugeOption.pointer.width / 6, 0, 2 * Math.PI, false);
+      context.fill();
+      context.restore();
+    }
+
+    if (opts.dataLabel !== false) {
+      drawGaugeLabel(gaugeOption, radius, centerPosition, opts, config, context);
+    }
+  }
+
+  //画仪表盘标题，副标题
+  drawRingTitle(opts, config, context, centerPosition);
+
+  if (process === 1 && opts.type === 'gauge') {
+    opts.extra.gauge.oldAngle = series[0]._proportion_;
+    opts.extra.gauge.oldData = series[0].data;
+  }
+  return {
+    center: centerPosition,
+    radius: radius,
+    innerRadius: innerRadius,
+    categories: categories,
+    totalAngle: totalAngle };
+
+}
+
+function drawRadarDataPoints(series, opts, config, context) {
+  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+  var radarOption = assign({}, {
+    gridColor: '#cccccc',
+    labelColor: '#666666',
+    opacity: 0.2,
+    gridCount: 3 },
+  opts.extra.radar);
+
+  var coordinateAngle = getRadarCoordinateSeries(opts.categories.length);
+
+  var centerPosition = {
+    x: opts.area[3] + (opts.width - opts.area[1] - opts.area[3]) / 2,
+    y: opts.area[0] + (opts.height - opts.area[0] - opts.area[2]) / 2 };
+
+
+  var radius = Math.min(centerPosition.x - (getMaxTextListLength(opts.categories) + config.radarLabelTextMargin),
+  centerPosition.y - config.radarLabelTextMargin);
+  //TODO逻辑不对
+  radius -= opts.padding[1];
+
+  // draw grid
+  context.beginPath();
+  context.setLineWidth(1 * opts.pixelRatio);
+  context.setStrokeStyle(radarOption.gridColor);
+  coordinateAngle.forEach(function (angle) {
+    var pos = convertCoordinateOrigin(radius * Math.cos(angle), radius * Math.sin(angle), centerPosition);
+    context.moveTo(centerPosition.x, centerPosition.y);
+    context.lineTo(pos.x, pos.y);
+  });
+  context.stroke();
+  context.closePath();
+  // draw split line grid
+
+  var _loop = function _loop(i) {
+    var startPos = {};
+    context.beginPath();
+    context.setLineWidth(1 * opts.pixelRatio);
+    context.setStrokeStyle(radarOption.gridColor);
+    coordinateAngle.forEach(function (angle, index) {
+      var pos = convertCoordinateOrigin(radius / radarOption.gridCount * i * Math.cos(angle), radius / radarOption.gridCount * i * Math.sin(angle), centerPosition);
+      if (index === 0) {
+        startPos = pos;
+        context.moveTo(pos.x, pos.y);
+      } else {
+        context.lineTo(pos.x, pos.y);
+      }
+    });
+    context.lineTo(startPos.x, startPos.y);
+    context.stroke();
+    context.closePath();
+  };
+
+  for (var i = 1; i <= radarOption.gridCount; i++) {
+    _loop(i);
+  }
+
+  var radarDataPoints = getRadarDataPoints(coordinateAngle, centerPosition, radius, series, opts, process);
+
+  radarDataPoints.forEach(function (eachSeries, seriesIndex) {
+    // 绘制区域数据
+    context.beginPath();
+    context.setFillStyle(hexToRgb(eachSeries.color, radarOption.opacity));
+    eachSeries.data.forEach(function (item, index) {
+      if (index === 0) {
+        context.moveTo(item.position.x, item.position.y);
+      } else {
+        context.lineTo(item.position.x, item.position.y);
+      }
+    });
+    context.closePath();
+    context.fill();
+
+    if (opts.dataPointShape !== false) {
+      var points = eachSeries.data.map(function (item) {
+        return item.position;
+      });
+      drawPointShape(points, eachSeries.color, eachSeries.pointShape, context, opts);
+    }
+  });
+  // draw label text
+  drawRadarLabel(coordinateAngle, radius, centerPosition, opts, config, context);
+
+  return {
+    center: centerPosition,
+    radius: radius,
+    angleList: coordinateAngle };
+
+}
+
+function normalInt(min, max, iter) {
+  iter = iter == 0 ? 1 : iter;
+  var arr = [];
+  for (var i = 0; i < iter; i++) {
+    arr[i] = Math.random();
+  };
+  return Math.floor(arr.reduce(function (i, j) {return i + j;}) / iter * (max - min)) + min;
+};
+
+function collisionNew(area, points, width, height) {
+  var isIn = false;
+  for (var i = 0; i < points.length; i++) {
+    if (points[i].area) {
+      if (area[3] < points[i].area[1] || area[0] > points[i].area[2] || area[1] > points[i].area[3] || area[2] < points[i].area[0]) {
+        if (area[0] < 0 || area[1] < 0 || area[2] > width || area[3] > height) {
+          isIn = true;
+          break;
+        } else {
+          isIn = false;
+        }
+      } else {
+        isIn = true;
+        break;
+      }
+    }
+  }
+  return isIn;
+};
+
+function getBoundingBox(data) {
+  var bounds = {},coords;
+  bounds.xMin = 180;
+  bounds.xMax = 0;
+  bounds.yMin = 90;
+  bounds.yMax = 0;
+  for (var i = 0; i < data.length; i++) {
+    var coorda = data[i].geometry.coordinates;
+    for (var k = 0; k < coorda.length; k++) {
+      coords = coorda[k];
+      if (coords.length == 1) {
+        coords = coords[0];
+      }
+      for (var j = 0; j < coords.length; j++) {
+        var longitude = coords[j][0];
+        var latitude = coords[j][1];
+        var point = {
+          x: longitude,
+          y: latitude };
+
+        bounds.xMin = bounds.xMin < point.x ? bounds.xMin : point.x;
+        bounds.xMax = bounds.xMax > point.x ? bounds.xMax : point.x;
+        bounds.yMin = bounds.yMin < point.y ? bounds.yMin : point.y;
+        bounds.yMax = bounds.yMax > point.y ? bounds.yMax : point.y;
+      }
+    }
+  }
+  return bounds;
+}
+
+function coordinateToPoint(latitude, longitude, bounds, scale, xoffset, yoffset) {
+  return {
+    x: (longitude - bounds.xMin) * scale + xoffset,
+    y: (bounds.yMax - latitude) * scale + yoffset };
+
+}
+
+function pointToCoordinate(pointY, pointX, bounds, scale, xoffset, yoffset) {
+  return {
+    x: (pointX - xoffset) / scale + bounds.xMin,
+    y: bounds.yMax - (pointY - yoffset) / scale };
+
+}
+
+function isRayIntersectsSegment(poi, s_poi, e_poi) {
+  if (s_poi[1] == e_poi[1]) {return false;}
+  if (s_poi[1] > poi[1] && e_poi[1] > poi[1]) {return false;}
+  if (s_poi[1] < poi[1] && e_poi[1] < poi[1]) {return false;}
+  if (s_poi[1] == poi[1] && e_poi[1] > poi[1]) {return false;}
+  if (e_poi[1] == poi[1] && s_poi[1] > poi[1]) {return false;}
+  if (s_poi[0] < poi[0] && e_poi[1] < poi[1]) {return false;}
+  var xseg = e_poi[0] - (e_poi[0] - s_poi[0]) * (e_poi[1] - poi[1]) / (e_poi[1] - s_poi[1]);
+  if (xseg < poi[0]) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function isPoiWithinPoly(poi, poly) {
+  var sinsc = 0;
+  for (var i = 0; i < poly.length; i++) {
+    var epoly = poly[i][0];
+    if (poly.length == 1) {
+      epoly = poly[i][0];
+    }
+    for (var j = 0; j < epoly.length - 1; j++) {
+      var s_poi = epoly[j];
+      var e_poi = epoly[j + 1];
+      if (isRayIntersectsSegment(poi, s_poi, e_poi)) {
+        sinsc += 1;
+      }
+    }
+  }
+
+  if (sinsc % 2 == 1) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+
+function drawMapDataPoints(series, opts, config, context) {
+  var mapOption = assign({}, {
+    border: true,
+    borderWidth: 1,
+    borderColor: '#666666',
+    fillOpacity: 0.6,
+    activeBorderColor: '#f04864',
+    activeFillColor: '#facc14',
+    activeFillOpacity: 1 },
+  opts.extra.map);
+  var coords, point;
+  var data = series;
+  var bounds = getBoundingBox(data);
+  var xScale = opts.width / Math.abs(bounds.xMax - bounds.xMin);
+  var yScale = opts.height / Math.abs(bounds.yMax - bounds.yMin);
+  var scale = xScale < yScale ? xScale : yScale;
+  var xoffset = opts.width / 2 - Math.abs(bounds.xMax - bounds.xMin) / 2 * scale;
+  var yoffset = opts.height / 2 - Math.abs(bounds.yMax - bounds.yMin) / 2 * scale;
+  context.beginPath();
+  context.clearRect(0, 0, opts.width, opts.height);
+  context.setFillStyle(opts.background || '#FFFFFF');
+  context.rect(0, 0, opts.width, opts.height);
+  context.fill();
+  for (var i = 0; i < data.length; i++) {
+    context.beginPath();
+    context.setLineWidth(mapOption.borderWidth * opts.pixelRatio);
+    context.setStrokeStyle(mapOption.borderColor);
+    context.setFillStyle(hexToRgb(series[i].color, mapOption.fillOpacity));
+    if (opts.tooltip) {
+      if (opts.tooltip.index == i) {
+        context.setStrokeStyle(mapOption.activeBorderColor);
+        context.setFillStyle(hexToRgb(mapOption.activeFillColor, mapOption.activeFillOpacity));
+      }
+    }
+    var coorda = data[i].geometry.coordinates;
+    for (var k = 0; k < coorda.length; k++) {
+      coords = coorda[k];
+      if (coords.length == 1) {
+        coords = coords[0];
+      }
+      for (var j = 0; j < coords.length; j++) {
+        point = coordinateToPoint(coords[j][1], coords[j][0], bounds, scale, xoffset, yoffset);
+        if (j === 0) {
+          context.beginPath();
+          context.moveTo(point.x, point.y);
+        } else {
+          context.lineTo(point.x, point.y);
+        }
+      }
+      context.fill();
+      if (mapOption.border == true) {
+        context.stroke();
+      }
+    }
+    if (opts.dataLabel == true) {
+      var centerPoint = data[i].properties.centroid;
+      if (centerPoint) {
+        point = coordinateToPoint(centerPoint[1], centerPoint[0], bounds, scale, xoffset, yoffset);
+        var fontSize = data[i].textSize || config.fontSize;
+        var text = data[i].properties.name;
+        context.beginPath();
+        context.setFontSize(fontSize);
+        context.setFillStyle(data[i].textColor || '#666666');
+        context.fillText(text, point.x - measureText(text, fontSize) / 2, point.y + fontSize / 2);
+        context.closePath();
+        context.stroke();
+      }
+    }
+  }
+  opts.chartData.mapData = {
+    bounds: bounds,
+    scale: scale,
+    xoffset: xoffset,
+    yoffset: yoffset };
+
+  drawToolTipBridge(opts, config, context, 1);
+  context.draw();
+}
+
+function getWordCloudPoint(opts, type) {
+  var points = opts.series.sort(function (a, b) {return parseInt(b.textSize) - parseInt(a.textSize);});
+  switch (type) {
+    case 'normal':
+      for (var i = 0; i < points.length; i++) {
+        var text = points[i].name;
+        var tHeight = points[i].textSize;
+        var tWidth = measureText(text, tHeight);
+        var x = void 0,y = void 0;
+        var area = void 0;
+        var breaknum = 0;
+        while (true) {
+          breaknum++;
+          x = normalInt(-opts.width / 2, opts.width / 2, 5) - tWidth / 2;
+          y = normalInt(-opts.height / 2, opts.height / 2, 5) + tHeight / 2;
+          area = [x - 5 + opts.width / 2, y - 5 - tHeight + opts.height / 2, x + tWidth + 5 + opts.width / 2, y + 5 + opts.height / 2];
+          var isCollision = collisionNew(area, points, opts.width, opts.height);
+          if (!isCollision) break;
+          if (breaknum == 1000) {
+            area = [-100, -100, -100, -100];
+            break;
+          }
+        };
+        points[i].area = area;
+      }
+      break;
+    case 'vertical':var
+      Spin = function Spin() {
+        //获取均匀随机值，是否旋转，旋转的概率为（1-0.5）
+        if (Math.random() > 0.7) {
+          return true;
+        } else {return false;};
+      };;
+      for (var _i22 = 0; _i22 < points.length; _i22++) {
+        var _text = points[_i22].name;
+        var _tHeight = points[_i22].textSize;
+        var _tWidth = measureText(_text, _tHeight);
+        var isSpin = Spin();
+        var _x = void 0,_y = void 0,_area = void 0,areav = void 0;
+        var _breaknum = 0;
+        while (true) {
+          _breaknum++;
+          var _isCollision = void 0;
+          if (isSpin) {
+            _x = normalInt(-opts.width / 2, opts.width / 2, 5) - _tWidth / 2;
+            _y = normalInt(-opts.height / 2, opts.height / 2, 5) + _tHeight / 2;
+            _area = [_y - 5 - _tWidth + opts.width / 2, -_x - 5 + opts.height / 2, _y + 5 + opts.width / 2, -_x + _tHeight + 5 + opts.height / 2];
+            areav = [opts.width - (opts.width / 2 - opts.height / 2) - (-_x + _tHeight + 5 + opts.height / 2) - 5, opts.height / 2 - opts.width / 2 + (_y - 5 - _tWidth + opts.width / 2) - 5, opts.width - (opts.width / 2 - opts.height / 2) - (-_x + _tHeight + 5 + opts.height / 2) + _tHeight, opts.height / 2 - opts.width / 2 + (_y - 5 - _tWidth + opts.width / 2) + _tWidth + 5];
+            _isCollision = collisionNew(areav, points, opts.height, opts.width);
+          } else {
+            _x = normalInt(-opts.width / 2, opts.width / 2, 5) - _tWidth / 2;
+            _y = normalInt(-opts.height / 2, opts.height / 2, 5) + _tHeight / 2;
+            _area = [_x - 5 + opts.width / 2, _y - 5 - _tHeight + opts.height / 2, _x + _tWidth + 5 + opts.width / 2, _y + 5 + opts.height / 2];
+            _isCollision = collisionNew(_area, points, opts.width, opts.height);
+          }
+          if (!_isCollision) break;
+          if (_breaknum == 1000) {
+            _area = [-1000, -1000, -1000, -1000];
+            break;
+          }
+        };
+        if (isSpin) {
+          points[_i22].area = areav;
+          points[_i22].areav = _area;
+        } else {
+          points[_i22].area = _area;
+        }
+        points[_i22].rotate = isSpin;
+      };
+      break;}
+
+  return points;
+}
+
+
+function drawWordCloudDataPoints(series, opts, config, context) {
+  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+  var wordOption = assign({}, {
+    type: 'normal',
+    autoColors: true },
+  opts.extra.word);
+
+  context.beginPath();
+  context.setFillStyle(opts.background || '#FFFFFF');
+  context.rect(0, 0, opts.width, opts.height);
+  context.fill();
+  context.save();
+  var points = opts.chartData.wordCloudData;
+  context.translate(opts.width / 2, opts.height / 2);
+
+  for (var i = 0; i < points.length; i++) {
+    context.save();
+    if (points[i].rotate) {
+      context.rotate(90 * Math.PI / 180);
+    }
+    var text = points[i].name;
+    var tHeight = points[i].textSize;
+    var tWidth = measureText(text, tHeight);
+    context.beginPath();
+    context.setStrokeStyle(points[i].color);
+    context.setFillStyle(points[i].color);
+    context.setFontSize(tHeight);
+    if (points[i].rotate) {
+      if (points[i].areav[0] > 0) {
+        if (opts.tooltip) {
+          if (opts.tooltip.index == i) {
+            context.strokeText(text, (points[i].areav[0] + 5 - opts.width / 2) * process - tWidth * (1 - process) / 2, (points[i].areav[1] + 5 + tHeight - opts.height / 2) * process);
+          } else {
+            context.fillText(text, (points[i].areav[0] + 5 - opts.width / 2) * process - tWidth * (1 - process) / 2, (points[i].areav[1] + 5 + tHeight - opts.height / 2) * process);
+          }
+        } else {
+          context.fillText(text, (points[i].areav[0] + 5 - opts.width / 2) * process - tWidth * (1 - process) / 2, (points[i].areav[1] + 5 + tHeight - opts.height / 2) * process);
+        }
+      }
+    } else {
+      if (points[i].area[0] > 0) {
+        if (opts.tooltip) {
+          if (opts.tooltip.index == i) {
+            context.strokeText(text, (points[i].area[0] + 5 - opts.width / 2) * process - tWidth * (1 - process) / 2, (points[i].area[1] + 5 + tHeight - opts.height / 2) * process);
+          } else {
+            context.fillText(text, (points[i].area[0] + 5 - opts.width / 2) * process - tWidth * (1 - process) / 2, (points[i].area[1] + 5 + tHeight - opts.height / 2) * process);
+          }
+        } else {
+          context.fillText(text, (points[i].area[0] + 5 - opts.width / 2) * process - tWidth * (1 - process) / 2, (points[i].area[1] + 5 + tHeight - opts.height / 2) * process);
+        }
+
+      }
+    }
+
+    context.stroke();
+    context.restore();
+  }
+  context.restore();
+}
+
+function drawFunnelDataPoints(series, opts, config, context) {
+  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
+  var funnelOption = assign({}, {
+    activeWidth: 10,
+    activeOpacity: 0.3,
+    border: false,
+    borderWidth: 2,
+    borderColor: '#FFFFFF',
+    fillOpacity: 1,
+    labelAlign: 'right' },
+  opts.extra.funnel);
+  var eachSpacing = (opts.height - opts.area[0] - opts.area[2]) / series.length;
+  var centerPosition = {
+    x: opts.area[3] + (opts.width - opts.area[1] - opts.area[3]) / 2,
+    y: opts.height - opts.area[2] };
+
+  var activeWidth = funnelOption.activeWidth;
+  var radius = Math.min((opts.width - opts.area[1] - opts.area[3]) / 2 - activeWidth, (opts.height - opts.area[0] - opts.area[2]) / 2 - activeWidth);
+  series = getFunnelDataPoints(series, radius, process);
+  context.save();
+  context.translate(centerPosition.x, centerPosition.y);
+  for (var i = 0; i < series.length; i++) {
+    if (i == 0) {
+      if (opts.tooltip) {
+        if (opts.tooltip.index == i) {
+          context.beginPath();
+          context.setFillStyle(hexToRgb(series[i].color, funnelOption.activeOpacity));
+          context.moveTo(-activeWidth, 0);
+          context.lineTo(-series[i].radius - activeWidth, -eachSpacing);
+          context.lineTo(series[i].radius + activeWidth, -eachSpacing);
+          context.lineTo(activeWidth, 0);
+          context.lineTo(-activeWidth, 0);
+          context.closePath();
+          context.fill();
+        }
+      }
+      series[i].funnelArea = [centerPosition.x - series[i].radius, centerPosition.y - eachSpacing, centerPosition.x + series[i].radius, centerPosition.y];
+      context.beginPath();
+      context.setLineWidth(funnelOption.borderWidth * opts.pixelRatio);
+      context.setStrokeStyle(funnelOption.borderColor);
+      context.setFillStyle(hexToRgb(series[i].color, funnelOption.fillOpacity));
+      context.moveTo(0, 0);
+      context.lineTo(-series[i].radius, -eachSpacing);
+      context.lineTo(series[i].radius, -eachSpacing);
+      context.lineTo(0, 0);
+      context.closePath();
+      context.fill();
+      if (funnelOption.border == true) {
+        context.stroke();
+      }
+    } else {
+      if (opts.tooltip) {
+        if (opts.tooltip.index == i) {
+          context.beginPath();
+          context.setFillStyle(hexToRgb(series[i].color, funnelOption.activeOpacity));
+          context.moveTo(0, 0);
+          context.lineTo(-series[i - 1].radius - activeWidth, 0);
+          context.lineTo(-series[i].radius - activeWidth, -eachSpacing);
+          context.lineTo(series[i].radius + activeWidth, -eachSpacing);
+          context.lineTo(series[i - 1].radius + activeWidth, 0);
+          context.lineTo(0, 0);
+          context.closePath();
+          context.fill();
+        }
+      }
+      series[i].funnelArea = [centerPosition.x - series[i].radius, centerPosition.y - eachSpacing * (i + 1), centerPosition.x + series[i].radius, centerPosition.y - eachSpacing * i];
+      context.beginPath();
+      context.setLineWidth(funnelOption.borderWidth * opts.pixelRatio);
+      context.setStrokeStyle(funnelOption.borderColor);
+      context.setFillStyle(hexToRgb(series[i].color, funnelOption.fillOpacity));
+      context.moveTo(0, 0);
+      context.lineTo(-series[i - 1].radius, 0);
+      context.lineTo(-series[i].radius, -eachSpacing);
+      context.lineTo(series[i].radius, -eachSpacing);
+      context.lineTo(series[i - 1].radius, 0);
+      context.lineTo(0, 0);
+      context.closePath();
+      context.fill();
+      if (funnelOption.border == true) {
+        context.stroke();
+      }
+    }
+    context.translate(0, -eachSpacing);
+  }
+  context.restore();
+
+  if (opts.dataLabel !== false && process === 1) {
+    drawFunnelText(series, opts, context, eachSpacing, funnelOption.labelAlign, activeWidth, centerPosition);
+  }
+
+  return {
+    center: centerPosition,
+    radius: radius,
+    series: series };
+
+}
+
+function drawFunnelText(series, opts, context, eachSpacing, labelAlign, activeWidth, centerPosition) {
+  for (var i = 0; i < series.length; i++) {
+    var item = series[i];
+    var startX = void 0,endX = void 0,startY = void 0,fontSize = void 0;
+    var text = item.format ? item.format(+item._proportion_.toFixed(2)) : util.toFixed(item._proportion_ * 100) + '%';
+    if (labelAlign == 'right') {
+      if (i == 0) {
+        startX = (item.funnelArea[2] + centerPosition.x) / 2;
+      } else {
+        startX = (item.funnelArea[2] + series[i - 1].funnelArea[2]) / 2;
+      }
+      endX = startX + activeWidth * 2;
+      startY = item.funnelArea[1] + eachSpacing / 2;
+      fontSize = item.textSize || opts.fontSize;
+      context.setLineWidth(1 * opts.pixelRatio);
+      context.setStrokeStyle(item.color);
+      context.setFillStyle(item.color);
+      context.beginPath();
+      context.moveTo(startX, startY);
+      context.lineTo(endX, startY);
+      context.stroke();
+      context.closePath();
+      context.beginPath();
+      context.moveTo(endX, startY);
+      context.arc(endX, startY, 2, 0, 2 * Math.PI);
+      context.closePath();
+      context.fill();
+      context.beginPath();
+      context.setFontSize(fontSize);
+      context.setFillStyle(item.textColor || '#666666');
+      context.fillText(text, endX + 5, startY + fontSize / 2 - 2);
+      context.closePath();
+      context.stroke();
+      context.closePath();
+    } else {
+      if (i == 0) {
+        startX = (item.funnelArea[0] + centerPosition.x) / 2;
+      } else {
+        startX = (item.funnelArea[0] + series[i - 1].funnelArea[0]) / 2;
+      }
+      endX = startX - activeWidth * 2;
+      startY = item.funnelArea[1] + eachSpacing / 2;
+      fontSize = item.textSize || opts.fontSize;
+      context.setLineWidth(1 * opts.pixelRatio);
+      context.setStrokeStyle(item.color);
+      context.setFillStyle(item.color);
+      context.beginPath();
+      context.moveTo(startX, startY);
+      context.lineTo(endX, startY);
+      context.stroke();
+      context.closePath();
+      context.beginPath();
+      context.moveTo(endX, startY);
+      context.arc(endX, startY, 2, 0, 2 * Math.PI);
+      context.closePath();
+      context.fill();
+      context.beginPath();
+      context.setFontSize(fontSize);
+      context.setFillStyle(item.textColor || '#666666');
+      context.fillText(text, endX - 5 - measureText(text), startY + fontSize / 2 - 2);
+      context.closePath();
+      context.stroke();
+      context.closePath();
+    }
+
+  }
+}
+
+
+function drawCanvas(opts, context) {
+  context.draw();
+}
+
+var Timing = {
+  easeIn: function easeIn(pos) {
+    return Math.pow(pos, 3);
+  },
+  easeOut: function easeOut(pos) {
+    return Math.pow(pos - 1, 3) + 1;
+  },
+  easeInOut: function easeInOut(pos) {
+    if ((pos /= 0.5) < 1) {
+      return 0.5 * Math.pow(pos, 3);
+    } else {
+      return 0.5 * (Math.pow(pos - 2, 3) + 2);
+    }
+  },
+  linear: function linear(pos) {
+    return pos;
+  } };
+
+
+function Animation(opts) {
+  this.isStop = false;
+  opts.duration = typeof opts.duration === 'undefined' ? 1000 : opts.duration;
+  opts.timing = opts.timing || 'linear';
+  var delay = 17;
+
+  function createAnimationFrame() {
+    if (typeof setTimeout !== 'undefined') {
+      return function (step, delay) {
+        setTimeout(function () {
+          var timeStamp = +new Date();
+          step(timeStamp);
+        }, delay);
+      };
+    } else if (typeof requestAnimationFrame !== 'undefined') {
+      return requestAnimationFrame;
+    } else {
+      return function (step) {
+        step(null);
+      };
+    }
+  };
+  var animationFrame = createAnimationFrame();
+  var startTimeStamp = null;
+  var _step = function step(timestamp) {
+    if (timestamp === null || this.isStop === true) {
+      opts.onProcess && opts.onProcess(1);
+      opts.onAnimationFinish && opts.onAnimationFinish();
+      return;
+    }
+    if (startTimeStamp === null) {
+      startTimeStamp = timestamp;
+    }
+    if (timestamp - startTimeStamp < opts.duration) {
+      var process = (timestamp - startTimeStamp) / opts.duration;
+      var timingFunction = Timing[opts.timing];
+      process = timingFunction(process);
+
+      opts.onProcess && opts.onProcess(process);
+      animationFrame(_step, delay);
+    } else {
+      opts.onProcess && opts.onProcess(1);
+      opts.onAnimationFinish && opts.onAnimationFinish();
+    }
+  };
+  _step = _step.bind(this);
+  animationFrame(_step, delay);
+}
+
+// stop animation immediately
+// and tigger onAnimationFinish
+Animation.prototype.stop = function () {
+  this.isStop = true;
+};
+
+function drawCharts(type, opts, config, context) {
+  var _this = this;
+  var series = opts.series;
+  var categories = opts.categories;
+  series = fillSeries(series, opts, config);
+  var duration = opts.animation ? opts.duration : 0;
+  _this.animationInstance && _this.animationInstance.stop();
+  var seriesMA = null;
+  if (type == 'candle') {
+    var average = assign({}, opts.extra.candle.average);
+    if (average.show) {
+      seriesMA = calCandleMA(average.day, average.name, average.color, series[0].data);
+      seriesMA = fillSeries(seriesMA, opts, config);
+      opts.seriesMA = seriesMA;
+    } else if (opts.seriesMA) {
+      seriesMA = opts.seriesMA = fillSeries(opts.seriesMA, opts, config);
+    } else {
+      seriesMA = series;
+    }
+  } else {
+    seriesMA = series;
+  }
+
+  /* 过滤掉show=false的series */
+  opts._series_ = series = filterSeries(series);
+
+  //重新计算图表区域
+
+  opts.area = new Array(4);
+  //复位绘图区域
+  for (var j = 0; j < 4; j++) {
+    opts.area[j] = opts.padding[j];
+  }
+
+  //通过计算三大区域：图例、X轴、Y轴的大小，确定绘图区域
+  var _calLegendData = calLegendData(seriesMA, opts, config, opts.chartData),
+  legendHeight = _calLegendData.area.wholeHeight,
+  legendWidth = _calLegendData.area.wholeWidth;
+
+  switch (opts.legend.position) {
+    case 'top':
+      opts.area[0] += legendHeight;
+      break;
+    case 'bottom':
+      opts.area[2] += legendHeight;
+      break;
+    case 'left':
+      opts.area[3] += legendWidth;
+      break;
+    case 'right':
+      opts.area[1] += legendWidth;
+      break;}
+
+
+  var _calYAxisData = {},yAxisWidth = 0;
+  if (opts.type === 'line' || opts.type === 'column' || opts.type === 'area' || opts.type === 'mix' || opts.type === 'candle') {
+    _calYAxisData = calYAxisData(series, opts, config);
+    yAxisWidth = _calYAxisData.yAxisWidth;
+    //如果显示Y轴标题
+    if (opts.yAxis.showTitle) {
+      var maxTitleHeight = 0;
+      for (var i = 0; i < opts.yAxis.data.length; i++) {
+        maxTitleHeight = Math.max(maxTitleHeight, opts.yAxis.data[i].titleFontSize ? opts.yAxis.data[i].titleFontSize : config.fontSize);
+      }
+      opts.area[0] += (maxTitleHeight + 6) * opts.pixelRatio;
+    }
+    var rightIndex = 0,leftIndex = 0;
+    //计算主绘图区域左右位置
+    for (var _i23 = 0; _i23 < yAxisWidth.length; _i23++) {
+      if (yAxisWidth[_i23].position == 'left') {
+        if (leftIndex > 0) {
+          opts.area[3] += yAxisWidth[_i23].width + opts.yAxis.padding;
+        } else {
+          opts.area[3] += yAxisWidth[_i23].width;
+        }
+        leftIndex += 1;
+      } else {
+        if (rightIndex > 0) {
+          opts.area[1] += yAxisWidth[_i23].width + opts.yAxis.padding;
+        } else {
+          opts.area[1] += yAxisWidth[_i23].width;
+        }
+        rightIndex += 1;
+      }
+    }
+  } else {
+    config.yAxisWidth = yAxisWidth;
+  }
+  opts.chartData.yAxisData = _calYAxisData;
+
+  if (opts.categories && opts.categories.length) {
+    opts.chartData.xAxisData = getXAxisPoints(opts.categories, opts, config);
+    var _calCategoriesData = calCategoriesData(opts.categories, opts, config, opts.chartData.xAxisData.eachSpacing),
+    xAxisHeight = _calCategoriesData.xAxisHeight,
+    angle = _calCategoriesData.angle;
+    config.xAxisHeight = xAxisHeight;
+    config._xAxisTextAngle_ = angle;
+    opts.area[2] += xAxisHeight;
+    opts.chartData.categoriesData = _calCategoriesData;
+  } else {
+    if (opts.type === 'line' || opts.type === 'area' || opts.type === 'points') {
+      opts.chartData.xAxisData = calXAxisData(series, opts, config);
+      categories = opts.chartData.xAxisData.rangesFormat;
+      var _calCategoriesData2 = calCategoriesData(categories, opts, config, opts.chartData.xAxisData.eachSpacing),
+      _xAxisHeight = _calCategoriesData2.xAxisHeight,
+      _angle = _calCategoriesData2.angle;
+      config.xAxisHeight = _xAxisHeight;
+      config._xAxisTextAngle_ = _angle;
+      opts.area[2] += _xAxisHeight;
+      opts.chartData.categoriesData = _calCategoriesData2;
+    } else {
+      opts.chartData.xAxisData = {
+        xAxisPoints: [] };
+
+    }
+  }
+  //计算右对齐偏移距离
+  if (opts.enableScroll && opts.xAxis.scrollAlign == 'right' && opts._scrollDistance_ === undefined) {
+    var offsetLeft = 0,
+    xAxisPoints = opts.chartData.xAxisData.xAxisPoints,
+    startX = opts.chartData.xAxisData.startX,
+    endX = opts.chartData.xAxisData.endX,
+    eachSpacing = opts.chartData.xAxisData.eachSpacing;
+    var totalWidth = eachSpacing * (xAxisPoints.length - 1);
+    var screenWidth = endX - startX;
+    offsetLeft = screenWidth - totalWidth;
+    _this.scrollOption = {
+      currentOffset: offsetLeft,
+      startTouchX: offsetLeft,
+      distance: 0,
+      lastMoveTime: 0 };
+
+    opts._scrollDistance_ = offsetLeft;
+  }
+
+  if (type === 'pie' || type === 'ring' || type === 'rose') {
+    config._pieTextMaxLength_ = opts.dataLabel === false ? 0 : getPieTextMaxLength(seriesMA);
+  }
+
+  switch (type) {
+    case 'word':
+      var wordOption = assign({}, {
+        type: 'normal',
+        autoColors: true },
+      opts.extra.word);
+      if (opts.updateData == true || opts.updateData == undefined) {
+        opts.chartData.wordCloudData = getWordCloudPoint(opts, wordOption.type);
+      }
+      this.animationInstance = new Animation({
+        timing: 'easeInOut',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          drawWordCloudDataPoints(series, opts, config, context, process);
+          drawCanvas(opts, context);
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;
+    case 'map':
+      context.clearRect(0, 0, opts.width, opts.height);
+      drawMapDataPoints(series, opts, config, context);
+      break;
+    case 'funnel':
+      this.animationInstance = new Animation({
+        timing: 'easeInOut',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          opts.chartData.funnelData = drawFunnelDataPoints(series, opts, config, context, process);
+          drawLegend(opts.series, opts, config, context, opts.chartData);
+          drawToolTipBridge(opts, config, context, process);
+          drawCanvas(opts, context);
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;
+    case 'line':
+      this.animationInstance = new Animation({
+        timing: 'easeIn',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          drawYAxisGrid(categories, opts, config, context);
+          drawXAxis(categories, opts, config, context);
+          var _drawLineDataPoints = drawLineDataPoints(series, opts, config, context, process),
+          xAxisPoints = _drawLineDataPoints.xAxisPoints,
+          calPoints = _drawLineDataPoints.calPoints,
+          eachSpacing = _drawLineDataPoints.eachSpacing;
+          opts.chartData.xAxisPoints = xAxisPoints;
+          opts.chartData.calPoints = calPoints;
+          opts.chartData.eachSpacing = eachSpacing;
+          drawYAxis(series, opts, config, context);
+          if (opts.enableMarkLine !== false && process === 1) {
+            drawMarkLine(opts, config, context);
+          }
+          drawLegend(opts.series, opts, config, context, opts.chartData);
+          drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints);
+          drawCanvas(opts, context);
+
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;
+    case 'mix':
+      this.animationInstance = new Animation({
+        timing: 'easeIn',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          drawYAxisGrid(categories, opts, config, context);
+          drawXAxis(categories, opts, config, context);
+          var _drawMixDataPoints = drawMixDataPoints(series, opts, config, context, process),
+          xAxisPoints = _drawMixDataPoints.xAxisPoints,
+          calPoints = _drawMixDataPoints.calPoints,
+          eachSpacing = _drawMixDataPoints.eachSpacing;
+          opts.chartData.xAxisPoints = xAxisPoints;
+          opts.chartData.calPoints = calPoints;
+          opts.chartData.eachSpacing = eachSpacing;
+          drawYAxis(series, opts, config, context);
+          if (opts.enableMarkLine !== false && process === 1) {
+            drawMarkLine(opts, config, context);
+          }
+          drawLegend(opts.series, opts, config, context, opts.chartData);
+          drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints);
+          drawCanvas(opts, context);
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;
+    case 'column':
+      this.animationInstance = new Animation({
+        timing: 'easeIn',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          drawYAxisGrid(categories, opts, config, context);
+          drawXAxis(categories, opts, config, context);
+          var _drawColumnDataPoints = drawColumnDataPoints(series, opts, config, context, process),
+          xAxisPoints = _drawColumnDataPoints.xAxisPoints,
+          calPoints = _drawColumnDataPoints.calPoints,
+          eachSpacing = _drawColumnDataPoints.eachSpacing;
+          opts.chartData.xAxisPoints = xAxisPoints;
+          opts.chartData.calPoints = calPoints;
+          opts.chartData.eachSpacing = eachSpacing;
+          drawYAxis(series, opts, config, context);
+          if (opts.enableMarkLine !== false && process === 1) {
+            drawMarkLine(opts, config, context);
+          }
+          drawLegend(opts.series, opts, config, context, opts.chartData);
+          drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints);
+          drawCanvas(opts, context);
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;
+    case 'area':
+      this.animationInstance = new Animation({
+        timing: 'easeIn',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          drawYAxisGrid(categories, opts, config, context);
+          drawXAxis(categories, opts, config, context);
+          var _drawAreaDataPoints = drawAreaDataPoints(series, opts, config, context, process),
+          xAxisPoints = _drawAreaDataPoints.xAxisPoints,
+          calPoints = _drawAreaDataPoints.calPoints,
+          eachSpacing = _drawAreaDataPoints.eachSpacing;
+          opts.chartData.xAxisPoints = xAxisPoints;
+          opts.chartData.calPoints = calPoints;
+          opts.chartData.eachSpacing = eachSpacing;
+          drawYAxis(series, opts, config, context);
+          if (opts.enableMarkLine !== false && process === 1) {
+            drawMarkLine(opts, config, context);
+          }
+          drawLegend(opts.series, opts, config, context, opts.chartData);
+          drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints);
+          drawCanvas(opts, context);
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;
+    case 'ring':
+    case 'pie':
+      this.animationInstance = new Animation({
+        timing: 'easeInOut',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          opts.chartData.pieData = drawPieDataPoints(series, opts, config, context, process);
+          drawLegend(opts.series, opts, config, context, opts.chartData);
+          drawToolTipBridge(opts, config, context, process);
+          drawCanvas(opts, context);
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;
+    case 'rose':
+      this.animationInstance = new Animation({
+        timing: 'easeInOut',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          opts.chartData.pieData = drawRoseDataPoints(series, opts, config, context, process);
+          drawLegend(opts.series, opts, config, context, opts.chartData);
+          drawToolTipBridge(opts, config, context, process);
+          drawCanvas(opts, context);
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;
+    case 'radar':
+      this.animationInstance = new Animation({
+        timing: 'easeInOut',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          opts.chartData.radarData = drawRadarDataPoints(series, opts, config, context, process);
+          drawLegend(opts.series, opts, config, context, opts.chartData);
+          drawToolTipBridge(opts, config, context, process);
+          drawCanvas(opts, context);
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;
+    case 'arcbar':
+      this.animationInstance = new Animation({
+        timing: 'easeInOut',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          opts.chartData.arcbarData = drawArcbarDataPoints(series, opts, config, context, process);
+          drawCanvas(opts, context);
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;
+    case 'gauge':
+      this.animationInstance = new Animation({
+        timing: 'easeInOut',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          opts.chartData.gaugeData = drawGaugeDataPoints(categories, series, opts, config, context, process);
+          drawCanvas(opts, context);
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;
+    case 'candle':
+      this.animationInstance = new Animation({
+        timing: 'easeIn',
+        duration: duration,
+        onProcess: function onProcess(process) {
+          context.clearRect(0, 0, opts.width, opts.height);
+          if (opts.rotate) {
+            contextRotate(context, opts);
+          }
+          drawYAxisGrid(categories, opts, config, context);
+          drawXAxis(categories, opts, config, context);
+          var _drawCandleDataPoints = drawCandleDataPoints(series, seriesMA, opts, config, context, process),
+          xAxisPoints = _drawCandleDataPoints.xAxisPoints,
+          calPoints = _drawCandleDataPoints.calPoints,
+          eachSpacing = _drawCandleDataPoints.eachSpacing;
+          opts.chartData.xAxisPoints = xAxisPoints;
+          opts.chartData.calPoints = calPoints;
+          opts.chartData.eachSpacing = eachSpacing;
+          drawYAxis(series, opts, config, context);
+          if (opts.enableMarkLine !== false && process === 1) {
+            drawMarkLine(opts, config, context);
+          }
+          if (seriesMA) {
+            drawLegend(seriesMA, opts, config, context, opts.chartData);
+          } else {
+            drawLegend(opts.series, opts, config, context, opts.chartData);
+          }
+          drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints);
+          drawCanvas(opts, context);
+        },
+        onAnimationFinish: function onAnimationFinish() {
+          _this.event.trigger('renderComplete');
+        } });
+
+      break;}
+
+}
+
+// simple event implement
+
+function Event() {
+  this.events = {};
+}
+
+Event.prototype.addEventListener = function (type, listener) {
+  this.events[type] = this.events[type] || [];
+  this.events[type].push(listener);
+};
+
+Event.prototype.trigger = function () {
+  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+
+  var type = args[0];
+  var params = args.slice(1);
+  if (!!this.events[type]) {
+    this.events[type].forEach(function (listener) {
+      try {
+        listener.apply(null, params);
+      } catch (e) {
+        console.error(e);
+      }
+    });
+  }
+};
+
+var Charts = function Charts(opts) {
+  opts.pixelRatio = opts.pixelRatio ? opts.pixelRatio : 1;
+  opts.fontSize = opts.fontSize ? opts.fontSize * opts.pixelRatio : 13 * opts.pixelRatio;
+  opts.title = assign({}, opts.title);
+  opts.subtitle = assign({}, opts.subtitle);
+  opts.duration = opts.duration ? opts.duration : 1000;
+  opts.yAxis = assign({}, {
+    data: [],
+    showTitle: false,
+    disabled: false,
+    disableGrid: false,
+    splitNumber: 5,
+    gridType: 'solid',
+    dashLength: 4 * opts.pixelRatio,
+    gridColor: '#cccccc',
+    padding: 10,
+    fontColor: '#666666' },
+  opts.yAxis);
+  opts.yAxis.dashLength *= opts.pixelRatio;
+  opts.yAxis.padding *= opts.pixelRatio;
+  opts.xAxis = assign({}, {
+    rotateLabel: false,
+    type: 'calibration',
+    gridType: 'solid',
+    dashLength: 4,
+    scrollAlign: 'left',
+    boundaryGap: 'center',
+    axisLine: true,
+    axisLineColor: '#cccccc' },
+  opts.xAxis);
+  opts.xAxis.dashLength *= opts.pixelRatio;
+  opts.legend = assign({}, {
+    show: true,
+    position: 'bottom',
+    float: 'center',
+    backgroundColor: 'rgba(0,0,0,0)',
+    borderColor: 'rgba(0,0,0,0)',
+    borderWidth: 0,
+    padding: 5,
+    margin: 5,
+    itemGap: 10,
+    fontSize: opts.fontSize,
+    lineHeight: opts.fontSize,
+    fontColor: '#333333',
+    format: {},
+    hiddenColor: '#CECECE' },
+  opts.legend);
+  opts.legend.borderWidth = opts.legend.borderWidth * opts.pixelRatio;
+  opts.legend.itemGap = opts.legend.itemGap * opts.pixelRatio;
+  opts.legend.padding = opts.legend.padding * opts.pixelRatio;
+  opts.legend.margin = opts.legend.margin * opts.pixelRatio;
+  opts.extra = assign({}, opts.extra);
+  opts.rotate = opts.rotate ? true : false;
+  opts.animation = opts.animation ? true : false;
+  opts.rotate = opts.rotate ? true : false;
+
+  var config$$1 = JSON.parse(JSON.stringify(config));
+  config$$1.colors = opts.colors ? opts.colors : config$$1.colors;
+  config$$1.yAxisTitleWidth = opts.yAxis.disabled !== true && opts.yAxis.title ? config$$1.yAxisTitleWidth : 0;
+  if (opts.type == 'pie' || opts.type == 'ring') {
+    config$$1.pieChartLinePadding = opts.dataLabel === false ? 0 : opts.extra.pie.labelWidth * opts.pixelRatio || config$$1.pieChartLinePadding * opts.pixelRatio;
+  }
+  if (opts.type == 'rose') {
+    config$$1.pieChartLinePadding = opts.dataLabel === false ? 0 : opts.extra.rose.labelWidth * opts.pixelRatio || config$$1.pieChartLinePadding * opts.pixelRatio;
+  }
+  config$$1.pieChartTextPadding = opts.dataLabel === false ? 0 : config$$1.pieChartTextPadding * opts.pixelRatio;
+  config$$1.yAxisSplit = opts.yAxis.splitNumber ? opts.yAxis.splitNumber : config.yAxisSplit;
+
+  //屏幕旋转
+  config$$1.rotate = opts.rotate;
+  if (opts.rotate) {
+    var tempWidth = opts.width;
+    var tempHeight = opts.height;
+    opts.width = tempHeight;
+    opts.height = tempWidth;
+  }
+
+  //适配高分屏
+  opts.padding = opts.padding ? opts.padding : config$$1.padding;
+  for (var i = 0; i < 4; i++) {
+    opts.padding[i] *= opts.pixelRatio;
+  }
+  config$$1.yAxisWidth = config.yAxisWidth * opts.pixelRatio;
+  config$$1.xAxisHeight = config.xAxisHeight * opts.pixelRatio;
+  if (opts.enableScroll && opts.xAxis.scrollShow) {
+    config$$1.xAxisHeight += 6 * opts.pixelRatio;
+  }
+  config$$1.xAxisLineHeight = config.xAxisLineHeight * opts.pixelRatio;
+  config$$1.fontSize = opts.fontSize;
+  config$$1.titleFontSize = config.titleFontSize * opts.pixelRatio;
+  config$$1.subtitleFontSize = config.subtitleFontSize * opts.pixelRatio;
+  config$$1.toolTipPadding = config.toolTipPadding * opts.pixelRatio;
+  config$$1.toolTipLineHeight = config.toolTipLineHeight * opts.pixelRatio;
+  config$$1.columePadding = config.columePadding * opts.pixelRatio;
+  opts.$this = opts.$this ? opts.$this : this;
+
+  this.context = uni.createCanvasContext(opts.canvasId, opts.$this);
+  /* 兼容原生H5
+                                                                     this.context = document.getElementById(opts.canvasId).getContext("2d");
+                                                                     this.context.setStrokeStyle = function(e){ return this.strokeStyle=e; }
+                                                                     this.context.setLineWidth = function(e){ return this.lineWidth=e; }
+                                                                     this.context.setLineCap = function(e){ return this.lineCap=e; }
+                                                                     this.context.setFontSize = function(e){ return this.font=e+"px sans-serif"; }
+                                                                     this.context.setFillStyle = function(e){ return this.fillStyle=e; }
+                                                                     this.context.draw = function(){ }
+                                                                     */
+
+  opts.chartData = {};
+  this.event = new Event();
+  this.scrollOption = {
+    currentOffset: 0,
+    startTouchX: 0,
+    distance: 0,
+    lastMoveTime: 0 };
+
+
+  this.opts = opts;
+  this.config = config$$1;
+
+  drawCharts.call(this, opts.type, opts, config$$1, this.context);
+};
+
+Charts.prototype.updateData = function () {
+  var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  this.opts = assign({}, this.opts, data);
+  this.opts.updateData = true;
+  var scrollPosition = data.scrollPosition || 'current';
+  switch (scrollPosition) {
+    case 'current':
+      this.opts._scrollDistance_ = this.scrollOption.currentOffset;
+      break;
+    case 'left':
+      this.opts._scrollDistance_ = 0;
+      this.scrollOption = {
+        currentOffset: 0,
+        startTouchX: 0,
+        distance: 0,
+        lastMoveTime: 0 };
+
+      break;
+    case 'right':
+      var _calYAxisData = calYAxisData(this.opts.series, this.opts, this.config),
+      yAxisWidth = _calYAxisData.yAxisWidth;
+      this.config.yAxisWidth = yAxisWidth;
+      var offsetLeft = 0;
+      var _getXAxisPoints0 = getXAxisPoints(this.opts.categories, this.opts, this.config),
+      xAxisPoints = _getXAxisPoints0.xAxisPoints,
+      startX = _getXAxisPoints0.startX,
+      endX = _getXAxisPoints0.endX,
+      eachSpacing = _getXAxisPoints0.eachSpacing;
+      var totalWidth = eachSpacing * (xAxisPoints.length - 1);
+      var screenWidth = endX - startX;
+      offsetLeft = screenWidth - totalWidth;
+      this.scrollOption = {
+        currentOffset: offsetLeft,
+        startTouchX: offsetLeft,
+        distance: 0,
+        lastMoveTime: 0 };
+
+      this.opts._scrollDistance_ = offsetLeft;
+      break;}
+
+  drawCharts.call(this, this.opts.type, this.opts, this.config, this.context);
+};
+
+Charts.prototype.zoom = function () {
+  var val = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.opts.xAxis.itemCount;
+  if (this.opts.enableScroll !== true) {
+    console.log('请启用滚动条后使用！');
+    return;
+  }
+  //当前屏幕中间点
+  var centerPoint = Math.round(Math.abs(this.scrollOption.currentOffset) / this.opts.chartData.eachSpacing) + Math.round(
+  this.opts.xAxis.itemCount / 2);
+  this.opts.animation = false;
+  this.opts.xAxis.itemCount = val.itemCount;
+  //重新计算x轴偏移距离
+  var _calYAxisData = calYAxisData(this.opts.series, this.opts, this.config),
+  yAxisWidth = _calYAxisData.yAxisWidth;
+  this.config.yAxisWidth = yAxisWidth;
+  var offsetLeft = 0;
+  var _getXAxisPoints0 = getXAxisPoints(this.opts.categories, this.opts, this.config),
+  xAxisPoints = _getXAxisPoints0.xAxisPoints,
+  startX = _getXAxisPoints0.startX,
+  endX = _getXAxisPoints0.endX,
+  eachSpacing = _getXAxisPoints0.eachSpacing;
+  var centerLeft = eachSpacing * centerPoint;
+  var screenWidth = endX - startX;
+  var MaxLeft = screenWidth - eachSpacing * (xAxisPoints.length - 1);
+  offsetLeft = screenWidth / 2 - centerLeft;
+  if (offsetLeft > 0) {
+    offsetLeft = 0;
+  }
+  if (offsetLeft < MaxLeft) {
+    offsetLeft = MaxLeft;
+  }
+  this.scrollOption = {
+    currentOffset: offsetLeft,
+    startTouchX: offsetLeft,
+    distance: 0,
+    lastMoveTime: 0 };
+
+  this.opts._scrollDistance_ = offsetLeft;
+  drawCharts.call(this, this.opts.type, this.opts, this.config, this.context);
+};
+
+Charts.prototype.stopAnimation = function () {
+  this.animationInstance && this.animationInstance.stop();
+};
+
+Charts.prototype.addEventListener = function (type, listener) {
+  this.event.addEventListener(type, listener);
+};
+
+Charts.prototype.getCurrentDataIndex = function (e) {
+  var touches = null;
+  if (e.changedTouches) {
+    touches = e.changedTouches[0];
+  } else {
+    touches = e.mp.changedTouches[0];
+  }
+  if (touches) {
+    var _touches$ = getTouches(touches, this.opts, e);
+    if (this.opts.type === 'pie' || this.opts.type === 'ring' || this.opts.type === 'rose') {
+      return findPieChartCurrentIndex({
+        x: _touches$.x,
+        y: _touches$.y },
+      this.opts.chartData.pieData);
+    } else if (this.opts.type === 'radar') {
+      return findRadarChartCurrentIndex({
+        x: _touches$.x,
+        y: _touches$.y },
+      this.opts.chartData.radarData, this.opts.categories.length);
+    } else if (this.opts.type === 'funnel') {
+      return findFunnelChartCurrentIndex({
+        x: _touches$.x,
+        y: _touches$.y },
+      this.opts.chartData.funnelData);
+    } else if (this.opts.type === 'map') {
+      return findMapChartCurrentIndex({
+        x: _touches$.x,
+        y: _touches$.y },
+      this.opts);
+    } else if (this.opts.type === 'word') {
+      return findWordChartCurrentIndex({
+        x: _touches$.x,
+        y: _touches$.y },
+      this.opts.chartData.wordCloudData);
+    } else {
+      return findCurrentIndex({
+        x: _touches$.x,
+        y: _touches$.y },
+      this.opts.chartData.calPoints, this.opts, this.config, Math.abs(this.scrollOption.currentOffset));
+    }
+  }
+  return -1;
+};
+
+Charts.prototype.getLegendDataIndex = function (e) {
+  var touches = null;
+  if (e.changedTouches) {
+    touches = e.changedTouches[0];
+  } else {
+    touches = e.mp.changedTouches[0];
+  }
+  if (touches) {
+    var _touches$ = getTouches(touches, this.opts, e);
+    return findLegendIndex({
+      x: _touches$.x,
+      y: _touches$.y },
+    this.opts.chartData.legendData);
+  }
+  return -1;
+};
+
+Charts.prototype.touchLegend = function (e) {
+  var option = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var touches = null;
+  if (e.changedTouches) {
+    touches = e.changedTouches[0];
+  } else {
+    touches = e.mp.changedTouches[0];
+  }
+  if (touches) {
+    var _touches$ = getTouches(touches, this.opts, e);
+    var index = this.getLegendDataIndex(e);
+    if (index >= 0) {
+      this.opts.series[index].show = !this.opts.series[index].show;
+      this.opts.animation = option.animation ? true : false;
+      this.opts._scrollDistance_ = this.scrollOption.currentOffset;
+      drawCharts.call(this, this.opts.type, this.opts, this.config, this.context);
+    }
+  }
+
+};
+
+Charts.prototype.showToolTip = function (e) {
+  var option = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var touches = null;
+  if (e.changedTouches) {
+    touches = e.changedTouches[0];
+  } else {
+    touches = e.mp.changedTouches[0];
+  }
+  if (!touches) {
+    console.log("touchError");
+  }
+  var _touches$ = getTouches(touches, this.opts, e);
+  var currentOffset = this.scrollOption.currentOffset;
+  var opts = assign({}, this.opts, {
+    _scrollDistance_: currentOffset,
+    animation: false });
+
+  if (this.opts.type === 'line' || this.opts.type === 'area' || this.opts.type === 'column') {
+    var index = this.getCurrentDataIndex(e);
+    if (index > -1) {
+      var seriesData = getSeriesDataItem(this.opts.series, index);
+      if (seriesData.length !== 0) {
+        var _getToolTipData = getToolTipData(seriesData, this.opts.chartData.calPoints, index, this.opts.categories, option),
+        textList = _getToolTipData.textList,
+        offset = _getToolTipData.offset;
+        offset.y = _touches$.y;
+        opts.tooltip = {
+          textList: textList,
+          offset: offset,
+          option: option,
+          index: index };
+
+      }
+    }
+    drawCharts.call(this, opts.type, opts, this.config, this.context);
+  }
+  if (this.opts.type === 'mix') {
+    var index = this.getCurrentDataIndex(e);
+    if (index > -1) {
+      var currentOffset = this.scrollOption.currentOffset;
+      var opts = assign({}, this.opts, {
+        _scrollDistance_: currentOffset,
+        animation: false });
+
+      var seriesData = getSeriesDataItem(this.opts.series, index);
+      if (seriesData.length !== 0) {
+        var _getMixToolTipData = getMixToolTipData(seriesData, this.opts.chartData.calPoints, index, this.opts.categories, option),
+        textList = _getMixToolTipData.textList,
+        offset = _getMixToolTipData.offset;
+        offset.y = _touches$.y;
+        opts.tooltip = {
+          textList: textList,
+          offset: offset,
+          option: option,
+          index: index };
+
+      }
+    }
+    drawCharts.call(this, opts.type, opts, this.config, this.context);
+  }
+  if (this.opts.type === 'candle') {
+    var index = this.getCurrentDataIndex(e);
+    if (index > -1) {
+      var currentOffset = this.scrollOption.currentOffset;
+      var opts = assign({}, this.opts, {
+        _scrollDistance_: currentOffset,
+        animation: false });
+
+      var seriesData = getSeriesDataItem(this.opts.series, index);
+      if (seriesData.length !== 0) {
+        var _getToolTipData = getCandleToolTipData(this.opts.series[0].data, seriesData, this.opts.chartData.calPoints,
+        index, this.opts.categories, this.opts.extra.candle, option),
+        textList = _getToolTipData.textList,
+        offset = _getToolTipData.offset;
+        offset.y = _touches$.y;
+        opts.tooltip = {
+          textList: textList,
+          offset: offset,
+          option: option,
+          index: index };
+
+      }
+    }
+    drawCharts.call(this, opts.type, opts, this.config, this.context);
+  }
+  if (this.opts.type === 'pie' || this.opts.type === 'ring' || this.opts.type === 'rose' || this.opts.type === 'funnel') {
+    var index = this.getCurrentDataIndex(e);
+    if (index > -1) {
+      var currentOffset = this.scrollOption.currentOffset;
+      var opts = assign({}, this.opts, {
+        _scrollDistance_: currentOffset,
+        animation: false });
+
+      var seriesData = this.opts._series_[index];
+      var textList = [{
+        text: option.format ? option.format(seriesData) : seriesData.name + ': ' + seriesData.data,
+        color: seriesData.color }];
+
+      var offset = {
+        x: _touches$.x,
+        y: _touches$.y };
+
+      opts.tooltip = {
+        textList: textList,
+        offset: offset,
+        option: option,
+        index: index };
+
+    }
+    drawCharts.call(this, opts.type, opts, this.config, this.context);
+  }
+  if (this.opts.type === 'map' || this.opts.type === 'word') {
+    var index = this.getCurrentDataIndex(e);
+    if (index > -1) {
+      var currentOffset = this.scrollOption.currentOffset;
+      var opts = assign({}, this.opts, {
+        _scrollDistance_: currentOffset,
+        animation: false });
+
+      var seriesData = this.opts._series_[index];
+      var textList = [{
+        text: option.format ? option.format(seriesData) : seriesData.properties.name,
+        color: seriesData.color }];
+
+      var offset = {
+        x: _touches$.x,
+        y: _touches$.y };
+
+      opts.tooltip = {
+        textList: textList,
+        offset: offset,
+        option: option,
+        index: index };
+
+    }
+    opts.updateData = false;
+    drawCharts.call(this, opts.type, opts, this.config, this.context);
+  }
+  if (this.opts.type === 'radar') {
+    var index = this.getCurrentDataIndex(e);
+    if (index > -1) {
+      var currentOffset = this.scrollOption.currentOffset;
+      var opts = assign({}, this.opts, {
+        _scrollDistance_: currentOffset,
+        animation: false });
+
+      var seriesData = getSeriesDataItem(this.opts.series, index);
+      if (seriesData.length !== 0) {
+        var textList = seriesData.map(function (item) {
+          return {
+            text: option.format ? option.format(item) : item.name + ': ' + item.data,
+            color: item.color };
+
+        });
+        var offset = {
+          x: _touches$.x,
+          y: _touches$.y };
+
+        opts.tooltip = {
+          textList: textList,
+          offset: offset,
+          option: option,
+          index: index };
+
+      }
+    }
+    drawCharts.call(this, opts.type, opts, this.config, this.context);
+  }
+};
+
+Charts.prototype.translate = function (distance) {
+  this.scrollOption = {
+    currentOffset: distance,
+    startTouchX: distance,
+    distance: 0,
+    lastMoveTime: 0 };
+
+  var opts = assign({}, this.opts, {
+    _scrollDistance_: distance,
+    animation: false });
+
+  drawCharts.call(this, this.opts.type, opts, this.config, this.context);
+};
+
+Charts.prototype.scrollStart = function (e) {
+  var touches = null;
+  if (e.changedTouches) {
+    touches = e.changedTouches[0];
+  } else {
+    touches = e.mp.changedTouches[0];
+  }
+  var _touches$ = getTouches(touches, this.opts, e);
+  if (touches && this.opts.enableScroll === true) {
+    this.scrollOption.startTouchX = _touches$.x;
+  }
+};
+
+Charts.prototype.scroll = function (e) {
+  if (this.scrollOption.lastMoveTime === 0) {
+    this.scrollOption.lastMoveTime = Date.now();
+  }
+  var Limit = this.opts.extra.touchMoveLimit || 20;
+  var currMoveTime = Date.now();
+  var duration = currMoveTime - this.scrollOption.lastMoveTime;
+  if (duration < Math.floor(1000 / Limit)) return;
+  this.scrollOption.lastMoveTime = currMoveTime;
+  var touches = null;
+  if (e.changedTouches) {
+    touches = e.changedTouches[0];
+  } else {
+    touches = e.mp.changedTouches[0];
+  }
+  if (touches && this.opts.enableScroll === true) {
+    var _touches$ = getTouches(touches, this.opts, e);
+    var _distance;
+    _distance = _touches$.x - this.scrollOption.startTouchX;
+    var currentOffset = this.scrollOption.currentOffset;
+    var validDistance = calValidDistance(this, currentOffset + _distance, this.opts.chartData, this.config, this.opts);
+    this.scrollOption.distance = _distance = validDistance - currentOffset;
+    var opts = assign({}, this.opts, {
+      _scrollDistance_: currentOffset + _distance,
+      animation: false });
+
+    drawCharts.call(this, opts.type, opts, this.config, this.context);
+    return currentOffset + _distance;
+  }
+};
+
+Charts.prototype.scrollEnd = function (e) {
+  if (this.opts.enableScroll === true) {
+    var _scrollOption = this.scrollOption,
+    currentOffset = _scrollOption.currentOffset,
+    distance = _scrollOption.distance;
+    this.scrollOption.currentOffset = currentOffset + distance;
+    this.scrollOption.distance = 0;
+  }
+};
+if ( true && typeof module.exports === "object") {
+  module.exports = Charts;
+  //export default Charts;//建议使用nodejs的module导出方式，如报错请使用export方式导出
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
 /* 256 */,
 /* 257 */,
 /* 258 */,
@@ -12779,13 +18422,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.formatList
 /* 274 */,
 /* 275 */,
 /* 276 */,
-/* 277 */,
-/* 278 */,
-/* 279 */,
-/* 280 */,
-/* 281 */,
-/* 282 */,
-/* 283 */
+/* 277 */
 /*!******************************************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/components/w-picker/city-data/province.js ***!
   \******************************************************************************************/
@@ -12934,7 +18571,7 @@ var provinceData = [{
 provinceData;exports.default = _default;
 
 /***/ }),
-/* 284 */
+/* 278 */
 /*!**************************************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/components/w-picker/city-data/city.js ***!
   \**************************************************************************************/
@@ -14447,7 +20084,7 @@ var cityData = [
 cityData;exports.default = _default;
 
 /***/ }),
-/* 285 */
+/* 279 */
 /*!**************************************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/components/w-picker/city-data/area.js ***!
   \**************************************************************************************/
@@ -26999,7 +32636,7 @@ var areaData = [
 areaData;exports.default = _default;
 
 /***/ }),
-/* 286 */
+/* 280 */
 /*!********************************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/components/w-picker/w-picker.js ***!
   \********************************************************************************/
@@ -27657,5657 +33294,6 @@ var initPicker = {
 
 
 initPicker;exports.default = _default;
-
-/***/ }),
-/* 287 */,
-/* 288 */,
-/* 289 */,
-/* 290 */,
-/* 291 */,
-/* 292 */,
-/* 293 */,
-/* 294 */
-/*!*************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/PetSocial/js_sdk/u-charts/u-charts/u-charts.js ***!
-  \*************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {/*
- * uCharts v1.9.3.20190922
- * uni-app平台高性能跨全端图表，支持H5、APP、小程序（微信/支付宝/百度/头条/QQ/360）
- * Copyright (c) 2019 QIUN秋云 https://www.ucharts.cn All rights reserved.
- * Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
- * 
- * uCharts官方网站
- * https://www.uCharts.cn
- * 
- * 开源地址:
- * https://gitee.com/uCharts/uCharts
- * 
- * uni-app插件市场地址：
- * http://ext.dcloud.net.cn/plugin?id=271
- * 
- */
-
-
-
-var config = {
-  yAxisWidth: 15,
-  yAxisSplit: 5,
-  xAxisHeight: 15,
-  xAxisLineHeight: 15,
-  legendHeight: 15,
-  yAxisTitleWidth: 15,
-  padding: [10, 10, 10, 10],
-  pixelRatio: 1,
-  rotate: false,
-  columePadding: 3,
-  fontSize: 13,
-  //dataPointShape: ['diamond', 'circle', 'triangle', 'rect'],
-  dataPointShape: ['circle', 'circle', 'circle', 'circle'],
-  colors: ['#1890ff', '#2fc25b', '#facc14', '#f04864', '#8543e0', '#90ed7d'],
-  pieChartLinePadding: 15,
-  pieChartTextPadding: 5,
-  xAxisTextPadding: 3,
-  titleColor: '#333333',
-  titleFontSize: 20,
-  subtitleColor: '#999999',
-  subtitleFontSize: 15,
-  toolTipPadding: 3,
-  toolTipBackground: '#000000',
-  toolTipOpacity: 0.7,
-  toolTipLineHeight: 20,
-  radarLabelTextMargin: 15,
-  gaugeLabelTextMargin: 15 };
-
-
-var assign = function assign(target) {for (var _len2 = arguments.length, varArgs = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {varArgs[_key2 - 1] = arguments[_key2];}
-  if (target == null) {
-    throw new TypeError('Cannot convert undefined or null to object');
-  }
-  if (!varArgs || varArgs.length <= 0) {
-    return target;
-  }
-  // 深度合并对象
-  function deepAssign(obj1, obj2) {
-    for (var key in obj2) {
-      obj1[key] = obj1[key] && obj1[key].toString() === "[object Object]" ?
-      deepAssign(obj1[key], obj2[key]) : obj1[key] = obj2[key];
-    }
-    return obj1;
-  }
-
-  varArgs.forEach(function (val) {
-    target = deepAssign(target, val);
-  });
-  return target;
-};
-
-var util = {
-  toFixed: function toFixed(num, limit) {
-    limit = limit || 2;
-    if (this.isFloat(num)) {
-      num = num.toFixed(limit);
-    }
-    return num;
-  },
-  isFloat: function isFloat(num) {
-    return num % 1 !== 0;
-  },
-  approximatelyEqual: function approximatelyEqual(num1, num2) {
-    return Math.abs(num1 - num2) < 1e-10;
-  },
-  isSameSign: function isSameSign(num1, num2) {
-    return Math.abs(num1) === num1 && Math.abs(num2) === num2 || Math.abs(num1) !== num1 && Math.abs(num2) !== num2;
-  },
-  isSameXCoordinateArea: function isSameXCoordinateArea(p1, p2) {
-    return this.isSameSign(p1.x, p2.x);
-  },
-  isCollision: function isCollision(obj1, obj2) {
-    obj1.end = {};
-    obj1.end.x = obj1.start.x + obj1.width;
-    obj1.end.y = obj1.start.y - obj1.height;
-    obj2.end = {};
-    obj2.end.x = obj2.start.x + obj2.width;
-    obj2.end.y = obj2.start.y - obj2.height;
-    var flag = obj2.start.x > obj1.end.x || obj2.end.x < obj1.start.x || obj2.end.y > obj1.start.y || obj2.start.y < obj1.end.y;
-    return !flag;
-  } };
-
-
-//兼容H5点击事件
-function getH5Offset(e) {
-  e.mp = {
-    changedTouches: [] };
-
-  e.mp.changedTouches.push({
-    x: e.offsetX,
-    y: e.offsetY });
-
-  return e;
-}
-
-// hex 转 rgba
-function hexToRgb(hexValue, opc) {
-  var rgx = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-  var hex = hexValue.replace(rgx, function (m, r, g, b) {
-    return r + r + g + g + b + b;
-  });
-  var rgb = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  var r = parseInt(rgb[1], 16);
-  var g = parseInt(rgb[2], 16);
-  var b = parseInt(rgb[3], 16);
-  return 'rgba(' + r + ',' + g + ',' + b + ',' + opc + ')';
-}
-
-function findRange(num, type, limit) {
-  if (isNaN(num)) {
-    throw new Error('[uCharts] unvalid series data!');
-  }
-  limit = limit || 10;
-  type = type ? type : 'upper';
-  var multiple = 1;
-  while (limit < 1) {
-    limit *= 10;
-    multiple *= 10;
-  }
-  if (type === 'upper') {
-    num = Math.ceil(num * multiple);
-  } else {
-    num = Math.floor(num * multiple);
-  }
-  while (num % limit !== 0) {
-    if (type === 'upper') {
-      num++;
-    } else {
-      num--;
-    }
-  }
-  return num / multiple;
-}
-
-function calCandleMA(dayArr, nameArr, colorArr, kdata) {
-  var seriesTemp = [];
-  for (var k = 0; k < dayArr.length; k++) {
-    var seriesItem = {
-      data: [],
-      name: nameArr[k],
-      color: colorArr[k] };
-
-    for (var i = 0, len = kdata.length; i < len; i++) {
-      if (i < dayArr[k]) {
-        seriesItem.data.push(null);
-        continue;
-      }
-      var sum = 0;
-      for (var j = 0; j < dayArr[k]; j++) {
-        sum += kdata[i - j][1];
-      }
-      seriesItem.data.push(+(sum / dayArr[k]).toFixed(3));
-    }
-    seriesTemp.push(seriesItem);
-  }
-  return seriesTemp;
-}
-
-function calValidDistance(self, distance, chartData, config, opts) {
-  var dataChartAreaWidth = opts.width - opts.area[1] - opts.area[3];
-  var dataChartWidth = chartData.eachSpacing * (opts.chartData.xAxisData.xAxisPoints.length - 1);
-  var validDistance = distance;
-  if (distance >= 0) {
-    validDistance = 0;
-    self.event.trigger('scrollLeft');
-  } else if (Math.abs(distance) >= dataChartWidth - dataChartAreaWidth) {
-    validDistance = dataChartAreaWidth - dataChartWidth;
-    self.event.trigger('scrollRight');
-  }
-  return validDistance;
-}
-
-function isInAngleRange(angle, startAngle, endAngle) {
-  function adjust(angle) {
-    while (angle < 0) {
-      angle += 2 * Math.PI;
-    }
-    while (angle > 2 * Math.PI) {
-      angle -= 2 * Math.PI;
-    }
-    return angle;
-  }
-  angle = adjust(angle);
-  startAngle = adjust(startAngle);
-  endAngle = adjust(endAngle);
-  if (startAngle > endAngle) {
-    endAngle += 2 * Math.PI;
-    if (angle < startAngle) {
-      angle += 2 * Math.PI;
-    }
-  }
-  return angle >= startAngle && angle <= endAngle;
-}
-
-function calRotateTranslate(x, y, h) {
-  var xv = x;
-  var yv = h - y;
-  var transX = xv + (h - yv - xv) / Math.sqrt(2);
-  transX *= -1;
-  var transY = (h - yv) * (Math.sqrt(2) - 1) - (h - yv - xv) / Math.sqrt(2);
-  return {
-    transX: transX,
-    transY: transY };
-
-}
-
-function createCurveControlPoints(points, i) {
-
-  function isNotMiddlePoint(points, i) {
-    if (points[i - 1] && points[i + 1]) {
-      return points[i].y >= Math.max(points[i - 1].y, points[i + 1].y) || points[i].y <= Math.min(points[i - 1].y,
-      points[
-      i + 1].y);
-    } else {
-      return false;
-    }
-  }
-  var a = 0.2;
-  var b = 0.2;
-  var pAx = null;
-  var pAy = null;
-  var pBx = null;
-  var pBy = null;
-  if (i < 1) {
-    pAx = points[0].x + (points[1].x - points[0].x) * a;
-    pAy = points[0].y + (points[1].y - points[0].y) * a;
-  } else {
-    pAx = points[i].x + (points[i + 1].x - points[i - 1].x) * a;
-    pAy = points[i].y + (points[i + 1].y - points[i - 1].y) * a;
-  }
-
-  if (i > points.length - 3) {
-    var last = points.length - 1;
-    pBx = points[last].x - (points[last].x - points[last - 1].x) * b;
-    pBy = points[last].y - (points[last].y - points[last - 1].y) * b;
-  } else {
-    pBx = points[i + 1].x - (points[i + 2].x - points[i].x) * b;
-    pBy = points[i + 1].y - (points[i + 2].y - points[i].y) * b;
-  }
-  if (isNotMiddlePoint(points, i + 1)) {
-    pBy = points[i + 1].y;
-  }
-  if (isNotMiddlePoint(points, i)) {
-    pAy = points[i].y;
-  }
-  if (pAy >= Math.max(points[i].y, points[i + 1].y) || pAy <= Math.min(points[i].y, points[i + 1].y)) {
-    pAy = points[i].y;
-  }
-  if (pBy >= Math.max(points[i].y, points[i + 1].y) || pBy <= Math.min(points[i].y, points[i + 1].y)) {
-    pBy = points[i + 1].y;
-  }
-  return {
-    ctrA: {
-      x: pAx,
-      y: pAy },
-
-    ctrB: {
-      x: pBx,
-      y: pBy } };
-
-
-}
-
-function convertCoordinateOrigin(x, y, center) {
-  return {
-    x: center.x + x,
-    y: center.y - y };
-
-}
-
-function avoidCollision(obj, target) {
-  if (target) {
-    // is collision test
-    while (util.isCollision(obj, target)) {
-      if (obj.start.x > 0) {
-        obj.start.y--;
-      } else if (obj.start.x < 0) {
-        obj.start.y++;
-      } else {
-        if (obj.start.y > 0) {
-          obj.start.y++;
-        } else {
-          obj.start.y--;
-        }
-      }
-    }
-  }
-  return obj;
-}
-
-function fillSeries(series, opts, config) {
-  var index = 0;
-  return series.map(function (item) {
-    if (!item.color) {
-      item.color = config.colors[index];
-      index = (index + 1) % config.colors.length;
-    }
-    if (!item.index) {
-      item.index = 0;
-    }
-    if (!item.type) {
-      item.type = opts.type;
-    }
-    if (typeof item.show == "undefined") {
-      item.show = true;
-    }
-    if (!item.type) {
-      item.type = opts.type;
-    }
-    if (!item.pointShape) {
-      item.pointShape = "circle";
-    }
-    if (!item.legendShape) {
-      switch (item.type) {
-        case 'line':
-          item.legendShape = "line";
-          break;
-        case 'column':
-          item.legendShape = "rect";
-          break;
-        case 'area':
-          item.legendShape = "triangle";
-          break;
-        default:
-          item.legendShape = "circle";}
-
-    }
-    return item;
-  });
-}
-
-function getDataRange(minData, maxData) {
-  var limit = 0;
-  var range = maxData - minData;
-  if (range >= 10000) {
-    limit = 1000;
-  } else if (range >= 1000) {
-    limit = 100;
-  } else if (range >= 100) {
-    limit = 10;
-  } else if (range >= 10) {
-    limit = 5;
-  } else if (range >= 1) {
-    limit = 1;
-  } else if (range >= 0.1) {
-    limit = 0.1;
-  } else if (range >= 0.01) {
-    limit = 0.01;
-  } else if (range >= 0.001) {
-    limit = 0.001;
-  } else if (range >= 0.0001) {
-    limit = 0.0001;
-  } else if (range >= 0.00001) {
-    limit = 0.00001;
-  } else {
-    limit = 0.000001;
-  }
-  return {
-    minRange: findRange(minData, 'lower', limit),
-    maxRange: findRange(maxData, 'upper', limit) };
-
-}
-
-function measureText(text) {
-  var fontSize = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : config.fontSize;
-  text = String(text);
-  var text = text.split('');
-  var width = 0;
-  for (var i = 0; i < text.length; i++) {
-    var item = text[i];
-    if (/[a-zA-Z]/.test(item)) {
-      width += 7;
-    } else if (/[0-9]/.test(item)) {
-      width += 5.5;
-    } else if (/\./.test(item)) {
-      width += 2.7;
-    } else if (/-/.test(item)) {
-      width += 3.25;
-    } else if (/[\u4e00-\u9fa5]/.test(item)) {
-      width += 10;
-    } else if (/\(|\)/.test(item)) {
-      width += 3.73;
-    } else if (/\s/.test(item)) {
-      width += 2.5;
-    } else if (/%/.test(item)) {
-      width += 8;
-    } else {
-      width += 10;
-    }
-  }
-  return width * fontSize / 10;
-}
-
-function dataCombine(series) {
-  return series.reduce(function (a, b) {
-    return (a.data ? a.data : a).concat(b.data);
-  }, []);
-}
-
-function dataCombineStack(series, len) {
-  var sum = new Array(len);
-  for (var j = 0; j < sum.length; j++) {
-    sum[j] = 0;
-  }
-  for (var i = 0; i < series.length; i++) {
-    for (var j = 0; j < sum.length; j++) {
-      sum[j] += series[i].data[j];
-    }
-  }
-  return series.reduce(function (a, b) {
-    return (a.data ? a.data : a).concat(b.data).concat(sum);
-  }, []);
-}
-
-function getTouches(touches, opts, e) {
-  var x, y;
-  if (touches.clientX) {
-    if (opts.rotate) {
-      y = opts.height - touches.clientX * opts.pixelRatio;
-      x = (touches.pageY - e.currentTarget.offsetTop - opts.height / opts.pixelRatio / 2 * (opts.pixelRatio - 1)) *
-      opts.pixelRatio;
-    } else {
-      x = touches.clientX * opts.pixelRatio;
-      y = (touches.pageY - e.currentTarget.offsetTop - opts.height / opts.pixelRatio / 2 * (opts.pixelRatio - 1)) *
-      opts.pixelRatio;
-    }
-  } else {
-    if (opts.rotate) {
-      y = opts.height - touches.x * opts.pixelRatio;
-      x = touches.y * opts.pixelRatio;
-    } else {
-      x = touches.x * opts.pixelRatio;
-      y = touches.y * opts.pixelRatio;
-    }
-  }
-  return {
-    x: x,
-    y: y };
-
-}
-
-function getSeriesDataItem(series, index) {
-  var data = [];
-  for (var i = 0; i < series.length; i++) {
-    var item = series[i];
-    if (item.data[index] !== null && typeof item.data[index] !== 'undefined' && item.show) {
-      var seriesItem = {};
-      seriesItem.color = item.color;
-      seriesItem.type = item.type;
-      seriesItem.style = item.style;
-      seriesItem.pointShape = item.pointShape;
-      seriesItem.disableLegend = item.disableLegend;
-      seriesItem.name = item.name;
-      seriesItem.show = item.show;
-      seriesItem.data = item.format ? item.format(item.data[index]) : item.data[index];
-      data.push(seriesItem);
-    }
-  }
-  return data;
-}
-
-function getMaxTextListLength(list) {
-  var lengthList = list.map(function (item) {
-    return measureText(item);
-  });
-  return Math.max.apply(null, lengthList);
-}
-
-function getRadarCoordinateSeries(length) {
-  var eachAngle = 2 * Math.PI / length;
-  var CoordinateSeries = [];
-  for (var i = 0; i < length; i++) {
-    CoordinateSeries.push(eachAngle * i);
-  }
-
-  return CoordinateSeries.map(function (item) {
-    return -1 * item + Math.PI / 2;
-  });
-}
-
-function getToolTipData(seriesData, calPoints, index, categories) {
-  var option = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {};
-
-  var textList = seriesData.map(function (item) {
-    var titleText = [];
-    if (categories) {
-      titleText = categories;
-    } else {
-      titleText = item.data;
-    }
-    return {
-      text: option.format ? option.format(item, titleText[index]) : item.name + ': ' + item.data,
-      color: item.color };
-
-  });
-  var validCalPoints = [];
-  var offset = {
-    x: 0,
-    y: 0 };
-
-  for (var i = 0; i < calPoints.length; i++) {
-    var points = calPoints[i];
-    if (typeof points[index] !== 'undefined' && points[index] !== null) {
-      validCalPoints.push(points[index]);
-    }
-  }
-  for (var _i = 0; _i < validCalPoints.length; _i++) {
-    var item = validCalPoints[_i];
-    offset.x = Math.round(item.x);
-    offset.y += item.y;
-  }
-  offset.y /= validCalPoints.length;
-  return {
-    textList: textList,
-    offset: offset };
-
-}
-
-function getMixToolTipData(seriesData, calPoints, index, categories) {
-  var option = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {};
-  var textList = seriesData.map(function (item) {
-    return {
-      text: option.format ? option.format(item, categories[index]) : item.name + ': ' + item.data,
-      color: item.color,
-      disableLegend: item.disableLegend ? true : false };
-
-  });
-  textList = textList.filter(function (item) {
-    if (item.disableLegend !== true) {
-      return item;
-    }
-  });
-  var validCalPoints = [];
-  var offset = {
-    x: 0,
-    y: 0 };
-
-  for (var i = 0; i < calPoints.length; i++) {
-    var points = calPoints[i];
-    if (typeof points[index] !== 'undefined' && points[index] !== null) {
-      validCalPoints.push(points[index]);
-    }
-  }
-  for (var _i2 = 0; _i2 < validCalPoints.length; _i2++) {
-    var item = validCalPoints[_i2];
-    offset.x = Math.round(item.x);
-    offset.y += item.y;
-  }
-  offset.y /= validCalPoints.length;
-  return {
-    textList: textList,
-    offset: offset };
-
-}
-
-function getCandleToolTipData(series, seriesData, calPoints, index, categories, extra) {
-  var option = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : {};
-  var upColor = extra.color.upFill;
-  var downColor = extra.color.downFill;
-  //颜色顺序为开盘，收盘，最低，最高
-  var color = [upColor, upColor, downColor, upColor];
-  var textList = [];
-  var text0 = {
-    text: categories[index],
-    color: null };
-
-  textList.push(text0);
-  seriesData.map(function (item) {
-    if (index == 0 && item.data[1] - item.data[0] < 0) {
-      color[1] = downColor;
-    } else {
-      if (item.data[0] < series[index - 1][1]) {
-        color[0] = downColor;
-      }
-      if (item.data[1] < item.data[0]) {
-        color[1] = downColor;
-      }
-      if (item.data[2] > series[index - 1][1]) {
-        color[2] = upColor;
-      }
-      if (item.data[3] < series[index - 1][1]) {
-        color[3] = downColor;
-      }
-    }
-    var text1 = {
-      text: '开盘：' + item.data[0],
-      color: color[0] };
-
-    var text2 = {
-      text: '收盘：' + item.data[1],
-      color: color[1] };
-
-    var text3 = {
-      text: '最低：' + item.data[2],
-      color: color[2] };
-
-    var text4 = {
-      text: '最高：' + item.data[3],
-      color: color[3] };
-
-    textList.push(text1, text2, text3, text4);
-  });
-  var validCalPoints = [];
-  var offset = {
-    x: 0,
-    y: 0 };
-
-  for (var i = 0; i < calPoints.length; i++) {
-    var points = calPoints[i];
-    if (typeof points[index] !== 'undefined' && points[index] !== null) {
-      validCalPoints.push(points[index]);
-    }
-  }
-  offset.x = Math.round(validCalPoints[0][0].x);
-  return {
-    textList: textList,
-    offset: offset };
-
-}
-
-function filterSeries(series) {
-  var tempSeries = [];
-  for (var i = 0; i < series.length; i++) {
-    if (series[i].show == true) {
-      tempSeries.push(series[i]);
-    }
-  }
-  return tempSeries;
-}
-
-function findCurrentIndex(currentPoints, calPoints, opts, config) {
-  var offset = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 0;
-  var currentIndex = -1;
-  var spacing = 0;
-  var xAxisPoints = [];
-  for (var i = 0; i < calPoints[0].length; i++) {
-    xAxisPoints.push(calPoints[0][i].x);
-  }
-  if ((opts.type == 'line' || opts.type == 'area') && opts.xAxis.boundaryGap == 'justify') {
-    spacing = opts.chartData.eachSpacing / 2;
-  }
-  if (!opts.categories) {
-    spacing = 0;
-  }
-  if (isInExactChartArea(currentPoints, opts, config)) {
-    xAxisPoints.forEach(function (item, index) {
-      if (currentPoints.x + offset + spacing > item) {
-        currentIndex = index;
-      }
-    });
-  }
-  return currentIndex;
-}
-
-function findLegendIndex(currentPoints, legendData, opts) {
-  var currentIndex = -1;
-  if (isInExactLegendArea(currentPoints, legendData.area)) {
-    var points = legendData.points;
-    var index = -1;
-    for (var i = 0, len = points.length; i < len; i++) {
-      var item = points[i];
-      for (var j = 0; j < item.length; j++) {
-        index += 1;
-        var area = item[j]['area'];
-        if (currentPoints.x > area[0] && currentPoints.x < area[2] && currentPoints.y > area[1] && currentPoints.y < area[3]) {
-          currentIndex = index;
-          break;
-        }
-      }
-    }
-    return currentIndex;
-  }
-  return currentIndex;
-}
-
-function isInExactLegendArea(currentPoints, area) {
-  return currentPoints.x > area.start.x && currentPoints.x < area.end.x && currentPoints.y > area.start.y &&
-  currentPoints.y < area.end.y;
-}
-
-function isInExactChartArea(currentPoints, opts, config) {
-  return currentPoints.x <= opts.width - opts.area[1] + 10 && currentPoints.x >= opts.area[3] - 10 && currentPoints.y >= opts.area[0] && currentPoints.y <= opts.height - opts.area[2];
-}
-
-function findRadarChartCurrentIndex(currentPoints, radarData, count) {
-  var eachAngleArea = 2 * Math.PI / count;
-  var currentIndex = -1;
-  if (isInExactPieChartArea(currentPoints, radarData.center, radarData.radius)) {
-    var fixAngle = function fixAngle(angle) {
-      if (angle < 0) {
-        angle += 2 * Math.PI;
-      }
-      if (angle > 2 * Math.PI) {
-        angle -= 2 * Math.PI;
-      }
-      return angle;
-    };
-
-    var angle = Math.atan2(radarData.center.y - currentPoints.y, currentPoints.x - radarData.center.x);
-    angle = -1 * angle;
-    if (angle < 0) {
-      angle += 2 * Math.PI;
-    }
-
-    var angleList = radarData.angleList.map(function (item) {
-      item = fixAngle(-1 * item);
-
-      return item;
-    });
-
-    angleList.forEach(function (item, index) {
-      var rangeStart = fixAngle(item - eachAngleArea / 2);
-      var rangeEnd = fixAngle(item + eachAngleArea / 2);
-      if (rangeEnd < rangeStart) {
-        rangeEnd += 2 * Math.PI;
-      }
-      if (angle >= rangeStart && angle <= rangeEnd || angle + 2 * Math.PI >= rangeStart && angle + 2 * Math.PI <=
-      rangeEnd) {
-        currentIndex = index;
-      }
-    });
-  }
-
-  return currentIndex;
-}
-
-function findFunnelChartCurrentIndex(currentPoints, funnelData) {
-  var currentIndex = -1;
-  for (var i = 0, len = funnelData.series.length; i < len; i++) {
-    var item = funnelData.series[i];
-    if (currentPoints.x > item.funnelArea[0] && currentPoints.x < item.funnelArea[2] && currentPoints.y > item.funnelArea[1] && currentPoints.y < item.funnelArea[3]) {
-      currentIndex = i;
-      break;
-    }
-  }
-  return currentIndex;
-}
-
-function findWordChartCurrentIndex(currentPoints, wordData) {
-  var currentIndex = -1;
-  for (var i = 0, len = wordData.length; i < len; i++) {
-    var item = wordData[i];
-    if (currentPoints.x > item.area[0] && currentPoints.x < item.area[2] && currentPoints.y > item.area[1] && currentPoints.y < item.area[3]) {
-      currentIndex = i;
-      break;
-    }
-  }
-  return currentIndex;
-}
-
-function findMapChartCurrentIndex(currentPoints, opts) {
-  var currentIndex = -1;
-  var cData = opts.chartData.mapData;
-  var data = opts.series;
-  var tmp = pointToCoordinate(currentPoints.y, currentPoints.x, cData.bounds, cData.scale, cData.xoffset, cData.yoffset);
-  var poi = [tmp.x, tmp.y];
-  for (var i = 0, len = data.length; i < len; i++) {
-    var item = data[i].geometry.coordinates;
-    if (isPoiWithinPoly(poi, item)) {
-      currentIndex = i;
-      break;
-    }
-  }
-  return currentIndex;
-}
-
-function findPieChartCurrentIndex(currentPoints, pieData) {
-  var currentIndex = -1;
-  if (isInExactPieChartArea(currentPoints, pieData.center, pieData.radius)) {
-    var angle = Math.atan2(pieData.center.y - currentPoints.y, currentPoints.x - pieData.center.x);
-    angle = -angle;
-    for (var i = 0, len = pieData.series.length; i < len; i++) {
-      var item = pieData.series[i];
-      if (isInAngleRange(angle, item._start_, item._start_ + item._proportion_ * 2 * Math.PI)) {
-        currentIndex = i;
-        break;
-      }
-    }
-  }
-
-  return currentIndex;
-}
-
-function isInExactPieChartArea(currentPoints, center, radius) {
-  return Math.pow(currentPoints.x - center.x, 2) + Math.pow(currentPoints.y - center.y, 2) <= Math.pow(radius, 2);
-}
-
-function splitPoints(points) {
-  var newPoints = [];
-  var items = [];
-  points.forEach(function (item, index) {
-    if (item !== null) {
-      items.push(item);
-    } else {
-      if (items.length) {
-        newPoints.push(items);
-      }
-      items = [];
-    }
-  });
-  if (items.length) {
-    newPoints.push(items);
-  }
-
-  return newPoints;
-}
-
-function calLegendData(series, opts, config, chartData) {
-  var legendData = {
-    area: {
-      start: {
-        x: 0,
-        y: 0 },
-
-      end: {
-        x: 0,
-        y: 0 },
-
-      width: 0,
-      height: 0,
-      wholeWidth: 0,
-      wholeHeight: 0 },
-
-    points: [],
-    widthArr: [],
-    heightArr: [] };
-
-  if (opts.legend.show === false) {
-    chartData.legendData = legendData;
-    return legendData;
-  }
-
-  var padding = opts.legend.padding;
-  var margin = opts.legend.margin;
-  var fontSize = opts.legend.fontSize;
-  var shapeWidth = 15 * opts.pixelRatio;
-  var shapeRight = 5 * opts.pixelRatio;
-  var lineHeight = Math.max(opts.legend.lineHeight * opts.pixelRatio, fontSize);
-  if (opts.legend.position == 'top' || opts.legend.position == 'bottom') {
-    var legendList = [];
-    var widthCount = 0;
-    var widthCountArr = [];
-    var currentRow = [];
-    for (var i = 0; i < series.length; i++) {
-      var item = series[i];
-      var itemWidth = shapeWidth + shapeRight + measureText(item.name || 'undefined', fontSize) + opts.legend.itemGap;
-      if (widthCount + itemWidth > opts.width - opts.padding[1] - opts.padding[3]) {
-        legendList.push(currentRow);
-        widthCountArr.push(widthCount - opts.legend.itemGap);
-        widthCount = itemWidth;
-        currentRow = [item];
-      } else {
-        widthCount += itemWidth;
-        currentRow.push(item);
-      }
-    }
-    if (currentRow.length) {
-      legendList.push(currentRow);
-      widthCountArr.push(widthCount - opts.legend.itemGap);
-      legendData.widthArr = widthCountArr;
-      var legendWidth = Math.max.apply(null, widthCountArr);
-      switch (opts.legend.float) {
-        case 'left':
-          legendData.area.start.x = opts.padding[3];
-          legendData.area.end.x = opts.padding[3] + 2 * padding;
-          break;
-        case 'right':
-          legendData.area.start.x = opts.width - opts.padding[1] - legendWidth - 2 * padding;
-          legendData.area.end.x = opts.width - opts.padding[1];
-          break;
-        default:
-          legendData.area.start.x = (opts.width - legendWidth) / 2 - padding;
-          legendData.area.end.x = (opts.width + legendWidth) / 2 + padding;}
-
-      legendData.area.width = legendWidth + 2 * padding;
-      legendData.area.wholeWidth = legendWidth + 2 * padding;
-      legendData.area.height = legendList.length * lineHeight + 2 * padding;
-      legendData.area.wholeHeight = legendList.length * lineHeight + 2 * padding + 2 * margin;
-      legendData.points = legendList;
-    }
-  } else {
-    var len = series.length;
-    var maxHeight = opts.height - opts.padding[0] - opts.padding[2] - 2 * margin - 2 * padding;
-    var maxLength = Math.min(Math.floor(maxHeight / lineHeight), len);
-    legendData.area.height = maxLength * lineHeight + padding * 2;
-    legendData.area.wholeHeight = maxLength * lineHeight + padding * 2;
-    switch (opts.legend.float) {
-      case 'top':
-        legendData.area.start.y = opts.padding[0] + margin;
-        legendData.area.end.y = opts.padding[0] + margin + legendData.area.height;
-        break;
-      case 'bottom':
-        legendData.area.start.y = opts.height - opts.padding[2] - margin - legendData.area.height;
-        legendData.area.end.y = opts.height - opts.padding[2] - margin;
-        break;
-      default:
-        legendData.area.start.y = (opts.height - legendData.area.height) / 2;
-        legendData.area.end.y = (opts.height + legendData.area.height) / 2;}
-
-    var lineNum = len % maxLength === 0 ? len / maxLength : Math.floor(len / maxLength + 1);
-    var _currentRow = [];
-    for (var _i3 = 0; _i3 < lineNum; _i3++) {
-      var temp = series.slice(_i3 * maxLength, _i3 * maxLength + maxLength);
-      _currentRow.push(temp);
-    }
-
-    legendData.points = _currentRow;
-
-    if (_currentRow.length) {
-      for (var _i4 = 0; _i4 < _currentRow.length; _i4++) {
-        var _item = _currentRow[_i4];
-        var maxWidth = 0;
-        for (var j = 0; j < _item.length; j++) {
-          var _itemWidth = shapeWidth + shapeRight + measureText(_item[j].name || 'undefined', fontSize) + opts.legend.itemGap;
-          if (_itemWidth > maxWidth) {
-            maxWidth = _itemWidth;
-          }
-        }
-        legendData.widthArr.push(maxWidth);
-        legendData.heightArr.push(_item.length * lineHeight + padding * 2);
-      }
-      var _legendWidth = 0;
-      for (var _i5 = 0; _i5 < legendData.widthArr.length; _i5++) {
-        _legendWidth += legendData.widthArr[_i5];
-      }
-      legendData.area.width = _legendWidth - opts.legend.itemGap + 2 * padding;
-      legendData.area.wholeWidth = legendData.area.width + padding;
-    }
-  }
-
-  switch (opts.legend.position) {
-    case 'top':
-      legendData.area.start.y = opts.padding[0] + margin;
-      legendData.area.end.y = opts.padding[0] + margin + legendData.area.height;
-      break;
-    case 'bottom':
-      legendData.area.start.y = opts.height - opts.padding[2] - legendData.area.height - margin;
-      legendData.area.end.y = opts.height - opts.padding[2] - margin;
-      break;
-    case 'left':
-      legendData.area.start.x = opts.padding[3];
-      legendData.area.end.x = opts.padding[3] + legendData.area.width;
-      break;
-    case 'right':
-      legendData.area.start.x = opts.width - opts.padding[1] - legendData.area.width;
-      legendData.area.end.x = opts.width - opts.padding[1];
-      break;}
-
-  chartData.legendData = legendData;
-  return legendData;
-}
-
-function calCategoriesData(categories, opts, config, eachSpacing) {
-  var result = {
-    angle: 0,
-    xAxisHeight: config.xAxisHeight };
-
-  var categoriesTextLenth = categories.map(function (item) {
-    return measureText(item, opts.xAxis.fontSize || config.fontSize);
-  });
-  var maxTextLength = Math.max.apply(this, categoriesTextLenth);
-
-  if (opts.xAxis.rotateLabel == true && maxTextLength + 2 * config.xAxisTextPadding > eachSpacing) {
-    result.angle = 45 * Math.PI / 180;
-    result.xAxisHeight = 2 * config.xAxisTextPadding + maxTextLength * Math.sin(result.angle);
-  }
-  return result;
-}
-
-function getXAxisTextList(series, opts, config) {
-  var index = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : -1;
-  var data = dataCombine(series);
-  var sorted = [];
-  // remove null from data
-  data = data.filter(function (item) {
-    //return item !== null;
-    if (typeof item === 'object' && item !== null) {
-      if (item.constructor == Array) {
-        return item !== null;
-      } else {
-        return item.value !== null;
-      }
-    } else {
-      return item !== null;
-    }
-  });
-  data.map(function (item) {
-    if (typeof item === 'object') {
-      if (item.constructor == Array) {
-        if (opts.type == 'candle') {
-          item.map(function (subitem) {
-            sorted.push(subitem);
-          });
-        } else {
-          sorted.push(item[0]);
-        }
-      } else {
-        sorted.push(item.value);
-      }
-    } else {
-      sorted.push(item);
-    }
-  });
-
-  var minData = 0;
-  var maxData = 0;
-  if (sorted.length > 0) {
-    minData = Math.min.apply(this, sorted);
-    maxData = Math.max.apply(this, sorted);
-  }
-  //为了兼容v1.9.0之前的项目
-  if (index > -1) {
-    if (typeof opts.xAxis.data[index].min === 'number') {
-      minData = Math.min(opts.xAxis.data[index].min, minData);
-    }
-    if (typeof opts.xAxis.data[index].max === 'number') {
-      maxData = Math.max(opts.xAxis.data[index].max, maxData);
-    }
-  } else {
-    if (typeof opts.xAxis.min === 'number') {
-      minData = Math.min(opts.xAxis.min, minData);
-    }
-    if (typeof opts.xAxis.max === 'number') {
-      maxData = Math.max(opts.xAxis.max, maxData);
-    }
-  }
-
-
-  if (minData === maxData) {
-    var rangeSpan = maxData || 10;
-    maxData += rangeSpan;
-  }
-
-  var dataRange = getDataRange(minData, maxData);
-  var minRange = dataRange.minRange;
-  var maxRange = dataRange.maxRange;
-
-  var range = [];
-  var eachRange = (maxRange - minRange) / opts.xAxis.splitNumber;
-
-  for (var i = 0; i <= opts.xAxis.splitNumber; i++) {
-    range.push(minRange + eachRange * i);
-  }
-  return range;
-}
-
-function calXAxisData(series, opts, config) {
-  var result = {
-    angle: 0,
-    xAxisHeight: config.xAxisHeight };
-
-
-  result.ranges = getXAxisTextList(series, opts, config);
-  result.rangesFormat = result.ranges.map(function (item) {
-    item = opts.xAxis.format ? opts.xAxis.format(item) : util.toFixed(item, 2);
-    return item;
-  });
-  var xAxisScaleValues = result.ranges.map(function (item) {
-    // 如果刻度值是浮点数,则保留两位小数
-    item = util.toFixed(item, 2);
-    // 若有自定义格式则调用自定义的格式化函数
-    item = opts.xAxis.format ? opts.xAxis.format(Number(item)) : item;
-    return item;
-  });
-
-  result = Object.assign(result, getXAxisPoints(xAxisScaleValues, opts, config));
-  // 计算X轴刻度的属性譬如每个刻度的间隔,刻度的起始点\结束点以及总长
-  var eachSpacing = result.eachSpacing;
-
-  var textLength = xAxisScaleValues.map(function (item) {
-    return measureText(item);
-  });
-
-  // get max length of categories text
-  var maxTextLength = Math.max.apply(this, textLength);
-
-  // 如果刻度值文本内容过长,则将其逆时针旋转45°
-  if (maxTextLength + 2 * config.xAxisTextPadding > eachSpacing) {
-    result.angle = 45 * Math.PI / 180;
-    result.xAxisHeight = 2 * config.xAxisTextPadding + maxTextLength * Math.sin(result.angle);
-  }
-
-  if (opts.xAxis.disabled === true) {
-    result.xAxisHeight = 0;
-  }
-
-  return result;
-}
-
-function getRadarDataPoints(angleList, center, radius, series, opts) {
-  var process = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 1;
-
-  var radarOption = opts.extra.radar || {};
-  radarOption.max = radarOption.max || 0;
-  var maxData = Math.max(radarOption.max, Math.max.apply(null, dataCombine(series)));
-
-  var data = [];var _loop2 = function _loop2(
-  i) {
-    var each = series[i];
-    var listItem = {};
-    listItem.color = each.color;
-    listItem.legendShape = each.legendShape;
-    listItem.pointShape = each.pointShape;
-    listItem.data = [];
-    each.data.forEach(function (item, index) {
-      var tmp = {};
-      tmp.angle = angleList[index];
-
-      tmp.proportion = item / maxData;
-      tmp.position = convertCoordinateOrigin(radius * tmp.proportion * process * Math.cos(tmp.angle), radius * tmp.proportion *
-      process * Math.sin(tmp.angle), center);
-      listItem.data.push(tmp);
-    });
-
-    data.push(listItem);};for (var i = 0; i < series.length; i++) {_loop2(i);
-  }
-
-  return data;
-}
-
-function getPieDataPoints(series, radius) {
-  var process = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
-
-  var count = 0;
-  var _start_ = 0;
-  for (var i = 0; i < series.length; i++) {
-    var item = series[i];
-    item.data = item.data === null ? 0 : item.data;
-    count += item.data;
-  }
-  for (var _i6 = 0; _i6 < series.length; _i6++) {
-    var _item2 = series[_i6];
-    _item2.data = _item2.data === null ? 0 : _item2.data;
-    if (count === 0) {
-      _item2._proportion_ = 1 / series.length * process;
-    } else {
-      _item2._proportion_ = _item2.data / count * process;
-    }
-    _item2._radius_ = radius;
-  }
-  for (var _i7 = 0; _i7 < series.length; _i7++) {
-    var _item3 = series[_i7];
-    _item3._start_ = _start_;
-    _start_ += 2 * _item3._proportion_ * Math.PI;
-  }
-
-  return series;
-}
-
-function getFunnelDataPoints(series, radius) {
-  var process = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
-  series = series.sort(function (a, b) {return parseInt(b.data) - parseInt(a.data);});
-  for (var i = 0; i < series.length; i++) {
-    series[i].radius = series[i].data / series[0].data * radius * process;
-    series[i]._proportion_ = series[i].data / series[0].data;
-  }
-  return series.reverse();
-}
-
-function getRoseDataPoints(series, type, minRadius, radius) {
-  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
-  var count = 0;
-  var _start_ = 0;
-
-  var dataArr = [];
-  for (var i = 0; i < series.length; i++) {
-    var item = series[i];
-    item.data = item.data === null ? 0 : item.data;
-    count += item.data;
-    dataArr.push(item.data);
-  }
-
-  var minData = Math.min.apply(null, dataArr);
-  var maxData = Math.max.apply(null, dataArr);
-  var radiusLength = radius - minRadius;
-
-  for (var _i8 = 0; _i8 < series.length; _i8++) {
-    var _item4 = series[_i8];
-    _item4.data = _item4.data === null ? 0 : _item4.data;
-    if (count === 0 || type == 'area') {
-      _item4._proportion_ = _item4.data / count * process;
-      _item4._rose_proportion_ = 1 / series.length * process;
-    } else {
-      _item4._proportion_ = _item4.data / count * process;
-      _item4._rose_proportion_ = _item4.data / count * process;
-    }
-    _item4._radius_ = minRadius + radiusLength * ((_item4.data - minData) / (maxData - minData));
-  }
-  for (var _i9 = 0; _i9 < series.length; _i9++) {
-    var _item5 = series[_i9];
-    _item5._start_ = _start_;
-    _start_ += 2 * _item5._rose_proportion_ * Math.PI;
-  }
-
-  return series;
-}
-
-function getArcbarDataPoints(series, arcbarOption) {
-  var process = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
-  if (process == 1) {
-    process = 0.999999;
-  }
-  for (var i = 0; i < series.length; i++) {
-    var item = series[i];
-    item.data = item.data === null ? 0 : item.data;
-    var totalAngle = void 0;
-    if (arcbarOption.type == 'circle') {
-      totalAngle = 2;
-    } else {
-      if (arcbarOption.endAngle < arcbarOption.startAngle) {
-        totalAngle = 2 + arcbarOption.endAngle - arcbarOption.startAngle;
-      } else {
-        totalAngle = arcbarOption.startAngle - arcbarOption.endAngle;
-      }
-    }
-    item._proportion_ = totalAngle * item.data * process + arcbarOption.startAngle;
-    if (item._proportion_ >= 2) {
-      item._proportion_ = item._proportion_ % 2;
-    }
-  }
-  return series;
-}
-
-function getGaugeAxisPoints(categories, startAngle, endAngle) {
-  var totalAngle = startAngle - endAngle + 1;
-  var tempStartAngle = startAngle;
-  for (var i = 0; i < categories.length; i++) {
-    categories[i].value = categories[i].value === null ? 0 : categories[i].value;
-    categories[i]._startAngle_ = tempStartAngle;
-    categories[i]._endAngle_ = totalAngle * categories[i].value + startAngle;
-    if (categories[i]._endAngle_ >= 2) {
-      categories[i]._endAngle_ = categories[i]._endAngle_ % 2;
-    }
-    tempStartAngle = categories[i]._endAngle_;
-  }
-  return categories;
-}
-
-function getGaugeDataPoints(series, categories, gaugeOption) {
-  var process = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 1;
-  for (var i = 0; i < series.length; i++) {
-    var item = series[i];
-    item.data = item.data === null ? 0 : item.data;
-    if (gaugeOption.pointer.color == 'auto') {
-      for (var _i10 = 0; _i10 < categories.length; _i10++) {
-        if (item.data <= categories[_i10].value) {
-          item.color = categories[_i10].color;
-          break;
-        }
-      }
-    } else {
-      item.color = gaugeOption.pointer.color;
-    }
-    var totalAngle = gaugeOption.startAngle - gaugeOption.endAngle + 1;
-    item._endAngle_ = totalAngle * item.data + gaugeOption.startAngle;
-    item._oldAngle_ = gaugeOption.oldAngle;
-    if (gaugeOption.oldAngle < gaugeOption.endAngle) {
-      item._oldAngle_ += 2;
-    }
-    if (item.data >= gaugeOption.oldData) {
-      item._proportion_ = (item._endAngle_ - item._oldAngle_) * process + gaugeOption.oldAngle;
-    } else {
-      item._proportion_ = item._oldAngle_ - (item._oldAngle_ - item._endAngle_) * process;
-    }
-    if (item._proportion_ >= 2) {
-      item._proportion_ = item._proportion_ % 2;
-    }
-  }
-  return series;
-}
-
-function getPieTextMaxLength(series) {
-  series = getPieDataPoints(series);
-  var maxLength = 0;
-  for (var i = 0; i < series.length; i++) {
-    var item = series[i];
-    var text = item.format ? item.format(+item._proportion_.toFixed(2)) : util.toFixed(item._proportion_ * 100) + '%';
-    maxLength = Math.max(maxLength, measureText(text));
-  }
-
-  return maxLength;
-}
-
-function fixColumeData(points, eachSpacing, columnLen, index, config, opts) {
-  return points.map(function (item) {
-    if (item === null) {
-      return null;
-    }
-    item.width = Math.ceil((eachSpacing - 2 * config.columePadding) / columnLen);
-
-    if (opts.extra.column && opts.extra.column.width && +opts.extra.column.width > 0) {
-      item.width = Math.min(item.width, +opts.extra.column.width);
-    }
-    if (item.width <= 0) {
-      item.width = 1;
-    }
-    item.x += (index + 0.5 - columnLen / 2) * item.width;
-    return item;
-  });
-}
-
-function fixColumeMeterData(points, eachSpacing, columnLen, index, config, opts, border) {
-  return points.map(function (item) {
-    if (item === null) {
-      return null;
-    }
-    item.width = Math.ceil((eachSpacing - 2 * config.columePadding) / 2);
-
-    if (opts.extra.column && opts.extra.column.width && +opts.extra.column.width > 0) {
-      item.width = Math.min(item.width, +opts.extra.column.width);
-    }
-
-    if (index > 0) {
-      item.width -= 2 * border;
-    }
-    return item;
-  });
-}
-
-function fixColumeStackData(points, eachSpacing, columnLen, index, config, opts, series) {
-
-  return points.map(function (item, indexn) {
-
-    if (item === null) {
-      return null;
-    }
-    item.width = Math.ceil((eachSpacing - 2 * config.columePadding) / 2);
-
-    if (opts.extra.column && opts.extra.column.width && +opts.extra.column.width > 0) {
-      item.width = Math.min(item.width, +opts.extra.column.width);
-    }
-    return item;
-  });
-}
-
-function getXAxisPoints(categories, opts, config) {
-  var spacingValid = opts.width - opts.area[1] - opts.area[3];
-  var dataCount = opts.enableScroll ? Math.min(opts.xAxis.itemCount, categories.length) : categories.length;
-  if ((opts.type == 'line' || opts.type == 'area') && dataCount > 1 && opts.xAxis.boundaryGap == 'justify') {
-    dataCount -= 1;
-  }
-  var eachSpacing = spacingValid / dataCount;
-
-  var xAxisPoints = [];
-  var startX = opts.area[3];
-  var endX = opts.width - opts.area[1];
-  categories.forEach(function (item, index) {
-    xAxisPoints.push(startX + index * eachSpacing);
-  });
-  if (opts.xAxis.boundaryGap !== 'justify') {
-    if (opts.enableScroll === true) {
-      xAxisPoints.push(startX + categories.length * eachSpacing);
-    } else {
-      xAxisPoints.push(endX);
-    }
-  }
-  return {
-    xAxisPoints: xAxisPoints,
-    startX: startX,
-    endX: endX,
-    eachSpacing: eachSpacing };
-
-}
-
-function getCandleDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config) {
-  var process = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : 1;
-  var points = [];
-  var validHeight = opts.height - opts.area[0] - opts.area[2];
-  data.forEach(function (item, index) {
-    if (item === null) {
-      points.push(null);
-    } else {
-      var cPoints = [];
-      item.forEach(function (items, indexs) {
-        var point = {};
-        point.x = xAxisPoints[index] + Math.round(eachSpacing / 2);
-        var value = items.value || items;
-        var height = validHeight * (value - minRange) / (maxRange - minRange);
-        height *= process;
-        point.y = opts.height - Math.round(height) - opts.area[2];
-        cPoints.push(point);
-      });
-      points.push(cPoints);
-    }
-  });
-
-  return points;
-}
-
-function getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config) {
-  var process = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : 1;
-  var boundaryGap = 'center';
-  if (opts.type == 'line' || opts.type == 'area') {
-    boundaryGap = opts.xAxis.boundaryGap;
-  }
-  var points = [];
-  var validHeight = opts.height - opts.area[0] - opts.area[2];
-  var validWidth = opts.width - opts.area[1] - opts.area[3];
-  data.forEach(function (item, index) {
-    if (item === null) {
-      points.push(null);
-    } else {
-      var point = {};
-      point.color = item.color;
-      point.x = xAxisPoints[index];
-      var value = item;
-      if (typeof item === 'object' && item !== null) {
-        if (item.constructor == Array) {
-          var xranges, xminRange, xmaxRange;
-          xranges = [].concat(opts.chartData.xAxisData.ranges);
-
-          xminRange = xranges.shift();
-          xmaxRange = xranges.pop();
-          value = item[1];
-          point.x = opts.area[3] + validWidth * (item[0] - xminRange) / (xmaxRange - xminRange);
-        } else {
-          value = item.value;
-        }
-      }
-      if (boundaryGap == 'center') {
-        point.x += Math.round(eachSpacing / 2);
-      }
-      var height = validHeight * (value - minRange) / (maxRange - minRange);
-      height *= process;
-      point.y = opts.height - Math.round(height) - opts.area[2];
-      points.push(point);
-    }
-  });
-
-  return points;
-}
-
-function getStackDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, seriesIndex, stackSeries) {
-  var process = arguments.length > 9 && arguments[9] !== undefined ? arguments[9] : 1;
-  var points = [];
-  var validHeight = opts.height - opts.area[0] - opts.area[2];
-
-  data.forEach(function (item, index) {
-    if (item === null) {
-      points.push(null);
-    } else {
-      var point = {};
-      point.color = item.color;
-      point.x = xAxisPoints[index] + Math.round(eachSpacing / 2);
-
-      if (seriesIndex > 0) {
-        var value = 0;
-        for (var i = 0; i <= seriesIndex; i++) {
-          value += stackSeries[i].data[index];
-        }
-        var value0 = value - item;
-        var height = validHeight * (value - minRange) / (maxRange - minRange);
-        var height0 = validHeight * (value0 - minRange) / (maxRange - minRange);
-      } else {
-        var value = item;
-        var height = validHeight * (value - minRange) / (maxRange - minRange);
-        var height0 = 0;
-      }
-      var heightc = height0;
-      height *= process;
-      heightc *= process;
-      point.y = opts.height - Math.round(height) - opts.area[2];
-      point.y0 = opts.height - Math.round(heightc) - opts.area[2];
-      points.push(point);
-    }
-  });
-
-  return points;
-}
-
-function getYAxisTextList(series, opts, config, stack) {
-  var index = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : -1;
-  var data;
-  if (stack == 'stack') {
-    data = dataCombineStack(series, opts.categories.length);
-  } else {
-    data = dataCombine(series);
-  }
-  var sorted = [];
-  // remove null from data
-  data = data.filter(function (item) {
-    //return item !== null;
-    if (typeof item === 'object' && item !== null) {
-      if (item.constructor == Array) {
-        return item !== null;
-      } else {
-        return item.value !== null;
-      }
-    } else {
-      return item !== null;
-    }
-  });
-  data.map(function (item) {
-    if (typeof item === 'object') {
-      if (item.constructor == Array) {
-        if (opts.type == 'candle') {
-          item.map(function (subitem) {
-            sorted.push(subitem);
-          });
-        } else {
-          sorted.push(item[1]);
-        }
-      } else {
-        sorted.push(item.value);
-      }
-    } else {
-      sorted.push(item);
-    }
-  });
-
-  var minData = 0;
-  var maxData = 0;
-  if (sorted.length > 0) {
-    minData = Math.min.apply(this, sorted);
-    maxData = Math.max.apply(this, sorted);
-  }
-  //为了兼容v1.9.0之前的项目
-  if (index > -1) {
-    if (typeof opts.yAxis.data[index].min === 'number') {
-      minData = Math.min(opts.yAxis.data[index].min, minData);
-    }
-    if (typeof opts.yAxis.data[index].max === 'number') {
-      maxData = Math.max(opts.yAxis.data[index].max, maxData);
-    }
-  } else {
-    if (typeof opts.yAxis.min === 'number') {
-      minData = Math.min(opts.yAxis.min, minData);
-    }
-    if (typeof opts.yAxis.max === 'number') {
-      maxData = Math.max(opts.yAxis.max, maxData);
-    }
-  }
-
-
-  if (minData === maxData) {
-    var rangeSpan = maxData || 10;
-    maxData += rangeSpan;
-  }
-
-  var dataRange = getDataRange(minData, maxData);
-  var minRange = dataRange.minRange;
-  var maxRange = dataRange.maxRange;
-
-  var range = [];
-  var eachRange = (maxRange - minRange) / opts.yAxis.splitNumber;
-
-  for (var i = 0; i <= opts.yAxis.splitNumber; i++) {
-    range.push(minRange + eachRange * i);
-  }
-  return range.reverse();
-}
-
-function calYAxisData(series, opts, config) {
-  //堆叠图重算Y轴
-  var columnstyle = assign({}, {
-    type: "" },
-  opts.extra.column);
-  //如果是多Y轴，重新计算
-  var YLength = opts.yAxis.data.length;
-  var newSeries = new Array(YLength);
-  if (YLength > 0) {
-    for (var i = 0; i < YLength; i++) {
-      newSeries[i] = [];
-      for (var j = 0; j < series.length; j++) {
-        if (series[j].index == i) {
-          newSeries[i].push(series[j]);
-        }
-      }
-    }
-    var rangesArr = new Array(YLength);
-    var rangesFormatArr = new Array(YLength);
-    var yAxisWidthArr = new Array(YLength);var _loop3 = function _loop3(
-
-    _i11) {
-      var yData = opts.yAxis.data[_i11];
-      //如果总开关不显示，强制每个Y轴为不显示
-      if (opts.yAxis.disabled == true) {
-        yData.disabled = true;
-      }
-      rangesArr[_i11] = getYAxisTextList(newSeries[_i11], opts, config, columnstyle.type, _i11);
-      var yAxisFontSizes = yData.fontSize || config.fontSize;
-      yAxisWidthArr[_i11] = { position: yData.position ? yData.position : 'left', width: 0 };
-      rangesFormatArr[_i11] = rangesArr[_i11].map(function (items) {
-        items = util.toFixed(items, 6);
-        items = yData.format ? yData.format(Number(items)) : items;
-        yAxisWidthArr[_i11].width = Math.max(yAxisWidthArr[_i11].width, measureText(items, yAxisFontSizes) + 5);
-        return items;
-      });
-      var calibration = yData.calibration ? 4 * opts.pixelRatio : 0;
-      yAxisWidthArr[_i11].width += calibration + 3 * opts.pixelRatio;
-      if (yData.disabled === true) {
-        yAxisWidthArr[_i11].width = 0;
-      }};for (var _i11 = 0; _i11 < YLength; _i11++) {_loop3(_i11);
-    }
-
-  } else {
-    var rangesArr = new Array(1);
-    var rangesFormatArr = new Array(1);
-    var yAxisWidthArr = new Array(1);
-    rangesArr[0] = getYAxisTextList(series, opts, config, columnstyle.type);
-    yAxisWidthArr[0] = { position: 'left', width: 0 };
-    var yAxisFontSize = opts.yAxis.fontSize || config.fontSize;
-    rangesFormatArr[0] = rangesArr[0].map(function (item) {
-      item = util.toFixed(item, 6);
-      item = opts.yAxis.format ? opts.yAxis.format(Number(item)) : item;
-      yAxisWidthArr[0].width = Math.max(yAxisWidthArr[0].width, measureText(item, yAxisFontSize) + 5);
-      return item;
-    });
-    yAxisWidthArr[0].width += 3 * opts.pixelRatio;
-    if (opts.yAxis.disabled === true) {
-      yAxisWidthArr[0] = { position: 'left', width: 0 };
-      opts.yAxis.data[0] = { disabled: true };
-    } else {
-      opts.yAxis.data[0] = { disabled: false, position: 'left', max: opts.yAxis.max, min: opts.yAxis.min, format: opts.yAxis.format };
-    }
-
-  }
-
-  return {
-    rangesFormat: rangesFormatArr,
-    ranges: rangesArr,
-    yAxisWidth: yAxisWidthArr };
-
-
-}
-
-function calTooltipYAxisData(point, series, opts, config, eachSpacing) {
-  var ranges = [].concat(opts.chartData.yAxisData.ranges);
-  var spacingValid = opts.height - opts.area[0] - opts.area[2];
-  var minAxis = opts.area[0];
-  var items = [];
-  for (var i = 0; i < ranges.length; i++) {
-    var maxVal = ranges[i].shift();
-    var minVal = ranges[i].pop();
-    var item = maxVal - (maxVal - minVal) * (point - minAxis) / spacingValid;
-    item = opts.yAxis.data[i].format ? opts.yAxis.data[i].format(Number(item)) : item.toFixed(0);
-    items.push(String(item));
-  }
-  return items;
-}
-
-function calMarkLineData(points, opts) {
-  var minRange, maxRange;
-  var spacingValid = opts.height - opts.area[0] - opts.area[2];
-  for (var i = 0; i < points.length; i++) {
-    points[i].yAxisIndex = points[i].yAxisIndex ? points[i].yAxisIndex : 0;
-    var range = [].concat(opts.chartData.yAxisData.ranges[points[i].yAxisIndex]);
-    minRange = range.pop();
-    maxRange = range.shift();
-    var height = spacingValid * (points[i].value - minRange) / (maxRange - minRange);
-    points[i].y = opts.height - Math.round(height) - opts.area[2];
-  }
-  return points;
-}
-
-function contextRotate(context, opts) {
-  if (opts.rotateLock !== true) {
-    context.translate(opts.height, 0);
-    context.rotate(90 * Math.PI / 180);
-  } else if (opts._rotate_ !== true) {
-    context.translate(opts.height, 0);
-    context.rotate(90 * Math.PI / 180);
-    opts._rotate_ = true;
-  }
-}
-
-function drawPointShape(points, color, shape, context, opts) {
-  context.beginPath();
-  if (opts.dataPointShapeType == 'hollow') {
-    context.setStrokeStyle(color);
-    context.setFillStyle(opts.background);
-    context.setLineWidth(2 * opts.pixelRatio);
-  } else {
-    context.setStrokeStyle("#ffffff");
-    context.setFillStyle(color);
-    context.setLineWidth(1 * opts.pixelRatio);
-  }
-  if (shape === 'diamond') {
-    points.forEach(function (item, index) {
-      if (item !== null) {
-        context.moveTo(item.x, item.y - 4.5);
-        context.lineTo(item.x - 4.5, item.y);
-        context.lineTo(item.x, item.y + 4.5);
-        context.lineTo(item.x + 4.5, item.y);
-        context.lineTo(item.x, item.y - 4.5);
-      }
-    });
-  } else if (shape === 'circle') {
-    points.forEach(function (item, index) {
-      if (item !== null) {
-        context.moveTo(item.x + 2.5 * opts.pixelRatio, item.y);
-        context.arc(item.x, item.y, 3 * opts.pixelRatio, 0, 2 * Math.PI, false);
-      }
-    });
-  } else if (shape === 'rect') {
-    points.forEach(function (item, index) {
-      if (item !== null) {
-        context.moveTo(item.x - 3.5, item.y - 3.5);
-        context.rect(item.x - 3.5, item.y - 3.5, 7, 7);
-      }
-    });
-  } else if (shape === 'triangle') {
-    points.forEach(function (item, index) {
-      if (item !== null) {
-        context.moveTo(item.x, item.y - 4.5);
-        context.lineTo(item.x - 4.5, item.y + 4.5);
-        context.lineTo(item.x + 4.5, item.y + 4.5);
-        context.lineTo(item.x, item.y - 4.5);
-      }
-    });
-  }
-  context.closePath();
-  context.fill();
-  context.stroke();
-}
-
-function drawRingTitle(opts, config, context, center) {
-  var titlefontSize = opts.title.fontSize || config.titleFontSize;
-  var subtitlefontSize = opts.subtitle.fontSize || config.subtitleFontSize;
-  var title = opts.title.name || '';
-  var subtitle = opts.subtitle.name || '';
-  var titleFontColor = opts.title.color || config.titleColor;
-  var subtitleFontColor = opts.subtitle.color || config.subtitleColor;
-  var titleHeight = title ? titlefontSize : 0;
-  var subtitleHeight = subtitle ? subtitlefontSize : 0;
-  var margin = 5;
-
-  if (subtitle) {
-    var textWidth = measureText(subtitle, subtitlefontSize);
-    var startX = center.x - textWidth / 2 + (opts.subtitle.offsetX || 0);
-    var startY = center.y + subtitlefontSize / 2 + (opts.subtitle.offsetY || 0);
-    if (title) {
-      startY += (titleHeight + margin) / 2;
-    }
-    context.beginPath();
-    context.setFontSize(subtitlefontSize);
-    context.setFillStyle(subtitleFontColor);
-    context.fillText(subtitle, startX, startY);
-    context.closePath();
-    context.stroke();
-  }
-  if (title) {
-    var _textWidth = measureText(title, titlefontSize);
-    var _startX = center.x - _textWidth / 2 + (opts.title.offsetX || 0);
-    var _startY = center.y + titlefontSize / 2 + (opts.title.offsetY || 0);
-    if (subtitle) {
-      _startY -= (subtitleHeight + margin) / 2;
-    }
-    context.beginPath();
-    context.setFontSize(titlefontSize);
-    context.setFillStyle(titleFontColor);
-    context.fillText(title, _startX, _startY);
-    context.closePath();
-    context.stroke();
-  }
-}
-
-function drawPointText(points, series, config, context) {
-  // 绘制数据文案
-  var data = series.data;
-  points.forEach(function (item, index) {
-    if (item !== null) {
-      //var formatVal = series.format ? series.format(data[index]) : data[index];
-      context.beginPath();
-      context.setFontSize(series.textSize || config.fontSize);
-      context.setFillStyle(series.textColor || '#666666');
-      var value = data[index];
-      if (typeof data[index] === 'object' && data[index] !== null) {
-        if (data[index].constructor == Array) {
-          value = data[index][1];
-        } else {
-          value = data[index].value;
-        }
-      }
-      var formatVal = series.format ? series.format(value) : value;
-      context.fillText(String(formatVal), item.x - measureText(formatVal, series.textSize || config.fontSize) / 2, item.y - 4);
-      context.closePath();
-      context.stroke();
-    }
-  });
-
-}
-
-function drawGaugeLabel(gaugeOption, radius, centerPosition, opts, config, context) {
-  radius -= gaugeOption.width / 2 + config.gaugeLabelTextMargin;
-
-  var totalAngle = gaugeOption.startAngle - gaugeOption.endAngle + 1;
-  var splitAngle = totalAngle / gaugeOption.splitLine.splitNumber;
-  var totalNumber = gaugeOption.endNumber - gaugeOption.startNumber;
-  var splitNumber = totalNumber / gaugeOption.splitLine.splitNumber;
-  var nowAngle = gaugeOption.startAngle;
-  var nowNumber = gaugeOption.startNumber;
-  for (var i = 0; i < gaugeOption.splitLine.splitNumber + 1; i++) {
-    var pos = {
-      x: radius * Math.cos(nowAngle * Math.PI),
-      y: radius * Math.sin(nowAngle * Math.PI) };
-
-    var labelText = gaugeOption.labelFormat ? gaugeOption.labelFormat(nowNumber) : nowNumber;
-    pos.x += centerPosition.x - measureText(labelText) / 2;
-    pos.y += centerPosition.y;
-    var startX = pos.x;
-    var startY = pos.y;
-    context.beginPath();
-    context.setFontSize(config.fontSize);
-    context.setFillStyle(gaugeOption.labelColor || '#666666');
-    context.fillText(labelText, startX, startY + config.fontSize / 2);
-    context.closePath();
-    context.stroke();
-
-    nowAngle += splitAngle;
-    if (nowAngle >= 2) {
-      nowAngle = nowAngle % 2;
-    }
-    nowNumber += splitNumber;
-  }
-
-}
-
-function drawRadarLabel(angleList, radius, centerPosition, opts, config, context) {
-  var radarOption = opts.extra.radar || {};
-  radius += config.radarLabelTextMargin;
-
-  angleList.forEach(function (angle, index) {
-    var pos = {
-      x: radius * Math.cos(angle),
-      y: radius * Math.sin(angle) };
-
-    var posRelativeCanvas = convertCoordinateOrigin(pos.x, pos.y, centerPosition);
-    var startX = posRelativeCanvas.x;
-    var startY = posRelativeCanvas.y;
-    if (util.approximatelyEqual(pos.x, 0)) {
-      startX -= measureText(opts.categories[index] || '') / 2;
-    } else if (pos.x < 0) {
-      startX -= measureText(opts.categories[index] || '');
-    }
-    context.beginPath();
-    context.setFontSize(config.fontSize);
-    context.setFillStyle(radarOption.labelColor || '#666666');
-    context.fillText(opts.categories[index] || '', startX, startY + config.fontSize / 2);
-    context.closePath();
-    context.stroke();
-  });
-
-}
-
-function drawPieText(series, opts, config, context, radius, center) {
-  var lineRadius = config.pieChartLinePadding;
-  var textObjectCollection = [];
-  var lastTextObject = null;
-
-  var seriesConvert = series.map(function (item) {
-    var text = item.format ? item.format(+item._proportion_.toFixed(2)) : util.toFixed(item._proportion_.toFixed(4) * 100) + '%';
-    if (item._rose_proportion_) item._proportion_ = item._rose_proportion_;
-    var arc = 2 * Math.PI - (item._start_ + 2 * Math.PI * item._proportion_ / 2);
-    var color = item.color;
-    var radius = item._radius_;
-    return {
-      arc: arc,
-      text: text,
-      color: color,
-      radius: radius,
-      textColor: item.textColor,
-      textSize: item.textSize };
-
-  });
-  for (var i = 0; i < seriesConvert.length; i++) {
-    var item = seriesConvert[i];
-    // line end
-    var orginX1 = Math.cos(item.arc) * (item.radius + lineRadius);
-    var orginY1 = Math.sin(item.arc) * (item.radius + lineRadius);
-
-    // line start
-    var orginX2 = Math.cos(item.arc) * item.radius;
-    var orginY2 = Math.sin(item.arc) * item.radius;
-
-    // text start
-    var orginX3 = orginX1 >= 0 ? orginX1 + config.pieChartTextPadding : orginX1 - config.pieChartTextPadding;
-    var orginY3 = orginY1;
-    var textWidth = measureText(item.text, item.textSize || config.fontSize);
-    var startY = orginY3;
-
-    if (lastTextObject && util.isSameXCoordinateArea(lastTextObject.start, {
-      x: orginX3 }))
-    {
-      if (orginX3 > 0) {
-        startY = Math.min(orginY3, lastTextObject.start.y);
-      } else if (orginX1 < 0) {
-        startY = Math.max(orginY3, lastTextObject.start.y);
-      } else {
-        if (orginY3 > 0) {
-          startY = Math.max(orginY3, lastTextObject.start.y);
-        } else {
-          startY = Math.min(orginY3, lastTextObject.start.y);
-        }
-      }
-    }
-    if (orginX3 < 0) {
-      orginX3 -= textWidth;
-    }
-
-    var textObject = {
-      lineStart: {
-        x: orginX2,
-        y: orginY2 },
-
-      lineEnd: {
-        x: orginX1,
-        y: orginY1 },
-
-      start: {
-        x: orginX3,
-        y: startY },
-
-      width: textWidth,
-      height: config.fontSize,
-      text: item.text,
-      color: item.color,
-      textColor: item.textColor,
-      textSize: item.textSize };
-
-    lastTextObject = avoidCollision(textObject, lastTextObject);
-    textObjectCollection.push(lastTextObject);
-  }
-
-  for (var _i12 = 0; _i12 < textObjectCollection.length; _i12++) {
-    var _item6 = textObjectCollection[_i12];
-    var lineStartPoistion = convertCoordinateOrigin(_item6.lineStart.x, _item6.lineStart.y, center);
-    var lineEndPoistion = convertCoordinateOrigin(_item6.lineEnd.x, _item6.lineEnd.y, center);
-    var textPosition = convertCoordinateOrigin(_item6.start.x, _item6.start.y, center);
-    context.setLineWidth(1 * opts.pixelRatio);
-    context.setFontSize(config.fontSize);
-    context.beginPath();
-    context.setStrokeStyle(_item6.color);
-    context.setFillStyle(_item6.color);
-    context.moveTo(lineStartPoistion.x, lineStartPoistion.y);
-    var curveStartX = _item6.start.x < 0 ? textPosition.x + _item6.width : textPosition.x;
-    var textStartX = _item6.start.x < 0 ? textPosition.x - 5 : textPosition.x + 5;
-    context.quadraticCurveTo(lineEndPoistion.x, lineEndPoistion.y, curveStartX, textPosition.y);
-    context.moveTo(lineStartPoistion.x, lineStartPoistion.y);
-    context.stroke();
-    context.closePath();
-    context.beginPath();
-    context.moveTo(textPosition.x + _item6.width, textPosition.y);
-    context.arc(curveStartX, textPosition.y, 2, 0, 2 * Math.PI);
-    context.closePath();
-    context.fill();
-    context.beginPath();
-    context.setFontSize(_item6.textSize || config.fontSize);
-    context.setFillStyle(_item6.textColor || '#666666');
-    context.fillText(_item6.text, textStartX, textPosition.y + 3);
-    context.closePath();
-    context.stroke();
-    context.closePath();
-  }
-}
-
-function drawToolTipSplitLine(offsetX, opts, config, context) {
-  var toolTipOption = opts.extra.tooltip || {};
-  toolTipOption.gridType = toolTipOption.gridType == undefined ? 'solid' : toolTipOption.gridType;
-  toolTipOption.dashLength = toolTipOption.dashLength == undefined ? 4 : toolTipOption.dashLength;
-  var startY = opts.area[0];
-  var endY = opts.height - opts.area[2];
-
-  if (toolTipOption.gridType == 'dash') {
-    context.setLineDash([toolTipOption.dashLength, toolTipOption.dashLength]);
-  }
-  context.setStrokeStyle(toolTipOption.gridColor || '#cccccc');
-  context.setLineWidth(1 * opts.pixelRatio);
-  context.beginPath();
-  context.moveTo(offsetX, startY);
-  context.lineTo(offsetX, endY);
-  context.stroke();
-  context.setLineDash([]);
-
-  if (toolTipOption.xAxisLabel) {
-    var labelText = opts.categories[opts.tooltip.index];
-    context.setFontSize(config.fontSize);
-    var textWidth = measureText(labelText, config.fontSize);
-
-    var textX = offsetX - 0.5 * textWidth;
-    var textY = endY;
-    context.beginPath();
-    context.setFillStyle(hexToRgb(toolTipOption.labelBgColor || config.toolTipBackground, toolTipOption.labelBgOpacity || config.toolTipOpacity));
-    context.setStrokeStyle(toolTipOption.labelBgColor || config.toolTipBackground);
-    context.setLineWidth(1 * opts.pixelRatio);
-    context.rect(textX - config.toolTipPadding, textY, textWidth + 2 * config.toolTipPadding, config.fontSize + 2 * config.toolTipPadding);
-    context.closePath();
-    context.stroke();
-    context.fill();
-
-    context.beginPath();
-    context.setFontSize(config.fontSize);
-    context.setFillStyle(toolTipOption.labelFontColor || config.fontColor);
-    context.fillText(String(labelText), textX, textY + config.toolTipPadding + config.fontSize);
-    context.closePath();
-    context.stroke();
-  }
-}
-
-function drawMarkLine(opts, config, context) {
-  var markLineOption = assign({}, {
-    type: 'solid',
-    dashLength: 4,
-    data: [] },
-  opts.extra.markLine);
-  var startX = opts.area[3];
-  var endX = opts.width - opts.area[1];
-  var points = calMarkLineData(markLineOption.data, opts);
-
-  for (var i = 0; i < points.length; i++) {
-    var item = assign({}, {
-      lineColor: '#DE4A42',
-      showLabel: false,
-      labelFontColor: '#666666',
-      labelBgColor: '#DFE8FF',
-      labelBgOpacity: 0.8,
-      yAxisIndex: 0 },
-    points[i]);
-
-    if (markLineOption.type == 'dash') {
-      context.setLineDash([markLineOption.dashLength, markLineOption.dashLength]);
-    }
-    context.setStrokeStyle(item.lineColor);
-    context.setLineWidth(1 * opts.pixelRatio);
-    context.beginPath();
-    context.moveTo(startX, item.y);
-    context.lineTo(endX, item.y);
-    context.stroke();
-    context.setLineDash([]);
-    if (item.showLabel) {
-      var labelText = opts.yAxis.format ? opts.yAxis.format(Number(item.value)) : item.value;
-      context.setFontSize(config.fontSize);
-      var textWidth = measureText(labelText, config.fontSize);
-      var bgStartX = opts.padding[3] + config.yAxisTitleWidth - config.toolTipPadding;
-      var bgEndX = Math.max(opts.area[3], textWidth + config.toolTipPadding * 2);
-      var bgWidth = bgEndX - bgStartX;
-
-      var textX = bgStartX + (bgWidth - textWidth) / 2;
-      var textY = item.y;
-      context.setFillStyle(hexToRgb(item.labelBgColor, item.labelBgOpacity));
-      context.setStrokeStyle(item.labelBgColor);
-      context.setLineWidth(1 * opts.pixelRatio);
-      context.beginPath();
-      context.rect(bgStartX, textY - 0.5 * config.fontSize - config.toolTipPadding, bgWidth, config.fontSize + 2 * config.toolTipPadding);
-      context.closePath();
-      context.stroke();
-      context.fill();
-
-      context.beginPath();
-      context.setFontSize(config.fontSize);
-      context.setFillStyle(item.labelFontColor);
-      context.fillText(String(labelText), textX, textY + 0.5 * config.fontSize);
-      context.stroke();
-    }
-  }
-}
-
-function drawToolTipHorizentalLine(opts, config, context, eachSpacing, xAxisPoints) {
-  var toolTipOption = assign({}, {
-    gridType: 'solid',
-    dashLength: 4 },
-  opts.extra.tooltip);
-
-  var startX = opts.area[3];
-  var endX = opts.width - opts.area[1];
-
-  if (toolTipOption.gridType == 'dash') {
-    context.setLineDash([toolTipOption.dashLength, toolTipOption.dashLength]);
-  }
-  context.setStrokeStyle(toolTipOption.gridColor || '#cccccc');
-  context.setLineWidth(1 * opts.pixelRatio);
-  context.beginPath();
-  context.moveTo(startX, opts.tooltip.offset.y);
-  context.lineTo(endX, opts.tooltip.offset.y);
-  context.stroke();
-  context.setLineDash([]);
-
-  if (toolTipOption.yAxisLabel) {
-    var labelText = calTooltipYAxisData(opts.tooltip.offset.y, opts.series, opts, config, eachSpacing);
-    var widthArr = opts.chartData.yAxisData.yAxisWidth;
-    var tStartLeft = opts.area[3];
-    var tStartRight = opts.width - opts.area[1];
-    for (var i = 0; i < labelText.length; i++) {
-      context.setFontSize(config.fontSize);
-      var textWidth = measureText(labelText[i], config.fontSize);
-      var bgStartX = void 0,bgEndX = void 0,bgWidth = void 0;
-      if (widthArr[i].position == 'left') {
-        bgStartX = tStartLeft - widthArr[i].width;
-        bgEndX = Math.max(bgStartX, bgStartX + textWidth + config.toolTipPadding * 2);
-      } else {
-        bgStartX = tStartRight;
-        bgEndX = Math.max(bgStartX + widthArr[i].width, bgStartX + textWidth + config.toolTipPadding * 2);
-      }
-      bgWidth = bgEndX - bgStartX;
-
-      var textX = bgStartX + (bgWidth - textWidth) / 2;
-      var textY = opts.tooltip.offset.y;
-      context.beginPath();
-      context.setFillStyle(hexToRgb(toolTipOption.labelBgColor || config.toolTipBackground, toolTipOption.labelBgOpacity || config.toolTipOpacity));
-      context.setStrokeStyle(toolTipOption.labelBgColor || config.toolTipBackground);
-      context.setLineWidth(1 * opts.pixelRatio);
-      context.rect(bgStartX, textY - 0.5 * config.fontSize - config.toolTipPadding, bgWidth, config.fontSize + 2 * config.toolTipPadding);
-      context.closePath();
-      context.stroke();
-      context.fill();
-
-      context.beginPath();
-      context.setFontSize(config.fontSize);
-      context.setFillStyle(toolTipOption.labelFontColor || config.fontColor);
-      context.fillText(labelText[i], textX, textY + 0.5 * config.fontSize);
-      context.closePath();
-      context.stroke();
-      if (widthArr[i].position == 'left') {
-        tStartLeft -= widthArr[i].width + opts.yAxis.padding;
-      } else {
-        tStartRight += widthArr[i].width + opts.yAxis.padding;
-      }
-    }
-  }
-}
-
-function drawToolTipSplitArea(offsetX, opts, config, context, eachSpacing) {
-  var toolTipOption = assign({}, {
-    activeBgColor: '#000000',
-    activeBgOpacity: 0.08 },
-  opts.extra.tooltip);
-  var startY = opts.area[0];
-  var endY = opts.height - opts.area[2];
-  context.beginPath();
-  context.setFillStyle(hexToRgb(toolTipOption.activeBgColor, toolTipOption.activeBgOpacity));
-  context.rect(offsetX - eachSpacing / 2, startY, eachSpacing, endY - startY);
-  context.closePath();
-  context.fill();
-}
-
-function drawToolTip(textList, offset, opts, config, context, eachSpacing, xAxisPoints) {
-  var toolTipOption = assign({}, {
-    showBox: true,
-    bgColor: '#000000',
-    bgOpacity: 0.7,
-    fontColor: '#FFFFFF' },
-  opts.extra.tooltip);
-  var legendWidth = 4 * opts.pixelRatio;
-  var legendMarginRight = 5 * opts.pixelRatio;
-  var arrowWidth = 8 * opts.pixelRatio;
-  var isOverRightBorder = false;
-  if (opts.type == 'line' || opts.type == 'area' || opts.type == 'candle' || opts.type == 'mix') {
-    drawToolTipSplitLine(opts.tooltip.offset.x, opts, config, context);
-  }
-
-  offset = assign({
-    x: 0,
-    y: 0 },
-  offset);
-  offset.y -= 8 * opts.pixelRatio;
-  var textWidth = textList.map(function (item) {
-    return measureText(item.text, config.fontSize);
-  });
-  var toolTipWidth = legendWidth + legendMarginRight + 4 * config.toolTipPadding + Math.max.apply(null, textWidth);
-  var toolTipHeight = 2 * config.toolTipPadding + textList.length * config.toolTipLineHeight;
-
-  if (toolTipOption.showBox == false) {return;}
-  // if beyond the right border
-  if (offset.x - Math.abs(opts._scrollDistance_) + arrowWidth + toolTipWidth > opts.width) {
-    isOverRightBorder = true;
-  }
-  if (toolTipHeight + offset.y > opts.height) {
-    offset.y = opts.height - toolTipHeight;
-  }
-  // draw background rect
-  context.beginPath();
-  context.setFillStyle(hexToRgb(toolTipOption.bgColor || config.toolTipBackground, toolTipOption.bgOpacity || config.toolTipOpacity));
-  if (isOverRightBorder) {
-    context.moveTo(offset.x, offset.y + 10 * opts.pixelRatio);
-    context.lineTo(offset.x - arrowWidth, offset.y + 10 * opts.pixelRatio - 5 * opts.pixelRatio);
-    context.lineTo(offset.x - arrowWidth, offset.y);
-    context.lineTo(offset.x - arrowWidth - Math.round(toolTipWidth), offset.y);
-    context.lineTo(offset.x - arrowWidth - Math.round(toolTipWidth), offset.y + toolTipHeight);
-    context.lineTo(offset.x - arrowWidth, offset.y + toolTipHeight);
-    context.lineTo(offset.x - arrowWidth, offset.y + 10 * opts.pixelRatio + 5 * opts.pixelRatio);
-    context.lineTo(offset.x, offset.y + 10 * opts.pixelRatio);
-  } else {
-    context.moveTo(offset.x, offset.y + 10 * opts.pixelRatio);
-    context.lineTo(offset.x + arrowWidth, offset.y + 10 * opts.pixelRatio - 5 * opts.pixelRatio);
-    context.lineTo(offset.x + arrowWidth, offset.y);
-    context.lineTo(offset.x + arrowWidth + Math.round(toolTipWidth), offset.y);
-    context.lineTo(offset.x + arrowWidth + Math.round(toolTipWidth), offset.y + toolTipHeight);
-    context.lineTo(offset.x + arrowWidth, offset.y + toolTipHeight);
-    context.lineTo(offset.x + arrowWidth, offset.y + 10 * opts.pixelRatio + 5 * opts.pixelRatio);
-    context.lineTo(offset.x, offset.y + 10 * opts.pixelRatio);
-  }
-
-  context.closePath();
-  context.fill();
-
-  // draw legend
-  textList.forEach(function (item, index) {
-    if (item.color !== null) {
-      context.beginPath();
-      context.setFillStyle(item.color);
-      var startX = offset.x + arrowWidth + 2 * config.toolTipPadding;
-      var startY = offset.y + (config.toolTipLineHeight - config.fontSize) / 2 + config.toolTipLineHeight * index +
-      config.toolTipPadding + 1;
-      if (isOverRightBorder) {
-        startX = offset.x - toolTipWidth - arrowWidth + 2 * config.toolTipPadding;
-      }
-      context.fillRect(startX, startY, legendWidth, config.fontSize);
-      context.closePath();
-    }
-  });
-
-  // draw text list
-
-  textList.forEach(function (item, index) {
-    var startX = offset.x + arrowWidth + 2 * config.toolTipPadding + legendWidth + legendMarginRight;
-    if (isOverRightBorder) {
-      startX = offset.x - toolTipWidth - arrowWidth + 2 * config.toolTipPadding + +legendWidth + legendMarginRight;
-    }
-    var startY = offset.y + (config.toolTipLineHeight - config.fontSize) / 2 + config.toolTipLineHeight * index +
-    config.toolTipPadding;
-    context.beginPath();
-    context.setFontSize(config.fontSize);
-    context.setFillStyle(toolTipOption.fontColor);
-    context.fillText(item.text, startX, startY + config.fontSize);
-    context.closePath();
-    context.stroke();
-  });
-}
-
-function drawYAxisTitle(title, opts, config, context) {
-  var startX = config.xAxisHeight + (opts.height - config.xAxisHeight - measureText(title)) / 2;
-  context.save();
-  context.beginPath();
-  context.setFontSize(config.fontSize);
-  context.setFillStyle(opts.yAxis.titleFontColor || '#333333');
-  context.translate(0, opts.height);
-  context.rotate(-90 * Math.PI / 180);
-  context.fillText(title, startX, opts.padding[3] + 0.5 * config.fontSize);
-  context.closePath();
-  context.stroke();
-  context.restore();
-}
-
-function drawColumnDataPoints(series, opts, config, context) {
-  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
-  var xAxisData = opts.chartData.xAxisData,
-  xAxisPoints = xAxisData.xAxisPoints,
-  eachSpacing = xAxisData.eachSpacing;
-  var columnOption = assign({}, {
-    type: 'group',
-    width: eachSpacing / 2,
-    meter: {
-      border: 4,
-      fillColor: '#FFFFFF' } },
-
-  opts.extra.column);
-
-  var calPoints = [];
-  context.save();
-
-  var leftNum = -2;
-  var rightNum = xAxisPoints.length + 2;
-
-  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
-    context.translate(opts._scrollDistance_, 0);
-    leftNum = Math.floor(-opts._scrollDistance_ / eachSpacing) - 2;
-    rightNum = leftNum + opts.xAxis.itemCount + 4;
-  }
-  if (opts.tooltip && opts.tooltip.textList && opts.tooltip.textList.length && process === 1) {
-    drawToolTipSplitArea(opts.tooltip.offset.x, opts, config, context, eachSpacing);
-  }
-
-  series.forEach(function (eachSeries, seriesIndex) {
-    var ranges, minRange, maxRange;
-    ranges = [].concat(opts.chartData.yAxisData.ranges[eachSeries.index]);
-    minRange = ranges.pop();
-    maxRange = ranges.shift();
-
-    var data = eachSeries.data;
-    switch (columnOption.type) {
-      case 'group':
-        var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-        var tooltipPoints = getStackDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, seriesIndex, series, process);
-        calPoints.push(tooltipPoints);
-        points = fixColumeData(points, eachSpacing, series.length, seriesIndex, config, opts);
-        for (var i = 0; i < points.length; i++) {
-          var item = points[i];
-          if (item !== null && i > leftNum && i < rightNum) {
-            context.beginPath();
-            context.setStrokeStyle(item.color || eachSeries.color);
-            context.setLineWidth(1);
-            context.setFillStyle(item.color || eachSeries.color);
-            var startX = item.x - item.width / 2;
-            var height = opts.height - item.y - opts.area[2];
-            context.moveTo(startX - 1, item.y);
-            context.lineTo(startX + item.width - 2, item.y);
-            context.lineTo(startX + item.width - 2, opts.height - opts.area[2]);
-            context.lineTo(startX, opts.height - opts.area[2]);
-            context.lineTo(startX, item.y);
-            context.closePath();
-            context.stroke();
-            context.fill();
-          }
-        };
-        break;
-      case 'stack':
-        // 绘制堆叠数据图
-        var points = getStackDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, seriesIndex, series, process);
-        calPoints.push(points);
-        points = fixColumeStackData(points, eachSpacing, series.length, seriesIndex, config, opts, series);
-
-        for (var _i13 = 0; _i13 < points.length; _i13++) {
-          var _item7 = points[_i13];
-          if (_item7 !== null && _i13 > leftNum && _i13 < rightNum) {
-            context.beginPath();
-            context.setFillStyle(_item7.color || eachSeries.color);
-            var startX = _item7.x - _item7.width / 2 + 1;
-            var height = opts.height - _item7.y - opts.area[2];
-            var height0 = opts.height - _item7.y0 - opts.area[2];
-            if (seriesIndex > 0) {
-              height -= height0;
-            }
-            context.moveTo(startX, _item7.y);
-            context.fillRect(startX, _item7.y, _item7.width - 2, height);
-            context.closePath();
-            context.fill();
-          }
-        };
-        break;
-      case 'meter':
-        // 绘制温度计数据图
-        var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-        calPoints.push(points);
-        points = fixColumeMeterData(points, eachSpacing, series.length, seriesIndex, config, opts, columnOption.meter.border);
-        if (seriesIndex == 0) {
-          for (var _i14 = 0; _i14 < points.length; _i14++) {
-            var _item8 = points[_i14];
-            if (_item8 !== null && _i14 > leftNum && _i14 < rightNum) {
-              //画背景颜色
-              context.beginPath();
-              context.setFillStyle(columnOption.meter.fillColor);
-              var startX = _item8.x - _item8.width / 2;
-              var height = opts.height - _item8.y - opts.area[2];
-              context.moveTo(startX, _item8.y);
-              context.fillRect(startX, _item8.y, _item8.width, height);
-              context.closePath();
-              context.fill();
-              //画边框线
-              if (columnOption.meter.border > 0) {
-                context.beginPath();
-                context.setStrokeStyle(eachSeries.color);
-                context.setLineWidth(columnOption.meter.border * opts.pixelRatio);
-                context.moveTo(startX + columnOption.meter.border * 0.5, _item8.y + height);
-                context.lineTo(startX + columnOption.meter.border * 0.5, _item8.y + columnOption.meter.border * 0.5);
-                context.lineTo(startX + _item8.width - columnOption.meter.border * 0.5, _item8.y + columnOption.meter.border * 0.5);
-                context.lineTo(startX + _item8.width - columnOption.meter.border * 0.5, _item8.y + height);
-                context.stroke();
-              }
-            }
-          };
-        } else {
-          for (var _i15 = 0; _i15 < points.length; _i15++) {
-            var _item9 = points[_i15];
-            if (_item9 !== null && _i15 > leftNum && _i15 < rightNum) {
-              context.beginPath();
-              context.setFillStyle(_item9.color || eachSeries.color);
-              var startX = _item9.x - _item9.width / 2;
-              var height = opts.height - _item9.y - opts.area[2];
-              context.moveTo(startX, _item9.y);
-              context.fillRect(startX, _item9.y, _item9.width, height);
-              context.closePath();
-              context.fill();
-            }
-          };
-        }
-        break;}
-
-  });
-
-  if (opts.dataLabel !== false && process === 1) {
-    series.forEach(function (eachSeries, seriesIndex) {
-      var ranges, minRange, maxRange;
-      ranges = [].concat(opts.chartData.yAxisData.ranges[eachSeries.index]);
-      minRange = ranges.pop();
-      maxRange = ranges.shift();
-      var data = eachSeries.data;
-      switch (columnOption.type) {
-        case 'group':
-          var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-          points = fixColumeData(points, eachSpacing, series.length, seriesIndex, config, opts);
-          drawPointText(points, eachSeries, config, context);
-          break;
-        case 'stack':
-          var points = getStackDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, seriesIndex, series, process);
-          drawPointText(points, eachSeries, config, context);
-          break;
-        case 'meter':
-          var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-          drawPointText(points, eachSeries, config, context);
-          break;}
-
-    });
-  }
-
-  context.restore();
-
-  return {
-    xAxisPoints: xAxisPoints,
-    calPoints: calPoints,
-    eachSpacing: eachSpacing };
-
-}
-
-function drawCandleDataPoints(series, seriesMA, opts, config, context) {
-  var process = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 1;
-  var candleOption = assign({}, {
-    color: {},
-    average: {} },
-  opts.extra.candle);
-  candleOption.color = assign({}, {
-    upLine: '#f04864',
-    upFill: '#f04864',
-    downLine: '#2fc25b',
-    downFill: '#2fc25b' },
-  candleOption.color);
-  candleOption.average = assign({}, {
-    show: false,
-    name: [],
-    day: [],
-    color: config.colors },
-  candleOption.average);
-  opts.extra.candle = candleOption;
-
-  var xAxisData = opts.chartData.xAxisData,
-  xAxisPoints = xAxisData.xAxisPoints,
-  eachSpacing = xAxisData.eachSpacing;
-
-  var calPoints = [];
-
-  context.save();
-
-  var leftNum = -2;
-  var rightNum = xAxisPoints.length + 2;
-  var leftSpace = 0;
-  var rightSpace = opts.width + eachSpacing;
-
-  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
-    context.translate(opts._scrollDistance_, 0);
-    leftNum = Math.floor(-opts._scrollDistance_ / eachSpacing) - 2;
-    rightNum = leftNum + opts.xAxis.itemCount + 4;
-    leftSpace = -opts._scrollDistance_ - eachSpacing + opts.area[3];
-    rightSpace = leftSpace + (opts.xAxis.itemCount + 4) * eachSpacing;
-  }
-
-  //画均线
-  if (candleOption.average.show) {
-    seriesMA.forEach(function (eachSeries, seriesIndex) {
-      var ranges, minRange, maxRange;
-      ranges = [].concat(opts.chartData.yAxisData.ranges[eachSeries.index]);
-      minRange = ranges.pop();
-      maxRange = ranges.shift();
-
-      var data = eachSeries.data;
-      var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-      var splitPointList = splitPoints(points);
-
-      for (var i = 0; i < splitPointList.length; i++) {
-        var _points = splitPointList[i];
-        context.beginPath();
-        context.setStrokeStyle(eachSeries.color);
-        context.setLineWidth(1);
-        if (_points.length === 1) {
-          context.moveTo(_points[0].x, _points[0].y);
-          context.arc(_points[0].x, _points[0].y, 1, 0, 2 * Math.PI);
-        } else {
-          context.moveTo(_points[0].x, _points[0].y);
-          var startPoint = 0;
-          for (var j = 0; j < _points.length; j++) {
-            var item = _points[j];
-            if (startPoint == 0 && item.x > leftSpace) {
-              context.moveTo(item.x, item.y);
-              startPoint = 1;
-            }
-            if (j > 0 && item.x > leftSpace && item.x < rightSpace) {
-              var ctrlPoint = createCurveControlPoints(_points, j - 1);
-              context.bezierCurveTo(ctrlPoint.ctrA.x, ctrlPoint.ctrA.y, ctrlPoint.ctrB.x, ctrlPoint.ctrB.y, item.x, item.y);
-            }
-          }
-          context.moveTo(_points[0].x, _points[0].y);
-        }
-        context.closePath();
-        context.stroke();
-      }
-    });
-  }
-  //画K线
-  series.forEach(function (eachSeries, seriesIndex) {
-    var ranges, minRange, maxRange;
-    ranges = [].concat(opts.chartData.yAxisData.ranges[eachSeries.index]);
-    minRange = ranges.pop();
-    maxRange = ranges.shift();
-    var data = eachSeries.data;
-    var points = getCandleDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-    calPoints.push(points);
-    var splitPointList = splitPoints(points);
-
-    for (var i = 0; i < splitPointList[0].length; i++) {
-      if (i > leftNum && i < rightNum) {
-        var item = splitPointList[0][i];
-        context.beginPath();
-        //如果上涨
-        if (data[i][1] - data[i][0] > 0) {
-          context.setStrokeStyle(candleOption.color.upLine);
-          context.setFillStyle(candleOption.color.upFill);
-          context.setLineWidth(1 * opts.pixelRatio);
-          context.moveTo(item[3].x, item[3].y); //顶点
-          context.lineTo(item[1].x, item[1].y); //收盘中间点
-          context.lineTo(item[1].x - eachSpacing / 4, item[1].y); //收盘左侧点
-          context.lineTo(item[0].x - eachSpacing / 4, item[0].y); //开盘左侧点
-          context.lineTo(item[0].x, item[0].y); //开盘中间点
-          context.lineTo(item[2].x, item[2].y); //底点
-          context.lineTo(item[0].x, item[0].y); //开盘中间点
-          context.lineTo(item[0].x + eachSpacing / 4, item[0].y); //开盘右侧点
-          context.lineTo(item[1].x + eachSpacing / 4, item[1].y); //收盘右侧点
-          context.lineTo(item[1].x, item[1].y); //收盘中间点
-          context.moveTo(item[3].x, item[3].y); //顶点
-        } else {
-          context.setStrokeStyle(candleOption.color.downLine);
-          context.setFillStyle(candleOption.color.downFill);
-          context.setLineWidth(1 * opts.pixelRatio);
-          context.moveTo(item[3].x, item[3].y); //顶点
-          context.lineTo(item[0].x, item[0].y); //开盘中间点
-          context.lineTo(item[0].x - eachSpacing / 4, item[0].y); //开盘左侧点
-          context.lineTo(item[1].x - eachSpacing / 4, item[1].y); //收盘左侧点
-          context.lineTo(item[1].x, item[1].y); //收盘中间点
-          context.lineTo(item[2].x, item[2].y); //底点
-          context.lineTo(item[1].x, item[1].y); //收盘中间点
-          context.lineTo(item[1].x + eachSpacing / 4, item[1].y); //收盘右侧点
-          context.lineTo(item[0].x + eachSpacing / 4, item[0].y); //开盘右侧点
-          context.lineTo(item[0].x, item[0].y); //开盘中间点
-          context.moveTo(item[3].x, item[3].y); //顶点
-        }
-        context.closePath();
-        context.fill();
-        context.stroke();
-      }
-    }
-  });
-
-  context.restore();
-
-  return {
-    xAxisPoints: xAxisPoints,
-    calPoints: calPoints,
-    eachSpacing: eachSpacing };
-
-}
-
-function drawAreaDataPoints(series, opts, config, context) {
-  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
-  var areaOption = assign({}, {
-    type: 'straight',
-    opacity: 0.2,
-    addLine: false,
-    width: 2,
-    gradient: false },
-  opts.extra.area);
-
-  var xAxisData = opts.chartData.xAxisData,
-  xAxisPoints = xAxisData.xAxisPoints,
-  eachSpacing = xAxisData.eachSpacing;
-
-  var endY = opts.height - opts.area[2];
-  var calPoints = [];
-
-  context.save();
-  var leftSpace = 0;
-  var rightSpace = opts.width + eachSpacing;
-  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
-    context.translate(opts._scrollDistance_, 0);
-    leftSpace = -opts._scrollDistance_ - eachSpacing + opts.area[3];
-    rightSpace = leftSpace + (opts.xAxis.itemCount + 4) * eachSpacing;
-  }
-
-  series.forEach(function (eachSeries, seriesIndex) {
-    var ranges, minRange, maxRange;
-    ranges = [].concat(opts.chartData.yAxisData.ranges[eachSeries.index]);
-    minRange = ranges.pop();
-    maxRange = ranges.shift();
-    var data = eachSeries.data;
-    var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-    calPoints.push(points);
-
-    var splitPointList = splitPoints(points);
-    for (var i = 0; i < splitPointList.length; i++) {
-      var _points2 = splitPointList[i];
-      // 绘制区域数
-      context.beginPath();
-      context.setStrokeStyle(hexToRgb(eachSeries.color, areaOption.opacity));
-      if (areaOption.gradient) {
-        var gradient = context.createLinearGradient(0, opts.area[0], 0, opts.height - opts.area[2]);
-        gradient.addColorStop('0', hexToRgb(eachSeries.color, areaOption.opacity));
-        gradient.addColorStop('1.0', hexToRgb("#FFFFFF", 0.1));
-        context.setFillStyle(gradient);
-      } else {
-        context.setFillStyle(hexToRgb(eachSeries.color, areaOption.opacity));
-      }
-      context.setLineWidth(areaOption.width * opts.pixelRatio);
-      if (_points2.length > 1) {
-        var firstPoint = _points2[0];
-        var lastPoint = _points2[_points2.length - 1];
-        context.moveTo(firstPoint.x, firstPoint.y);
-        var startPoint = 0;
-        if (areaOption.type === 'curve') {
-          for (var j = 0; j < _points2.length; j++) {
-            var item = _points2[j];
-            if (startPoint == 0 && item.x > leftSpace) {
-              context.moveTo(item.x, item.y);
-              startPoint = 1;
-            }
-            if (j > 0 && item.x > leftSpace && item.x < rightSpace) {
-              var ctrlPoint = createCurveControlPoints(_points2, j - 1);
-              context.bezierCurveTo(ctrlPoint.ctrA.x, ctrlPoint.ctrA.y, ctrlPoint.ctrB.x, ctrlPoint.ctrB.y, item.x, item.y);
-            }
-          };
-        } else {
-          for (var _j = 0; _j < _points2.length; _j++) {
-            var _item10 = _points2[_j];
-            if (startPoint == 0 && _item10.x > leftSpace) {
-              context.moveTo(_item10.x, _item10.y);
-              startPoint = 1;
-            }
-            if (_j > 0 && _item10.x > leftSpace && _item10.x < rightSpace) {
-              context.lineTo(_item10.x, _item10.y);
-            }
-          };
-        }
-
-        context.lineTo(lastPoint.x, endY);
-        context.lineTo(firstPoint.x, endY);
-        context.lineTo(firstPoint.x, firstPoint.y);
-      } else {
-        var _item11 = _points2[0];
-        context.moveTo(_item11.x - eachSpacing / 2, _item11.y);
-        context.lineTo(_item11.x + eachSpacing / 2, _item11.y);
-        context.lineTo(_item11.x + eachSpacing / 2, endY);
-        context.lineTo(_item11.x - eachSpacing / 2, endY);
-        context.moveTo(_item11.x - eachSpacing / 2, _item11.y);
-      }
-      context.closePath();
-      context.fill();
-
-      //画连线
-      if (areaOption.addLine) {
-        if (eachSeries.lineType == 'dash') {
-          var dashLength = eachSeries.dashLength ? eachSeries.dashLength : 8;
-          dashLength *= opts.pixelRatio;
-          context.setLineDash([dashLength, dashLength]);
-        }
-        context.beginPath();
-        context.setStrokeStyle(eachSeries.color);
-        context.setLineWidth(areaOption.width * opts.pixelRatio);
-        if (_points2.length === 1) {
-          context.moveTo(_points2[0].x, _points2[0].y);
-          context.arc(_points2[0].x, _points2[0].y, 1, 0, 2 * Math.PI);
-        } else {
-          context.moveTo(_points2[0].x, _points2[0].y);
-          var _startPoint = 0;
-          if (areaOption.type === 'curve') {
-            for (var _j2 = 0; _j2 < _points2.length; _j2++) {
-              var _item12 = _points2[_j2];
-              if (_startPoint == 0 && _item12.x > leftSpace) {
-                context.moveTo(_item12.x, _item12.y);
-                _startPoint = 1;
-              }
-              if (_j2 > 0 && _item12.x > leftSpace && _item12.x < rightSpace) {
-                var _ctrlPoint = createCurveControlPoints(_points2, _j2 - 1);
-                context.bezierCurveTo(_ctrlPoint.ctrA.x, _ctrlPoint.ctrA.y, _ctrlPoint.ctrB.x, _ctrlPoint.ctrB.y, _item12.x, _item12.y);
-              }
-            };
-          } else {
-            for (var _j3 = 0; _j3 < _points2.length; _j3++) {
-              var _item13 = _points2[_j3];
-              if (_startPoint == 0 && _item13.x > leftSpace) {
-                context.moveTo(_item13.x, _item13.y);
-                _startPoint = 1;
-              }
-              if (_j3 > 0 && _item13.x > leftSpace && _item13.x < rightSpace) {
-                context.lineTo(_item13.x, _item13.y);
-              }
-            };
-          }
-          context.moveTo(_points2[0].x, _points2[0].y);
-        }
-        context.stroke();
-        context.setLineDash([]);
-      }
-    }
-
-    //画点
-    if (opts.dataPointShape !== false) {
-      drawPointShape(points, eachSeries.color, eachSeries.pointShape, context, opts);
-    }
-
-  });
-
-  if (opts.dataLabel !== false && process === 1) {
-    series.forEach(function (eachSeries, seriesIndex) {
-      var ranges, minRange, maxRange;
-      ranges = [].concat(opts.chartData.yAxisData.ranges[eachSeries.index]);
-      minRange = ranges.pop();
-      maxRange = ranges.shift();
-      var data = eachSeries.data;
-      var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-      drawPointText(points, eachSeries, config, context);
-    });
-  }
-
-  context.restore();
-
-  return {
-    xAxisPoints: xAxisPoints,
-    calPoints: calPoints,
-    eachSpacing: eachSpacing };
-
-}
-
-function drawLineDataPoints(series, opts, config, context) {
-  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
-  var lineOption = assign({}, {
-    type: 'straight',
-    width: 2 },
-  opts.extra.line);
-  lineOption.width *= opts.pixelRatio;
-
-  var xAxisData = opts.chartData.xAxisData,
-  xAxisPoints = xAxisData.xAxisPoints,
-  eachSpacing = xAxisData.eachSpacing;
-  var calPoints = [];
-
-  context.save();
-  var leftSpace = 0;
-  var rightSpace = opts.width + eachSpacing;
-  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
-    context.translate(opts._scrollDistance_, 0);
-    leftSpace = -opts._scrollDistance_ - eachSpacing + opts.area[3];
-    rightSpace = leftSpace + (opts.xAxis.itemCount + 4) * eachSpacing;
-  }
-
-  series.forEach(function (eachSeries, seriesIndex) {
-    var ranges, minRange, maxRange;
-    ranges = [].concat(opts.chartData.yAxisData.ranges[eachSeries.index]);
-    minRange = ranges.pop();
-    maxRange = ranges.shift();
-    var data = eachSeries.data;
-    var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-    calPoints.push(points);
-    var splitPointList = splitPoints(points);
-
-    if (eachSeries.lineType == 'dash') {
-      var dashLength = eachSeries.dashLength ? eachSeries.dashLength : 8;
-      dashLength *= opts.pixelRatio;
-      context.setLineDash([dashLength, dashLength]);
-    }
-    context.beginPath();
-    context.setStrokeStyle(eachSeries.color);
-    context.setLineWidth(lineOption.width);
-
-    splitPointList.forEach(function (points, index) {
-
-      if (points.length === 1) {
-        context.moveTo(points[0].x, points[0].y);
-        context.arc(points[0].x, points[0].y, 1, 0, 2 * Math.PI);
-      } else {
-        context.moveTo(points[0].x, points[0].y);
-        var startPoint = 0;
-        if (lineOption.type === 'curve') {
-          for (var j = 0; j < points.length; j++) {
-            var item = points[j];
-            if (startPoint == 0 && item.x > leftSpace) {
-              context.moveTo(item.x, item.y);
-              startPoint = 1;
-            }
-            if (j > 0 && item.x > leftSpace && item.x < rightSpace) {
-              var ctrlPoint = createCurveControlPoints(points, j - 1);
-              context.bezierCurveTo(ctrlPoint.ctrA.x, ctrlPoint.ctrA.y, ctrlPoint.ctrB.x, ctrlPoint.ctrB.y, item.x, item.y);
-            }
-          };
-        } else {
-          for (var _j4 = 0; _j4 < points.length; _j4++) {
-            var _item14 = points[_j4];
-            if (startPoint == 0 && _item14.x > leftSpace) {
-              context.moveTo(_item14.x, _item14.y);
-              startPoint = 1;
-            }
-            if (_j4 > 0 && _item14.x > leftSpace && _item14.x < rightSpace) {
-              context.lineTo(_item14.x, _item14.y);
-            }
-          };
-        }
-        context.moveTo(points[0].x, points[0].y);
-      }
-
-    });
-
-    context.stroke();
-    context.setLineDash([]);
-
-    if (opts.dataPointShape !== false) {
-      drawPointShape(points, eachSeries.color, eachSeries.pointShape, context, opts);
-    }
-  });
-
-  if (opts.dataLabel !== false && process === 1) {
-    series.forEach(function (eachSeries, seriesIndex) {
-      var ranges, minRange, maxRange;
-      ranges = [].concat(opts.chartData.yAxisData.ranges[eachSeries.index]);
-      minRange = ranges.pop();
-      maxRange = ranges.shift();
-      var data = eachSeries.data;
-      var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-      drawPointText(points, eachSeries, config, context);
-    });
-  }
-
-  context.restore();
-
-  return {
-    xAxisPoints: xAxisPoints,
-    calPoints: calPoints,
-    eachSpacing: eachSpacing };
-
-}
-
-function drawMixDataPoints(series, opts, config, context) {
-  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
-
-  var xAxisData = opts.chartData.xAxisData,
-  xAxisPoints = xAxisData.xAxisPoints,
-  eachSpacing = xAxisData.eachSpacing;
-
-  var endY = opts.height - opts.area[2];
-  var calPoints = [];
-
-  var columnIndex = 0;
-  var columnLength = 0;
-  series.forEach(function (eachSeries, seriesIndex) {
-    if (eachSeries.type == 'column') {
-      columnLength += 1;
-    }
-  });
-  context.save();
-  var leftNum = -2;
-  var rightNum = xAxisPoints.length + 2;
-  var leftSpace = 0;
-  var rightSpace = opts.width + eachSpacing;
-  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
-    context.translate(opts._scrollDistance_, 0);
-    leftNum = Math.floor(-opts._scrollDistance_ / eachSpacing) - 2;
-    rightNum = leftNum + opts.xAxis.itemCount + 4;
-    leftSpace = -opts._scrollDistance_ - eachSpacing + opts.area[3];
-    rightSpace = leftSpace + (opts.xAxis.itemCount + 4) * eachSpacing;
-  }
-
-  series.forEach(function (eachSeries, seriesIndex) {
-    var ranges, minRange, maxRange;
-
-    ranges = [].concat(opts.chartData.yAxisData.ranges[eachSeries.index]);
-    minRange = ranges.pop();
-    maxRange = ranges.shift();
-
-    var data = eachSeries.data;
-    var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-    calPoints.push(points);
-
-    // 绘制柱状数据图
-    if (eachSeries.type == 'column') {
-      points = fixColumeData(points, eachSpacing, columnLength, columnIndex, config, opts);
-      for (var i = 0; i < points.length; i++) {
-        var item = points[i];
-        if (item !== null && i > leftNum && i < rightNum) {
-          context.beginPath();
-          context.setStrokeStyle(item.color || eachSeries.color);
-          context.setLineWidth(1);
-          context.setFillStyle(item.color || eachSeries.color);
-          var startX = item.x - item.width / 2;
-          var height = opts.height - item.y - opts.area[2];
-          context.moveTo(startX, item.y);
-          context.moveTo(startX - 1, item.y);
-          context.lineTo(startX + item.width - 2, item.y);
-          context.lineTo(startX + item.width - 2, opts.height - opts.area[2]);
-          context.lineTo(startX, opts.height - opts.area[2]);
-          context.lineTo(startX, item.y);
-          context.closePath();
-          context.stroke();
-          context.fill();
-          context.closePath();
-          context.fill();
-        }
-      }
-      columnIndex += 1;
-    }
-
-    //绘制区域图数据
-
-    if (eachSeries.type == 'area') {
-      var _splitPointList = splitPoints(points);
-      for (var _i16 = 0; _i16 < _splitPointList.length; _i16++) {
-        var _points3 = _splitPointList[_i16];
-        // 绘制区域数据
-        context.beginPath();
-        context.setStrokeStyle(eachSeries.color);
-        context.setFillStyle(hexToRgb(eachSeries.color, 0.2));
-        context.setLineWidth(2 * opts.pixelRatio);
-        if (_points3.length > 1) {
-          var firstPoint = _points3[0];
-          var lastPoint = _points3[_points3.length - 1];
-          context.moveTo(firstPoint.x, firstPoint.y);
-          var startPoint = 0;
-          if (eachSeries.style === 'curve') {
-            for (var j = 0; j < _points3.length; j++) {
-              var _item15 = _points3[j];
-              if (startPoint == 0 && _item15.x > leftSpace) {
-                context.moveTo(_item15.x, _item15.y);
-                startPoint = 1;
-              }
-              if (j > 0 && _item15.x > leftSpace && _item15.x < rightSpace) {
-                var ctrlPoint = createCurveControlPoints(_points3, j - 1);
-                context.bezierCurveTo(ctrlPoint.ctrA.x, ctrlPoint.ctrA.y, ctrlPoint.ctrB.x, ctrlPoint.ctrB.y, _item15.x, _item15.y);
-              }
-            };
-          } else {
-            for (var _j5 = 0; _j5 < _points3.length; _j5++) {
-              var _item16 = _points3[_j5];
-              if (startPoint == 0 && _item16.x > leftSpace) {
-                context.moveTo(_item16.x, _item16.y);
-                startPoint = 1;
-              }
-              if (_j5 > 0 && _item16.x > leftSpace && _item16.x < rightSpace) {
-                context.lineTo(_item16.x, _item16.y);
-              }
-            };
-          }
-          context.lineTo(lastPoint.x, endY);
-          context.lineTo(firstPoint.x, endY);
-          context.lineTo(firstPoint.x, firstPoint.y);
-        } else {
-          var _item17 = _points3[0];
-          context.moveTo(_item17.x - eachSpacing / 2, _item17.y);
-          context.lineTo(_item17.x + eachSpacing / 2, _item17.y);
-          context.lineTo(_item17.x + eachSpacing / 2, endY);
-          context.lineTo(_item17.x - eachSpacing / 2, endY);
-          context.moveTo(_item17.x - eachSpacing / 2, _item17.y);
-        }
-        context.closePath();
-        context.fill();
-      }
-    }
-
-    // 绘制折线数据图
-    if (eachSeries.type == 'line') {
-      var splitPointList = splitPoints(points);
-      splitPointList.forEach(function (points, index) {
-        if (eachSeries.lineType == 'dash') {
-          var dashLength = eachSeries.dashLength ? eachSeries.dashLength : 8;
-          dashLength *= opts.pixelRatio;
-          context.setLineDash([dashLength, dashLength]);
-        }
-        context.beginPath();
-        context.setStrokeStyle(eachSeries.color);
-        context.setLineWidth(2 * opts.pixelRatio);
-        if (points.length === 1) {
-          context.moveTo(points[0].x, points[0].y);
-          context.arc(points[0].x, points[0].y, 1, 0, 2 * Math.PI);
-        } else {
-          context.moveTo(points[0].x, points[0].y);
-          var _startPoint2 = 0;
-          if (eachSeries.style == 'curve') {
-            for (var _j6 = 0; _j6 < points.length; _j6++) {
-              var _item18 = points[_j6];
-              if (_startPoint2 == 0 && _item18.x > leftSpace) {
-                context.moveTo(_item18.x, _item18.y);
-                _startPoint2 = 1;
-              }
-              if (_j6 > 0 && _item18.x > leftSpace && _item18.x < rightSpace) {
-                var ctrlPoint = createCurveControlPoints(points, _j6 - 1);
-                context.bezierCurveTo(ctrlPoint.ctrA.x, ctrlPoint.ctrA.y, ctrlPoint.ctrB.x, ctrlPoint.ctrB.y, _item18.x, _item18.y);
-              }
-            }
-          } else {
-            for (var _j7 = 0; _j7 < points.length; _j7++) {
-              var _item19 = points[_j7];
-              if (_startPoint2 == 0 && _item19.x > leftSpace) {
-                context.moveTo(_item19.x, _item19.y);
-                _startPoint2 = 1;
-              }
-              if (_j7 > 0 && _item19.x > leftSpace && _item19.x < rightSpace) {
-                context.lineTo(_item19.x, _item19.y);
-              }
-            }
-          }
-          context.moveTo(points[0].x, points[0].y);
-        }
-        context.stroke();
-        context.setLineDash([]);
-      });
-    }
-
-    // 绘制点数据图
-    if (eachSeries.type == 'point') {
-      eachSeries.addPoint = true;
-    }
-
-    if (eachSeries.addPoint == true && eachSeries.type !== 'column') {
-      drawPointShape(points, eachSeries.color, eachSeries.pointShape, context, opts);
-    }
-  });
-  if (opts.dataLabel !== false && process === 1) {
-    var columnIndex = 0;
-    series.forEach(function (eachSeries, seriesIndex) {
-      var ranges, minRange, maxRange;
-
-      ranges = [].concat(opts.chartData.yAxisData.ranges[eachSeries.index]);
-      minRange = ranges.pop();
-      maxRange = ranges.shift();
-
-      var data = eachSeries.data;
-      var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-      if (eachSeries.type !== 'column') {
-        drawPointText(points, eachSeries, config, context);
-      } else {
-        points = fixColumeData(points, eachSpacing, columnLength, columnIndex, config, opts);
-        drawPointText(points, eachSeries, config, context);
-        columnIndex += 1;
-      }
-
-    });
-  }
-
-  context.restore();
-
-  return {
-    xAxisPoints: xAxisPoints,
-    calPoints: calPoints,
-    eachSpacing: eachSpacing };
-
-}
-
-function drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints) {
-  var toolTipOption = opts.extra.tooltip || {};
-  if (toolTipOption.horizentalLine && opts.tooltip && process === 1 && (opts.type == 'line' || opts.type == 'area' || opts.type == 'column' || opts.type == 'candle' || opts.type == 'mix')) {
-    drawToolTipHorizentalLine(opts, config, context, eachSpacing, xAxisPoints);
-  }
-  context.save();
-  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
-    context.translate(opts._scrollDistance_, 0);
-  }
-  if (opts.tooltip && opts.tooltip.textList && opts.tooltip.textList.length && process === 1) {
-    drawToolTip(opts.tooltip.textList, opts.tooltip.offset, opts, config, context, eachSpacing, xAxisPoints);
-  }
-  context.restore();
-
-}
-
-function drawXAxis(categories, opts, config, context) {
-
-  var xAxisData = opts.chartData.xAxisData,
-  xAxisPoints = xAxisData.xAxisPoints,
-  startX = xAxisData.startX,
-  endX = xAxisData.endX,
-  eachSpacing = xAxisData.eachSpacing;
-  var boundaryGap = 'center';
-  if (opts.type == 'line' || opts.type == 'area') {
-    boundaryGap = opts.xAxis.boundaryGap;
-  }
-  var startY = opts.height - opts.area[2];
-  var endY = opts.area[0];
-
-  //绘制滚动条
-  if (opts.enableScroll && opts.xAxis.scrollShow) {
-    var scrollY = opts.height - opts.area[2] + config.xAxisHeight;
-    var scrollScreenWidth = endX - startX;
-    var scrollTotalWidth = eachSpacing * (xAxisPoints.length - 1);
-    var scrollWidth = scrollScreenWidth * scrollScreenWidth / scrollTotalWidth;
-    var scrollLeft = 0;
-    if (opts._scrollDistance_) {
-      scrollLeft = -opts._scrollDistance_ * scrollScreenWidth / scrollTotalWidth;
-    }
-    context.beginPath();
-    context.setLineCap('round');
-    context.setLineWidth(6 * opts.pixelRatio);
-    context.setStrokeStyle(opts.xAxis.scrollBackgroundColor || "#EFEBEF");
-    context.moveTo(startX, scrollY);
-    context.lineTo(endX, scrollY);
-    context.stroke();
-    context.closePath();
-    context.beginPath();
-    context.setLineCap('round');
-    context.setLineWidth(6 * opts.pixelRatio);
-    context.setStrokeStyle(opts.xAxis.scrollColor || "#A6A6A6");
-    context.moveTo(startX + scrollLeft, scrollY);
-    context.lineTo(startX + scrollLeft + scrollWidth, scrollY);
-    context.stroke();
-    context.closePath();
-    context.setLineCap('butt');
-  }
-
-  context.save();
-
-  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0) {
-    context.translate(opts._scrollDistance_, 0);
-  }
-
-  //绘制X轴刻度线
-  if (opts.xAxis.calibration === true) {
-    context.setStrokeStyle(opts.xAxis.gridColor || "#cccccc");
-    context.setLineCap('butt');
-    context.setLineWidth(1 * opts.pixelRatio);
-    xAxisPoints.forEach(function (item, index) {
-      if (index > 0) {
-        context.beginPath();
-        context.moveTo(item - eachSpacing / 2, startY);
-        context.lineTo(item - eachSpacing / 2, startY + 3 * opts.pixelRatio);
-        context.closePath();
-        context.stroke();
-      }
-    });
-  }
-  //绘制X轴网格
-  if (opts.xAxis.disableGrid !== true) {
-    context.setStrokeStyle(opts.xAxis.gridColor || "#cccccc");
-    context.setLineCap('butt');
-    context.setLineWidth(1 * opts.pixelRatio);
-    if (opts.xAxis.gridType == 'dash') {
-      context.setLineDash([opts.xAxis.dashLength, opts.xAxis.dashLength]);
-    }
-    opts.xAxis.gridEval = opts.xAxis.gridEval || 1;
-    xAxisPoints.forEach(function (item, index) {
-      if (index % opts.xAxis.gridEval == 0) {
-        context.beginPath();
-        context.moveTo(item, startY);
-        context.lineTo(item, endY);
-        context.stroke();
-      }
-    });
-    context.setLineDash([]);
-  }
-
-
-  //绘制X轴文案
-  if (opts.xAxis.disabled !== true) {
-    // 对X轴列表做抽稀处理
-    //默认全部显示X轴标签
-    var maxXAxisListLength = categories.length;
-    //如果设置了X轴单屏数量
-    if (opts.xAxis.labelCount) {
-      //如果设置X轴密度
-      if (opts.xAxis.itemCount) {
-        maxXAxisListLength = Math.ceil(categories.length / opts.xAxis.itemCount * opts.xAxis.labelCount);
-      } else {
-        maxXAxisListLength = opts.xAxis.labelCount;
-      }
-      maxXAxisListLength -= 1;
-    }
-
-    var ratio = Math.ceil(categories.length / maxXAxisListLength);
-
-    var newCategories = [];
-    var cgLength = categories.length;
-    for (var i = 0; i < cgLength; i++) {
-      if (i % ratio !== 0) {
-        newCategories.push("");
-      } else {
-        newCategories.push(categories[i]);
-      }
-    }
-    newCategories[cgLength - 1] = categories[cgLength - 1];
-
-    var xAxisFontSize = opts.xAxis.fontSize || config.fontSize;
-    if (config._xAxisTextAngle_ === 0) {
-      newCategories.forEach(function (item, index) {
-        var offset = -measureText(String(item), xAxisFontSize) / 2;
-        if (boundaryGap == 'center') {
-          offset += eachSpacing / 2;
-        }
-        var scrollHeight = 0;
-        if (opts.xAxis.scrollShow) {
-          scrollHeight = 6 * opts.pixelRatio;
-        }
-        context.beginPath();
-        context.setFontSize(xAxisFontSize);
-        context.setFillStyle(opts.xAxis.fontColor || '#666666');
-        context.fillText(String(item), xAxisPoints[index] + offset, startY + xAxisFontSize + (config.xAxisHeight - scrollHeight - xAxisFontSize) / 2);
-        context.closePath();
-        context.stroke();
-      });
-
-    } else {
-      newCategories.forEach(function (item, index) {
-        context.save();
-        context.beginPath();
-        context.setFontSize(xAxisFontSize);
-        context.setFillStyle(opts.xAxis.fontColor || '#666666');
-        var textWidth = measureText(String(item), xAxisFontSize);
-        var offset = -textWidth;
-        if (boundaryGap == 'center') {
-          offset += eachSpacing / 2;
-        }
-        var _calRotateTranslate = calRotateTranslate(xAxisPoints[index] + eachSpacing / 2, startY + xAxisFontSize / 2 + 5, opts.height),
-        transX = _calRotateTranslate.transX,
-        transY = _calRotateTranslate.transY;
-
-        context.rotate(-1 * config._xAxisTextAngle_);
-        context.translate(transX, transY);
-        context.fillText(String(item), xAxisPoints[index] + offset, startY + xAxisFontSize + 5);
-        context.closePath();
-        context.stroke();
-        context.restore();
-      });
-    }
-  }
-  context.restore();
-
-  //绘制X轴轴线
-  if (opts.xAxis.axisLine) {
-    context.beginPath();
-    context.setStrokeStyle(opts.xAxis.axisLineColor);
-    context.setLineWidth(1 * opts.pixelRatio);
-    context.moveTo(startX, opts.height - opts.area[2]);
-    context.lineTo(endX, opts.height - opts.area[2]);
-    context.stroke();
-  }
-}
-
-function drawYAxisGrid(categories, opts, config, context) {
-  if (opts.yAxis.disableGrid === true) {
-    return;
-  }
-  var spacingValid = opts.height - opts.area[0] - opts.area[2];
-  var eachSpacing = spacingValid / opts.yAxis.splitNumber;
-  var startX = opts.area[3];
-  var xAxisPoints = opts.chartData.xAxisData.xAxisPoints,
-  xAxiseachSpacing = opts.chartData.xAxisData.eachSpacing;
-  var TotalWidth = xAxiseachSpacing * (xAxisPoints.length - 1);
-  var endX = startX + TotalWidth;
-
-  var points = [];
-  for (var i = 0; i < opts.yAxis.splitNumber + 1; i++) {
-    points.push(opts.height - opts.area[2] - eachSpacing * i);
-  }
-
-  context.save();
-  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0) {
-    context.translate(opts._scrollDistance_, 0);
-  }
-
-  if (opts.yAxis.gridType == 'dash') {
-    context.setLineDash([opts.yAxis.dashLength, opts.yAxis.dashLength]);
-  }
-  context.setStrokeStyle(opts.yAxis.gridColor);
-  context.setLineWidth(1 * opts.pixelRatio);
-  points.forEach(function (item, index) {
-    context.beginPath();
-    context.moveTo(startX, item);
-    context.lineTo(endX, item);
-    context.stroke();
-  });
-  context.setLineDash([]);
-
-  context.restore();
-}
-
-function drawYAxis(series, opts, config, context) {
-  if (opts.yAxis.disabled === true) {
-    return;
-  }
-  var spacingValid = opts.height - opts.area[0] - opts.area[2];
-  var eachSpacing = spacingValid / opts.yAxis.splitNumber;
-  var startX = opts.area[3];
-  var endX = opts.width - opts.area[1];
-  var endY = opts.height - opts.area[2];
-  var fillEndY = endY + config.xAxisHeight;
-  if (opts.xAxis.scrollShow) {
-    fillEndY -= 3 * opts.pixelRatio;
-  }
-  if (opts.xAxis.rotateLabel) {
-    fillEndY = opts.height - opts.area[2] + 3;
-  }
-  // set YAxis background
-  context.beginPath();
-  context.setFillStyle(opts.background || '#ffffff');
-  if (opts._scrollDistance_ < 0) {
-    context.fillRect(0, 0, startX, fillEndY);
-  }
-  if (opts.enableScroll == true) {
-    context.fillRect(endX, 0, opts.width, fillEndY);
-  }
-  context.closePath();
-  context.stroke();
-
-  var points = [];
-  for (var i = 0; i <= opts.yAxis.splitNumber; i++) {
-    points.push(opts.area[0] + eachSpacing * i);
-  }
-
-  var tStartLeft = opts.area[3];
-  var tStartRight = opts.width - opts.area[1];var _loop4 = function _loop4(
-
-  _i17) {
-    var yData = opts.yAxis.data[_i17];
-    if (yData.disabled !== true) {
-      var rangesFormat = opts.chartData.yAxisData.rangesFormat[_i17];
-      var yAxisFontSize = yData.fontSize || config.fontSize;
-      var yAxisWidth = opts.chartData.yAxisData.yAxisWidth[_i17];
-      //画Y轴刻度及文案
-      rangesFormat.forEach(function (item, index) {
-        var pos = points[index] ? points[index] : endY;
-        context.beginPath();
-        context.setFontSize(yAxisFontSize);
-        context.setLineWidth(1 * opts.pixelRatio);
-        context.setStrokeStyle(yData.axisLineColor || '#cccccc');
-        context.setFillStyle(yData.fontColor || '#666666');
-        if (yAxisWidth.position == 'left') {
-          context.fillText(String(item), tStartLeft - yAxisWidth.width, pos + yAxisFontSize / 2);
-          //画刻度线
-          if (yData.calibration == true) {
-            context.moveTo(tStartLeft, pos);
-            context.lineTo(tStartLeft - 3 * opts.pixelRatio, pos);
-          }
-        } else {
-          context.fillText(String(item), tStartRight + 4 * opts.pixelRatio, pos + yAxisFontSize / 2);
-          //画刻度线
-          if (yData.calibration == true) {
-            context.moveTo(tStartRight, pos);
-            context.lineTo(tStartRight + 3 * opts.pixelRatio, pos);
-          }
-        }
-        context.closePath();
-        context.stroke();
-      });
-      //画Y轴轴线
-      if (yData.axisLine !== false) {
-        context.beginPath();
-        context.setStrokeStyle(yData.axisLineColor || '#cccccc');
-        context.setLineWidth(1 * opts.pixelRatio);
-        if (yAxisWidth.position == 'left') {
-          context.moveTo(tStartLeft, opts.height - opts.area[2]);
-          context.lineTo(tStartLeft, opts.area[0]);
-        } else {
-          context.moveTo(tStartRight, opts.height - opts.area[2]);
-          context.lineTo(tStartRight, opts.area[0]);
-        }
-        context.stroke();
-      }
-
-      //画Y轴标题
-      if (opts.yAxis.showTitle) {
-
-        var titleFontSize = yData.titleFontSize || config.fontSize;
-        var title = yData.title;
-        context.beginPath();
-        context.setFontSize(titleFontSize);
-        context.setFillStyle(yData.titleFontColor || '#666666');
-        if (yAxisWidth.position == 'left') {
-          context.fillText(title, tStartLeft - measureText(title, titleFontSize) / 2, opts.area[0] - 10 * opts.pixelRatio);
-        } else {
-          context.fillText(title, tStartRight - measureText(title, titleFontSize) / 2, opts.area[0] - 10 * opts.pixelRatio);
-        }
-        context.closePath();
-        context.stroke();
-      }
-      if (yAxisWidth.position == 'left') {
-        tStartLeft -= yAxisWidth.width + opts.yAxis.padding;
-      } else {
-        tStartRight += yAxisWidth.width + opts.yAxis.padding;
-      }
-    }};for (var _i17 = 0; _i17 < opts.yAxis.data.length; _i17++) {_loop4(_i17);
-  }
-}
-
-function drawLegend(series, opts, config, context, chartData) {
-  if (opts.legend.show === false) {
-    return;
-  }
-  var legendData = chartData.legendData;
-  var legendList = legendData.points;
-  var legendArea = legendData.area;
-  var padding = opts.legend.padding;
-  var fontSize = opts.legend.fontSize;
-  var shapeWidth = 15 * opts.pixelRatio;
-  var shapeRight = 5 * opts.pixelRatio;
-  var itemGap = opts.legend.itemGap;
-  var lineHeight = Math.max(opts.legend.lineHeight * opts.pixelRatio, fontSize);
-
-  //画背景及边框
-  context.beginPath();
-  context.setLineWidth(opts.legend.borderWidth);
-  context.setStrokeStyle(opts.legend.borderColor);
-  context.setFillStyle(opts.legend.backgroundColor);
-  context.moveTo(legendArea.start.x, legendArea.start.y);
-  context.rect(legendArea.start.x, legendArea.start.y, legendArea.width, legendArea.height);
-  context.closePath();
-  context.fill();
-  context.stroke();
-
-  legendList.forEach(function (itemList, listIndex) {
-    var width = 0;
-    var height = 0;
-    width = legendData.widthArr[listIndex];
-    height = legendData.heightArr[listIndex];
-    var startX = 0;
-    var startY = 0;
-    if (opts.legend.position == 'top' || opts.legend.position == 'bottom') {
-      startX = legendArea.start.x + (legendArea.width - width) / 2;
-      startY = legendArea.start.y + padding + listIndex * lineHeight;
-    } else {
-      if (listIndex == 0) {
-        width = 0;
-      } else {
-        width = legendData.widthArr[listIndex - 1];
-      }
-      startX = legendArea.start.x + padding + width;
-      startY = legendArea.start.y + padding + (legendArea.height - height) / 2;
-    }
-
-    context.setFontSize(config.fontSize);
-    for (var i = 0; i < itemList.length; i++) {
-      var item = itemList[i];
-      item.area = [0, 0, 0, 0];
-      item.area[0] = startX;
-      item.area[1] = startY;
-      item.area[3] = startY + lineHeight;
-      context.beginPath();
-      context.setLineWidth(1 * opts.pixelRatio);
-      context.setStrokeStyle(item.show ? item.color : opts.legend.hiddenColor);
-      context.setFillStyle(item.show ? item.color : opts.legend.hiddenColor);
-      switch (item.legendShape) {
-        case 'line':
-          context.moveTo(startX, startY + 0.5 * lineHeight - 2 * opts.pixelRatio);
-          context.fillRect(startX, startY + 0.5 * lineHeight - 2 * opts.pixelRatio, 15 * opts.pixelRatio, 4 * opts.pixelRatio);
-          break;
-        case 'triangle':
-          context.moveTo(startX + 7.5 * opts.pixelRatio, startY + 0.5 * lineHeight - 5 * opts.pixelRatio);
-          context.lineTo(startX + 2.5 * opts.pixelRatio, startY + 0.5 * lineHeight + 5 * opts.pixelRatio);
-          context.lineTo(startX + 12.5 * opts.pixelRatio, startY + 0.5 * lineHeight + 5 * opts.pixelRatio);
-          context.lineTo(startX + 7.5 * opts.pixelRatio, startY + 0.5 * lineHeight - 5 * opts.pixelRatio);
-          break;
-        case 'diamond':
-          context.moveTo(startX + 7.5 * opts.pixelRatio, startY + 0.5 * lineHeight - 5 * opts.pixelRatio);
-          context.lineTo(startX + 2.5 * opts.pixelRatio, startY + 0.5 * lineHeight);
-          context.lineTo(startX + 7.5 * opts.pixelRatio, startY + 0.5 * lineHeight + 5 * opts.pixelRatio);
-          context.lineTo(startX + 12.5 * opts.pixelRatio, startY + 0.5 * lineHeight);
-          context.lineTo(startX + 7.5 * opts.pixelRatio, startY + 0.5 * lineHeight - 5 * opts.pixelRatio);
-          break;
-        case 'circle':
-          context.moveTo(startX + 7.5 * opts.pixelRatio, startY + 0.5 * lineHeight);
-          context.arc(startX + 7.5 * opts.pixelRatio, startY + 0.5 * lineHeight, 5 * opts.pixelRatio, 0, 2 * Math.PI);
-          break;
-        case 'rect':
-          context.moveTo(startX, startY + 0.5 * lineHeight - 5 * opts.pixelRatio);
-          context.fillRect(startX, startY + 0.5 * lineHeight - 5 * opts.pixelRatio, 15 * opts.pixelRatio, 10 * opts.pixelRatio);
-          break;
-        default:
-          context.moveTo(startX, startY + 0.5 * lineHeight - 5 * opts.pixelRatio);
-          context.fillRect(startX, startY + 0.5 * lineHeight - 5 * opts.pixelRatio, 15 * opts.pixelRatio, 10 * opts.pixelRatio);}
-
-      context.closePath();
-      context.fill();
-      context.stroke();
-
-      startX += shapeWidth + shapeRight;
-      var fontTrans = 0.5 * lineHeight + 0.5 * fontSize - 2;
-      context.beginPath();
-      context.setFontSize(fontSize);
-      context.setFillStyle(item.show ? opts.legend.fontColor : opts.legend.hiddenColor);
-      context.fillText(item.name, startX, startY + fontTrans);
-      context.closePath();
-      context.stroke();
-      if (opts.legend.position == 'top' || opts.legend.position == 'bottom') {
-        startX += measureText(item.name, fontSize) + itemGap;
-        item.area[2] = startX;
-      } else {
-        item.area[2] = startX + measureText(item.name, fontSize) + itemGap;;
-        startX -= shapeWidth + shapeRight;
-        startY += lineHeight;
-      }
-    }
-  });
-}
-
-function drawPieDataPoints(series, opts, config, context) {
-  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
-  var pieOption = assign({}, {
-    activeOpacity: 0.5,
-    activeRadius: 10 * opts.pixelRatio,
-    offsetAngle: 0,
-    labelWidth: 15 * opts.pixelRatio,
-    ringWidth: 0,
-    border: false,
-    borderWidth: 2,
-    borderColor: '#FFFFFF' },
-  opts.extra.pie);
-  var centerPosition = {
-    x: opts.area[3] + (opts.width - opts.area[1] - opts.area[3]) / 2,
-    y: opts.area[0] + (opts.height - opts.area[0] - opts.area[2]) / 2 };
-
-  if (config.pieChartLinePadding == 0) {
-    config.pieChartLinePadding = pieOption.activeRadius;
-  }
-
-  var radius = Math.min((opts.width - opts.area[1] - opts.area[3]) / 2 - config.pieChartLinePadding - config.pieChartTextPadding - config._pieTextMaxLength_, (opts.height - opts.area[0] - opts.area[2]) / 2 - config.pieChartLinePadding - config.pieChartTextPadding);
-
-  series = getPieDataPoints(series, radius, process);
-
-  var activeRadius = pieOption.activeRadius;
-
-  series = series.map(function (eachSeries) {
-    eachSeries._start_ += pieOption.offsetAngle * Math.PI / 180;
-    return eachSeries;
-  });
-  series.forEach(function (eachSeries, seriesIndex) {
-    if (opts.tooltip) {
-      if (opts.tooltip.index == seriesIndex) {
-        context.beginPath();
-        context.setFillStyle(hexToRgb(eachSeries.color, opts.extra.pie.activeOpacity || 0.5));
-        context.moveTo(centerPosition.x, centerPosition.y);
-        context.arc(centerPosition.x, centerPosition.y, eachSeries._radius_ + activeRadius, eachSeries._start_,
-        eachSeries._start_ + 2 *
-        eachSeries._proportion_ * Math.PI);
-        context.closePath();
-        context.fill();
-      }
-    }
-    context.beginPath();
-    context.setLineWidth(pieOption.borderWidth * opts.pixelRatio);
-    context.lineJoin = "round";
-    context.setStrokeStyle(pieOption.borderColor);
-    context.setFillStyle(eachSeries.color);
-    context.moveTo(centerPosition.x, centerPosition.y);
-    context.arc(centerPosition.x, centerPosition.y, eachSeries._radius_, eachSeries._start_, eachSeries._start_ + 2 * eachSeries._proportion_ * Math.PI);
-    context.closePath();
-    context.fill();
-    if (pieOption.border == true) {
-      context.stroke();
-    }
-  });
-
-  if (opts.type === 'ring') {
-    var innerPieWidth = radius * 0.6;
-    if (typeof opts.extra.pie.ringWidth === 'number' && opts.extra.pie.ringWidth > 0) {
-      innerPieWidth = Math.max(0, radius - opts.extra.pie.ringWidth);
-    }
-    context.beginPath();
-    context.setFillStyle(opts.background || '#ffffff');
-    context.moveTo(centerPosition.x, centerPosition.y);
-    context.arc(centerPosition.x, centerPosition.y, innerPieWidth, 0, 2 * Math.PI);
-    context.closePath();
-    context.fill();
-  }
-
-  if (opts.dataLabel !== false && process === 1) {
-    var valid = false;
-    for (var i = 0, len = series.length; i < len; i++) {
-      if (series[i].data > 0) {
-        valid = true;
-        break;
-      }
-    }
-
-    if (valid) {
-      drawPieText(series, opts, config, context, radius, centerPosition);
-    }
-  }
-
-  if (process === 1 && opts.type === 'ring') {
-    drawRingTitle(opts, config, context, centerPosition);
-  }
-
-  return {
-    center: centerPosition,
-    radius: radius,
-    series: series };
-
-}
-
-function drawRoseDataPoints(series, opts, config, context) {
-  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
-  var roseOption = assign({}, {
-    type: 'area',
-    activeOpacity: 0.5,
-    activeRadius: 10 * opts.pixelRatio,
-    offsetAngle: 0,
-    labelWidth: 15 * opts.pixelRatio,
-    border: false,
-    borderWidth: 2,
-    borderColor: '#FFFFFF' },
-  opts.extra.rose);
-  if (config.pieChartLinePadding == 0) {
-    config.pieChartLinePadding = roseOption.activeRadius;
-  }
-  var centerPosition = {
-    x: opts.area[3] + (opts.width - opts.area[1] - opts.area[3]) / 2,
-    y: opts.area[0] + (opts.height - opts.area[0] - opts.area[2]) / 2 };
-
-  var radius = Math.min((opts.width - opts.area[1] - opts.area[3]) / 2 - config.pieChartLinePadding - config.pieChartTextPadding - config._pieTextMaxLength_, (opts.height - opts.area[0] - opts.area[2]) / 2 - config.pieChartLinePadding - config.pieChartTextPadding);
-  var minRadius = roseOption.minRadius || radius * 0.5;
-
-  series = getRoseDataPoints(series, roseOption.type, minRadius, radius, process);
-
-  var activeRadius = roseOption.activeRadius;
-
-  series = series.map(function (eachSeries) {
-    eachSeries._start_ += (roseOption.offsetAngle || 0) * Math.PI / 180;
-    return eachSeries;
-  });
-
-  series.forEach(function (eachSeries, seriesIndex) {
-    if (opts.tooltip) {
-      if (opts.tooltip.index == seriesIndex) {
-        context.beginPath();
-        context.setFillStyle(hexToRgb(eachSeries.color, roseOption.activeOpacity || 0.5));
-        context.moveTo(centerPosition.x, centerPosition.y);
-        context.arc(centerPosition.x, centerPosition.y, activeRadius + eachSeries._radius_, eachSeries._start_,
-        eachSeries._start_ + 2 * eachSeries._rose_proportion_ * Math.PI);
-        context.closePath();
-        context.fill();
-      }
-    }
-    context.beginPath();
-    context.setLineWidth(roseOption.borderWidth * opts.pixelRatio);
-    context.lineJoin = "round";
-    context.setStrokeStyle(roseOption.borderColor);
-    context.setFillStyle(eachSeries.color);
-    context.moveTo(centerPosition.x, centerPosition.y);
-    context.arc(centerPosition.x, centerPosition.y, eachSeries._radius_, eachSeries._start_, eachSeries._start_ + 2 *
-    eachSeries._rose_proportion_ * Math.PI);
-    context.closePath();
-    context.fill();
-    if (roseOption.border == true) {
-      context.stroke();
-    }
-  });
-
-  if (opts.dataLabel !== false && process === 1) {
-    var valid = false;
-    for (var i = 0, len = series.length; i < len; i++) {
-      if (series[i].data > 0) {
-        valid = true;
-        break;
-      }
-    }
-
-    if (valid) {
-      drawPieText(series, opts, config, context, radius, centerPosition);
-    }
-  }
-
-  return {
-    center: centerPosition,
-    radius: radius,
-    series: series };
-
-}
-
-function drawArcbarDataPoints(series, opts, config, context) {
-  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
-  var arcbarOption = assign({}, {
-    startAngle: 0.75,
-    endAngle: 0.25,
-    type: 'default',
-    width: 12 * opts.pixelRatio,
-    gap: 2 * opts.pixelRatio },
-  opts.extra.arcbar);
-
-  series = getArcbarDataPoints(series, arcbarOption, process);
-
-  var centerPosition;
-  if (arcbarOption.center) {
-    centerPosition = arcbarOption.center;
-  } else {
-    centerPosition = {
-      x: opts.width / 2,
-      y: opts.height / 2 };
-
-  }
-
-  var radius;
-  if (arcbarOption.radius) {
-    radius = arcbarOption.radius;
-  } else {
-    radius = Math.min(centerPosition.x, centerPosition.y);
-    radius -= 5 * opts.pixelRatio;
-    radius -= arcbarOption.width / 2;
-  }
-
-  for (var i = 0; i < series.length; i++) {
-    var eachSeries = series[i];
-    //背景颜色
-    context.setLineWidth(arcbarOption.width);
-    context.setStrokeStyle(arcbarOption.backgroundColor || '#E9E9E9');
-    context.setLineCap('round');
-    context.beginPath();
-    if (arcbarOption.type == 'default') {
-      context.arc(centerPosition.x, centerPosition.y, radius - (arcbarOption.width + arcbarOption.gap) * i, arcbarOption.startAngle * Math.PI, arcbarOption.endAngle * Math.PI, false);
-    } else {
-      context.arc(centerPosition.x, centerPosition.y, radius - (arcbarOption.width + arcbarOption.gap) * i, 0, 2 * Math.PI, false);
-    }
-    context.stroke();
-    //进度条
-    context.setLineWidth(arcbarOption.width);
-    context.setStrokeStyle(eachSeries.color);
-    context.setLineCap('round');
-    context.beginPath();
-    context.arc(centerPosition.x, centerPosition.y, radius - (arcbarOption.width + arcbarOption.gap) * i, arcbarOption.startAngle * Math.PI, eachSeries._proportion_ * Math.PI, false);
-    context.stroke();
-  }
-
-  drawRingTitle(opts, config, context, centerPosition);
-
-  return {
-    center: centerPosition,
-    radius: radius,
-    series: series };
-
-}
-
-function drawGaugeDataPoints(categories, series, opts, config, context) {
-  var process = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 1;
-  var gaugeOption = assign({}, {
-    type: 'default',
-    startAngle: 0.75,
-    endAngle: 0.25,
-    width: 15,
-    splitLine: {
-      fixRadius: 0,
-      splitNumber: 10,
-      width: 15,
-      color: '#FFFFFF',
-      childNumber: 5,
-      childWidth: 5 },
-
-    pointer: {
-      width: 15,
-      color: 'auto' } },
-
-  opts.extra.gauge);
-
-  if (gaugeOption.oldAngle == undefined) {
-    gaugeOption.oldAngle = gaugeOption.startAngle;
-  }
-  if (gaugeOption.oldData == undefined) {
-    gaugeOption.oldData = 0;
-  }
-  categories = getGaugeAxisPoints(categories, gaugeOption.startAngle, gaugeOption.endAngle);
-
-  var centerPosition = {
-    x: opts.width / 2,
-    y: opts.height / 2 };
-
-  var radius = Math.min(centerPosition.x, centerPosition.y);
-  radius -= 5 * opts.pixelRatio;
-  radius -= gaugeOption.width / 2;
-  var innerRadius = radius - gaugeOption.width;
-  var totalAngle = 0;
-
-  //判断仪表盘的样式：default百度样式，progress新样式
-  if (gaugeOption.type == 'progress') {
-
-    //## 第一步画中心圆形背景和进度条背景
-    //中心圆形背景
-    var pieRadius = radius - gaugeOption.width * 3;
-    context.beginPath();
-    var gradient = context.createLinearGradient(centerPosition.x, centerPosition.y - pieRadius, centerPosition.x, centerPosition.y + pieRadius);
-    //配置渐变填充（起点：中心点向上减半径；结束点中心点向下加半径）
-    gradient.addColorStop('0', hexToRgb(series[0].color, 0.3));
-    gradient.addColorStop('1.0', hexToRgb("#FFFFFF", 0.1));
-    context.setFillStyle(gradient);
-    context.arc(centerPosition.x, centerPosition.y, pieRadius, 0, 2 * Math.PI, false);
-    context.fill();
-    //画进度条背景
-    context.setLineWidth(gaugeOption.width);
-    context.setStrokeStyle(hexToRgb(series[0].color, 0.3));
-    context.setLineCap('round');
-    context.beginPath();
-    context.arc(centerPosition.x, centerPosition.y, innerRadius, gaugeOption.startAngle * Math.PI, gaugeOption.endAngle * Math.PI, false);
-    context.stroke();
-
-    //## 第二步画刻度线
-    totalAngle = gaugeOption.startAngle - gaugeOption.endAngle + 1;
-    var splitAngle = totalAngle / gaugeOption.splitLine.splitNumber;
-    var childAngle = totalAngle / gaugeOption.splitLine.splitNumber / gaugeOption.splitLine.childNumber;
-    var startX = -radius - gaugeOption.width * 0.5 - gaugeOption.splitLine.fixRadius;
-    var endX = -radius - gaugeOption.width - gaugeOption.splitLine.fixRadius + gaugeOption.splitLine.width;
-    context.save();
-    context.translate(centerPosition.x, centerPosition.y);
-    context.rotate((gaugeOption.startAngle - 1) * Math.PI);
-    var len = gaugeOption.splitLine.splitNumber * gaugeOption.splitLine.childNumber + 1;
-    var proc = series[0].data * process;
-    for (var i = 0; i < len; i++) {
-      context.beginPath();
-      //刻度线随进度变色
-      if (proc > i / len) {
-        context.setStrokeStyle(hexToRgb(series[0].color, 1));
-      } else {
-        context.setStrokeStyle(hexToRgb(series[0].color, 0.3));
-      }
-      context.setLineWidth(3 * opts.pixelRatio);
-      context.moveTo(startX, 0);
-      context.lineTo(endX, 0);
-      context.stroke();
-      context.rotate(childAngle * Math.PI);
-    }
-    context.restore();
-
-    //## 第三步画进度条
-    series = getArcbarDataPoints(series, gaugeOption, process);
-    context.setLineWidth(gaugeOption.width);
-    context.setStrokeStyle(series[0].color);
-    context.setLineCap('round');
-    context.beginPath();
-    context.arc(centerPosition.x, centerPosition.y, innerRadius, gaugeOption.startAngle * Math.PI, series[0]._proportion_ * Math.PI, false);
-    context.stroke();
-
-    //## 第四步画指针
-    var pointerRadius = radius - gaugeOption.width * 2.5;
-    context.save();
-    context.translate(centerPosition.x, centerPosition.y);
-    context.rotate((series[0]._proportion_ - 1) * Math.PI);
-    context.beginPath();
-    context.setLineWidth(gaugeOption.width / 3);
-    var gradient3 = context.createLinearGradient(0, -pointerRadius * 0.6, 0, pointerRadius * 0.6);
-    gradient3.addColorStop('0', hexToRgb('#FFFFFF', 0));
-    gradient3.addColorStop('0.5', hexToRgb(series[0].color, 1));
-    gradient3.addColorStop('1.0', hexToRgb('#FFFFFF', 0));
-    context.setStrokeStyle(gradient3);
-    context.arc(0, 0, pointerRadius, 0.85 * Math.PI, 1.15 * Math.PI, false);
-    context.stroke();
-    context.beginPath();
-    context.setLineWidth(1);
-    context.setStrokeStyle(series[0].color);
-    context.setFillStyle(series[0].color);
-    context.moveTo(-pointerRadius - gaugeOption.width / 3 / 2, -4);
-    context.lineTo(-pointerRadius - gaugeOption.width / 3 / 2 - 4, 0);
-    context.lineTo(-pointerRadius - gaugeOption.width / 3 / 2, 4);
-    context.lineTo(-pointerRadius - gaugeOption.width / 3 / 2, -4);
-    context.stroke();
-    context.fill();
-    context.restore();
-
-    //default百度样式
-  } else {
-    //画背景
-    context.setLineWidth(gaugeOption.width);
-    context.setLineCap('butt');
-    for (var _i18 = 0; _i18 < categories.length; _i18++) {
-      var eachCategories = categories[_i18];
-      context.beginPath();
-      context.setStrokeStyle(eachCategories.color);
-      context.arc(centerPosition.x, centerPosition.y, radius, eachCategories._startAngle_ * Math.PI, eachCategories._endAngle_ * Math.PI, false);
-      context.stroke();
-    }
-    context.save();
-
-    //画刻度线
-    totalAngle = gaugeOption.startAngle - gaugeOption.endAngle + 1;
-    var _splitAngle = totalAngle / gaugeOption.splitLine.splitNumber;
-    var _childAngle = totalAngle / gaugeOption.splitLine.splitNumber / gaugeOption.splitLine.childNumber;
-    var _startX2 = -radius - gaugeOption.width * 0.5 - gaugeOption.splitLine.fixRadius;
-    var _endX = -radius - gaugeOption.width * 0.5 - gaugeOption.splitLine.fixRadius + gaugeOption.splitLine.width;
-    var childendX = -radius - gaugeOption.width * 0.5 - gaugeOption.splitLine.fixRadius + gaugeOption.splitLine.childWidth;
-
-    context.translate(centerPosition.x, centerPosition.y);
-    context.rotate((gaugeOption.startAngle - 1) * Math.PI);
-
-    for (var _i19 = 0; _i19 < gaugeOption.splitLine.splitNumber + 1; _i19++) {
-      context.beginPath();
-      context.setStrokeStyle(gaugeOption.splitLine.color);
-      context.setLineWidth(2 * opts.pixelRatio);
-      context.moveTo(_startX2, 0);
-      context.lineTo(_endX, 0);
-      context.stroke();
-      context.rotate(_splitAngle * Math.PI);
-    }
-    context.restore();
-
-    context.save();
-    context.translate(centerPosition.x, centerPosition.y);
-    context.rotate((gaugeOption.startAngle - 1) * Math.PI);
-
-    for (var _i20 = 0; _i20 < gaugeOption.splitLine.splitNumber * gaugeOption.splitLine.childNumber + 1; _i20++) {
-      context.beginPath();
-      context.setStrokeStyle(gaugeOption.splitLine.color);
-      context.setLineWidth(1 * opts.pixelRatio);
-      context.moveTo(_startX2, 0);
-      context.lineTo(childendX, 0);
-      context.stroke();
-      context.rotate(_childAngle * Math.PI);
-    }
-    context.restore();
-
-    //画指针
-    series = getGaugeDataPoints(series, categories, gaugeOption, process);
-
-    for (var _i21 = 0; _i21 < series.length; _i21++) {
-      var eachSeries = series[_i21];
-      context.save();
-      context.translate(centerPosition.x, centerPosition.y);
-      context.rotate((eachSeries._proportion_ - 1) * Math.PI);
-      context.beginPath();
-      context.setFillStyle(eachSeries.color);
-      context.moveTo(gaugeOption.pointer.width, 0);
-      context.lineTo(0, -gaugeOption.pointer.width / 2);
-      context.lineTo(-innerRadius, 0);
-      context.lineTo(0, gaugeOption.pointer.width / 2);
-      context.lineTo(gaugeOption.pointer.width, 0);
-      context.closePath();
-      context.fill();
-      context.beginPath();
-      context.setFillStyle('#FFFFFF');
-      context.arc(0, 0, gaugeOption.pointer.width / 6, 0, 2 * Math.PI, false);
-      context.fill();
-      context.restore();
-    }
-
-    if (opts.dataLabel !== false) {
-      drawGaugeLabel(gaugeOption, radius, centerPosition, opts, config, context);
-    }
-  }
-
-  //画仪表盘标题，副标题
-  drawRingTitle(opts, config, context, centerPosition);
-
-  if (process === 1 && opts.type === 'gauge') {
-    opts.extra.gauge.oldAngle = series[0]._proportion_;
-    opts.extra.gauge.oldData = series[0].data;
-  }
-  return {
-    center: centerPosition,
-    radius: radius,
-    innerRadius: innerRadius,
-    categories: categories,
-    totalAngle: totalAngle };
-
-}
-
-function drawRadarDataPoints(series, opts, config, context) {
-  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
-  var radarOption = assign({}, {
-    gridColor: '#cccccc',
-    labelColor: '#666666',
-    opacity: 0.2,
-    gridCount: 3 },
-  opts.extra.radar);
-
-  var coordinateAngle = getRadarCoordinateSeries(opts.categories.length);
-
-  var centerPosition = {
-    x: opts.area[3] + (opts.width - opts.area[1] - opts.area[3]) / 2,
-    y: opts.area[0] + (opts.height - opts.area[0] - opts.area[2]) / 2 };
-
-
-  var radius = Math.min(centerPosition.x - (getMaxTextListLength(opts.categories) + config.radarLabelTextMargin),
-  centerPosition.y - config.radarLabelTextMargin);
-  //TODO逻辑不对
-  radius -= opts.padding[1];
-
-  // draw grid
-  context.beginPath();
-  context.setLineWidth(1 * opts.pixelRatio);
-  context.setStrokeStyle(radarOption.gridColor);
-  coordinateAngle.forEach(function (angle) {
-    var pos = convertCoordinateOrigin(radius * Math.cos(angle), radius * Math.sin(angle), centerPosition);
-    context.moveTo(centerPosition.x, centerPosition.y);
-    context.lineTo(pos.x, pos.y);
-  });
-  context.stroke();
-  context.closePath();
-  // draw split line grid
-
-  var _loop = function _loop(i) {
-    var startPos = {};
-    context.beginPath();
-    context.setLineWidth(1 * opts.pixelRatio);
-    context.setStrokeStyle(radarOption.gridColor);
-    coordinateAngle.forEach(function (angle, index) {
-      var pos = convertCoordinateOrigin(radius / radarOption.gridCount * i * Math.cos(angle), radius / radarOption.gridCount * i * Math.sin(angle), centerPosition);
-      if (index === 0) {
-        startPos = pos;
-        context.moveTo(pos.x, pos.y);
-      } else {
-        context.lineTo(pos.x, pos.y);
-      }
-    });
-    context.lineTo(startPos.x, startPos.y);
-    context.stroke();
-    context.closePath();
-  };
-
-  for (var i = 1; i <= radarOption.gridCount; i++) {
-    _loop(i);
-  }
-
-  var radarDataPoints = getRadarDataPoints(coordinateAngle, centerPosition, radius, series, opts, process);
-
-  radarDataPoints.forEach(function (eachSeries, seriesIndex) {
-    // 绘制区域数据
-    context.beginPath();
-    context.setFillStyle(hexToRgb(eachSeries.color, radarOption.opacity));
-    eachSeries.data.forEach(function (item, index) {
-      if (index === 0) {
-        context.moveTo(item.position.x, item.position.y);
-      } else {
-        context.lineTo(item.position.x, item.position.y);
-      }
-    });
-    context.closePath();
-    context.fill();
-
-    if (opts.dataPointShape !== false) {
-      var points = eachSeries.data.map(function (item) {
-        return item.position;
-      });
-      drawPointShape(points, eachSeries.color, eachSeries.pointShape, context, opts);
-    }
-  });
-  // draw label text
-  drawRadarLabel(coordinateAngle, radius, centerPosition, opts, config, context);
-
-  return {
-    center: centerPosition,
-    radius: radius,
-    angleList: coordinateAngle };
-
-}
-
-function normalInt(min, max, iter) {
-  iter = iter == 0 ? 1 : iter;
-  var arr = [];
-  for (var i = 0; i < iter; i++) {
-    arr[i] = Math.random();
-  };
-  return Math.floor(arr.reduce(function (i, j) {return i + j;}) / iter * (max - min)) + min;
-};
-
-function collisionNew(area, points, width, height) {
-  var isIn = false;
-  for (var i = 0; i < points.length; i++) {
-    if (points[i].area) {
-      if (area[3] < points[i].area[1] || area[0] > points[i].area[2] || area[1] > points[i].area[3] || area[2] < points[i].area[0]) {
-        if (area[0] < 0 || area[1] < 0 || area[2] > width || area[3] > height) {
-          isIn = true;
-          break;
-        } else {
-          isIn = false;
-        }
-      } else {
-        isIn = true;
-        break;
-      }
-    }
-  }
-  return isIn;
-};
-
-function getBoundingBox(data) {
-  var bounds = {},coords;
-  bounds.xMin = 180;
-  bounds.xMax = 0;
-  bounds.yMin = 90;
-  bounds.yMax = 0;
-  for (var i = 0; i < data.length; i++) {
-    var coorda = data[i].geometry.coordinates;
-    for (var k = 0; k < coorda.length; k++) {
-      coords = coorda[k];
-      if (coords.length == 1) {
-        coords = coords[0];
-      }
-      for (var j = 0; j < coords.length; j++) {
-        var longitude = coords[j][0];
-        var latitude = coords[j][1];
-        var point = {
-          x: longitude,
-          y: latitude };
-
-        bounds.xMin = bounds.xMin < point.x ? bounds.xMin : point.x;
-        bounds.xMax = bounds.xMax > point.x ? bounds.xMax : point.x;
-        bounds.yMin = bounds.yMin < point.y ? bounds.yMin : point.y;
-        bounds.yMax = bounds.yMax > point.y ? bounds.yMax : point.y;
-      }
-    }
-  }
-  return bounds;
-}
-
-function coordinateToPoint(latitude, longitude, bounds, scale, xoffset, yoffset) {
-  return {
-    x: (longitude - bounds.xMin) * scale + xoffset,
-    y: (bounds.yMax - latitude) * scale + yoffset };
-
-}
-
-function pointToCoordinate(pointY, pointX, bounds, scale, xoffset, yoffset) {
-  return {
-    x: (pointX - xoffset) / scale + bounds.xMin,
-    y: bounds.yMax - (pointY - yoffset) / scale };
-
-}
-
-function isRayIntersectsSegment(poi, s_poi, e_poi) {
-  if (s_poi[1] == e_poi[1]) {return false;}
-  if (s_poi[1] > poi[1] && e_poi[1] > poi[1]) {return false;}
-  if (s_poi[1] < poi[1] && e_poi[1] < poi[1]) {return false;}
-  if (s_poi[1] == poi[1] && e_poi[1] > poi[1]) {return false;}
-  if (e_poi[1] == poi[1] && s_poi[1] > poi[1]) {return false;}
-  if (s_poi[0] < poi[0] && e_poi[1] < poi[1]) {return false;}
-  var xseg = e_poi[0] - (e_poi[0] - s_poi[0]) * (e_poi[1] - poi[1]) / (e_poi[1] - s_poi[1]);
-  if (xseg < poi[0]) {
-    return false;
-  } else {
-    return true;
-  }
-}
-
-function isPoiWithinPoly(poi, poly) {
-  var sinsc = 0;
-  for (var i = 0; i < poly.length; i++) {
-    var epoly = poly[i][0];
-    if (poly.length == 1) {
-      epoly = poly[i][0];
-    }
-    for (var j = 0; j < epoly.length - 1; j++) {
-      var s_poi = epoly[j];
-      var e_poi = epoly[j + 1];
-      if (isRayIntersectsSegment(poi, s_poi, e_poi)) {
-        sinsc += 1;
-      }
-    }
-  }
-
-  if (sinsc % 2 == 1) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-
-function drawMapDataPoints(series, opts, config, context) {
-  var mapOption = assign({}, {
-    border: true,
-    borderWidth: 1,
-    borderColor: '#666666',
-    fillOpacity: 0.6,
-    activeBorderColor: '#f04864',
-    activeFillColor: '#facc14',
-    activeFillOpacity: 1 },
-  opts.extra.map);
-  var coords, point;
-  var data = series;
-  var bounds = getBoundingBox(data);
-  var xScale = opts.width / Math.abs(bounds.xMax - bounds.xMin);
-  var yScale = opts.height / Math.abs(bounds.yMax - bounds.yMin);
-  var scale = xScale < yScale ? xScale : yScale;
-  var xoffset = opts.width / 2 - Math.abs(bounds.xMax - bounds.xMin) / 2 * scale;
-  var yoffset = opts.height / 2 - Math.abs(bounds.yMax - bounds.yMin) / 2 * scale;
-  context.beginPath();
-  context.clearRect(0, 0, opts.width, opts.height);
-  context.setFillStyle(opts.background || '#FFFFFF');
-  context.rect(0, 0, opts.width, opts.height);
-  context.fill();
-  for (var i = 0; i < data.length; i++) {
-    context.beginPath();
-    context.setLineWidth(mapOption.borderWidth * opts.pixelRatio);
-    context.setStrokeStyle(mapOption.borderColor);
-    context.setFillStyle(hexToRgb(series[i].color, mapOption.fillOpacity));
-    if (opts.tooltip) {
-      if (opts.tooltip.index == i) {
-        context.setStrokeStyle(mapOption.activeBorderColor);
-        context.setFillStyle(hexToRgb(mapOption.activeFillColor, mapOption.activeFillOpacity));
-      }
-    }
-    var coorda = data[i].geometry.coordinates;
-    for (var k = 0; k < coorda.length; k++) {
-      coords = coorda[k];
-      if (coords.length == 1) {
-        coords = coords[0];
-      }
-      for (var j = 0; j < coords.length; j++) {
-        point = coordinateToPoint(coords[j][1], coords[j][0], bounds, scale, xoffset, yoffset);
-        if (j === 0) {
-          context.beginPath();
-          context.moveTo(point.x, point.y);
-        } else {
-          context.lineTo(point.x, point.y);
-        }
-      }
-      context.fill();
-      if (mapOption.border == true) {
-        context.stroke();
-      }
-    }
-    if (opts.dataLabel == true) {
-      var centerPoint = data[i].properties.centroid;
-      if (centerPoint) {
-        point = coordinateToPoint(centerPoint[1], centerPoint[0], bounds, scale, xoffset, yoffset);
-        var fontSize = data[i].textSize || config.fontSize;
-        var text = data[i].properties.name;
-        context.beginPath();
-        context.setFontSize(fontSize);
-        context.setFillStyle(data[i].textColor || '#666666');
-        context.fillText(text, point.x - measureText(text, fontSize) / 2, point.y + fontSize / 2);
-        context.closePath();
-        context.stroke();
-      }
-    }
-  }
-  opts.chartData.mapData = {
-    bounds: bounds,
-    scale: scale,
-    xoffset: xoffset,
-    yoffset: yoffset };
-
-  drawToolTipBridge(opts, config, context, 1);
-  context.draw();
-}
-
-function getWordCloudPoint(opts, type) {
-  var points = opts.series.sort(function (a, b) {return parseInt(b.textSize) - parseInt(a.textSize);});
-  switch (type) {
-    case 'normal':
-      for (var i = 0; i < points.length; i++) {
-        var text = points[i].name;
-        var tHeight = points[i].textSize;
-        var tWidth = measureText(text, tHeight);
-        var x = void 0,y = void 0;
-        var area = void 0;
-        var breaknum = 0;
-        while (true) {
-          breaknum++;
-          x = normalInt(-opts.width / 2, opts.width / 2, 5) - tWidth / 2;
-          y = normalInt(-opts.height / 2, opts.height / 2, 5) + tHeight / 2;
-          area = [x - 5 + opts.width / 2, y - 5 - tHeight + opts.height / 2, x + tWidth + 5 + opts.width / 2, y + 5 + opts.height / 2];
-          var isCollision = collisionNew(area, points, opts.width, opts.height);
-          if (!isCollision) break;
-          if (breaknum == 1000) {
-            area = [-100, -100, -100, -100];
-            break;
-          }
-        };
-        points[i].area = area;
-      }
-      break;
-    case 'vertical':var
-      Spin = function Spin() {
-        //获取均匀随机值，是否旋转，旋转的概率为（1-0.5）
-        if (Math.random() > 0.7) {
-          return true;
-        } else {return false;};
-      };;
-      for (var _i22 = 0; _i22 < points.length; _i22++) {
-        var _text = points[_i22].name;
-        var _tHeight = points[_i22].textSize;
-        var _tWidth = measureText(_text, _tHeight);
-        var isSpin = Spin();
-        var _x = void 0,_y = void 0,_area = void 0,areav = void 0;
-        var _breaknum = 0;
-        while (true) {
-          _breaknum++;
-          var _isCollision = void 0;
-          if (isSpin) {
-            _x = normalInt(-opts.width / 2, opts.width / 2, 5) - _tWidth / 2;
-            _y = normalInt(-opts.height / 2, opts.height / 2, 5) + _tHeight / 2;
-            _area = [_y - 5 - _tWidth + opts.width / 2, -_x - 5 + opts.height / 2, _y + 5 + opts.width / 2, -_x + _tHeight + 5 + opts.height / 2];
-            areav = [opts.width - (opts.width / 2 - opts.height / 2) - (-_x + _tHeight + 5 + opts.height / 2) - 5, opts.height / 2 - opts.width / 2 + (_y - 5 - _tWidth + opts.width / 2) - 5, opts.width - (opts.width / 2 - opts.height / 2) - (-_x + _tHeight + 5 + opts.height / 2) + _tHeight, opts.height / 2 - opts.width / 2 + (_y - 5 - _tWidth + opts.width / 2) + _tWidth + 5];
-            _isCollision = collisionNew(areav, points, opts.height, opts.width);
-          } else {
-            _x = normalInt(-opts.width / 2, opts.width / 2, 5) - _tWidth / 2;
-            _y = normalInt(-opts.height / 2, opts.height / 2, 5) + _tHeight / 2;
-            _area = [_x - 5 + opts.width / 2, _y - 5 - _tHeight + opts.height / 2, _x + _tWidth + 5 + opts.width / 2, _y + 5 + opts.height / 2];
-            _isCollision = collisionNew(_area, points, opts.width, opts.height);
-          }
-          if (!_isCollision) break;
-          if (_breaknum == 1000) {
-            _area = [-1000, -1000, -1000, -1000];
-            break;
-          }
-        };
-        if (isSpin) {
-          points[_i22].area = areav;
-          points[_i22].areav = _area;
-        } else {
-          points[_i22].area = _area;
-        }
-        points[_i22].rotate = isSpin;
-      };
-      break;}
-
-  return points;
-}
-
-
-function drawWordCloudDataPoints(series, opts, config, context) {
-  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
-  var wordOption = assign({}, {
-    type: 'normal',
-    autoColors: true },
-  opts.extra.word);
-
-  context.beginPath();
-  context.setFillStyle(opts.background || '#FFFFFF');
-  context.rect(0, 0, opts.width, opts.height);
-  context.fill();
-  context.save();
-  var points = opts.chartData.wordCloudData;
-  context.translate(opts.width / 2, opts.height / 2);
-
-  for (var i = 0; i < points.length; i++) {
-    context.save();
-    if (points[i].rotate) {
-      context.rotate(90 * Math.PI / 180);
-    }
-    var text = points[i].name;
-    var tHeight = points[i].textSize;
-    var tWidth = measureText(text, tHeight);
-    context.beginPath();
-    context.setStrokeStyle(points[i].color);
-    context.setFillStyle(points[i].color);
-    context.setFontSize(tHeight);
-    if (points[i].rotate) {
-      if (points[i].areav[0] > 0) {
-        if (opts.tooltip) {
-          if (opts.tooltip.index == i) {
-            context.strokeText(text, (points[i].areav[0] + 5 - opts.width / 2) * process - tWidth * (1 - process) / 2, (points[i].areav[1] + 5 + tHeight - opts.height / 2) * process);
-          } else {
-            context.fillText(text, (points[i].areav[0] + 5 - opts.width / 2) * process - tWidth * (1 - process) / 2, (points[i].areav[1] + 5 + tHeight - opts.height / 2) * process);
-          }
-        } else {
-          context.fillText(text, (points[i].areav[0] + 5 - opts.width / 2) * process - tWidth * (1 - process) / 2, (points[i].areav[1] + 5 + tHeight - opts.height / 2) * process);
-        }
-      }
-    } else {
-      if (points[i].area[0] > 0) {
-        if (opts.tooltip) {
-          if (opts.tooltip.index == i) {
-            context.strokeText(text, (points[i].area[0] + 5 - opts.width / 2) * process - tWidth * (1 - process) / 2, (points[i].area[1] + 5 + tHeight - opts.height / 2) * process);
-          } else {
-            context.fillText(text, (points[i].area[0] + 5 - opts.width / 2) * process - tWidth * (1 - process) / 2, (points[i].area[1] + 5 + tHeight - opts.height / 2) * process);
-          }
-        } else {
-          context.fillText(text, (points[i].area[0] + 5 - opts.width / 2) * process - tWidth * (1 - process) / 2, (points[i].area[1] + 5 + tHeight - opts.height / 2) * process);
-        }
-
-      }
-    }
-
-    context.stroke();
-    context.restore();
-  }
-  context.restore();
-}
-
-function drawFunnelDataPoints(series, opts, config, context) {
-  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
-  var funnelOption = assign({}, {
-    activeWidth: 10,
-    activeOpacity: 0.3,
-    border: false,
-    borderWidth: 2,
-    borderColor: '#FFFFFF',
-    fillOpacity: 1,
-    labelAlign: 'right' },
-  opts.extra.funnel);
-  var eachSpacing = (opts.height - opts.area[0] - opts.area[2]) / series.length;
-  var centerPosition = {
-    x: opts.area[3] + (opts.width - opts.area[1] - opts.area[3]) / 2,
-    y: opts.height - opts.area[2] };
-
-  var activeWidth = funnelOption.activeWidth;
-  var radius = Math.min((opts.width - opts.area[1] - opts.area[3]) / 2 - activeWidth, (opts.height - opts.area[0] - opts.area[2]) / 2 - activeWidth);
-  series = getFunnelDataPoints(series, radius, process);
-  context.save();
-  context.translate(centerPosition.x, centerPosition.y);
-  for (var i = 0; i < series.length; i++) {
-    if (i == 0) {
-      if (opts.tooltip) {
-        if (opts.tooltip.index == i) {
-          context.beginPath();
-          context.setFillStyle(hexToRgb(series[i].color, funnelOption.activeOpacity));
-          context.moveTo(-activeWidth, 0);
-          context.lineTo(-series[i].radius - activeWidth, -eachSpacing);
-          context.lineTo(series[i].radius + activeWidth, -eachSpacing);
-          context.lineTo(activeWidth, 0);
-          context.lineTo(-activeWidth, 0);
-          context.closePath();
-          context.fill();
-        }
-      }
-      series[i].funnelArea = [centerPosition.x - series[i].radius, centerPosition.y - eachSpacing, centerPosition.x + series[i].radius, centerPosition.y];
-      context.beginPath();
-      context.setLineWidth(funnelOption.borderWidth * opts.pixelRatio);
-      context.setStrokeStyle(funnelOption.borderColor);
-      context.setFillStyle(hexToRgb(series[i].color, funnelOption.fillOpacity));
-      context.moveTo(0, 0);
-      context.lineTo(-series[i].radius, -eachSpacing);
-      context.lineTo(series[i].radius, -eachSpacing);
-      context.lineTo(0, 0);
-      context.closePath();
-      context.fill();
-      if (funnelOption.border == true) {
-        context.stroke();
-      }
-    } else {
-      if (opts.tooltip) {
-        if (opts.tooltip.index == i) {
-          context.beginPath();
-          context.setFillStyle(hexToRgb(series[i].color, funnelOption.activeOpacity));
-          context.moveTo(0, 0);
-          context.lineTo(-series[i - 1].radius - activeWidth, 0);
-          context.lineTo(-series[i].radius - activeWidth, -eachSpacing);
-          context.lineTo(series[i].radius + activeWidth, -eachSpacing);
-          context.lineTo(series[i - 1].radius + activeWidth, 0);
-          context.lineTo(0, 0);
-          context.closePath();
-          context.fill();
-        }
-      }
-      series[i].funnelArea = [centerPosition.x - series[i].radius, centerPosition.y - eachSpacing * (i + 1), centerPosition.x + series[i].radius, centerPosition.y - eachSpacing * i];
-      context.beginPath();
-      context.setLineWidth(funnelOption.borderWidth * opts.pixelRatio);
-      context.setStrokeStyle(funnelOption.borderColor);
-      context.setFillStyle(hexToRgb(series[i].color, funnelOption.fillOpacity));
-      context.moveTo(0, 0);
-      context.lineTo(-series[i - 1].radius, 0);
-      context.lineTo(-series[i].radius, -eachSpacing);
-      context.lineTo(series[i].radius, -eachSpacing);
-      context.lineTo(series[i - 1].radius, 0);
-      context.lineTo(0, 0);
-      context.closePath();
-      context.fill();
-      if (funnelOption.border == true) {
-        context.stroke();
-      }
-    }
-    context.translate(0, -eachSpacing);
-  }
-  context.restore();
-
-  if (opts.dataLabel !== false && process === 1) {
-    drawFunnelText(series, opts, context, eachSpacing, funnelOption.labelAlign, activeWidth, centerPosition);
-  }
-
-  return {
-    center: centerPosition,
-    radius: radius,
-    series: series };
-
-}
-
-function drawFunnelText(series, opts, context, eachSpacing, labelAlign, activeWidth, centerPosition) {
-  for (var i = 0; i < series.length; i++) {
-    var item = series[i];
-    var startX = void 0,endX = void 0,startY = void 0,fontSize = void 0;
-    var text = item.format ? item.format(+item._proportion_.toFixed(2)) : util.toFixed(item._proportion_ * 100) + '%';
-    if (labelAlign == 'right') {
-      if (i == 0) {
-        startX = (item.funnelArea[2] + centerPosition.x) / 2;
-      } else {
-        startX = (item.funnelArea[2] + series[i - 1].funnelArea[2]) / 2;
-      }
-      endX = startX + activeWidth * 2;
-      startY = item.funnelArea[1] + eachSpacing / 2;
-      fontSize = item.textSize || opts.fontSize;
-      context.setLineWidth(1 * opts.pixelRatio);
-      context.setStrokeStyle(item.color);
-      context.setFillStyle(item.color);
-      context.beginPath();
-      context.moveTo(startX, startY);
-      context.lineTo(endX, startY);
-      context.stroke();
-      context.closePath();
-      context.beginPath();
-      context.moveTo(endX, startY);
-      context.arc(endX, startY, 2, 0, 2 * Math.PI);
-      context.closePath();
-      context.fill();
-      context.beginPath();
-      context.setFontSize(fontSize);
-      context.setFillStyle(item.textColor || '#666666');
-      context.fillText(text, endX + 5, startY + fontSize / 2 - 2);
-      context.closePath();
-      context.stroke();
-      context.closePath();
-    } else {
-      if (i == 0) {
-        startX = (item.funnelArea[0] + centerPosition.x) / 2;
-      } else {
-        startX = (item.funnelArea[0] + series[i - 1].funnelArea[0]) / 2;
-      }
-      endX = startX - activeWidth * 2;
-      startY = item.funnelArea[1] + eachSpacing / 2;
-      fontSize = item.textSize || opts.fontSize;
-      context.setLineWidth(1 * opts.pixelRatio);
-      context.setStrokeStyle(item.color);
-      context.setFillStyle(item.color);
-      context.beginPath();
-      context.moveTo(startX, startY);
-      context.lineTo(endX, startY);
-      context.stroke();
-      context.closePath();
-      context.beginPath();
-      context.moveTo(endX, startY);
-      context.arc(endX, startY, 2, 0, 2 * Math.PI);
-      context.closePath();
-      context.fill();
-      context.beginPath();
-      context.setFontSize(fontSize);
-      context.setFillStyle(item.textColor || '#666666');
-      context.fillText(text, endX - 5 - measureText(text), startY + fontSize / 2 - 2);
-      context.closePath();
-      context.stroke();
-      context.closePath();
-    }
-
-  }
-}
-
-
-function drawCanvas(opts, context) {
-  context.draw();
-}
-
-var Timing = {
-  easeIn: function easeIn(pos) {
-    return Math.pow(pos, 3);
-  },
-  easeOut: function easeOut(pos) {
-    return Math.pow(pos - 1, 3) + 1;
-  },
-  easeInOut: function easeInOut(pos) {
-    if ((pos /= 0.5) < 1) {
-      return 0.5 * Math.pow(pos, 3);
-    } else {
-      return 0.5 * (Math.pow(pos - 2, 3) + 2);
-    }
-  },
-  linear: function linear(pos) {
-    return pos;
-  } };
-
-
-function Animation(opts) {
-  this.isStop = false;
-  opts.duration = typeof opts.duration === 'undefined' ? 1000 : opts.duration;
-  opts.timing = opts.timing || 'linear';
-  var delay = 17;
-
-  function createAnimationFrame() {
-    if (typeof setTimeout !== 'undefined') {
-      return function (step, delay) {
-        setTimeout(function () {
-          var timeStamp = +new Date();
-          step(timeStamp);
-        }, delay);
-      };
-    } else if (typeof requestAnimationFrame !== 'undefined') {
-      return requestAnimationFrame;
-    } else {
-      return function (step) {
-        step(null);
-      };
-    }
-  };
-  var animationFrame = createAnimationFrame();
-  var startTimeStamp = null;
-  var _step = function step(timestamp) {
-    if (timestamp === null || this.isStop === true) {
-      opts.onProcess && opts.onProcess(1);
-      opts.onAnimationFinish && opts.onAnimationFinish();
-      return;
-    }
-    if (startTimeStamp === null) {
-      startTimeStamp = timestamp;
-    }
-    if (timestamp - startTimeStamp < opts.duration) {
-      var process = (timestamp - startTimeStamp) / opts.duration;
-      var timingFunction = Timing[opts.timing];
-      process = timingFunction(process);
-
-      opts.onProcess && opts.onProcess(process);
-      animationFrame(_step, delay);
-    } else {
-      opts.onProcess && opts.onProcess(1);
-      opts.onAnimationFinish && opts.onAnimationFinish();
-    }
-  };
-  _step = _step.bind(this);
-  animationFrame(_step, delay);
-}
-
-// stop animation immediately
-// and tigger onAnimationFinish
-Animation.prototype.stop = function () {
-  this.isStop = true;
-};
-
-function drawCharts(type, opts, config, context) {
-  var _this = this;
-  var series = opts.series;
-  var categories = opts.categories;
-  series = fillSeries(series, opts, config);
-  var duration = opts.animation ? opts.duration : 0;
-  _this.animationInstance && _this.animationInstance.stop();
-  var seriesMA = null;
-  if (type == 'candle') {
-    var average = assign({}, opts.extra.candle.average);
-    if (average.show) {
-      seriesMA = calCandleMA(average.day, average.name, average.color, series[0].data);
-      seriesMA = fillSeries(seriesMA, opts, config);
-      opts.seriesMA = seriesMA;
-    } else if (opts.seriesMA) {
-      seriesMA = opts.seriesMA = fillSeries(opts.seriesMA, opts, config);
-    } else {
-      seriesMA = series;
-    }
-  } else {
-    seriesMA = series;
-  }
-
-  /* 过滤掉show=false的series */
-  opts._series_ = series = filterSeries(series);
-
-  //重新计算图表区域
-
-  opts.area = new Array(4);
-  //复位绘图区域
-  for (var j = 0; j < 4; j++) {
-    opts.area[j] = opts.padding[j];
-  }
-
-  //通过计算三大区域：图例、X轴、Y轴的大小，确定绘图区域
-  var _calLegendData = calLegendData(seriesMA, opts, config, opts.chartData),
-  legendHeight = _calLegendData.area.wholeHeight,
-  legendWidth = _calLegendData.area.wholeWidth;
-
-  switch (opts.legend.position) {
-    case 'top':
-      opts.area[0] += legendHeight;
-      break;
-    case 'bottom':
-      opts.area[2] += legendHeight;
-      break;
-    case 'left':
-      opts.area[3] += legendWidth;
-      break;
-    case 'right':
-      opts.area[1] += legendWidth;
-      break;}
-
-
-  var _calYAxisData = {},yAxisWidth = 0;
-  if (opts.type === 'line' || opts.type === 'column' || opts.type === 'area' || opts.type === 'mix' || opts.type === 'candle') {
-    _calYAxisData = calYAxisData(series, opts, config);
-    yAxisWidth = _calYAxisData.yAxisWidth;
-    //如果显示Y轴标题
-    if (opts.yAxis.showTitle) {
-      var maxTitleHeight = 0;
-      for (var i = 0; i < opts.yAxis.data.length; i++) {
-        maxTitleHeight = Math.max(maxTitleHeight, opts.yAxis.data[i].titleFontSize ? opts.yAxis.data[i].titleFontSize : config.fontSize);
-      }
-      opts.area[0] += (maxTitleHeight + 6) * opts.pixelRatio;
-    }
-    var rightIndex = 0,leftIndex = 0;
-    //计算主绘图区域左右位置
-    for (var _i23 = 0; _i23 < yAxisWidth.length; _i23++) {
-      if (yAxisWidth[_i23].position == 'left') {
-        if (leftIndex > 0) {
-          opts.area[3] += yAxisWidth[_i23].width + opts.yAxis.padding;
-        } else {
-          opts.area[3] += yAxisWidth[_i23].width;
-        }
-        leftIndex += 1;
-      } else {
-        if (rightIndex > 0) {
-          opts.area[1] += yAxisWidth[_i23].width + opts.yAxis.padding;
-        } else {
-          opts.area[1] += yAxisWidth[_i23].width;
-        }
-        rightIndex += 1;
-      }
-    }
-  } else {
-    config.yAxisWidth = yAxisWidth;
-  }
-  opts.chartData.yAxisData = _calYAxisData;
-
-  if (opts.categories && opts.categories.length) {
-    opts.chartData.xAxisData = getXAxisPoints(opts.categories, opts, config);
-    var _calCategoriesData = calCategoriesData(opts.categories, opts, config, opts.chartData.xAxisData.eachSpacing),
-    xAxisHeight = _calCategoriesData.xAxisHeight,
-    angle = _calCategoriesData.angle;
-    config.xAxisHeight = xAxisHeight;
-    config._xAxisTextAngle_ = angle;
-    opts.area[2] += xAxisHeight;
-    opts.chartData.categoriesData = _calCategoriesData;
-  } else {
-    if (opts.type === 'line' || opts.type === 'area' || opts.type === 'points') {
-      opts.chartData.xAxisData = calXAxisData(series, opts, config);
-      categories = opts.chartData.xAxisData.rangesFormat;
-      var _calCategoriesData2 = calCategoriesData(categories, opts, config, opts.chartData.xAxisData.eachSpacing),
-      _xAxisHeight = _calCategoriesData2.xAxisHeight,
-      _angle = _calCategoriesData2.angle;
-      config.xAxisHeight = _xAxisHeight;
-      config._xAxisTextAngle_ = _angle;
-      opts.area[2] += _xAxisHeight;
-      opts.chartData.categoriesData = _calCategoriesData2;
-    } else {
-      opts.chartData.xAxisData = {
-        xAxisPoints: [] };
-
-    }
-  }
-  //计算右对齐偏移距离
-  if (opts.enableScroll && opts.xAxis.scrollAlign == 'right' && opts._scrollDistance_ === undefined) {
-    var offsetLeft = 0,
-    xAxisPoints = opts.chartData.xAxisData.xAxisPoints,
-    startX = opts.chartData.xAxisData.startX,
-    endX = opts.chartData.xAxisData.endX,
-    eachSpacing = opts.chartData.xAxisData.eachSpacing;
-    var totalWidth = eachSpacing * (xAxisPoints.length - 1);
-    var screenWidth = endX - startX;
-    offsetLeft = screenWidth - totalWidth;
-    _this.scrollOption = {
-      currentOffset: offsetLeft,
-      startTouchX: offsetLeft,
-      distance: 0,
-      lastMoveTime: 0 };
-
-    opts._scrollDistance_ = offsetLeft;
-  }
-
-  if (type === 'pie' || type === 'ring' || type === 'rose') {
-    config._pieTextMaxLength_ = opts.dataLabel === false ? 0 : getPieTextMaxLength(seriesMA);
-  }
-
-  switch (type) {
-    case 'word':
-      var wordOption = assign({}, {
-        type: 'normal',
-        autoColors: true },
-      opts.extra.word);
-      if (opts.updateData == true || opts.updateData == undefined) {
-        opts.chartData.wordCloudData = getWordCloudPoint(opts, wordOption.type);
-      }
-      this.animationInstance = new Animation({
-        timing: 'easeInOut',
-        duration: duration,
-        onProcess: function onProcess(process) {
-          context.clearRect(0, 0, opts.width, opts.height);
-          if (opts.rotate) {
-            contextRotate(context, opts);
-          }
-          drawWordCloudDataPoints(series, opts, config, context, process);
-          drawCanvas(opts, context);
-        },
-        onAnimationFinish: function onAnimationFinish() {
-          _this.event.trigger('renderComplete');
-        } });
-
-      break;
-    case 'map':
-      context.clearRect(0, 0, opts.width, opts.height);
-      drawMapDataPoints(series, opts, config, context);
-      break;
-    case 'funnel':
-      this.animationInstance = new Animation({
-        timing: 'easeInOut',
-        duration: duration,
-        onProcess: function onProcess(process) {
-          context.clearRect(0, 0, opts.width, opts.height);
-          if (opts.rotate) {
-            contextRotate(context, opts);
-          }
-          opts.chartData.funnelData = drawFunnelDataPoints(series, opts, config, context, process);
-          drawLegend(opts.series, opts, config, context, opts.chartData);
-          drawToolTipBridge(opts, config, context, process);
-          drawCanvas(opts, context);
-        },
-        onAnimationFinish: function onAnimationFinish() {
-          _this.event.trigger('renderComplete');
-        } });
-
-      break;
-    case 'line':
-      this.animationInstance = new Animation({
-        timing: 'easeIn',
-        duration: duration,
-        onProcess: function onProcess(process) {
-          context.clearRect(0, 0, opts.width, opts.height);
-          if (opts.rotate) {
-            contextRotate(context, opts);
-          }
-          drawYAxisGrid(categories, opts, config, context);
-          drawXAxis(categories, opts, config, context);
-          var _drawLineDataPoints = drawLineDataPoints(series, opts, config, context, process),
-          xAxisPoints = _drawLineDataPoints.xAxisPoints,
-          calPoints = _drawLineDataPoints.calPoints,
-          eachSpacing = _drawLineDataPoints.eachSpacing;
-          opts.chartData.xAxisPoints = xAxisPoints;
-          opts.chartData.calPoints = calPoints;
-          opts.chartData.eachSpacing = eachSpacing;
-          drawYAxis(series, opts, config, context);
-          if (opts.enableMarkLine !== false && process === 1) {
-            drawMarkLine(opts, config, context);
-          }
-          drawLegend(opts.series, opts, config, context, opts.chartData);
-          drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints);
-          drawCanvas(opts, context);
-
-        },
-        onAnimationFinish: function onAnimationFinish() {
-          _this.event.trigger('renderComplete');
-        } });
-
-      break;
-    case 'mix':
-      this.animationInstance = new Animation({
-        timing: 'easeIn',
-        duration: duration,
-        onProcess: function onProcess(process) {
-          context.clearRect(0, 0, opts.width, opts.height);
-          if (opts.rotate) {
-            contextRotate(context, opts);
-          }
-          drawYAxisGrid(categories, opts, config, context);
-          drawXAxis(categories, opts, config, context);
-          var _drawMixDataPoints = drawMixDataPoints(series, opts, config, context, process),
-          xAxisPoints = _drawMixDataPoints.xAxisPoints,
-          calPoints = _drawMixDataPoints.calPoints,
-          eachSpacing = _drawMixDataPoints.eachSpacing;
-          opts.chartData.xAxisPoints = xAxisPoints;
-          opts.chartData.calPoints = calPoints;
-          opts.chartData.eachSpacing = eachSpacing;
-          drawYAxis(series, opts, config, context);
-          if (opts.enableMarkLine !== false && process === 1) {
-            drawMarkLine(opts, config, context);
-          }
-          drawLegend(opts.series, opts, config, context, opts.chartData);
-          drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints);
-          drawCanvas(opts, context);
-        },
-        onAnimationFinish: function onAnimationFinish() {
-          _this.event.trigger('renderComplete');
-        } });
-
-      break;
-    case 'column':
-      this.animationInstance = new Animation({
-        timing: 'easeIn',
-        duration: duration,
-        onProcess: function onProcess(process) {
-          context.clearRect(0, 0, opts.width, opts.height);
-          if (opts.rotate) {
-            contextRotate(context, opts);
-          }
-          drawYAxisGrid(categories, opts, config, context);
-          drawXAxis(categories, opts, config, context);
-          var _drawColumnDataPoints = drawColumnDataPoints(series, opts, config, context, process),
-          xAxisPoints = _drawColumnDataPoints.xAxisPoints,
-          calPoints = _drawColumnDataPoints.calPoints,
-          eachSpacing = _drawColumnDataPoints.eachSpacing;
-          opts.chartData.xAxisPoints = xAxisPoints;
-          opts.chartData.calPoints = calPoints;
-          opts.chartData.eachSpacing = eachSpacing;
-          drawYAxis(series, opts, config, context);
-          if (opts.enableMarkLine !== false && process === 1) {
-            drawMarkLine(opts, config, context);
-          }
-          drawLegend(opts.series, opts, config, context, opts.chartData);
-          drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints);
-          drawCanvas(opts, context);
-        },
-        onAnimationFinish: function onAnimationFinish() {
-          _this.event.trigger('renderComplete');
-        } });
-
-      break;
-    case 'area':
-      this.animationInstance = new Animation({
-        timing: 'easeIn',
-        duration: duration,
-        onProcess: function onProcess(process) {
-          context.clearRect(0, 0, opts.width, opts.height);
-          if (opts.rotate) {
-            contextRotate(context, opts);
-          }
-          drawYAxisGrid(categories, opts, config, context);
-          drawXAxis(categories, opts, config, context);
-          var _drawAreaDataPoints = drawAreaDataPoints(series, opts, config, context, process),
-          xAxisPoints = _drawAreaDataPoints.xAxisPoints,
-          calPoints = _drawAreaDataPoints.calPoints,
-          eachSpacing = _drawAreaDataPoints.eachSpacing;
-          opts.chartData.xAxisPoints = xAxisPoints;
-          opts.chartData.calPoints = calPoints;
-          opts.chartData.eachSpacing = eachSpacing;
-          drawYAxis(series, opts, config, context);
-          if (opts.enableMarkLine !== false && process === 1) {
-            drawMarkLine(opts, config, context);
-          }
-          drawLegend(opts.series, opts, config, context, opts.chartData);
-          drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints);
-          drawCanvas(opts, context);
-        },
-        onAnimationFinish: function onAnimationFinish() {
-          _this.event.trigger('renderComplete');
-        } });
-
-      break;
-    case 'ring':
-    case 'pie':
-      this.animationInstance = new Animation({
-        timing: 'easeInOut',
-        duration: duration,
-        onProcess: function onProcess(process) {
-          context.clearRect(0, 0, opts.width, opts.height);
-          if (opts.rotate) {
-            contextRotate(context, opts);
-          }
-          opts.chartData.pieData = drawPieDataPoints(series, opts, config, context, process);
-          drawLegend(opts.series, opts, config, context, opts.chartData);
-          drawToolTipBridge(opts, config, context, process);
-          drawCanvas(opts, context);
-        },
-        onAnimationFinish: function onAnimationFinish() {
-          _this.event.trigger('renderComplete');
-        } });
-
-      break;
-    case 'rose':
-      this.animationInstance = new Animation({
-        timing: 'easeInOut',
-        duration: duration,
-        onProcess: function onProcess(process) {
-          context.clearRect(0, 0, opts.width, opts.height);
-          if (opts.rotate) {
-            contextRotate(context, opts);
-          }
-          opts.chartData.pieData = drawRoseDataPoints(series, opts, config, context, process);
-          drawLegend(opts.series, opts, config, context, opts.chartData);
-          drawToolTipBridge(opts, config, context, process);
-          drawCanvas(opts, context);
-        },
-        onAnimationFinish: function onAnimationFinish() {
-          _this.event.trigger('renderComplete');
-        } });
-
-      break;
-    case 'radar':
-      this.animationInstance = new Animation({
-        timing: 'easeInOut',
-        duration: duration,
-        onProcess: function onProcess(process) {
-          context.clearRect(0, 0, opts.width, opts.height);
-          if (opts.rotate) {
-            contextRotate(context, opts);
-          }
-          opts.chartData.radarData = drawRadarDataPoints(series, opts, config, context, process);
-          drawLegend(opts.series, opts, config, context, opts.chartData);
-          drawToolTipBridge(opts, config, context, process);
-          drawCanvas(opts, context);
-        },
-        onAnimationFinish: function onAnimationFinish() {
-          _this.event.trigger('renderComplete');
-        } });
-
-      break;
-    case 'arcbar':
-      this.animationInstance = new Animation({
-        timing: 'easeInOut',
-        duration: duration,
-        onProcess: function onProcess(process) {
-          context.clearRect(0, 0, opts.width, opts.height);
-          if (opts.rotate) {
-            contextRotate(context, opts);
-          }
-          opts.chartData.arcbarData = drawArcbarDataPoints(series, opts, config, context, process);
-          drawCanvas(opts, context);
-        },
-        onAnimationFinish: function onAnimationFinish() {
-          _this.event.trigger('renderComplete');
-        } });
-
-      break;
-    case 'gauge':
-      this.animationInstance = new Animation({
-        timing: 'easeInOut',
-        duration: duration,
-        onProcess: function onProcess(process) {
-          context.clearRect(0, 0, opts.width, opts.height);
-          if (opts.rotate) {
-            contextRotate(context, opts);
-          }
-          opts.chartData.gaugeData = drawGaugeDataPoints(categories, series, opts, config, context, process);
-          drawCanvas(opts, context);
-        },
-        onAnimationFinish: function onAnimationFinish() {
-          _this.event.trigger('renderComplete');
-        } });
-
-      break;
-    case 'candle':
-      this.animationInstance = new Animation({
-        timing: 'easeIn',
-        duration: duration,
-        onProcess: function onProcess(process) {
-          context.clearRect(0, 0, opts.width, opts.height);
-          if (opts.rotate) {
-            contextRotate(context, opts);
-          }
-          drawYAxisGrid(categories, opts, config, context);
-          drawXAxis(categories, opts, config, context);
-          var _drawCandleDataPoints = drawCandleDataPoints(series, seriesMA, opts, config, context, process),
-          xAxisPoints = _drawCandleDataPoints.xAxisPoints,
-          calPoints = _drawCandleDataPoints.calPoints,
-          eachSpacing = _drawCandleDataPoints.eachSpacing;
-          opts.chartData.xAxisPoints = xAxisPoints;
-          opts.chartData.calPoints = calPoints;
-          opts.chartData.eachSpacing = eachSpacing;
-          drawYAxis(series, opts, config, context);
-          if (opts.enableMarkLine !== false && process === 1) {
-            drawMarkLine(opts, config, context);
-          }
-          if (seriesMA) {
-            drawLegend(seriesMA, opts, config, context, opts.chartData);
-          } else {
-            drawLegend(opts.series, opts, config, context, opts.chartData);
-          }
-          drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints);
-          drawCanvas(opts, context);
-        },
-        onAnimationFinish: function onAnimationFinish() {
-          _this.event.trigger('renderComplete');
-        } });
-
-      break;}
-
-}
-
-// simple event implement
-
-function Event() {
-  this.events = {};
-}
-
-Event.prototype.addEventListener = function (type, listener) {
-  this.events[type] = this.events[type] || [];
-  this.events[type].push(listener);
-};
-
-Event.prototype.trigger = function () {
-  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  var type = args[0];
-  var params = args.slice(1);
-  if (!!this.events[type]) {
-    this.events[type].forEach(function (listener) {
-      try {
-        listener.apply(null, params);
-      } catch (e) {
-        console.error(e);
-      }
-    });
-  }
-};
-
-var Charts = function Charts(opts) {
-  opts.pixelRatio = opts.pixelRatio ? opts.pixelRatio : 1;
-  opts.fontSize = opts.fontSize ? opts.fontSize * opts.pixelRatio : 13 * opts.pixelRatio;
-  opts.title = assign({}, opts.title);
-  opts.subtitle = assign({}, opts.subtitle);
-  opts.duration = opts.duration ? opts.duration : 1000;
-  opts.yAxis = assign({}, {
-    data: [],
-    showTitle: false,
-    disabled: false,
-    disableGrid: false,
-    splitNumber: 5,
-    gridType: 'solid',
-    dashLength: 4 * opts.pixelRatio,
-    gridColor: '#cccccc',
-    padding: 10,
-    fontColor: '#666666' },
-  opts.yAxis);
-  opts.yAxis.dashLength *= opts.pixelRatio;
-  opts.yAxis.padding *= opts.pixelRatio;
-  opts.xAxis = assign({}, {
-    rotateLabel: false,
-    type: 'calibration',
-    gridType: 'solid',
-    dashLength: 4,
-    scrollAlign: 'left',
-    boundaryGap: 'center',
-    axisLine: true,
-    axisLineColor: '#cccccc' },
-  opts.xAxis);
-  opts.xAxis.dashLength *= opts.pixelRatio;
-  opts.legend = assign({}, {
-    show: true,
-    position: 'bottom',
-    float: 'center',
-    backgroundColor: 'rgba(0,0,0,0)',
-    borderColor: 'rgba(0,0,0,0)',
-    borderWidth: 0,
-    padding: 5,
-    margin: 5,
-    itemGap: 10,
-    fontSize: opts.fontSize,
-    lineHeight: opts.fontSize,
-    fontColor: '#333333',
-    format: {},
-    hiddenColor: '#CECECE' },
-  opts.legend);
-  opts.legend.borderWidth = opts.legend.borderWidth * opts.pixelRatio;
-  opts.legend.itemGap = opts.legend.itemGap * opts.pixelRatio;
-  opts.legend.padding = opts.legend.padding * opts.pixelRatio;
-  opts.legend.margin = opts.legend.margin * opts.pixelRatio;
-  opts.extra = assign({}, opts.extra);
-  opts.rotate = opts.rotate ? true : false;
-  opts.animation = opts.animation ? true : false;
-  opts.rotate = opts.rotate ? true : false;
-
-  var config$$1 = JSON.parse(JSON.stringify(config));
-  config$$1.colors = opts.colors ? opts.colors : config$$1.colors;
-  config$$1.yAxisTitleWidth = opts.yAxis.disabled !== true && opts.yAxis.title ? config$$1.yAxisTitleWidth : 0;
-  if (opts.type == 'pie' || opts.type == 'ring') {
-    config$$1.pieChartLinePadding = opts.dataLabel === false ? 0 : opts.extra.pie.labelWidth * opts.pixelRatio || config$$1.pieChartLinePadding * opts.pixelRatio;
-  }
-  if (opts.type == 'rose') {
-    config$$1.pieChartLinePadding = opts.dataLabel === false ? 0 : opts.extra.rose.labelWidth * opts.pixelRatio || config$$1.pieChartLinePadding * opts.pixelRatio;
-  }
-  config$$1.pieChartTextPadding = opts.dataLabel === false ? 0 : config$$1.pieChartTextPadding * opts.pixelRatio;
-  config$$1.yAxisSplit = opts.yAxis.splitNumber ? opts.yAxis.splitNumber : config.yAxisSplit;
-
-  //屏幕旋转
-  config$$1.rotate = opts.rotate;
-  if (opts.rotate) {
-    var tempWidth = opts.width;
-    var tempHeight = opts.height;
-    opts.width = tempHeight;
-    opts.height = tempWidth;
-  }
-
-  //适配高分屏
-  opts.padding = opts.padding ? opts.padding : config$$1.padding;
-  for (var i = 0; i < 4; i++) {
-    opts.padding[i] *= opts.pixelRatio;
-  }
-  config$$1.yAxisWidth = config.yAxisWidth * opts.pixelRatio;
-  config$$1.xAxisHeight = config.xAxisHeight * opts.pixelRatio;
-  if (opts.enableScroll && opts.xAxis.scrollShow) {
-    config$$1.xAxisHeight += 6 * opts.pixelRatio;
-  }
-  config$$1.xAxisLineHeight = config.xAxisLineHeight * opts.pixelRatio;
-  config$$1.fontSize = opts.fontSize;
-  config$$1.titleFontSize = config.titleFontSize * opts.pixelRatio;
-  config$$1.subtitleFontSize = config.subtitleFontSize * opts.pixelRatio;
-  config$$1.toolTipPadding = config.toolTipPadding * opts.pixelRatio;
-  config$$1.toolTipLineHeight = config.toolTipLineHeight * opts.pixelRatio;
-  config$$1.columePadding = config.columePadding * opts.pixelRatio;
-  opts.$this = opts.$this ? opts.$this : this;
-
-  this.context = uni.createCanvasContext(opts.canvasId, opts.$this);
-  /* 兼容原生H5
-                                                                     this.context = document.getElementById(opts.canvasId).getContext("2d");
-                                                                     this.context.setStrokeStyle = function(e){ return this.strokeStyle=e; }
-                                                                     this.context.setLineWidth = function(e){ return this.lineWidth=e; }
-                                                                     this.context.setLineCap = function(e){ return this.lineCap=e; }
-                                                                     this.context.setFontSize = function(e){ return this.font=e+"px sans-serif"; }
-                                                                     this.context.setFillStyle = function(e){ return this.fillStyle=e; }
-                                                                     this.context.draw = function(){ }
-                                                                     */
-
-  opts.chartData = {};
-  this.event = new Event();
-  this.scrollOption = {
-    currentOffset: 0,
-    startTouchX: 0,
-    distance: 0,
-    lastMoveTime: 0 };
-
-
-  this.opts = opts;
-  this.config = config$$1;
-
-  drawCharts.call(this, opts.type, opts, config$$1, this.context);
-};
-
-Charts.prototype.updateData = function () {
-  var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  this.opts = assign({}, this.opts, data);
-  this.opts.updateData = true;
-  var scrollPosition = data.scrollPosition || 'current';
-  switch (scrollPosition) {
-    case 'current':
-      this.opts._scrollDistance_ = this.scrollOption.currentOffset;
-      break;
-    case 'left':
-      this.opts._scrollDistance_ = 0;
-      this.scrollOption = {
-        currentOffset: 0,
-        startTouchX: 0,
-        distance: 0,
-        lastMoveTime: 0 };
-
-      break;
-    case 'right':
-      var _calYAxisData = calYAxisData(this.opts.series, this.opts, this.config),
-      yAxisWidth = _calYAxisData.yAxisWidth;
-      this.config.yAxisWidth = yAxisWidth;
-      var offsetLeft = 0;
-      var _getXAxisPoints0 = getXAxisPoints(this.opts.categories, this.opts, this.config),
-      xAxisPoints = _getXAxisPoints0.xAxisPoints,
-      startX = _getXAxisPoints0.startX,
-      endX = _getXAxisPoints0.endX,
-      eachSpacing = _getXAxisPoints0.eachSpacing;
-      var totalWidth = eachSpacing * (xAxisPoints.length - 1);
-      var screenWidth = endX - startX;
-      offsetLeft = screenWidth - totalWidth;
-      this.scrollOption = {
-        currentOffset: offsetLeft,
-        startTouchX: offsetLeft,
-        distance: 0,
-        lastMoveTime: 0 };
-
-      this.opts._scrollDistance_ = offsetLeft;
-      break;}
-
-  drawCharts.call(this, this.opts.type, this.opts, this.config, this.context);
-};
-
-Charts.prototype.zoom = function () {
-  var val = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.opts.xAxis.itemCount;
-  if (this.opts.enableScroll !== true) {
-    console.log('请启用滚动条后使用！');
-    return;
-  }
-  //当前屏幕中间点
-  var centerPoint = Math.round(Math.abs(this.scrollOption.currentOffset) / this.opts.chartData.eachSpacing) + Math.round(
-  this.opts.xAxis.itemCount / 2);
-  this.opts.animation = false;
-  this.opts.xAxis.itemCount = val.itemCount;
-  //重新计算x轴偏移距离
-  var _calYAxisData = calYAxisData(this.opts.series, this.opts, this.config),
-  yAxisWidth = _calYAxisData.yAxisWidth;
-  this.config.yAxisWidth = yAxisWidth;
-  var offsetLeft = 0;
-  var _getXAxisPoints0 = getXAxisPoints(this.opts.categories, this.opts, this.config),
-  xAxisPoints = _getXAxisPoints0.xAxisPoints,
-  startX = _getXAxisPoints0.startX,
-  endX = _getXAxisPoints0.endX,
-  eachSpacing = _getXAxisPoints0.eachSpacing;
-  var centerLeft = eachSpacing * centerPoint;
-  var screenWidth = endX - startX;
-  var MaxLeft = screenWidth - eachSpacing * (xAxisPoints.length - 1);
-  offsetLeft = screenWidth / 2 - centerLeft;
-  if (offsetLeft > 0) {
-    offsetLeft = 0;
-  }
-  if (offsetLeft < MaxLeft) {
-    offsetLeft = MaxLeft;
-  }
-  this.scrollOption = {
-    currentOffset: offsetLeft,
-    startTouchX: offsetLeft,
-    distance: 0,
-    lastMoveTime: 0 };
-
-  this.opts._scrollDistance_ = offsetLeft;
-  drawCharts.call(this, this.opts.type, this.opts, this.config, this.context);
-};
-
-Charts.prototype.stopAnimation = function () {
-  this.animationInstance && this.animationInstance.stop();
-};
-
-Charts.prototype.addEventListener = function (type, listener) {
-  this.event.addEventListener(type, listener);
-};
-
-Charts.prototype.getCurrentDataIndex = function (e) {
-  var touches = null;
-  if (e.changedTouches) {
-    touches = e.changedTouches[0];
-  } else {
-    touches = e.mp.changedTouches[0];
-  }
-  if (touches) {
-    var _touches$ = getTouches(touches, this.opts, e);
-    if (this.opts.type === 'pie' || this.opts.type === 'ring' || this.opts.type === 'rose') {
-      return findPieChartCurrentIndex({
-        x: _touches$.x,
-        y: _touches$.y },
-      this.opts.chartData.pieData);
-    } else if (this.opts.type === 'radar') {
-      return findRadarChartCurrentIndex({
-        x: _touches$.x,
-        y: _touches$.y },
-      this.opts.chartData.radarData, this.opts.categories.length);
-    } else if (this.opts.type === 'funnel') {
-      return findFunnelChartCurrentIndex({
-        x: _touches$.x,
-        y: _touches$.y },
-      this.opts.chartData.funnelData);
-    } else if (this.opts.type === 'map') {
-      return findMapChartCurrentIndex({
-        x: _touches$.x,
-        y: _touches$.y },
-      this.opts);
-    } else if (this.opts.type === 'word') {
-      return findWordChartCurrentIndex({
-        x: _touches$.x,
-        y: _touches$.y },
-      this.opts.chartData.wordCloudData);
-    } else {
-      return findCurrentIndex({
-        x: _touches$.x,
-        y: _touches$.y },
-      this.opts.chartData.calPoints, this.opts, this.config, Math.abs(this.scrollOption.currentOffset));
-    }
-  }
-  return -1;
-};
-
-Charts.prototype.getLegendDataIndex = function (e) {
-  var touches = null;
-  if (e.changedTouches) {
-    touches = e.changedTouches[0];
-  } else {
-    touches = e.mp.changedTouches[0];
-  }
-  if (touches) {
-    var _touches$ = getTouches(touches, this.opts, e);
-    return findLegendIndex({
-      x: _touches$.x,
-      y: _touches$.y },
-    this.opts.chartData.legendData);
-  }
-  return -1;
-};
-
-Charts.prototype.touchLegend = function (e) {
-  var option = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  var touches = null;
-  if (e.changedTouches) {
-    touches = e.changedTouches[0];
-  } else {
-    touches = e.mp.changedTouches[0];
-  }
-  if (touches) {
-    var _touches$ = getTouches(touches, this.opts, e);
-    var index = this.getLegendDataIndex(e);
-    if (index >= 0) {
-      this.opts.series[index].show = !this.opts.series[index].show;
-      this.opts.animation = option.animation ? true : false;
-      this.opts._scrollDistance_ = this.scrollOption.currentOffset;
-      drawCharts.call(this, this.opts.type, this.opts, this.config, this.context);
-    }
-  }
-
-};
-
-Charts.prototype.showToolTip = function (e) {
-  var option = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  var touches = null;
-  if (e.changedTouches) {
-    touches = e.changedTouches[0];
-  } else {
-    touches = e.mp.changedTouches[0];
-  }
-  if (!touches) {
-    console.log("touchError");
-  }
-  var _touches$ = getTouches(touches, this.opts, e);
-  var currentOffset = this.scrollOption.currentOffset;
-  var opts = assign({}, this.opts, {
-    _scrollDistance_: currentOffset,
-    animation: false });
-
-  if (this.opts.type === 'line' || this.opts.type === 'area' || this.opts.type === 'column') {
-    var index = this.getCurrentDataIndex(e);
-    if (index > -1) {
-      var seriesData = getSeriesDataItem(this.opts.series, index);
-      if (seriesData.length !== 0) {
-        var _getToolTipData = getToolTipData(seriesData, this.opts.chartData.calPoints, index, this.opts.categories, option),
-        textList = _getToolTipData.textList,
-        offset = _getToolTipData.offset;
-        offset.y = _touches$.y;
-        opts.tooltip = {
-          textList: textList,
-          offset: offset,
-          option: option,
-          index: index };
-
-      }
-    }
-    drawCharts.call(this, opts.type, opts, this.config, this.context);
-  }
-  if (this.opts.type === 'mix') {
-    var index = this.getCurrentDataIndex(e);
-    if (index > -1) {
-      var currentOffset = this.scrollOption.currentOffset;
-      var opts = assign({}, this.opts, {
-        _scrollDistance_: currentOffset,
-        animation: false });
-
-      var seriesData = getSeriesDataItem(this.opts.series, index);
-      if (seriesData.length !== 0) {
-        var _getMixToolTipData = getMixToolTipData(seriesData, this.opts.chartData.calPoints, index, this.opts.categories, option),
-        textList = _getMixToolTipData.textList,
-        offset = _getMixToolTipData.offset;
-        offset.y = _touches$.y;
-        opts.tooltip = {
-          textList: textList,
-          offset: offset,
-          option: option,
-          index: index };
-
-      }
-    }
-    drawCharts.call(this, opts.type, opts, this.config, this.context);
-  }
-  if (this.opts.type === 'candle') {
-    var index = this.getCurrentDataIndex(e);
-    if (index > -1) {
-      var currentOffset = this.scrollOption.currentOffset;
-      var opts = assign({}, this.opts, {
-        _scrollDistance_: currentOffset,
-        animation: false });
-
-      var seriesData = getSeriesDataItem(this.opts.series, index);
-      if (seriesData.length !== 0) {
-        var _getToolTipData = getCandleToolTipData(this.opts.series[0].data, seriesData, this.opts.chartData.calPoints,
-        index, this.opts.categories, this.opts.extra.candle, option),
-        textList = _getToolTipData.textList,
-        offset = _getToolTipData.offset;
-        offset.y = _touches$.y;
-        opts.tooltip = {
-          textList: textList,
-          offset: offset,
-          option: option,
-          index: index };
-
-      }
-    }
-    drawCharts.call(this, opts.type, opts, this.config, this.context);
-  }
-  if (this.opts.type === 'pie' || this.opts.type === 'ring' || this.opts.type === 'rose' || this.opts.type === 'funnel') {
-    var index = this.getCurrentDataIndex(e);
-    if (index > -1) {
-      var currentOffset = this.scrollOption.currentOffset;
-      var opts = assign({}, this.opts, {
-        _scrollDistance_: currentOffset,
-        animation: false });
-
-      var seriesData = this.opts._series_[index];
-      var textList = [{
-        text: option.format ? option.format(seriesData) : seriesData.name + ': ' + seriesData.data,
-        color: seriesData.color }];
-
-      var offset = {
-        x: _touches$.x,
-        y: _touches$.y };
-
-      opts.tooltip = {
-        textList: textList,
-        offset: offset,
-        option: option,
-        index: index };
-
-    }
-    drawCharts.call(this, opts.type, opts, this.config, this.context);
-  }
-  if (this.opts.type === 'map' || this.opts.type === 'word') {
-    var index = this.getCurrentDataIndex(e);
-    if (index > -1) {
-      var currentOffset = this.scrollOption.currentOffset;
-      var opts = assign({}, this.opts, {
-        _scrollDistance_: currentOffset,
-        animation: false });
-
-      var seriesData = this.opts._series_[index];
-      var textList = [{
-        text: option.format ? option.format(seriesData) : seriesData.properties.name,
-        color: seriesData.color }];
-
-      var offset = {
-        x: _touches$.x,
-        y: _touches$.y };
-
-      opts.tooltip = {
-        textList: textList,
-        offset: offset,
-        option: option,
-        index: index };
-
-    }
-    opts.updateData = false;
-    drawCharts.call(this, opts.type, opts, this.config, this.context);
-  }
-  if (this.opts.type === 'radar') {
-    var index = this.getCurrentDataIndex(e);
-    if (index > -1) {
-      var currentOffset = this.scrollOption.currentOffset;
-      var opts = assign({}, this.opts, {
-        _scrollDistance_: currentOffset,
-        animation: false });
-
-      var seriesData = getSeriesDataItem(this.opts.series, index);
-      if (seriesData.length !== 0) {
-        var textList = seriesData.map(function (item) {
-          return {
-            text: option.format ? option.format(item) : item.name + ': ' + item.data,
-            color: item.color };
-
-        });
-        var offset = {
-          x: _touches$.x,
-          y: _touches$.y };
-
-        opts.tooltip = {
-          textList: textList,
-          offset: offset,
-          option: option,
-          index: index };
-
-      }
-    }
-    drawCharts.call(this, opts.type, opts, this.config, this.context);
-  }
-};
-
-Charts.prototype.translate = function (distance) {
-  this.scrollOption = {
-    currentOffset: distance,
-    startTouchX: distance,
-    distance: 0,
-    lastMoveTime: 0 };
-
-  var opts = assign({}, this.opts, {
-    _scrollDistance_: distance,
-    animation: false });
-
-  drawCharts.call(this, this.opts.type, opts, this.config, this.context);
-};
-
-Charts.prototype.scrollStart = function (e) {
-  var touches = null;
-  if (e.changedTouches) {
-    touches = e.changedTouches[0];
-  } else {
-    touches = e.mp.changedTouches[0];
-  }
-  var _touches$ = getTouches(touches, this.opts, e);
-  if (touches && this.opts.enableScroll === true) {
-    this.scrollOption.startTouchX = _touches$.x;
-  }
-};
-
-Charts.prototype.scroll = function (e) {
-  if (this.scrollOption.lastMoveTime === 0) {
-    this.scrollOption.lastMoveTime = Date.now();
-  }
-  var Limit = this.opts.extra.touchMoveLimit || 20;
-  var currMoveTime = Date.now();
-  var duration = currMoveTime - this.scrollOption.lastMoveTime;
-  if (duration < Math.floor(1000 / Limit)) return;
-  this.scrollOption.lastMoveTime = currMoveTime;
-  var touches = null;
-  if (e.changedTouches) {
-    touches = e.changedTouches[0];
-  } else {
-    touches = e.mp.changedTouches[0];
-  }
-  if (touches && this.opts.enableScroll === true) {
-    var _touches$ = getTouches(touches, this.opts, e);
-    var _distance;
-    _distance = _touches$.x - this.scrollOption.startTouchX;
-    var currentOffset = this.scrollOption.currentOffset;
-    var validDistance = calValidDistance(this, currentOffset + _distance, this.opts.chartData, this.config, this.opts);
-    this.scrollOption.distance = _distance = validDistance - currentOffset;
-    var opts = assign({}, this.opts, {
-      _scrollDistance_: currentOffset + _distance,
-      animation: false });
-
-    drawCharts.call(this, opts.type, opts, this.config, this.context);
-    return currentOffset + _distance;
-  }
-};
-
-Charts.prototype.scrollEnd = function (e) {
-  if (this.opts.enableScroll === true) {
-    var _scrollOption = this.scrollOption,
-    currentOffset = _scrollOption.currentOffset,
-    distance = _scrollOption.distance;
-    this.scrollOption.currentOffset = currentOffset + distance;
-    this.scrollOption.distance = 0;
-  }
-};
-if ( true && typeof module.exports === "object") {
-  module.exports = Charts;
-  //export default Charts;//建议使用nodejs的module导出方式，如报错请使用export方式导出
-}
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })
 ]]);

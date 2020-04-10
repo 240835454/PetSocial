@@ -61,5 +61,6 @@
       "desc": "测试"
     }
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap75.json"
 }
