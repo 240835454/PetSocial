@@ -1,9 +1,9 @@
-.timelineItem .timeItem.data-v-0db0bace {
+.timelineItem .timeItem.data-v-f411f12a {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
 }
-.timelineItem .timeItem .leftTime.data-v-0db0bace {
+.timelineItem .timeItem .leftTime.data-v-f411f12a {
   width: 135rpx;
   padding: 0 10rpx;
   font-size: 22rpx;
@@ -15,12 +15,12 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.timelineItem .timeItem .line.data-v-0db0bace {
+.timelineItem .timeItem .line.data-v-f411f12a {
   width: 1px;
   background: #cccccc;
   position: relative;
 }
-.timelineItem .timeItem .line .out.data-v-0db0bace {
+.timelineItem .timeItem .line .out.data-v-f411f12a {
   position: absolute;
   top: 0;
   left: 50%;
@@ -40,13 +40,13 @@
   background: rgba(236, 104, 23, 0.6);
   border-radius: 50%;
 }
-.timelineItem .timeItem .line .out .inner.data-v-0db0bace {
+.timelineItem .timeItem .line .out .inner.data-v-f411f12a {
   width: 18rpx;
   height: 18rpx;
   background: #ec6817;
   border-radius: 50%;
 }
-.timelineItem .timeItem .rightContent.data-v-0db0bace {
+.timelineItem .timeItem .rightContent.data-v-f411f12a {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
           flex: 1;

@@ -85,7 +85,7 @@
 						icon: require('../../../static/account_10.png')
 					},
 					{
-						id: 11,
+						id: 11, 
 						name: '服饰',
 						color: 'rgb(180,117,242)',
 						icon: require('../../../static/account_11.png')

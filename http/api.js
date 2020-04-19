@@ -1,7 +1,7 @@
 import axios from './interceptor.js'
 
-// let ApiUrl = 'http://192.168.0.108:3000/API';
-let ApiUrl = 'http://192.168.0.113:3000/API';
+let ApiUrl = 'http://192.168.2.157:3000/API';
+// let ApiUrl = 'http://192.168.0.113:3000/API'; 
 // let ApiUrl = 'http://172.20.10.13:3000/API';
 
 export default {

@@ -13,6 +13,7 @@
     "pages/petbnb/account/account",
     "pages/petbnb/account/addAccount",
     "pages/petbnb/article/article",
+    "pages/petbnb/article/detail",
     "pages/petbnb/service/service",
     "pages/petbnb/encyclopedia/encyclopedia",
     "pages/petbnb/encyclopedia/petTypeList",
@@ -62,5 +63,5 @@
     }
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap75.json"
+  "sitemapLocation": "sitemap44.json"
 }
