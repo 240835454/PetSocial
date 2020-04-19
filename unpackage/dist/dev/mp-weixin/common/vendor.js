@@ -12652,6 +12652,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABX
 /* 189 */,
 /* 190 */,
 /* 191 */,
+<<<<<<< HEAD
 /* 192 */,
 /* 193 */,
 /* 194 */,
@@ -12662,6 +12663,12 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABX
 /*!****************************************************************!*\
   !*** C:/Users/jm/Desktop/毕设项目/PetSocial/util/js/formatList.js ***!
   \****************************************************************/
+=======
+/* 192 */
+/*!**********************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/PetSocial/util/js/formatList.js ***!
+  \**********************************************************************/
+>>>>>>> 213fca0226d184984769bb915f4fbbf0f4eaf90d
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12695,6 +12702,15 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.formatList
 }
 
 /***/ }),
+<<<<<<< HEAD
+=======
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */,
+>>>>>>> 213fca0226d184984769bb915f4fbbf0f4eaf90d
 /* 199 */,
 /* 200 */,
 /* 201 */,
@@ -12753,6 +12769,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.formatList
 /* 254 */,
 /* 255 */,
 /* 256 */,
+<<<<<<< HEAD
 /* 257 */,
 /* 258 */,
 /* 259 */,
@@ -12763,6 +12780,12 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.formatList
 /*!*******************************************************************************!*\
   !*** C:/Users/jm/Desktop/毕设项目/PetSocial/js_sdk/u-charts/u-charts/u-charts.js ***!
   \*******************************************************************************/
+=======
+/* 257 */
+/*!*************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/PetSocial/js_sdk/u-charts/u-charts/u-charts.js ***!
+  \*************************************************************************************/
+>>>>>>> 213fca0226d184984769bb915f4fbbf0f4eaf90d
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18403,6 +18426,15 @@ if ( true && typeof module.exports === "object") {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+<<<<<<< HEAD
+=======
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+>>>>>>> 213fca0226d184984769bb915f4fbbf0f4eaf90d
 /* 264 */,
 /* 265 */,
 /* 266 */,
@@ -18418,6 +18450,7 @@ if ( true && typeof module.exports === "object") {
 /* 276 */,
 /* 277 */,
 /* 278 */,
+<<<<<<< HEAD
 /* 279 */,
 /* 280 */,
 /* 281 */,
@@ -18428,6 +18461,12 @@ if ( true && typeof module.exports === "object") {
 /*!************************************************************************************!*\
   !*** C:/Users/jm/Desktop/毕设项目/PetSocial/components/w-picker/city-data/province.js ***!
   \************************************************************************************/
+=======
+/* 279 */
+/*!******************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/PetSocial/components/w-picker/city-data/province.js ***!
+  \******************************************************************************************/
+>>>>>>> 213fca0226d184984769bb915f4fbbf0f4eaf90d
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18573,10 +18612,17 @@ var provinceData = [{
 provinceData;exports.default = _default;
 
 /***/ }),
+<<<<<<< HEAD
 /* 286 */
 /*!********************************************************************************!*\
   !*** C:/Users/jm/Desktop/毕设项目/PetSocial/components/w-picker/city-data/city.js ***!
   \********************************************************************************/
+=======
+/* 280 */
+/*!**************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/PetSocial/components/w-picker/city-data/city.js ***!
+  \**************************************************************************************/
+>>>>>>> 213fca0226d184984769bb915f4fbbf0f4eaf90d
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20086,10 +20132,17 @@ var cityData = [
 cityData;exports.default = _default;
 
 /***/ }),
+<<<<<<< HEAD
 /* 287 */
 /*!********************************************************************************!*\
   !*** C:/Users/jm/Desktop/毕设项目/PetSocial/components/w-picker/city-data/area.js ***!
   \********************************************************************************/
+=======
+/* 281 */
+/*!**************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/PetSocial/components/w-picker/city-data/area.js ***!
+  \**************************************************************************************/
+>>>>>>> 213fca0226d184984769bb915f4fbbf0f4eaf90d
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -32638,10 +32691,17 @@ var areaData = [
 areaData;exports.default = _default;
 
 /***/ }),
+<<<<<<< HEAD
 /* 288 */
 /*!**************************************************************************!*\
   !*** C:/Users/jm/Desktop/毕设项目/PetSocial/components/w-picker/w-picker.js ***!
   \**************************************************************************/
+=======
+/* 282 */
+/*!********************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/PetSocial/components/w-picker/w-picker.js ***!
+  \********************************************************************************/
+>>>>>>> 213fca0226d184984769bb915f4fbbf0f4eaf90d
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
