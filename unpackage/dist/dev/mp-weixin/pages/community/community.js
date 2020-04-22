@@ -131,7 +131,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 77));
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@vue/babel-preset-app/node_modules/@babel/runtime/regenerator */ 77));
 
 
 
@@ -267,7 +267,7 @@ var _default =
   // 		}
   // 	});
   // },
-  onLoad: function () {var _onLoad = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _this = this;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+  onLoad: function onLoad() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
               uni.getSystemInfo({ //获取设备信息 
                 success: function success(res) {
                   _this.screenHeight = res.screenHeight;
@@ -275,13 +275,13 @@ var _default =
                 } });
 
               uni.startPullDownRefresh();_context.next = 4;return (
-                this.getUserInfo());case 4:_context.next = 6;return (
-                this.getList());case 6:_context.next = 8;return (
-                this.getComments());case 8:case "end":return _context.stop();}}}, _callee, this);}));function onLoad() {return _onLoad.apply(this, arguments);}return onLoad;}(),
+                _this.getUserInfo());case 4:_context.next = 6;return (
+                _this.getList());case 6:_context.next = 8;return (
+                _this.getComments());case 8:case "end":return _context.stop();}}}, _callee);}))();
 
 
 
-
+  },
   onShow: function onShow() {var _this2 = this;
     uni.onWindowResize(function (res) {//监听窗口尺寸变化,窗口尺寸不包括底部导航栏
       if (_this2.platform === 'ios') {

@@ -147,7 +147,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _uCharts = _interopRequireDefault(__webpack_require__(/*! ../../../../js_sdk/u-charts/u-charts/u-charts.js */ 257));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var wPicker = function wPicker() {Promise.all(/*! require.ensure | components/w-picker/w-picker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/w-picker/w-picker")]).then((function () {return resolve(__webpack_require__(/*! @/components/w-picker/w-picker.vue */ 274));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};
+var _uCharts = _interopRequireDefault(__webpack_require__(/*! ../../../../js_sdk/u-charts/u-charts/u-charts.js */ 257));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _createForOfIteratorHelper(o) {if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) {var i = 0;var F = function F() {};return { s: F, n: function n() {if (i >= o.length) return { done: true };return { done: false, value: o[i++] };}, e: function e(_e) {throw _e;}, f: F };}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}var it,normalCompletion = true,didErr = false,err;return { s: function s() {it = o[Symbol.iterator]();}, n: function n() {var step = it.next();normalCompletion = step.done;return step;}, e: function e(_e2) {didErr = true;err = _e2;}, f: function f() {try {if (!normalCompletion && it.return != null) it.return();} finally {if (didErr) throw err;}} };}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(n);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}var wPicker = function wPicker() {Promise.all(/*! require.ensure | components/w-picker/w-picker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/w-picker/w-picker")]).then((function () {return resolve(__webpack_require__(/*! @/components/w-picker/w-picker.vue */ 274));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};
 var _self;
 var canvaColumn = null;var _default =
 {
@@ -188,11 +188,11 @@ var canvaColumn = null;var _default =
         date: this.date }).
 
       then(function (res) {
-        _this.list = res.data.list;var _iteratorNormalCompletion = true;var _didIteratorError = false;var _iteratorError = undefined;try {
-          for (var _iterator = res.data.list[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {var i = _step.value;
+        _this.list = res.data.list;var _iterator = _createForOfIteratorHelper(
+        res.data.list),_step;try {for (_iterator.s(); !(_step = _iterator.n()).done;) {var i = _step.value;
             i.data = parseInt(i.cost);
             i.icon = _this.$API + "/image/account_" + "".concat(i.type_id) + ".png";
-          }} catch (err) {_didIteratorError = true;_iteratorError = err;} finally {try {if (!_iteratorNormalCompletion && _iterator.return != null) {_iterator.return();}} finally {if (_didIteratorError) {throw _iteratorError;}}}
+          }} catch (err) {_iterator.e(err);} finally {_iterator.f();}
         var Ring = {
           series: [] };
 

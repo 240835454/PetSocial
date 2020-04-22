@@ -131,7 +131,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 77));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@vue/babel-preset-app/node_modules/@babel/runtime/regenerator */ 77));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} //
 //
 //
 //
@@ -220,7 +220,7 @@ var sizeType = [
   },
 
   methods: {
-    publish: function () {var _publish = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var date, oldContent;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+    publish: function publish() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var date, oldContent;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
                 // if (!this.input_content) {
                 // 	uni.showModal({ content: '内容不能为空', showCancel: false, });
                 // 	return;
@@ -231,13 +231,13 @@ var sizeType = [
                 // var location = await this.getLocation();//位置信息,可删除,主要想记录一下异步转同步处理
                 date = new Date();
                 oldContent = JSON.stringify({
-                  text: this.input_content,
-                  images: this.postImageList });
+                  text: _this.input_content,
+                  images: _this.postImageList });
 
 
-                this.$http.post('/Community/postDynamic', {
-                  avatar: this.avatar,
-                  name: this.name,
+                _this.$http.post('/Community/postDynamic', {
+                  avatar: _this.avatar,
+                  name: _this.name,
                   content: oldContent,
                   timestamp: date.getTime() }).
                 then(function (res) {
@@ -298,7 +298,7 @@ var sizeType = [
                 // 		})
                 // 	}
                 // });
-              case 4:case "end":return _context.stop();}}}, _callee, this);}));function publish() {return _publish.apply(this, arguments);}return publish;}(),
+              case 4:case "end":return _context.stop();}}}, _callee);}))();},
 
     getLocation: function getLocation() {//h5中可能不支持,自己选择
       return new Promise(function (resolve, reject) {
@@ -317,7 +317,7 @@ var sizeType = [
     close: function close(e) {
       this.imageList.splice(e, 1);
     },
-    chooseImage: function () {var _chooseImage = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _this = this;var isContinue;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:if (!(
+    chooseImage: function () {var _chooseImage = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _this2 = this;var isContinue;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:if (!(
                 this.imageList.length === 9)) {_context2.next = 7;break;}_context2.next = 3;return (
                   this.isFullImg());case 3:isContinue = _context2.sent;
                 console.log("是否继续?", isContinue);if (
@@ -339,11 +339,11 @@ var sizeType = [
 
 
 
-                    _this.imageList = _this.imageList.concat(res.tempFilePaths); //非APP平台不支持自定义压缩,暂时没有处理,可通过uni-app上传组件的sizeType属性压缩
+                    _this2.imageList = _this2.imageList.concat(res.tempFilePaths); //非APP平台不支持自定义压缩,暂时没有处理,可通过uni-app上传组件的sizeType属性压缩
 
-                    for (var i = 0; i < _this.imageList.length; i++) {
-                      _this.$http.uploadFile(_this.imageList[i]).then(function (res) {
-                        _this.postImageList.push(res.data.path);
+                    for (var i = 0; i < _this2.imageList.length; i++) {
+                      _this2.$http.uploadFile(_this2.imageList[i]).then(function (res) {
+                        _this2.postImageList.push(res.data.path);
                       }).
                       catch(function (err) {
                         uni.showToast({
@@ -355,13 +355,13 @@ var sizeType = [
                   } });case 8:case "end":return _context2.stop();}}}, _callee2, this);}));function chooseImage() {return _chooseImage.apply(this, arguments);}return chooseImage;}(),
 
 
-    isFullImg: function isFullImg() {var _this2 = this;
+    isFullImg: function isFullImg() {var _this3 = this;
       return new Promise(function (res) {
         uni.showModal({
           content: "已经有9张图片了,是否清空现有图片？",
           success: function success(e) {
             if (e.confirm) {
-              _this2.imageList = [];
+              _this3.imageList = [];
               res(true);
             } else {
               res(false);
