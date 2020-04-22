@@ -1,1 +1,1 @@
-<view>123</view>
+<view><block wx:for="{{petList}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="item"><image class="item-img" src="{{api+item.avatar}}" mode="aspectFill"></image></view></block></view>

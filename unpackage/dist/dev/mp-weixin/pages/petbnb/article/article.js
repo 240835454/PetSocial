@@ -147,16 +147,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default =
 {
   data: function data() {
@@ -170,7 +160,8 @@ var _default =
   onLoad: function onLoad() {
     this.getList();
   },
-  onReachBottom: function onReachBottom() {var _this = this; //监听上拉触底事件
+  onReachBottom: function onReachBottom() {var _this = this;
+    //监听上拉触底事件
     // this.showLoadMore = true;
     if (this.list.length < this.total) {
       uni.showToast({
@@ -180,7 +171,8 @@ var _default =
 
       this.now_page += 1;
       setTimeout(function () {
-        _this.$http.get('/petbnb/article/getArticleList', {
+        _this.$http.
+        get('/petbnb/article/getArticleList', {
           index: _this.now_page,
           size: _this.size }).
 
@@ -204,7 +196,8 @@ var _default =
   },
   methods: {
     getList: function getList() {var _this2 = this;
-      this.$http.get('/petbnb/article/getArticleList', {
+      this.$http.
+      get('/petbnb/article/getArticleList', {
         index: this.now_page,
         size: this.size }).
 
@@ -212,6 +205,11 @@ var _default =
         _this2.total = res.data.total;
         _this2.list = res.data.list;
       });
+    },
+    enterDetail: function enterDetail(id, url) {
+      uni.navigateTo({
+        url: './detail?id=' + id });
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

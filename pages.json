@@ -112,6 +112,13 @@
 				"navigationBarTextStyle": "white"
 			}
 		},
+		{
+			"path": "pages/petbnb/article/detail",
+			"style": {
+				"navigationBarTitleText": "文章详情",
+				"navigationBarTextStyle": "white"
+			}
+		},
 		// 同城服务
 		{
 			"path": "pages/petbnb/service/service",

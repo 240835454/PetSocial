@@ -1,0 +1,5 @@
+.page {
+  padding: 30rpx 10rpx;
+  box-sizing: border-box;
+}
+

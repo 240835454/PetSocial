@@ -15,7 +15,7 @@ __webpack_require__(/*! public/css/common.less */ 50);function _interopRequireDe
 
 _vue.default.config.productionTip = false;
 
-// Vue.prototype.$API = 'http://192.168.0.108:3000' 
+// Vue.prototype.$API = 'http://192.168.2.157:3000'  
 _vue.default.prototype.$API = 'http://192.168.0.113:3000';
 // Vue.prototype.$API = 'http://192.168.30.1:3000'
 // Vue.prototype.$API = 'http://172.20.10.13:3000'

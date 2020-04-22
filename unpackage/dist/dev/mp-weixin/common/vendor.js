@@ -8527,7 +8527,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/login/register": { "navigationBarTitleText": "萌宠", "navigationBarTextStyle": "white" }, "pages/login/setPassword": { "navigationBarTextText": "萌宠", "navigationBarTextStyle": "white" }, "pages/login/login": { "navigationBarTitleText": "萌宠", "navigationBarTextStyle": "white" }, "pages/community/community": { "navigationBarTitleText": "社区", "navigationBarTextStyle": "white", "enablePullDownRefresh": true }, "pages/community/publish": { "navigationBarTitleText": "发布", "navigationBarTextStyle": "white" }, "pages/community/publish_video": { "navigationBarTitleText": "发布", "navigationBarTextStyle": "white" }, "pages/community/userDetail": { "navigationBarTitleText": "", "navigationBarTextStyle": "white" }, "pages/community/chat": { "navigationBarTitleText": "", "navigationBarTextStyle": "white" }, "pages/petbnb/petbnb": { "navigationBarTitleText": "养宠", "navigationBarTextStyle": "white" }, "pages/petbnb/pet/addPet": { "navigationBarTitleText": "养宠", "navigationBarTextStyle": "white" }, "pages/petbnb/account/account": { "navigationBarTitleText": "账本", "navigationBarTextStyle": "white" }, "pages/petbnb/account/addAccount": { "navigationBarTitleText": "记账", "navigationBarTextStyle": "white" }, "pages/petbnb/article/article": { "navigationBarTitleText": "精选文章", "navigationBarTextStyle": "white" }, "pages/petbnb/service/service": { "navigationBarTitleText": "同城服务", "navigationBarTextStyle": "white" }, "pages/petbnb/encyclopedia/encyclopedia": { "navigationBarTitleText": "宠物种族", "navigationBarTextStyle": "white" }, "pages/petbnb/encyclopedia/petTypeList": { "navigationBarTextStyle": "white" }, "pages/petbnb/encyclopedia/petDetail": { "navigationBarTextStyle": "white" }, "pages/user/user": { "navigationBarTitleText": "我的", "navigationBarTextStyle": "white" }, "pages/user/myInfo": { "navigationBarTitleText": "个人资料", "navigationBarTextStyle": "white" }, "pages/user/myPet": { "navigationBarTitleText": "我的宠物", "navigationBarTextStyle": "white" }, "pages/user/myFriend": { "navigationBarTitleText": "我的关注", "navigationBarTextStyle": "white" }, "pages/user/myAlbum": { "navigationBarTitleText": "我的相册", "navigationBarTextStyle": "white" }, "pages/user/myCollection": { "navigationBarTitleText": "我的相册", "navigationBarTextStyle": "white" } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F2473D", "backgroundColor": "#F8F8F8" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/login/register": { "navigationBarTitleText": "萌宠", "navigationBarTextStyle": "white" }, "pages/login/setPassword": { "navigationBarTextText": "萌宠", "navigationBarTextStyle": "white" }, "pages/login/login": { "navigationBarTitleText": "萌宠", "navigationBarTextStyle": "white" }, "pages/community/community": { "navigationBarTitleText": "社区", "navigationBarTextStyle": "white", "enablePullDownRefresh": true }, "pages/community/publish": { "navigationBarTitleText": "发布", "navigationBarTextStyle": "white" }, "pages/community/publish_video": { "navigationBarTitleText": "发布", "navigationBarTextStyle": "white" }, "pages/community/userDetail": { "navigationBarTitleText": "", "navigationBarTextStyle": "white" }, "pages/community/chat": { "navigationBarTitleText": "", "navigationBarTextStyle": "white" }, "pages/petbnb/petbnb": { "navigationBarTitleText": "养宠", "navigationBarTextStyle": "white" }, "pages/petbnb/pet/addPet": { "navigationBarTitleText": "养宠", "navigationBarTextStyle": "white" }, "pages/petbnb/account/account": { "navigationBarTitleText": "账本", "navigationBarTextStyle": "white" }, "pages/petbnb/account/addAccount": { "navigationBarTitleText": "记账", "navigationBarTextStyle": "white" }, "pages/petbnb/article/article": { "navigationBarTitleText": "精选文章", "navigationBarTextStyle": "white" }, "pages/petbnb/article/detail": { "navigationBarTitleText": "文章详情", "navigationBarTextStyle": "white" }, "pages/petbnb/service/service": { "navigationBarTitleText": "同城服务", "navigationBarTextStyle": "white" }, "pages/petbnb/encyclopedia/encyclopedia": { "navigationBarTitleText": "宠物种族", "navigationBarTextStyle": "white" }, "pages/petbnb/encyclopedia/petTypeList": { "navigationBarTextStyle": "white" }, "pages/petbnb/encyclopedia/petDetail": { "navigationBarTextStyle": "white" }, "pages/user/user": { "navigationBarTitleText": "我的", "navigationBarTextStyle": "white" }, "pages/user/myInfo": { "navigationBarTitleText": "个人资料", "navigationBarTextStyle": "white" }, "pages/user/myPet": { "navigationBarTitleText": "我的宠物", "navigationBarTextStyle": "white" }, "pages/user/myFriend": { "navigationBarTitleText": "我的关注", "navigationBarTextStyle": "white" }, "pages/user/myAlbum": { "navigationBarTitleText": "我的相册", "navigationBarTextStyle": "white" }, "pages/user/myCollection": { "navigationBarTitleText": "我的相册", "navigationBarTextStyle": "white" } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F2473D", "backgroundColor": "#F8F8F8" } };exports.default = _default;
 
 /***/ }),
 /* 8 */
@@ -8684,7 +8684,7 @@ function normalizeComponent (
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _interceptor = _interopRequireDefault(__webpack_require__(/*! ./interceptor.js */ 16));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
-// let ApiUrl = 'http://192.168.0.108:3000/API';
+// let ApiUrl = 'http://192.168.2.157:3000/API';
 var ApiUrl = 'http://192.168.0.113:3000/API';
 // let ApiUrl = 'http://172.20.10.13:3000/API';
 var _default =
@@ -8747,7 +8747,8 @@ var _default =
   },
   // 上传文件
   uploadFile: function uploadFile(file) {
-    var url = 'http://192.168.0.108:3000/image';
+    // let url = 'http://192.168.0.108:3000/image';
+    var url = 'http://192.168.0.113:3000/image';
     // let url = 'http://192.168.30.1:3000/image';
     // let url = 'http://172.20.10.13:3000/image';
     return new Promise(function (resolve, reject) {
@@ -12652,7 +12653,15 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABX
 /* 189 */,
 /* 190 */,
 /* 191 */,
-/* 192 */
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */,
+/* 199 */,
+/* 200 */
 /*!**********************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/util/js/formatList.js ***!
   \**********************************************************************/
@@ -12689,14 +12698,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.formatList
 }
 
 /***/ }),
-/* 193 */,
-/* 194 */,
-/* 195 */,
-/* 196 */,
-/* 197 */,
-/* 198 */,
-/* 199 */,
-/* 200 */,
 /* 201 */,
 /* 202 */,
 /* 203 */,
@@ -12753,7 +12754,15 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.formatList
 /* 254 */,
 /* 255 */,
 /* 256 */,
-/* 257 */
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */
 /*!*************************************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/js_sdk/u-charts/u-charts/u-charts.js ***!
   \*************************************************************************************/
@@ -18397,14 +18406,6 @@ if ( true && typeof module.exports === "object") {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 258 */,
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */,
 /* 266 */,
 /* 267 */,
 /* 268 */,
@@ -18418,7 +18419,15 @@ if ( true && typeof module.exports === "object") {
 /* 276 */,
 /* 277 */,
 /* 278 */,
-/* 279 */
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */,
+/* 283 */,
+/* 284 */,
+/* 285 */,
+/* 286 */,
+/* 287 */
 /*!******************************************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/components/w-picker/city-data/province.js ***!
   \******************************************************************************************/
@@ -18567,7 +18576,7 @@ var provinceData = [{
 provinceData;exports.default = _default;
 
 /***/ }),
-/* 280 */
+/* 288 */
 /*!**************************************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/components/w-picker/city-data/city.js ***!
   \**************************************************************************************/
@@ -20080,7 +20089,7 @@ var cityData = [
 cityData;exports.default = _default;
 
 /***/ }),
-/* 281 */
+/* 289 */
 /*!**************************************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/components/w-picker/city-data/area.js ***!
   \**************************************************************************************/
@@ -32632,7 +32641,7 @@ var areaData = [
 areaData;exports.default = _default;
 
 /***/ }),
-/* 282 */
+/* 290 */
 /*!********************************************************************************!*\
   !*** C:/Users/Administrator/Desktop/PetSocial/components/w-picker/w-picker.js ***!
   \********************************************************************************/
