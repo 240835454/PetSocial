@@ -27,25 +27,7 @@
 		},
 		"miniprogram": {
 			"current": -1,
-<<<<<<< HEAD
-			"list": [
-				{
-					"id": -1,
-					"name": "pages/petbnb/article/article",
-					"pathName": "pages/petbnb/article/article",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/petbnb/petbnb",
-					"pathName": "pages/petbnb/petbnb",
-					"scene": null
-				}
-			]
-=======
 			"list": []
->>>>>>> 213fca0226d184984769bb915f4fbbf0f4eaf90d
 		}
 	}
 }
