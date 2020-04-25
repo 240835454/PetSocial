@@ -1,1 +1,1 @@
-<view>123</view>
+<view><block wx:for="{{$root.l0}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="item"><view><image src mode></image></view><view class="item-box"><image class="avatar" src="{{api+item.$orig.avatar}}" mode="aspectFill"></image><text class="name">{{item.$orig.name}}</text><text class="time">{{item.m0}}</text></view></view></block></view>

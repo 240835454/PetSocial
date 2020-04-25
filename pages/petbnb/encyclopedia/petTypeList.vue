@@ -171,7 +171,12 @@
 					uni.navigateBack({
 						delta: 2
 					})
-				}else{
+				}else if(page[page.length-3].route === 'pages/user/components/editPet'){
+					uni.navigateBack({
+						delta: 2
+					})
+				}
+				else{
 					uni.navigateTo({
 						url: './petDetail?id=' + id
 					})

@@ -304,7 +304,12 @@ var TITLE_HEIGHT = 23;var _default = { data: function data() {return { title: 'H
         uni.navigateBack({
           delta: 2 });
 
-      } else {
+      } else if (page[page.length - 3].route === 'pages/user/components/editPet') {
+        uni.navigateBack({
+          delta: 2 });
+
+      } else
+      {
         uni.navigateTo({
           url: './petDetail?id=' + id });
 

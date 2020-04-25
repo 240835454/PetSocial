@@ -201,7 +201,11 @@ var _default =
   },
   onShow: function onShow(options) {
     var page = getCurrentPages();
-    this.info.breed = page[1].$vm.breed;
+    if (page.length === 2) {
+      this.info.breed = page[1].$vm.breed;
+    } else {
+      this.info.breed = page[2].$vm.breed;
+    }
   },
   methods: {
     addPet: function addPet() {

@@ -8527,7 +8527,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/login/register": { "navigationBarTitleText": "萌宠", "navigationBarTextStyle": "white" }, "pages/login/setPassword": { "navigationBarTextText": "萌宠", "navigationBarTextStyle": "white" }, "pages/login/login": { "navigationBarTitleText": "萌宠", "navigationBarTextStyle": "white" }, "pages/community/community": { "navigationBarTitleText": "社区", "navigationBarTextStyle": "white", "enablePullDownRefresh": true }, "pages/community/publish": { "navigationBarTitleText": "发布", "navigationBarTextStyle": "white" }, "pages/community/publish_video": { "navigationBarTitleText": "发布", "navigationBarTextStyle": "white" }, "pages/community/userDetail": { "navigationBarTitleText": "", "navigationBarTextStyle": "white" }, "pages/community/chat": { "navigationBarTitleText": "", "navigationBarTextStyle": "white" }, "pages/petbnb/petbnb": { "navigationBarTitleText": "养宠", "navigationBarTextStyle": "white" }, "pages/petbnb/pet/addPet": { "navigationBarTitleText": "养宠", "navigationBarTextStyle": "white" }, "pages/petbnb/account/account": { "navigationBarTitleText": "账本", "navigationBarTextStyle": "white" }, "pages/petbnb/account/addAccount": { "navigationBarTitleText": "记账", "navigationBarTextStyle": "white" }, "pages/petbnb/article/article": { "navigationBarTitleText": "精选文章", "navigationBarTextStyle": "white" }, "pages/petbnb/article/detail": { "navigationBarTitleText": "文章详情", "navigationBarTextStyle": "white" }, "pages/petbnb/service/service": { "navigationBarTitleText": "同城服务", "navigationBarTextStyle": "white" }, "pages/petbnb/encyclopedia/encyclopedia": { "navigationBarTitleText": "宠物种族", "navigationBarTextStyle": "white" }, "pages/petbnb/encyclopedia/petTypeList": { "navigationBarTextStyle": "white" }, "pages/petbnb/encyclopedia/petDetail": { "navigationBarTextStyle": "white" }, "pages/user/user": { "navigationBarTitleText": "我的", "navigationBarTextStyle": "white" }, "pages/user/myInfo": { "navigationBarTitleText": "个人资料", "navigationBarTextStyle": "white" }, "pages/user/myPet": { "navigationBarTitleText": "我的宠物", "navigationBarTextStyle": "white" }, "pages/user/myFriend": { "navigationBarTitleText": "我的关注", "navigationBarTextStyle": "white" }, "pages/user/myAlbum": { "navigationBarTitleText": "我的相册", "navigationBarTextStyle": "white" }, "pages/user/myCollection": { "navigationBarTitleText": "我的相册", "navigationBarTextStyle": "white" } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F2473D", "backgroundColor": "#F8F8F8" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/login/register": { "navigationBarTitleText": "萌宠", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/setPassword": { "navigationBarTextText": "萌宠", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/login": { "navigationBarTitleText": "萌宠", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/community/community": { "navigationBarTitleText": "社区", "navigationBarTextStyle": "white", "enablePullDownRefresh": true, "usingComponents": { "chat-input": "/components/im-chat/chatinput" }, "usingAutoImportComponents": {} }, "pages/community/publish": { "navigationBarTitleText": "发布", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/community/publish_video": { "navigationBarTitleText": "发布", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/community/userDetail": { "navigationBarTitleText": "", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/community/chat": { "navigationBarTitleText": "", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/petbnb": { "navigationBarTitleText": "养宠", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/pet/addPet": { "navigationBarTitleText": "养宠", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/account/account": { "navigationBarTitleText": "账本", "navigationBarTextStyle": "white", "usingComponents": { "charts": "/pages/petbnb/account/components/charts", "detail": "/pages/petbnb/account/components/detail" }, "usingAutoImportComponents": {} }, "pages/petbnb/account/addAccount": { "navigationBarTitleText": "记账", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/article/article": { "navigationBarTitleText": "精选文章", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/article/detail": { "navigationBarTitleText": "文章详情", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/service/service": { "navigationBarTitleText": "同城服务", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/encyclopedia/encyclopedia": { "navigationBarTitleText": "宠物种族", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/encyclopedia/petTypeList": { "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/petbnb/encyclopedia/petDetail": { "navigationBarTextStyle": "white", "usingComponents": { "rate": "/components/rate" }, "usingAutoImportComponents": {} }, "pages/user/user": { "navigationBarTitleText": "我的", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/myInfo": { "navigationBarTitleText": "个人资料", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/myPet": { "navigationBarTitleText": "我的宠物", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/myFriend": { "navigationBarTitleText": "我的关注", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/myAlbum": { "navigationBarTitleText": "我的动态", "navigationBarTextStyle": "white", "usingComponents": { "chat-input": "/components/im-chat/chatinput" }, "usingAutoImportComponents": {} }, "pages/user/myCollection": { "navigationBarTitleText": "我的点赞", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/components/editPet": { "navigationBarTitleText": "修改宠物信息", "navigationBarTextStyle": "white", "usingComponents": {}, "usingAutoImportComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F2473D", "backgroundColor": "#F8F8F8" } };exports.default = _default;
 
 /***/ }),
 /* 8 */
@@ -8747,7 +8747,9 @@ var _default =
   },
   // 上传文件
   uploadFile: function uploadFile(file) {
-    var url = 'http://192.168.0.108:3000/image';
+    // let url = 'http://192.168.0.108:3000/image';
+    // let url = 'http://192.168.0.113:3000/image'; // 海润
+    var url = 'http://192.168.2.157:3000/image'; // 家
     // let url = 'http://192.168.30.1:3000/image';
     // let url = 'http://172.20.10.13:3000/image';
     return new Promise(function (resolve, reject) {
@@ -12761,7 +12763,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.formatList
 /* 262 */,
 /* 263 */,
 /* 264 */,
-/* 265 */
+/* 265 */,
+/* 266 */,
+/* 267 */
 /*!*******************************************************************************!*\
   !*** C:/Users/jm/Desktop/毕设项目/PetSocial/js_sdk/u-charts/u-charts/u-charts.js ***!
   \*******************************************************************************/
@@ -18405,8 +18409,6 @@ if ( true && typeof module.exports === "object") {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 266 */,
-/* 267 */,
 /* 268 */,
 /* 269 */,
 /* 270 */,
@@ -18426,7 +18428,9 @@ if ( true && typeof module.exports === "object") {
 /* 284 */,
 /* 285 */,
 /* 286 */,
-/* 287 */
+/* 287 */,
+/* 288 */,
+/* 289 */
 /*!************************************************************************************!*\
   !*** C:/Users/jm/Desktop/毕设项目/PetSocial/components/w-picker/city-data/province.js ***!
   \************************************************************************************/
@@ -18575,7 +18579,7 @@ var provinceData = [{
 provinceData;exports.default = _default;
 
 /***/ }),
-/* 288 */
+/* 290 */
 /*!********************************************************************************!*\
   !*** C:/Users/jm/Desktop/毕设项目/PetSocial/components/w-picker/city-data/city.js ***!
   \********************************************************************************/
@@ -20088,7 +20092,7 @@ var cityData = [
 cityData;exports.default = _default;
 
 /***/ }),
-/* 289 */
+/* 291 */
 /*!********************************************************************************!*\
   !*** C:/Users/jm/Desktop/毕设项目/PetSocial/components/w-picker/city-data/area.js ***!
   \********************************************************************************/
@@ -32640,7 +32644,7 @@ var areaData = [
 areaData;exports.default = _default;
 
 /***/ }),
-/* 290 */
+/* 292 */
 /*!**************************************************************************!*\
   !*** C:/Users/jm/Desktop/毕设项目/PetSocial/components/w-picker/w-picker.js ***!
   \**************************************************************************/

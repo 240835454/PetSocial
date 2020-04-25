@@ -1,0 +1,67 @@
+.item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  padding: 10rpx 20rpx;
+  border-bottom: 1rpx solid #6666;
+  position: relative;
+}
+.item::after {
+  content: ' ';
+  border: solid #e5e5e5;
+  border-width: 3rpx 3rpx 0 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 30rpx;
+  position: absolute;
+  width: 18rpx;
+  height: 18rpx;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
+}
+.item .item-img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 15rpx;
+}
+.item .item-box .item-info .top {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.item .item-box .item-info .top .icon_level {
+  width: 36rpx;
+  height: 36rpx;
+  margin-top: 5rpx;
+  padding-right: 20rpx;
+}
+.item .item-box .item-info .bottom .breed {
+  display: inline-block;
+  padding: 2rpx 5rpx;
+  font-size: 18rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 10rpx;
+}
+.addPet {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  height: 121rpx;
+  border-bottom: 1rpx solid #6666;
+  color: grey;
+}
+

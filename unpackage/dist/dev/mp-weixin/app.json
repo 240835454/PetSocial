@@ -21,6 +21,7 @@
     "pages/user/user",
     "pages/user/myInfo",
     "pages/user/myPet",
+    "pages/user/components/editPet",
     "pages/user/myFriend",
     "pages/user/myAlbum",
     "pages/user/myCollection"
@@ -62,6 +63,5 @@
       "desc": "测试"
     }
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap3.json"
+  "usingComponents": {}
 }

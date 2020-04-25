@@ -32,19 +32,19 @@
 			<view class="item arrow" @click='enterMyAlbum'>
 				<image src="../../static/icon_xiangce.png" mode="aspectFill" class="icon"></image>
 				<text class="name">我的动态</text>
-			</view>
+			</view> 
 			<view class="item arrow" @click='enterMyCollection'>
 				<image src="../../static/icon_collect.png" mode="aspectFit" class="icon"></image>
-				<text class="name">我的收藏</text> 
-			</view>
+				<text class="name">我的点赞</text> 
+			</view>  
 			<view class="item arrow" @click="exit">
 				<image src="../../static/icon_logout.png" mode="aspectFill" class="icon"></image>
 				<text class="name">退出登录</text>
 			</view>
-		</view>
-	</view>
-</template>
-
+		</view>   
+	</view>    
+</template>  
+ 
 <script>
 	export default {
 		data() {

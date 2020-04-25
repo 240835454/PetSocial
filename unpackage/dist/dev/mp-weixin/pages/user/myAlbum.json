@@ -1,5 +1,7 @@
 {
-  "navigationBarTitleText": "我的相册",
+  "navigationBarTitleText": "我的动态",
   "navigationBarTextStyle": "white",
-  "usingComponents": {}
+  "usingComponents": {
+    "chat-input": "/components/im-chat/chatinput"
+  }
 }

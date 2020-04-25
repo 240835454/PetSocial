@@ -175,6 +175,14 @@
 				"navigationBarTextStyle": "white"
 			}
 		},
+		// 修改宠物资料
+		{
+			"path": "pages/user/components/editPet",
+			"style": {
+				"navigationBarTitleText": "修改宠物信息",
+				"navigationBarTextStyle": "white"
+			}
+		},
 		// 我的关注
 		{
 			"path": "pages/user/myFriend",
@@ -183,19 +191,19 @@
 				"navigationBarTextStyle": "white"
 			}
 		},
-		// 我的相册
-		{
+		// 我的动态
+		{ 
 			"path": "pages/user/myAlbum",
 			"style": {
-				"navigationBarTitleText": "我的相册", 
+				"navigationBarTitleText": "我的动态", 
 				"navigationBarTextStyle": "white"
 			}
 		},
-		// 我的收藏
+		// 我的点赞
 		{
 			"path": "pages/user/myCollection",
 			"style": {
-				"navigationBarTitleText": "我的相册",
+				"navigationBarTitleText": "我的点赞",
 				"navigationBarTextStyle": "white"
 			}
 		}

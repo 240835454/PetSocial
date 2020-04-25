@@ -63,10 +63,12 @@ export default {
 	},
 	// 上传文件
 	uploadFile(file) {
-		let url = 'http://192.168.0.108:3000/image';
+		// let url = 'http://192.168.0.108:3000/image';
+		// let url = 'http://192.168.0.113:3000/image'; // 海润
+		let url = 'http://192.168.2.157:3000/image'; // 家
 		// let url = 'http://192.168.30.1:3000/image';
 		// let url = 'http://172.20.10.13:3000/image';
-		return new Promise((resolve, reject) => {
+		return new Promise((resolve, reject) => { 
 			uni.uploadFile({
 				url: url,
 				filePath: file,

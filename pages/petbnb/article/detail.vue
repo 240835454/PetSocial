@@ -22,7 +22,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less"> 
 .page {
 	padding: 30upx 10upx;
 	box-sizing: border-box;

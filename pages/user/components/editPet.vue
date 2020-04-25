@@ -4,7 +4,7 @@
 			<image :src="info.avatar === '' ? '../../../static/camera.png' : api + info.avatar" class="icon" mode="" @click='changeAvatar'></image>
 			<view class="item">
 				<text>宠物名称</text>
-				<input type="text" value="" @input="petName" placeholder="设置宠物名称" placeholder-style='text-align:right' class="input-box" />
+				<input type="text" :value="info.name"  @input="petName" placeholder="设置宠物名称" placeholder-style='text-align:right' class="input-box" />
 			</view>
 			<view class="item">
 				<text>宠物性别</text>
@@ -33,7 +33,7 @@
 				</picker>
 			</view>
 			<view class="footer">
-				<text class="button" @click="addPet">保存</text>
+				<text class="button" @click="updatePet">保存</text>
 			</view>
 		</view>
 	</view>
@@ -66,19 +66,24 @@
 				api: this.$API
 			}
 		},
+		onLoad(options){
+			this.$http.get('/petbnb/getPetDetail',{
+				pid: options.pid
+			})
+			.then(res => {
+				this.info = res.data;
+				this.info.gender == 1 ? this.gender = "雄" : this.gender = "雌"
+			})
+		},
 		onShow(options) {
 			let page = getCurrentPages();
-			if(page.length === 2){
-				this.info.breed = page[1].$vm.breed;
-			}else{
-				this.info.breed = page[2].$vm.breed;
-			}
+			this.info.breed = page[2].$vm.breed;
 		},
 		methods: {
-			addPet() {
+			updatePet() {
 				if (this.info.name !== '' && this.info.gender !== '' && this.info.birthDay !== '' && this.info.avatar !== '' &&
 					this.info.breed !== '' && this.info.state !== '') {
-					this.$http.post('/petbnb/addPet', {
+					this.$http.post('/petbnb/updatePetDetail', {
 							...this.info
 						})
 						.then(res => {
@@ -134,7 +139,7 @@
 			// 宠物品种
 			petBreed() {
 				uni.navigateTo({
-					url: '../encyclopedia/encyclopedia'
+					url: '../../petbnb/encyclopedia/encyclopedia'
 				})
 			},
 			// 宠物生日
