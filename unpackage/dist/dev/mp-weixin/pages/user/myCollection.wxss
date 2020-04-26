@@ -7,6 +7,22 @@ page {
   padding: 30rpx;
   background-color: #fff;
   border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+.item .item-logo {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 20rpx;
+}
+.item .item-logo .logo {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 20rpx;
+}
+.item .item-logo .text {
+  display: block;
+  padding: 5rpx 0;
 }
 .item .item-box {
   display: -webkit-box;

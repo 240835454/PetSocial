@@ -38,44 +38,15 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/user/myPet",
-					"pathName": "pages/user/myPet",
+					"name": "pages/user/myCollection",
+					"pathName": "pages/user/myCollection",
 					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/petbnb/petbnb",
-					"pathName": "pages/petbnb/petbnb",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/user/components/editPet",
-					"pathName": "pages/user/components/editPet",
-					"query": "pid=1",
 					"scene": null
 				},
 				{
 					"id": -1,
 					"name": "pages/user/user",
 					"pathName": "pages/user/user",
-					"query": "pid=1",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/user/myAlbum",
-					"pathName": "pages/user/myAlbum",
-					"query": "pid=1",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/user/myCollection",
-					"pathName": "pages/user/myCollection",
-					"query": "pid=1",
 					"scene": null
 				}
 			]
